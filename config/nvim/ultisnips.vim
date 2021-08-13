@@ -1,3 +1,3 @@
-let g:snips_author = "Frederick Price"
-let g:snips_email = "rprice@pricemail.ca"
-let g:snips_github = "https://github.com/rickprice"
+let g:snips_author = {{user.fullname}}
+let g:snips_email = "{{user.email}"
+let g:snips_github = "https://github.com/{{hub.user}}"

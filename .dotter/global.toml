@@ -47,6 +47,11 @@
 "config/gh/config.yml" = "~/.config/gh/config.yml"
 "config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
 
+[nvim.files]
+"config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
+"config/nvim/init.vim" = "~/.config/nvim/init.vim"
+"config/nvim/ultisnips.vim" = "~/.config/nvim/ultisnips.vim"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]
