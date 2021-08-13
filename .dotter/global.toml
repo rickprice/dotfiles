@@ -62,7 +62,7 @@
 "config/yamllint/config" = "~/.config/yamllint/config"
 
 [ssh.files]
-"etc/ssh/sshd_config" = "/etc/ssh/sshd_config"
+"etc/ssh/sshd_config" = { target = "/etc/ssh/sshd_config", type = "template", owner = "root" }
 
 [activestate.files]
 [aws.files]
