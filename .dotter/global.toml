@@ -45,6 +45,7 @@
 
 [hub.files]
 "config/gh/config.yml" = "~/.config/gh/config.yml"
+"config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
 
 [activestate.files]
 [aws.files]
