@@ -56,4 +56,3 @@
 [aws.files]
 [pivotal.files]
 [user.files]
-"config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
