@@ -52,6 +52,9 @@
 "config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
 "config/nvim/ultisnips.vim" = "~/.config/nvim/ultisnips.vim"
 
+[rclone.files]
+"config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]
