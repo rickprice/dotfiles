@@ -70,7 +70,17 @@
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 
-[activestate.files]
-[aws.files]
+[gitconfig.files]
+"home/gitconfig"="~/.gitconfig"
+
 [pivotal.files]
+"home/pivotaltrackerrc"="~/.pivotaltrackerrc"
+
+[aws.files]
+"home/aws/config"="~/.aws/config"
+"home/aws/credentials"="~/.aws/credentials"
+
+[activestate.files]
+"home/camel"="~/.camel"
+
 [user.files]
