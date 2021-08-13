@@ -65,3 +65,6 @@ yay --noconfirm -S remmina
 
 ## Dotter
 yay --noconfirm -S dotter-rs-git
+
+## Delta
+yay --noconfirm -S git-delta-git
