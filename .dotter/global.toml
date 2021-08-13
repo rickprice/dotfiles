@@ -1,0 +1,44 @@
+# Helpers are user-defined functions that can be executed inside templates.
+# This section is optional.
+[helpers]
+# color_hex2rgb = "dotter_settings/helpers/color_hex2rgb.rhai"
+
+# A package contains two sections - "files" and "variables".
+# Both of those sections are optional - you can have only one if you want.
+
+# The 'files' section is a mapping between the path of the file relative to
+# the repository root and its location in the filesystem (where the program
+# expects it)
+# In this case, say your repository is at `~/.dotfiles`, it will map
+# `~/.dotfiles/zsh/zprofile` to `~/.zprofile`,
+# and `~/.dotfiles/zshrc` to `~/.zshrc`
+# To clarify, folders in the repository don't have to correspond to packages.
+# On Windows, '~' is expanded to 'C:\Users\<USERNAME>\'
+
+[alacritty.files]
+"config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+
+[autorandr.files]
+"config/autorandr/docked/config" = "~/.config/autorandr/docked/config"
+"config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
+"config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
+"config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
+
+[fish.files]
+# Fish config (probably unused)
+"config/fish/config.fish" = "~/.config/fish/config.fish"
+# My files in conf.d
+"config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
+"config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
+"config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
+"config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
+
+[flake8.files]
+"config/flake8" = "~/.config/flake8"
+
+[i3.files]
+"config/i3/config" = "~/.config/i3/config"
+"config/i3status/config" = "~/.config/i3status/config"
+
+[mypy.files]
+"config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"

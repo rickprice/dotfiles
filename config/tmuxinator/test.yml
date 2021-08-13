@@ -1,0 +1,19 @@
+# /home/fprice/.config/tmuxinator/test.yml
+name: session-name
+root: ~/docker_workspace
+
+windows:
+  - win1:
+      panes:
+        - pane1:
+          - echo "do something"
+        - pane2:
+          # - This pane holds vim
+  - setup:
+    # session-name:win1.1 == <session-name>:<window-name>.<pane-index>
+    - tmux send-keys -t session-name:win1.1 "./runTheHomeRepotDocker.sh" C-m # Run Docker
+    - tmux send-keys -t session-name:win1.1 "be" C-m # Run the BE environment
+    - sleep 2 # Sleep (in this window) because be takes a few seconds to come up
+    - tmux send-keys -t session-name:win1.1 "export AS_PLATFORM=pr4845" C-m # set our current PR
+    - sleep 1 # Sleep (in this window) if command is slow
+    - exit # Kill this tmux window

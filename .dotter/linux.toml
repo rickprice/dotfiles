@@ -1,0 +1,6 @@
+[zsh.files]
+zshrc = "~/.another_location"
+
+[zsh.variables]
+prompt_color = "#0000FF"
+
