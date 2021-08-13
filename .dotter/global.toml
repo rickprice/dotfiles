@@ -61,6 +61,9 @@
 [yamllint.files]
 "config/yamllint/config" = "~/.config/yamllint/config"
 
+[ssh.files]
+"etc/ssh/sshd_config" = "/etc/ssh/sshd_config"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]

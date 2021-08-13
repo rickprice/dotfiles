@@ -114,5 +114,5 @@ Subsystem	sftp	/usr/lib/ssh/sftp-server
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
-Match User fprice
+Match User {{ user.username }}
     X11Forwarding yes
