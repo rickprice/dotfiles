@@ -42,3 +42,12 @@
 
 [mypy.files]
 "config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
+
+[hub.files]
+"config/gh/config.yml" = "~/.config/gh/config.yml"
+
+[activestate.files]
+[aws.files]
+[pivotal.files]
+[user.files]
+"config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
