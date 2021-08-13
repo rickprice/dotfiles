@@ -58,6 +58,9 @@
 [wezterm.files]
 "config/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
 
+[yamllint.files]
+"config/yamllint/config" = "~/.config/yamllint/config"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]
