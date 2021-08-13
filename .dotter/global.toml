@@ -49,7 +49,7 @@
 
 [nvim.files]
 "config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
-"config/nvim/init.vim" = "~/.config/nvim/init.vim"
+"config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
 "config/nvim/ultisnips.vim" = "~/.config/nvim/ultisnips.vim"
 
 [activestate.files]
