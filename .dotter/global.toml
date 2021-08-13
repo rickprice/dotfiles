@@ -64,6 +64,12 @@
 [ssh.files]
 "etc/ssh/sshd_config" = { target = "/etc/ssh/sshd_config", type = "template", owner = "root" }
 
+[local.files]
+"local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
+"local/bin/get-aws-profile"="~/.local/bin/get-aws-profile"
+"local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
+"local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]
