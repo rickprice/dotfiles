@@ -1,0 +1,53 @@
+#! /bin/sh
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# We can't check this file into source control because it has secrets in it
+SENTINEL_AS_SETUP_SCRIPT=~/.local/bin/set_as_config.sh
+
+export PATH=$PATH:~/.local/bin
+
+# Needed so we can configure ultisnips...
+mkdir -p ~/.config/nvim
+
+# if [ ! -f $SENTINEL_AS_SETUP_SCRIPT ] ; then
+
+    FILE=`zenity --file-selection --title="Select ActiveState developer configuration file"`
+
+    case $? in
+             0 )
+                    echo "\"$FILE\" selected." ;;
+             1 )
+                 echo "No file selected." ;
+                 exit 1  ;;
+            -1 )
+                echo "An unexpected error has occurred." ;
+                exit -1  ;;
+    esac
+
+
+echo "You need to start up the VPN software now"
+echo "For instance:"
+echo "sudo cp ~/WireGuard/*.conf /etc/WireGaurd"
+echo "sudo wg-quick up wg0_rickp"
+echo
+echo "Press any key to continue"
+while [ true ] ; do
+# read -t 3 -n 1
+read -n 1
+if [ $? = 0 ] ; then
+break ;
+else
+echo "waiting for the keypress"
+fi
+done
+
+    python $SCRIPT_BASE/initial_setup.py $FILE
+
+# fi

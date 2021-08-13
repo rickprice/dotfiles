@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# Password
+yay --noconfirm -S x11-ssh-askpass
+
+## ssh-agent configuration
+sudo ln --force -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share
+
+## SSH Daemon
+sudo pacman --noconfirm -S openssh
+sudo systemctl enable sshd
+sudo systemctl start sshd

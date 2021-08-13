@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+## VirtualBox
+# Not configured yet, but this is a link that seems good:
+# https://www.linuxtechi.com/install-virtualbox-on-arch-linux/
+
+# have to add the correct kernel headers before we do the following:
+# You can determine what Kernel you are running with uname -a
+# sudo pacman -S linux-headers
+sudo groupadd --force vboxusers  # Force to avoid errors when group exists already
+sudo usermod -aG vboxusers $USER
+yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle

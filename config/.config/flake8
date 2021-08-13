@@ -1,0 +1,11 @@
+[flake8]
+# See docs/BE-Python-Coding-Standards.md
+
+ignore = D200, D202, D205, D400, D413, E203, E266, E501, W503
+max-line-length = 100
+max-complexity = 18
+select = B,C,E,F,W,T4,B9,D,I
+
+import-order-style = smarkets
+
+docstring-convention = google

@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# Photographic processing
+yay --noconfirm -S rawtherapee
+yay --noconfirm -S gimp
+yay --noconfirm -S perl-image-exiftool
+yay --noconfirm -S nomacs
+yay --noconfirm -S imagemagick
+yay --noconfirm -S openexr
+yay --noconfirm -S darktable-git
+
+# Ensure we have my favourite file manager and the thumbnailers it needs
+yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer

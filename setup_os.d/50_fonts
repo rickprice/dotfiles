@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+## Fonts
+yay --noconfirm -S xorg-xfontsel
+yay --noconfirm -S nerd-fonts-complete
+yay --noconfirm -S ttf-iosevka-git
+yay --noconfirm -S noto-fonts
+yay --noconfirm -S noto-fonts-emoji
+yay --noconfirm -S noto-fonts-extra
+yay --noconfirm -S ttf-linux-libertine
+yay --noconfirm -S powerline-fonts
+yay --noconfirm -S adobe-source-code-pro-fonts

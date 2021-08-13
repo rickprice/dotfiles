@@ -1,0 +1,24 @@
+#! /bin/sh
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# Configure GH files
+USER=$(pass show gh/gihtub/user)
+OAUTH_TOKEN=$(pass show gh/gihtub/oauth_token)
+PROTOCOL=$(pass show gh/gihtub/git_protocol)
+# OAUTH_TOKEN=thisisatest
+
+cat >~/.config/gh/hosts.yml <<End-of-message
+github.com:
+    user: rickprice
+    oauth_token: $OAUTH_TOKEN
+    git_protocol: ssh
+End-of-message
+
+git config --global github.user rickprice

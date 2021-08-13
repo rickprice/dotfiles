@@ -1,0 +1,27 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# Ensure we have a writable bin directory on the path
+mkdir -p ~/.local/bin
+export PATH=$PATH:~/.local/bin
+
+# ActiveState tool
+yes | sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
+
+# ActiveState BE Tooling
+yay --noconfirm -S yarn
+# ! I'm really not sure why this is already installed, need to loop back and look at this
+# yay --noconfirm -S node
+# ! I'm really not sure why this is already installed, need to loop back and look at this
+yay --noconfirm -S prettier
+yay --noconfirm -S jq
+yay --noconfirm -S python37
+yay --noconfirm -S python-black
+yay --noconfirm -S python-isort

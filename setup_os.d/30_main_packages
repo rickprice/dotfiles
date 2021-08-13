@@ -1,0 +1,67 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+## Install Main packages I want
+sudo pacman --noconfirm -S base-devel
+sudo pacman --noconfirm -S stow
+sudo pacman --noconfirm -S python
+sudo pacman --noconfirm -S python-pip
+sudo pacman --noconfirm -S figlet
+sudo pacman --noconfirm -S fd
+sudo pacman --noconfirm -S tmux
+sudo pacman --noconfirm -S zip
+sudo pacman --noconfirm -S unzip
+sudo pacman --noconfirm -S zenity
+sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
+
+## Install AUR packages I want
+yay --noconfirm -S poppler
+yay --noconfirm -S pdfjam
+yay --noconfirm -S pass
+yay --noconfirm -S udiskie
+yay --noconfirm -S go
+yay --noconfirm -S x11-ssh-askpass
+yay --noconfirm -S mosh
+yay --noconfirm -S googler
+yay --noconfirm -S so
+# yay --noconfirm -S luakit-git
+yay --noconfirm -S fwupd
+yay --noconfirm -S bazelisk-bin
+yay --noconfirm -S meld
+yay --noconfirm -S aws-cli
+yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
+yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
+yay --noconfirm -S python-pipenv # Needed for BE tools
+yay --noconfirm -S pyenv # Needed for BE tools
+
+# Ensure we have my favourite file manager and the thumbnailers it needs
+yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
+
+## X11 stuff
+sudo pacman --noconfirm -S xcape
+
+## Keypass
+yay --noconfirm -S keepassxc
+
+## Klogg
+yay --noconfirm -S klogg
+
+## Git-LFS
+yay --noconfirm -S git-lfs
+git lfs install
+
+## Man packages
+yay --noconfirm -S man-db
+
+## Remmina
+yay --noconfirm -S remmina
+
+## Dotter
+yay --noconfirm -S dotter-rs-git

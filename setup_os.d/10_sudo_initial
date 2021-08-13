@@ -1,0 +1,13 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+# Configure sudo on arch to be less frustrating - Long Timeouts
+sudo cp $SCRIPT_BASE/static/sudo_config_items/50_configure_timeouts_long /etc/sudoers.d
+sudo chown root:root /etc/sudoers.d/50_configure_timeouts_long
