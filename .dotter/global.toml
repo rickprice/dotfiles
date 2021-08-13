@@ -55,6 +55,9 @@
 [rclone.files]
 "config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
 
+[wezterm.files]
+"config/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
+
 [activestate.files]
 [aws.files]
 [pivotal.files]
