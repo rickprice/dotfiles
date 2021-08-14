@@ -9,4 +9,6 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Lua stuff
-yay --noconfirm -S lua luarocks
+# LuaRocks is getting a uknown trust error right now
+# yay --noconfirm -S lua luarocks
+yay --noconfirm -S lua
