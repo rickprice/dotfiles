@@ -31,7 +31,6 @@
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
 "config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
-"config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
@@ -82,5 +81,8 @@
 
 [activestate.files]
 "home/camel"="~/.camel"
+
+[todoist.files]
+"config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
 
 [user.files]
