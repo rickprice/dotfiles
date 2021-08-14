@@ -40,5 +40,5 @@ function git_clone() {
     fi
 }
 
-git_clone($HOME_REPOT_REPOSITORY,$HOME_REPOT_NAME)
-git_clone($CAMEL_REPOSITORY,$CAMEL_NAME)
+git_clone "$HOME_REPOT_REPOSITORY" "$HOME_REPOT_NAME"
+git_clone "$CAMEL_REPOSITORY" "$CAMEL_NAME"
