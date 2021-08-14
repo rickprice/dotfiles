@@ -85,4 +85,8 @@
 [todoist.files]
 "config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
 
+[mutt.files]
+"home/mutt/muttrc"="~/.mutt/muttrc"
+"home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
+
 [user.files]
