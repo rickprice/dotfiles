@@ -15,7 +15,7 @@ CAMEL_REPOSITORY=git@github.com:ActiveState/camel.git
 CAMEL_NAME=camel
 
 # Make sure the directory exists
-mkdir -p ~/Documents/ActiveState
+mkdir -p ~/Documents/ActiveState || true
 
 function git_clone() {
     local git_repository="$1"
@@ -38,7 +38,7 @@ function git_clone() {
         popd
 
         # Create a link in the home directory
-        ln -s "$directory" "~/$directory_name"
+        ln -s "~/$directory_name" "$directory"
 
     fi
 }
