@@ -28,3 +28,6 @@ yay --noconfirm -S python-isort
 
 # Hub
 yay --noconfirm -S hub
+
+# BE Tools setup
+~/TheHomeRepot/install-dev-tools.sh
