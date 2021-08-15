@@ -25,3 +25,6 @@ yay --noconfirm -S jq
 yay --noconfirm -S python37
 yay --noconfirm -S python-black
 yay --noconfirm -S python-isort
+
+# Hub
+yay --noconfirm -S hub
