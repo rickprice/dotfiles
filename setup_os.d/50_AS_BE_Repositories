@@ -38,8 +38,7 @@ function git_clone() {
         popd
 
         # Create a link in the home directory
-        ln -s "~/$directory_name" "$directory"
-
+        ln -s  $directory ~/$directory_name
     fi
 }
 
