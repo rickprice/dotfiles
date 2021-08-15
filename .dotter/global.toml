@@ -29,7 +29,6 @@
 "config/fish/config.fish" = "~/.config/fish/config.fish"
 # My files in conf.d
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
-"config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
 "config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
 
 [flake8.files]
@@ -88,5 +87,8 @@
 [mutt.files]
 "home/mutt/muttrc"="~/.mutt/muttrc"
 "home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
+
+[gist.files]
+"config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
 
 [user.files]
