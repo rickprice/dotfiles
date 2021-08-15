@@ -14,10 +14,13 @@ HOME_REPOT_NAME=TheHomeRepot
 CAMEL_REPOSITORY=git@github.com:ActiveState/camel.git
 CAMEL_NAME=camel
 
+# Make sure the directory exists
+mkdir -p ~/Documents/ActiveState
+
 function git_clone() {
     local git_repository="$1"
     local directory_name="$2"
-    local directory="~/Documents/ActiveState/$directory_name"
+    local directory=~/Documents/ActiveState/$directory_name
 
     if [ ! -d "$directory" ] ; then
 
