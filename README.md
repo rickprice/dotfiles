@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles for use with Chezmoi
+Dotfiles for use with Dotter
