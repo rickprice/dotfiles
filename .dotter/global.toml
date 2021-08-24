@@ -44,6 +44,7 @@
 [hub.files]
 "config/gh/config.yml" = "~/.config/gh/config.yml"
 "config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
+"config/gh/hub" = "~/.config/.hub"
 
 [nvim.files]
 "config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
