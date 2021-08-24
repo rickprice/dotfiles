@@ -10,12 +10,12 @@ output HDMI1
 off
 output VIRTUAL1
 off
-output DP1-1-1
+output DP-1-1
 crtc 1
 mode 1920x1080
 pos 0x0
 rate 60.00
-output eDP1
+output eDP-1
 crtc 0
 mode 1920x1080
 pos 0x1080
