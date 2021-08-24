@@ -178,7 +178,7 @@ workspace 6 output primary
 workspace 7 output primary
 workspace 8 output primary
 workspace 9 output primary
-workspace "10:ext" output DP1-1 primary
+workspace "10:ext" output DP1-1-1 primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
