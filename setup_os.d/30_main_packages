@@ -40,6 +40,8 @@ yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
 yay --noconfirm -S python-pipenv # Needed for BE tools
 yay --noconfirm -S pyenv # Needed for BE tools
+yay --noconfirm -S autorandr
+yay --noconfirm -S arandr
 
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
