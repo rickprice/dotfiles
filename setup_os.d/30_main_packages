@@ -64,6 +64,7 @@ yay --noconfirm -S man-db
 
 ## Remmina
 yay --noconfirm -S remmina
+yay --noconfirm -S freerdp
 
 ## Dotter
 yay --noconfirm -S dotter-rs-git
