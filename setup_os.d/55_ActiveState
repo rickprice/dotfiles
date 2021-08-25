@@ -30,4 +30,5 @@ yay --noconfirm -S python-isort
 yay --noconfirm -S hub
 
 # BE Tools setup
-~/TheHomeRepot/install-dev-tools.sh
+# We really don't need this to be run AFAIK, and it has issues when run here...
+# ~/TheHomeRepot/install-dev-tools.sh
