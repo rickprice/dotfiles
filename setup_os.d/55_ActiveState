@@ -32,3 +32,6 @@ yay --noconfirm -S hub
 # BE Tools setup
 # We really don't need this to be run AFAIK, and it has issues when run here...
 # ~/TheHomeRepot/install-dev-tools.sh
+
+# VPN stuff for ActiveState
+yay --noconfirm -S networkmanager-openvpn
