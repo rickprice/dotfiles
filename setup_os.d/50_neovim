@@ -21,3 +21,4 @@ gem install neovim
 # sudo cpanm Neovim::Ext
 # Can't use noconfirm with this because it defaults to N to delete vi and Vim
 yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
+yay --noconfirm -S xclip
