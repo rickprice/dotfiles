@@ -10,6 +10,10 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 dotter --force
 
+# Needs to be owned by root and executable
+sudo chmod a+x /etc/NetworkManager/dispatcher.d/10-dropbox.sh
+sudo chown root:root /etc/NetworkManager/dispatcher.d/10-dropbox.sh
+
 # rm -rf ~/.config/mimeapps.list
 # stow --dotfiles config
 # stow --dotfiles local
