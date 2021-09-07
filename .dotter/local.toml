@@ -5,7 +5,7 @@ includes = [".dotter/secrets.toml"]
 # An array of the names of all packages that are selected.
 # Only the files and variables that belong to packages in this list are kept.
 # Note that in this example, the `graphics` package is automatically added as well.
-packages = ["alacritty","autorandr","fish","flake8","i3","mypy","hub","nvim","user","rclone","wezterm","yamllint","ssh","local","activestate","pivotal","aws","todoist","mutt","gist","gitconfig"]
+packages = ["alacritty","autorandr","fish","flake8","i3","mypy","hub","nvim","user","rclone","wezterm","yamllint","ssh","local","activestate","pivotal","aws","todoist","mutt","gist","gitconfig","dropbox"]
 
 # File target locations can be overridden in local.toml
 # This can be useful for example for applications which read from a different

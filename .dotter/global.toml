@@ -93,4 +93,8 @@
 [gist.files]
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
 
+[dropbox.files]
+"config/systemd/user/dropbox.service" = "~/.config/systemd/user/dropbox.service"
+"etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
+
 [user.files]
