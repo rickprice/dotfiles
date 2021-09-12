@@ -33,12 +33,12 @@ function process_photo_directory() {
     echo "Add location data $directory"
     [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
 
-    echo "Copy pictures to dropbox directory ${directory}"
-    mkdir -p "$directory_dropbox"
-    cp -R $directory_location_data/* "$directory_dropbox"
+    # echo "Copy pictures to dropbox directory ${directory}"
+    # mkdir -p "$directory_dropbox"
+    # cp -R $directory_location_data/* "$directory_dropbox"
 
-    echo "Move pictures from [$directory_dropbox] to dropbox location [$dropbox_location] $directory"
-    rclone move "${directory_dropbox}" "Dropbox:${dropbox_location}"
+    # # echo "Move pictures from [$directory_dropbox] to dropbox location [$dropbox_location] $directory"
+    # rclone move "${directory_dropbox}" "Dropbox:${dropbox_location}"
 }
 
 echo Setup Google Takeout data
