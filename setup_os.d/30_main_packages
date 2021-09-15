@@ -30,7 +30,7 @@ yay --noconfirm -S go
 yay --noconfirm -S x11-ssh-askpass
 yay --noconfirm -S mosh
 yay --noconfirm -S googler
-yay --noconfirm -S so
+yay --noconfirm -S so-git
 # yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
 yay --noconfirm -S bazelisk-bin
