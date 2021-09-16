@@ -35,3 +35,6 @@ yay --noconfirm -S hub
 
 # VPN stuff for ActiveState
 yay --noconfirm -S networkmanager-openvpn
+
+# 1Password
+yay --noconfirm -S 1password
