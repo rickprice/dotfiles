@@ -1,4 +1,7 @@
 source $HOME/.mutt/muttrc.gmail
+source $HOME/.mutt/muttrc.colour
+source $HOME/.mutt/colors-gruvbox-shuber.muttrc
+source $HOME/.mutt/colors-gruvbox-shuber-extended.muttrc
 
 set ssl_starttls=yes
 set ssl_force_tls=yes

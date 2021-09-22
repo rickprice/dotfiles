@@ -89,6 +89,9 @@
 [mutt.files]
 "home/mutt/muttrc"="~/.mutt/muttrc"
 "home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
+"home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
+"home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
+"home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
 
 [gist.files]
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"

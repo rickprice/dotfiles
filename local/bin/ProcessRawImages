@@ -28,7 +28,7 @@ function process_photo_directory() {
 
     echo "Copy pictures to be geolocated ${directory}"
     mkdir -p "$directory_location_data"
-    cp $directory/* "$directory_location_data"
+    cp -r $directory/* "$directory_location_data"
 
     echo "Add location data $directory"
     [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
@@ -51,6 +51,7 @@ else
 fi
 
 process_photo_directory "$WORKING_DIR/CanonT7i"  "Pictures/CanonRawPhotos"
+# process_photo_directory "$WORKING_DIR/CanonSX540HS"  "Pictures/CanonSX540HS"
 
 
 # Start terminal to watch the pipeline

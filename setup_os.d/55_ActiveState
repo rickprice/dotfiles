@@ -36,5 +36,10 @@ yay --noconfirm -S hub
 # VPN stuff for ActiveState
 yay --noconfirm -S networkmanager-openvpn
 
+# Ansible stuff for ActiveState
+yay --noconfirm -S python-ansible
+yay --noconfirm -S python-pywinrm
+
+
 # 1Password
 yay --noconfirm -S 1password
