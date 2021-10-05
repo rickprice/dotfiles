@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-import os, datetime, errno, argparse, sys
+import argparse
+import datetime
+import errno
+import os
+import sys
 
 
 def create_file_list(CWD):
@@ -11,7 +15,9 @@ def create_file_list(CWD):
         files_with_mtime.append(
             (
                 filename,
-                datetime.datetime.fromtimestamp(os.stat(filename).st_mtime).strftime("%Y-%m-%d"),
+                datetime.datetime.fromtimestamp(os.stat(filename).st_mtime).strftime(
+                    "%Y-%m-%d"
+                ),
             )
         )
     return files_with_mtime
@@ -45,7 +51,11 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(prog=sys.argv[0], usage="%(prog)s [options]")
     parser.add_argument(
-        "-e", "--extension", action="append", help="File extensions to match", required=True
+        "-e",
+        "--extension",
+        action="append",
+        help="File extensions to match",
+        required=True,
     )
     args = parser.parse_args()
 
