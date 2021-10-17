@@ -50,7 +50,6 @@
 [nvim.files]
 "config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
 "config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
-"config/nvim/ultisnips.vim" = "~/.config/nvim/ultisnips.vim"
 
 [rclone.files]
 "config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
@@ -67,7 +66,6 @@
 [local.files]
 "local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
-"local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
 
 [gitconfig.files]
@@ -99,6 +97,6 @@
 
 [dropbox.files]
 "config/systemd/user/dropbox.service" = "~/.config/systemd/user/dropbox.service"
-"etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
+# "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
 
 [user.files]
