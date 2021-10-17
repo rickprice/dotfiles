@@ -29,7 +29,6 @@
 "config/fish/config.fish" = "~/.config/fish/config.fish"
 # My files in conf.d
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
-# "config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
 
 [flake8.files]
