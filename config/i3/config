@@ -343,7 +343,8 @@ exec --no-startup-id udiskie --tray&
 # +++ Noah +++ , I think you need this version of the command
 # exec --no-startup-id setxkbmap -model pc105 -layout us -option 'ctrl:nocaps'
 # +++ Noah +++ , I think you need this version of the command
-exec --no-startup-id setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'
+# exec --no-startup-id setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'
+exec --no-startup-id setxkbmap -model thinkpad -layout us -option 'ctrl:nocaps'
 # exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 exec --no-startup-id xcape -e 'Control_L=Escape'
 
