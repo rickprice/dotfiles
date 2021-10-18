@@ -30,7 +30,7 @@ yay --noconfirm -S fd
 yay --noconfirm -S bat
 
 # Better cd
-yay --noconfirm -S zoxide-git
+yay --noconfirm -S zoxide
 
 # Default shell is set as fish in initial machine build script
 # chsh -s $(which fish)
