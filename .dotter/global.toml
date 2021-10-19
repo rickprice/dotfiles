@@ -69,6 +69,7 @@
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
+"local/bin/weather"="~/.local/bin/weather"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"
