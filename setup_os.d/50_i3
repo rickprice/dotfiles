@@ -29,3 +29,8 @@ yay --noconfirm -R i3-wm i3status i3exit || true
 yay --noconfirm -S i3-git i3status-git i3exit
 yay --noconfirm -S dunst
 yay --noconfirm -S polkit-gnome
+
+
+# i3status-rust
+yay --noconfirm -S i3status-rust alsa-utils
+

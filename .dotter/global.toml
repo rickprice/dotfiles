@@ -39,6 +39,9 @@
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
 
+[i3status-rust.files]
+"config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
+
 [mypy.files]
 "config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
 
