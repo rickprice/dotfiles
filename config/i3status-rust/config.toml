@@ -3,8 +3,8 @@ icons = "awesome5"
 
 [[block]]
 block = "custom"
-command = "~/local/bin/show_timew"
-on_click = "~/local/bin/click_timew"
+command = "~/.local/bin/show_timew"
+on_click = "~/.local/bin/click_timew"
 interval = 60
 
 [[block]]
