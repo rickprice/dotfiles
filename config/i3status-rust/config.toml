@@ -2,6 +2,25 @@ theme = "solarized-dark"
 icons = "awesome5"
 
 [[block]]
+block = "custom"
+command = "~/local/bin/show_timew"
+on_click = "~/local/bin/click_timew"
+interval = 60
+
+[[block]]
+block = "pomodoro"
+length = 25
+break_length = 5
+message = "Take a break!"
+break_message = "Back to work!"
+notifier = "notifysend"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/"
@@ -29,4 +48,4 @@ format = "{1m}"
 [[block]]
 block = "time"
 interval = 5
-format = "%a %d/%m %R"
+format = "%a %Y/%m/%d %R"

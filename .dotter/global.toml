@@ -41,6 +41,8 @@
 
 [i3status-rust.files]
 "config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
+"local/bin/show_taskw.sh"="~/.local/bin/show_taskw"
+"local/bin/click_taskw.sh"="~/.local/bin/click_taskw"
 
 [mypy.files]
 "config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
