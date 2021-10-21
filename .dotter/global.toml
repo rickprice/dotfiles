@@ -38,6 +38,7 @@
 [i3.files]
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
+"config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
 
 [i3status-rust.files]
 "config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
