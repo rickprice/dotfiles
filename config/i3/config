@@ -195,7 +195,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
-bindsym $mod+F12 workspace $ws10
+# bindsym $mod+F12 workspace $ws10
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -208,7 +208,7 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
 
-bindsym $mod+Ctrl+F12 move container to workspace $ws10
+# bindsym $mod+Ctrl+F12 move container to workspace $ws10
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -221,7 +221,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
-bindsym $mod+Shift+F12 move container to workspace $ws10; workspace $ws10
+# bindsym $mod+Shift+F12 move container to workspace $ws10; workspace $ws10
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -229,7 +229,7 @@ bindsym $mod+Shift+F12 move container to workspace $ws10; workspace $ws10
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
-assign [class="zoom"] $ws10
+# assign [class="zoom"] $ws10
 # for_window [class="zoom"] move container to workspace $ws10
 
 # Open specific applications in floating mode
@@ -336,7 +336,7 @@ exec --no-startup-id pamac-tray
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 60 -locker blurlock
+# exec --no-startup-id xautolock -time 60 -locker blurlock
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
 exec --no-startup-id udiskie --tray&
