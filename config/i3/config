@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # exec_always --no-startup-id xrandr --output DP1-1-1 --auto --above eDP1
-xrandr --output eDP-1 --primary
+exec_always --no-startup-id xrandr --output eDP-1 --primary
 exec_always --no-startup-id xrandr --output HDMI-1 --auto --same-as eDP-1
 
 # Disable tapping on my touchpads, my laptops seem to use different ids from each other...
