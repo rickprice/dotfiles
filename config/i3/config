@@ -1,6 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # exec_always --no-startup-id xrandr --output DP1-1-1 --auto --above eDP1
+exec_always --no-startup-id xrandr --output HDMI-1 --auto --same-as eDP-1
 
 # Run Browser for user
 exec_always --no-startup-id firefox-developer-edition
@@ -169,7 +170,7 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 
-set $ws10 "10:ext"
+# set $ws10 "10:ext"
 
 # Assign to workspaces
 workspace 1 output primary
@@ -181,7 +182,7 @@ workspace 6 output primary
 workspace 7 output primary
 workspace 8 output primary
 workspace 9 output primary
-workspace "10:ext" output "DP-1-1" primary
+# workspace "10:ext" output "DP-1-1" primary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -324,7 +325,8 @@ mode "resize" {
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg;sleep 1;picom -b
+# exec --no-startup-id nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg;sleep 1;picom -b
+exec --no-startup-id variety;sleep 1;picom -b
 # exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager

@@ -12,7 +12,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 yay --noconfirm -S dmenu-frecency
 yay --noconfirm -S i3exit
 yay --noconfirm -S polkit-gnome
-yay --noconfirm -S nitrogen
+# yay --noconfirm -S nitrogen
+yay --noconfirm -S variety
 yay --noconfirm -S picom
 # yay --noconfirm -S network-manager-applet-git
 yay --noconfirm -S xfce4-power-manager
