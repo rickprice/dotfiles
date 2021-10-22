@@ -22,6 +22,7 @@ yay --noconfirm -S yarn
 # ! I'm really not sure why this is already installed, need to loop back and look at this
 yay --noconfirm -S prettier
 yay --noconfirm -S jq
+yay --noconfirm -S gron
 yay --noconfirm -S python37
 yay --noconfirm -S python-black
 yay --noconfirm -S python-isort
