@@ -325,6 +325,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg;sleep 1;picom -b
 exec --no-startup-id variety;sleep 1;picom -b
 # exec --no-startup-id manjaro-hello
+exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
