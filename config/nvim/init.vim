@@ -327,15 +327,15 @@ Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 let g:clap_theme = 'material_design_dark'
 
 " Neovim Bugfix
-if is_nvim
-    Plug 'antoinemadec/FixCursorHold.nvim'
-endif
+" if is_nvim
+"     Plug 'antoinemadec/FixCursorHold.nvim'
+" endif
 
 " Vim Diff tools
 Plug 'whiteinge/diffconflicts'
 
 " Comment colouring plugins
-Plug 'jbgutierrez/vim-better-comments'
+" Plug 'jbgutierrez/vim-better-comments'
 
 " Colour Schemes
 " - Color support plugins
