@@ -22,3 +22,10 @@ gem install neovim
 # Can't use noconfirm with this because it defaults to N to delete vi and Vim
 yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
 yay --noconfirm -S xclip
+
+# Language Servers
+yay --noconfirm -S pyright-git
+yay --noconfirm -S bash-language-server
+yay --noconfirm -S gopls
+yay --noconfirm -S vim-language-server
+yay --noconfirm -S yaml-language-server
