@@ -2,9 +2,7 @@ theme = "solarized-dark"
 icons = "awesome5"
 
 [[block]]
-block = "custom"
-command = "~/.local/bin/show_timew"
-on_click = "~/.local/bin/click_timew"
+block = "timewarrior"
 interval = 60
 
 [[block]]
@@ -15,10 +13,10 @@ message = "Take a break!"
 break_message = "Back to work!"
 notifier = "notifysend"
 
-[[block]]
-block = "battery"
-interval = 10
-format = "{percentage} {time}"
+# [[block]]
+# block = "battery"
+# interval = 10
+# format = "{percentage} {time}"
 
 [[block]]
 block = "disk_space"
