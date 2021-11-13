@@ -102,7 +102,7 @@ function! AirlineInit()
         if IsASPlatformProd()
             call airline#parts#define_accent('ASPlatform', 'red')
         endif
-    
+
         let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatform'])
     endif
 
@@ -114,7 +114,7 @@ augroup airline_init
 augroup END
 " +++++++++++++++++++++++++++++++ Code for AS Platform dislpay End in Airline Status Line +++++++++++++++++++++++++++++++
 
-" +++++++++++++++ Rust Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
 
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
@@ -146,7 +146,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" +++++++++++++++ Rust Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
 
 
 " if g:use_coc
@@ -846,7 +846,7 @@ endfunction
 command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
 noremap <silent> <F8> :ToggleSlash<CR>
 
-" +++++++++++++++ Rust Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
 
 " Set completeopt to have a better completion experience
 " :help completeopt
@@ -934,9 +934,9 @@ cmp.setup({
 })
 EOF
 
-" +++++++++++++++ Rust Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
 
-" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++
 
 " Python configuration
 lua <<EOF
@@ -967,7 +967,7 @@ lua <<EOF
 local yaml_lsp = require'lspconfig'
 yaml_lsp.yamlls.setup{}
 EOF
-" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++ 
+" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++
 
 
 " ------------------------------------------------------------------------------
