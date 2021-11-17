@@ -2,10 +2,6 @@ theme = "solarized-dark"
 icons = "awesome5"
 
 [[block]]
-block = "timewarrior"
-interval = 60
-
-[[block]]
 block = "supertoggle"
 
 command_current_state="timew; timew day"
