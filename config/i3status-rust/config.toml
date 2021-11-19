@@ -5,8 +5,8 @@ icons = "awesome5"
 block = "supertoggle"
 
 command_current_state="timew; timew day"
-command_on="timew continue"
-command_off="timew stop"
+command_on="timew continue; notify-send 'Starting TimeWarrior tracking.'"
+command_off="timew stop; notify-send 'Stopping TimeWarrior tracking.'"
 
 format_on="TW [ {tags} ] {hours}:{minutes}"
 format_off="TW IDLE"
