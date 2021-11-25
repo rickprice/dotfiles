@@ -145,12 +145,12 @@ Plug 'simrat39/rust-tools.nvim'
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
 
-" Fuzzy finder
-" Optional
+" Telescope Stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'jvgrootveld/telescope-zoxide'
 
 " +++++++++++++++ Rust Specific Stuff +++++++++++++++
 
@@ -759,6 +759,17 @@ require('telescope').setup {
 require('telescope').load_extension('fzf')
 EOF
 " +++++++++++++++ Telescope Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Zoxide Specific Stuff +++++++++++++++
+lua <<EOF
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>cd",
+	":lua require'telescope'.extensions.zoxide.list{}<CR>",
+	{noremap = true, silent = true}
+)
+EOF
+" +++++++++++++++ Zoxide Specific Stuff +++++++++++++++
 
 " +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++
 
