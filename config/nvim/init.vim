@@ -160,6 +160,20 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 " +++++++++++++++ Trouble Specific Stuff +++++++++++++++
 
+" +++++++++++++++ Wilder Specific Stuff +++++++++++++++
+Plug 'romgrk/fzy-lua-native'
+
+if has('nvim')
+  Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'gelguy/wilder.nvim'
+
+  " To use Python remote plugin features in Vim, can be skipped
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+
 " Git Gutter Plugin
 Plug 'airblade/vim-gitgutter'
 " Use fontawesome icons as signs
@@ -829,6 +843,37 @@ set foldexpr=nvim_treesitter#foldexpr()
 
 " +++++++++++++++ Treesitter Stuff +++++++++++++++
 
+" +++++++++++++++ Wilder Specific Stuff ++++++++++++++
+call wilder#setup({'modes': [':', '/', '?']})
+call wilder#set_option('use_python_remote_plugin', 0)
+
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 1,
+      \       'fuzzy_filter': wilder#lua_fzy_filter(),
+      \     }),
+      \     wilder#vim_search_pipeline(),
+      \   ),
+      \ ])
+
+call wilder#set_option('renderer', wilder#renderer_mux({
+      \ ':': wilder#popupmenu_renderer({
+      \   'highlighter': wilder#lua_fzy_highlighter(),
+      \   'left': [
+      \     ' ',
+      \     wilder#popupmenu_devicons(),
+      \   ],
+      \   'right': [
+      \     ' ',
+      \     wilder#popupmenu_scrollbar(),
+      \   ],
+      \ }),
+      \ '/': wilder#wildmenu_renderer({
+      \   'highlighter': wilder#lua_fzy_highlighter(),
+      \ }),
+      \ }))
+" +++++++++++++++ Wilder Specific Stuff +++++++++++++++
 
 " ------------------------------------------------------------------------------
 " FileType mappings
