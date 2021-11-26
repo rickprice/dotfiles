@@ -160,6 +160,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 " +++++++++++++++ Trouble Specific Stuff +++++++++++++++
 
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+Plug 'tami5/sqlite.lua'
+Plug 'AckslD/nvim-neoclip.lua'
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+
 " +++++++++++++++ Wilder Specific Stuff +++++++++++++++
 Plug 'romgrk/fzy-lua-native'
 
@@ -664,6 +669,19 @@ telescope.setup {
 EOF
 
 " +++++++++++++++ Trouble Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+lua << EOF
+
+require("telescope").load_extension("neoclip")
+require('neoclip').setup({
+  history = 1000,
+  enable_persistant_history = true,
+  preview = true,
+})
+
+EOF
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
 
 " Set completeopt to have a better completion experience
 " :help completeopt
