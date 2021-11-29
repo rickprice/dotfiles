@@ -148,6 +148,7 @@ Plug 'hrsh7th/vim-vsnip'
 " Telescope Stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'jvgrootveld/telescope-zoxide'
@@ -892,6 +893,24 @@ call wilder#set_option('renderer', wilder#renderer_mux({
       \ }),
       \ }))
 " +++++++++++++++ Wilder Specific Stuff +++++++++++++++
+
+" +++++++++++++++ LSPSaga Specific Stuff +++++++++++++++
+lua <<EOF
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+  error_sign = '',
+  warn_sign = '',
+  hint_sign = '',
+  infor_sign = '',
+  border_style = "round",
+}
+EOF
+
+" show hover doc
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
+nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
+" +++++++++++++++ LSPSaga Specific Stuff +++++++++++++++
 
 " ------------------------------------------------------------------------------
 " FileType mappings
