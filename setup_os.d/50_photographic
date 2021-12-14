@@ -8,6 +8,10 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
+# Geolocating
+yay --noconfirm -S perl-image-exiftool
+yay --confonfirm -S gpsbabel
+
 # Photographic processing
 yay --noconfirm -S rawtherapee
 yay --noconfirm -S gimp
