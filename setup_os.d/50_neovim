@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Neovim
-yay --noconfirm -S neovim-git
+yay --noconfirm -S neovim-nightly-bin
 
 ## Required for Neovim
 sudo pip install neovim

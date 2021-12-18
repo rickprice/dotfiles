@@ -11,7 +11,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Setup where everything goes
 DOWNLOADS_DIR=~/Downloads
 GOOGLE_TAKEOUT_DIR=./Takeout
-LOCATION_HISTORY_FILE="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
+LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Location History.json"
+LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 
 cd "$WORKING_DIR"
@@ -31,7 +32,13 @@ function process_photo_directory() {
     cp -r $directory/* "$directory_location_data"
 
     echo "Add location data $directory"
-    [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+    [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+
+    # Sort the processed files in the location directory
+    pushd .
+    cd $directory_location_data
+    SortFilesInDirectory --extension CR2 --extension JPG
+    popd
 
     # echo "Copy pictures to dropbox directory ${directory}"
     # mkdir -p "$directory_dropbox"
@@ -45,6 +52,7 @@ echo Setup Google Takeout data
 rm -rf "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
     tar -xzf $DOWNLOADS_DIR/takeout-*
+    location_history_json_converter $LOCATION_HISTORY_FILE_JSON $LOCATION_HISTORY_FILE_KML -f kml
 else
     figlet Too many or too few takeout location zip files
     exit -1
@@ -64,9 +72,9 @@ process_photo_directory "$WORKING_DIR/CanonT7i"  "Pictures/CanonRawPhotos"
 # rsync --ignore-missing-args $ORIGINAL_GOOGLE_PHOTOS_RAWS/* $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR
 
 # figlet Step 5: Geotag photos
-# [ "$(ls -A $DROPBOX_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR/*
-# [ "$(ls -A $DROPBOX_UPLOAD_DIR_ERIC)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR_ERIC/*
-# [ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR/*
+# [ "$(ls -A $DROPBOX_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR/*
+# [ "$(ls -A $DROPBOX_UPLOAD_DIR_ERIC)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $DROPBOX_UPLOAD_DIR_ERIC/*
+# [ "$(ls -A $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $ORIGINAL_GOOGLE_PHOTOS_RAWS_UPLOAD_DIR/*
 
 # figlet Step 6: Convert photos going to Google to JPEG
 # Convert files in batch mode using default parameters

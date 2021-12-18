@@ -71,11 +71,12 @@
 "etc/ssh/sshd_config" = { target = "/etc/ssh/sshd_config", type = "template", owner = "root" }
 
 [local.files]
-"local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
-"local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
+"local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
+"local/bin/ProcessRawImages.sh"="~/.local/bin/ProcessRawImages"
 "local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
-"local/bin/weather"="~/.local/bin/weather"
+"local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
+"local/bin/weather.sh"="~/.local/bin/weather"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"
@@ -86,7 +87,7 @@
 [aws.files]
 "home/aws/config"="~/.aws/config"
 "home/aws/credentials"="~/.aws/credentials"
-"local/bin/get-aws-profile"="~/.local/bin/get-aws-profile"
+"local/bin/get-aws-profile.py"="~/.local/bin/get-aws-profile"
 
 [activestate.files]
 "home/camel"="~/.camel"

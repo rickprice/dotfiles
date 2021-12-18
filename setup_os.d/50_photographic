@@ -11,6 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Geolocating
 yay --noconfirm -S perl-image-exiftool
 yay --confonfirm -S gpsbabel
+yay --noconfirm -S python-ijson
 
 # Photographic processing
 yay --noconfirm -S rawtherapee

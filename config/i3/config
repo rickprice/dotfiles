@@ -68,11 +68,12 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 # Start Applications
 # bindsym $mod+Ctrl+b exec wezterm start -- 'bmenu'
 # bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F2 exec firefox-developer-edition
+bindsym $mod+F2 exec nyxt
+bindsym $mod+F4 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F4 exec terminal -e ranger
+bindsym $mod+F5 exec terminal -e ranger
 # bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
