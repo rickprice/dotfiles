@@ -52,7 +52,7 @@ echo Setup Google Takeout data
 rm -rf "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
     tar -xzf $DOWNLOADS_DIR/takeout-*
-    location_history_json_converter $LOCATION_HISTORY_FILE_JSON $LOCATION_HISTORY_FILE_KML -f kml
+    location-history-json-converter -f kml "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
 else
     figlet Too many or too few takeout location zip files
     exit -1
