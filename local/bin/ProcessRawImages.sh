@@ -11,6 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Setup where everything goes
 DOWNLOADS_DIR=~/Downloads
 GOOGLE_TAKEOUT_DIR=./Takeout
+LOCATION_HISTORY_FILE_GPX="$GOOGLE_TAKEOUT_DIR/Location History/Location History.gpx"
 LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Location History.json"
 LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
@@ -32,7 +33,8 @@ function process_photo_directory() {
     cp -r $directory/* "$directory_location_data"
 
     echo "Add location data $directory"
-    [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+    # [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+    [ "$(ls -A $directory)" ] && exiftool -v5 -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
 
     # Sort the processed files in the location directory
     pushd .
@@ -52,7 +54,8 @@ echo Setup Google Takeout data
 rm -rf "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
     tar -xzf $DOWNLOADS_DIR/takeout-*
-    location-history-json-converter -f kml "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
+    location-history-json-converter -f kml -s 2021-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
+    # location-history-json-converter -f gpxtracks -s 2021-11-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_GPX"
 else
     figlet Too many or too few takeout location zip files
     exit -1
