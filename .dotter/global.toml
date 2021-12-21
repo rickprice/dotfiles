@@ -31,7 +31,7 @@
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
-"config/fish/functions/nnvim.fish" = "~/.config/fish/functions/nnvim.fish"
+"config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
@@ -55,9 +55,7 @@
 "config/gh/hub" = "~/.config/hub"
 
 [nvim.files]
-"config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
-"config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
-"config/nvim/ultisnips.vim" = "~/.config/nvim/ultisnips.vim"
+"config/nvim" = { target = "~/.config/nvim", type = "symbolic" }
 
 [rclone.files]
 "config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
