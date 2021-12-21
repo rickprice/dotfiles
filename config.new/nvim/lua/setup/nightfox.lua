@@ -15,6 +15,9 @@ nightfox.setup({
     search = true,
     match_paren = true,
   },
+  colors = {
+    bg = "#000000",
+  },
 })
 nightfox.load()
 
