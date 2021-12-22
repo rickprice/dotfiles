@@ -136,6 +136,7 @@ return require("packer").startup({
     use({ "onsails/lspkind-nvim", requires = { { "famiu/bufdelete.nvim" } } })
     use({ "tpope/vim-repeat" })
     use({ "tpope/vim-surround" })
+    use({ "tpope/vim-fugitive" })
     use({ "wellle/targets.vim" })
     use({
       "phaazon/hop.nvim",
@@ -165,6 +166,13 @@ return require("packer").startup({
 
     -- Improved incremental search
     use({ "haya14busa/is.vim" })
+
+    -- Handle marks
+    use({ "chentau/marks.nvim" })
+    use({
+      "chentau/marks.nvim",
+      setup = get_setup("marks"),
+    })
 
     if packer_bootstrap then
       require("packer").sync()
