@@ -8,8 +8,11 @@ opt.cursorcolumn = false
 opt.cursorline = false
 opt.encoding = "utf-8" -- Set default encoding to UTF-8
 opt.expandtab = true -- Use spaces instead of tabs
+opt.foldlevel = 99
 opt.foldenable = false
-opt.foldmethod = "indent"
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldtext = "nvim_treesitter#foldext()"
 opt.formatoptions = "l"
 opt.guicursor =
   "n-v-c-sm:block-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
