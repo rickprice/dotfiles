@@ -30,16 +30,19 @@ local function footer()
 end
 
 dashboard.section.header.val = {
-
-  [[__/\\\\\\\\\\\\\____/\\\\\\\\\\\\\\\_       ]],
-  [[ _\/\\\/////////\\\_\/\\\///////////__      ]],
-  [[  _\/\\\_______\/\\\_\/\\\_____________     ]],
-  [[   _\/\\\\\\\\\\\\\\__\/\\\\\\\\\\\_____    ]],
-  [[    _\/\\\/////////\\\_\/\\\///////______   ]],
-  [[     _\/\\\_______\/\\\_\/\\\_____________  ]],
-  [[      _\/\\\_______\/\\\_\/\\\_____________ ]],
-  [[       _\/\\\\\\\\\\\\\/__\/\\\_____________]],
-  [[        _\/////////////____\///_____________]],
+  -- https://manytools.org/hacker-tools/ascii-banner/
+  -- Georgi16 font
+  [[___      ___                 ____     ___                     ]],
+  [[`MM\     `M'                 `Mb(     )d' 68b                 ]],
+  [[ MMM\     M                   YM.     ,P  Y89                 ]],
+  [[ M\MM\    M   ____     _____  `Mb     d'  ___ ___  __    __   ]],
+  [[ M \MM\   M  6MMMMb   6MMMMMb  YM.   ,P   `MM `MM 6MMb  6MMb  ]],
+  [[ M  \MM\  M 6M'  `Mb 6M'   `Mb `Mb   d'    MM  MM69 `MM69 `Mb ]],
+  [[ M   \MM\ M MM    MM MM     MM  YM. ,P     MM  MM'   MM'   MM ]],
+  [[ M    \MM\M MMMMMMMM MM     MM  `Mb d'     MM  MM    MM    MM ]],
+  [[ M     \MMM MM       MM     MM   YM,P      MM  MM    MM    MM ]],
+  [[ M      \MM YM    d9 YM.   ,M9   `MM'      MM  MM    MM    MM ]],
+  [[_M_      \M  YMMMM9   YMMMMM9     YP      _MM__MM_  _MM_  _MM_]],
 }
 dashboard.section.header.opts.hl = pick_color()
 
