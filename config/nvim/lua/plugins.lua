@@ -159,6 +159,13 @@ return require("packer").startup({
       cmd = { "SymbolsOutline" },
       setup = get_setup("outline"),
     })
+
+    -- Manage sudo files better
+    use({ "lambdalisue/suda.vim" })
+
+    -- Improved incremental search
+    use({ "haya14busa/is.vim" })
+
     if packer_bootstrap then
       require("packer").sync()
     end
