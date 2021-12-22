@@ -96,7 +96,9 @@ return require("packer").startup({
       "simrat39/rust-tools.nvim",
       module = "rust-tools",
       requires = {
-        { "nvim-telescope/telescope.nvim" },
+        { "neovim/nvim-lspconfig" },
+        { "nvim-lua/plenary.nvim" },
+        { "mfussenegger/nvim-dap" },
       },
       config = get_setup("rust-tools"),
     })
@@ -104,12 +106,14 @@ return require("packer").startup({
       "folke/trouble.nvim",
       module = "trouble",
       requires = {
-        { "nvim-lua/popup.nvim" },
-        { "nvim-lua/plenary.nvim" },
         { "kyazdani42/nvim-web-devicons" },
-        { "nvim-telescope/telescope.nvim" },
       },
-      config = get_setup("trouble"),
+      -- config = get_setup("trouble"),
+      config = function()
+        require("trouble").setup({
+          -- your configuration comes here
+        })
+      end,
     })
     use({
       "nvim-telescope/telescope.nvim",
