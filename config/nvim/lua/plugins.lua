@@ -168,10 +168,17 @@ return require("packer").startup({
     use({ "haya14busa/is.vim" })
 
     -- Handle marks
-    use({ "chentau/marks.nvim" })
     use({
       "chentau/marks.nvim",
-      setup = get_setup("marks"),
+      config = function()
+        require("marks").setup({})
+      end,
+    })
+
+    use({
+      "chrisbra/csv.vim",
+      ft = "csv",
+      config = get_setup("csv"),
     })
 
     if packer_bootstrap then
