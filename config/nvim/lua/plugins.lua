@@ -93,10 +93,30 @@ return require("packer").startup({
       config = get_setup("comment"),
     })
     use({
+      "simrat39/rust-tools.nvim",
+      module = "rust-tools",
+      requires = {
+        { "nvim-telescope/telescope.nvim" },
+      },
+      config = get_setup("rust-tools"),
+    })
+    use({
+      "folke/trouble.nvim",
+      module = "trouble",
+      requires = {
+        { "nvim-lua/popup.nvim" },
+        { "nvim-lua/plenary.nvim" },
+        { "kyazdani42/nvim-web-devicons" },
+        { "nvim-telescope/telescope.nvim" },
+      },
+      config = get_setup("trouble"),
+    })
+    use({
       "nvim-telescope/telescope.nvim",
       module = "telescope",
       cmd = "Telescope",
       requires = {
+        { "glepnir/lspsaga.nvim" },
         { "nvim-lua/popup.nvim" },
         { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },

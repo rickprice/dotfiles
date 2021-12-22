@@ -107,3 +107,11 @@ map("v", "l", "<cmd>lua require'hop'.hint_lines()<cr>")
 
 -- Symbols outline
 map("n", "<leader>o", ":SymbolsOutline<cr>")
+
+-- Trouble
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
+map("n", "<leader>xw", "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>")
+map("n", "<leader>xd", "<cmd>TroubleToggle lsp_document_diagnostics<cr>")
+map("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
+map("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>")
+map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>")
