@@ -54,6 +54,13 @@ require("lspconfig").html.setup({
   end,
 })
 
+require("lspconfig").pyright.setup({})
+require("lspconfig").bashls.setup({})
+require("lspconfig").gopls.setup({})
+require("lspconfig").vimls.setup({})
+require("lspconfig").yamlls.setup({})
+require("lspconfig").rust_analyzer.setup({})
+
 -- LSP Prevents inline buffer annotations
 vim.lsp.diagnostic.show_line_diagnostics()
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

@@ -35,7 +35,7 @@ local function diff_source()
 end
 
 -- get colors from Nightfox to use in the words count
-local nfColors = require("nightfox.colors").init("nordfox")
+local nfColors = require("nightfox.colors").init("duskfox")
 
 -- print(vim.inspect(nfColors))
 require("lualine").setup({
@@ -50,7 +50,13 @@ require("lualine").setup({
     lualine_a = { "mode" },
     lualine_b = {
       { "branch", icon = "" },
-      { "diff", source = diff_source, color_added = "#a7c080", color_modified = "#ffdf1b", color_removed = "#ff6666" },
+      {
+        "diff",
+        source = diff_source,
+        color_added = "#a7c080",
+        color_modified = "#ffdf1b",
+        color_removed = "#ff6666",
+      },
     },
     lualine_c = {
       { "diagnostics", sources = { "nvim_diagnostic" } },

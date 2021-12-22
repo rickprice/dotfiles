@@ -116,6 +116,11 @@ return require("packer").startup({
       end,
     })
     use({
+      "glepnir/lspsaga.nvim",
+      module = "lspsaga",
+      config = get_setup("lspsaga"),
+    })
+    use({
       "nvim-telescope/telescope.nvim",
       module = "telescope",
       cmd = "Telescope",
