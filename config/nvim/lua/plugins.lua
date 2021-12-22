@@ -108,11 +108,8 @@ return require("packer").startup({
       requires = {
         { "kyazdani42/nvim-web-devicons" },
       },
-      -- config = get_setup("trouble"),
       config = function()
-        require("trouble").setup({
-          -- your configuration comes here
-        })
+        require("trouble").setup({})
       end,
     })
     use({
