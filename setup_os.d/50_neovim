@@ -32,3 +32,6 @@ yay --noconfirm -S yaml-language-server
 
 yay --noconfirm -S ctags
 
+# Markdown
+yay --noconfirm -S glow
+

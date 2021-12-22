@@ -175,11 +175,18 @@ return require("packer").startup({
       end,
     })
 
+    -- Handle CSV files
     use({
       "chrisbra/csv.vim",
       ft = "csv",
       config = get_setup("csv"),
     })
+
+    -- VimWiki
+    use({ "vimwiki/vimwiki" })
+
+    -- Markdown
+    use({ "ellisonleao/glow.nvim" })
 
     if packer_bootstrap then
       require("packer").sync()
