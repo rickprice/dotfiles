@@ -121,3 +121,6 @@ map("n", "gR", "<cmd>TroubleToggle lsp_references<cr>")
 
 -- Delete trailing whitespace
 map("n", "<Leader>dtw", ":%s/s+$//e<cr>")
+
+-- Toggle line numbers
+map("n", "<F2>", ":let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>")
