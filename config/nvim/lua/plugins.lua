@@ -185,6 +185,22 @@ return require("packer").startup({
     -- Markdown
     use({ "ellisonleao/glow.nvim" })
 
+    -- Better Selects
+    use({
+      "mfussenegger/nvim-ts-hint-textobject",
+      config = function()
+        vim.cmd([[omap     <silent> m :<C-U>lua require('tsht').nodes()<CR>]])
+        vim.cmd([[vnoremap <silent> m :lua require('tsht').nodes()<CR>]])
+      end,
+    })
+
+    -- ToDo management
+    use({
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = get_setup("todo-comments"),
+    })
+
     if packer_bootstrap then
       require("packer").sync()
     end
