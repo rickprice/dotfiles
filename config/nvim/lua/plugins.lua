@@ -201,6 +201,11 @@ return require("packer").startup({
       config = get_setup("todo-comments"),
     })
 
+    -- Is using a standard Neovim install, i.e. built from source or using a
+    -- provided appimage.
+    -- TODO: At some point this should be going away when NeoVim subsumes it
+    use("lewis6991/impatient.nvim")
+
     if packer_bootstrap then
       require("packer").sync()
     end
