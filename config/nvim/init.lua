@@ -3,3 +3,5 @@
 require("plugins")
 require("options")
 require("mappings")
+require("global_setup")
+

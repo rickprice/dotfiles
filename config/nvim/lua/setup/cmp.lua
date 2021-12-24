@@ -53,16 +53,18 @@ cmp.setup({
   },
 })
 
+-- This makes it really difficult to do searches because of the way that suggestions work with it
 -- cmp.setup.cmdline("/", {
 --   sources = {
 --     { name = "buffer" },
 --   },
 -- })
 
-cmp.setup.cmdline(":", {
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    { name = "cmdline" },
-  }),
-})
+--  This makes it really difficult to type : commands because of the way suggestions are working
+-- cmp.setup.cmdline(":", {
+--   sources = cmp.config.sources({
+--     { name = "path" },
+--   }, {
+--     { name = "cmdline" },
+--   }),
+-- })
