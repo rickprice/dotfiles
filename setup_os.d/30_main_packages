@@ -90,4 +90,3 @@ yay --noconfirm -S lazygit
 
 ## For handling mice and touchpads
 yay --noconfirm -S xorg-xinput
-
