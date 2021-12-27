@@ -133,7 +133,7 @@ return require("packer").startup({
     use({ "onsails/lspkind-nvim", requires = { { "famiu/bufdelete.nvim" } } })
     use({ "tpope/vim-repeat" })
     use({ "tpope/vim-surround" })
-    use({ "tpope/vim-fugitive" })
+    -- use({ "tpope/vim-fugitive" })
     use({ "wellle/targets.vim" })
     use({
       "phaazon/hop.nvim",
@@ -200,6 +200,10 @@ return require("packer").startup({
       requires = "nvim-lua/plenary.nvim",
       config = get_setup("todo-comments"),
     })
+
+    -- Git and Diff stuff
+    use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
+    use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
 
     -- Is using a standard Neovim install, i.e. built from source or using a
     -- provided appimage.
