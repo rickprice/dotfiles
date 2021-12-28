@@ -30,7 +30,6 @@
 # My files in conf.d
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
-"config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
@@ -39,11 +38,6 @@
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
 "config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
-
-[i3status-rust.files]
-"config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
-"local/bin/show_timew.sh"="~/.local/bin/show_timew"
-"local/bin/click_timew.sh"="~/.local/bin/click_timew"
 
 [mypy.files]
 "config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
