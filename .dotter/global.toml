@@ -79,6 +79,9 @@
 "local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
 
+[touchpad.files]
+"udev/90-ManageTouchpad.rules"="/etc/udev/rules.d/90-ManageTouchpad.rules"
+
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"
 

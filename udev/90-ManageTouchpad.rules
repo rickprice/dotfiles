@@ -1,0 +1,3 @@
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_STATUS}=="Charging", RUN+="/home/fprice/.local/bin/ManageTouchpadBasedOnExternalMouse"
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_STATUS}=="Discharging", RUN+="/home/fprice/.local/.bin/ManageTouchpadBasedOnExternalMouse"
+
