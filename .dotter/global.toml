@@ -30,6 +30,7 @@
 # My files in conf.d
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
+"config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
@@ -38,6 +39,11 @@
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
 "config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
+
+[i3status-rust.files]
+"config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
+"local/bin/show_timew.sh"="~/.local/bin/show_timew"
+"local/bin/click_timew.sh"="~/.local/bin/click_timew"
 
 [mypy.files]
 "config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
@@ -48,8 +54,7 @@
 "config/gh/hub" = "~/.config/hub"
 
 [nvim.files]
-"config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
-"config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
+"config/nvim" = { target = "~/.config/nvim", type = "symbolic" }
 
 [rclone.files]
 "config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
@@ -67,6 +72,10 @@
 "local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
+"local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
+"local/bin/weather.sh"="~/.local/bin/weather"
+"local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
+"local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"
@@ -77,7 +86,7 @@
 [aws.files]
 "home/aws/config"="~/.aws/config"
 "home/aws/credentials"="~/.aws/credentials"
-"local/bin/get-aws-profile"="~/.local/bin/get-aws-profile"
+"local/bin/get-aws-profile.py"="~/.local/bin/get-aws-profile"
 
 [activestate.files]
 "home/camel"="~/.camel"

@@ -102,7 +102,7 @@ function! AirlineInit()
         if IsASPlatformProd()
             call airline#parts#define_accent('ASPlatform', 'red')
         endif
-    
+
         let g:airline_section_y = airline#section#create_right(['ffenc','ASPlatform'])
     endif
 
@@ -114,14 +114,71 @@ augroup airline_init
 augroup END
 " +++++++++++++++++++++++++++++++ Code for AS Platform dislpay End in Airline Status Line +++++++++++++++++++++++++++++++
 
-if g:use_coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" +++++++++++++++ Treesitter Specific Stuff +++++++++++++++
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
+" +++++++++++++++ Treesitter Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
+
+" Collection of common configurations for the Nvim LSP client
+Plug 'neovim/nvim-lspconfig'
+
+" Completion framework
+Plug 'hrsh7th/nvim-cmp'
+
+" LSP completion source for nvim-cmp
+Plug 'hrsh7th/cmp-nvim-lsp'
+
+" Snippet completion source for nvim-cmp
+Plug 'hrsh7th/cmp-vsnip'
+
+" Other usefull completion sources
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+
+" See hrsh7th's other plugins for more completion sources!
+
+" To enable more of the features of rust-analyzer, such as inlay hints and more!
+Plug 'simrat39/rust-tools.nvim'
+
+" Snippet engine
+Plug 'hrsh7th/vim-vsnip'
+
+" Telescope Stuff
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'jvgrootveld/telescope-zoxide'
+
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Trouble Specific Stuff +++++++++++++++
+" Vim Script
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+" +++++++++++++++ Trouble Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+Plug 'tami5/sqlite.lua'
+Plug 'AckslD/nvim-neoclip.lua'
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Wilder Specific Stuff +++++++++++++++
+Plug 'romgrk/fzy-lua-native'
+
+if has('nvim')
+  Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-    if g:is_vim8 || g:is_nvim
-        Plug 'psf/black', { 'for' : 'python' }
-        Plug 'w0rp/ale'
-    endif
+  Plug 'gelguy/wilder.nvim'
+
+  " To use Python remote plugin features in Vim, can be skipped
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
 
 " Git Gutter Plugin
 Plug 'airblade/vim-gitgutter'
@@ -150,7 +207,7 @@ nnoremap <leader>gP :! git push<CR>  " git Push
 " Enable deletion of untracked files in Magit
 "let g:magit_discard_untracked_do_delete=1
 
-Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
+" Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-plug'
 
@@ -229,7 +286,7 @@ Plug 'unblevable/quick-scope'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'masukomi/vim-markdown-folding', { 'for' : 'markdown' }
+" Plug 'masukomi/vim-markdown-folding', { 'for' : 'markdown' }
 " Very powerful text objects plugin
 Plug 'wellle/targets.vim'
 
@@ -239,7 +296,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'nacro90/numb.nvim'
 
 
-Plug 'pedrohdz/vim-yaml-folds'
+" Plug 'pedrohdz/vim-yaml-folds'
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 
@@ -251,31 +308,6 @@ Plug 'lambdalisue/suda.vim'
 
 " Lua handling
 " Plug 'euclidianAce/BetterLua.vim'
-
-"UltiSnips engine
-if g:has_python3 || g:is_nvim5
-    " Track the engine.
-    Plug 'SirVer/ultisnips'
-
-    " Snippets are separated from the engine. Add this if you want them:
-    Plug 'honza/vim-snippets'
-
-    "Snippets for use by ActiveState BE
-    Plug 'rickprice/be-ultisnips-snippets'
-
-    " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-    " - https://github.com/Valloric/YouCompleteMe
-    " - https://github.com/nvim-lua/completion-nvim
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-    " If you want :UltiSnipsEdit to split your window.
-    let g:UltiSnipsEditSplit="vertical"
-
-    " Load Ultisnips user configuration
-    " source ~/.config/nvim/ultisnips.vim
-endif
 
 if g:has_python3
     "Mundo requires python >=2.4, but we only use Python3
@@ -292,50 +324,11 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 " Vim Sensible
 Plug 'tpope/vim-sensible'
 
-" Fern
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-hijack.vim'
-if !g:is_windows
-    Plug 'LumaKernel/fern-mapping-fzf.vim'
-endif
-Plug 'lambdalisue/fern-mapping-git.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-
-if g:is_nvim && g:has_rust_cargo
-    " Todoist
-    Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
-
-    let g:todoist = {
-    \ 'icons': {
-    \   'unchecked': ' [ ] ',
-    \   'checked':   ' [X] ',
-    \   'loading':   '  ',
-    \   'error':     '  ',
-    \ },
-    \  'defaultProject': 'WorkVimTodos',
-    \  'useMarkdownSyntax': v:true,
-    \}
-
-    let clap_provider_todoist = {
-    \ 'source': {-> Todoist__listProjects()},
-    \ 'sink': 'Todoist',
-    \}
-endif
-
-" The bang version will try to download the prebuilt binary if cargo does not exist.
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-let g:clap_theme = 'material_design_dark'
-
-" Neovim Bugfix
-if is_nvim
-    Plug 'antoinemadec/FixCursorHold.nvim'
-endif
-
 " Vim Diff tools
 Plug 'whiteinge/diffconflicts'
 
 " Comment colouring plugins
-Plug 'jbgutierrez/vim-better-comments'
+" Plug 'jbgutierrez/vim-better-comments'
 
 " Colour Schemes
 " - Color support plugins
@@ -383,9 +376,6 @@ endif
 if g:is_nvim
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
-
-" For tomasr/molokai
-" let g:molokai_original = 1
 
 ":colorscheme one
 ":set background=dark
@@ -449,170 +439,6 @@ let g:gist_show_privates = 1
 let g:gist_post_private = 1
 let g:github_user=$GIST_USER
 let g:gist_token=$GIST_TOKEN
-
-" CoC Setup
-if g:use_coc
-    " let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-git', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips']
-    let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-docker', 'coc-markdownlint', 'coc-perl', 'coc-sh', 'coc-fzf-preview', 'coc-spell-checker','coc-tsserver', 'coc-rls', 'coc-ultisnips','coc-lua','coc-toml','coc-fish']
-
-    " TextEdit might fail if hidden is not set.
-    set hidden
-
-    " Some servers have issues with backup files, see #649.
-    set nobackup
-    set nowritebackup
-
-    " Give more space for displaying messages.
-"    set cmdheight=2
-    set cmdheight=1
-
-    " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-    " delays and poor user experience.
-    set updatetime=300
-
-    " Don't pass messages to |ins-completion-menu|.
-    set shortmess+=c
-
-    " Always show the signcolumn, otherwise it would shift the text each time
-    " diagnostics appear/become resolved.
-    if has("patch-8.1.1564")
-      " Recently vim can merge signcolumn and number column into one
-      set signcolumn=number
-    else
-      set signcolumn=yes
-    endif
-
-    " Use tab for trigger completion with characters ahead and navigate.
-    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-    " other plugin before putting this into your config.
-    inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
-          \ coc#refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-    function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
-    endfunction
-
-    " Use <c-space> to trigger completion.
-    if g:is_nvim
-      inoremap <silent><expr> <c-space> coc#refresh()
-    else
-      inoremap <silent><expr> <c-@> coc#refresh()
-    endif
-
-    " Make <CR> auto-select the first completion item and notify coc.nvim to
-    " format on enter, <cr> could be remapped by other vim plugin
-    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-    " Use `[g` and `]g` to navigate diagnostics
-    " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-    nmap <leader>dia :CocDiagnostics<cr>
-    nmap <silent> [g <Plug>(coc-diagnostic-prev)
-    nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-    " GoTo code navigation.
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-
-    " Use K to show documentation in preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-    function! s:show_documentation()
-      if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-      else
-        call CocActionAsync('doHover')
-      endif
-    endfunction
-
-    " Highlight the symbol and its references when holding the cursor.
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-
-    " Symbol renaming.
-    nmap <leader>rn <Plug>(coc-rename)
-
-    " Formatting selected code.
-    xmap <leader>f  <Plug>(coc-format-selected)
-    nmap <leader>f  <Plug>(coc-format-selected)
-
-    augroup mygroup
-      autocmd!
-      " Setup formatexpr specified filetype(s).
-      autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-      " Update signature help on jump placeholder.
-      autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-    augroup end
-
-    " Applying codeAction to the selected region.
-    " Example: `<leader>aap` for current paragraph
-    xmap <leader>a  <Plug>(coc-codeaction-selected)
-    nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-    " Remap keys for applying codeAction to the current buffer.
-    nmap <leader>ac  <Plug>(coc-codeaction)
-    " Apply AutoFix to problem on the current line.
-    nmap <leader>qf  <Plug>(coc-fix-current)
-
-    " Map function and class text objects
-    " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-    xmap if <Plug>(coc-funcobj-i)
-    omap if <Plug>(coc-funcobj-i)
-    xmap af <Plug>(coc-funcobj-a)
-    omap af <Plug>(coc-funcobj-a)
-    xmap ic <Plug>(coc-classobj-i)
-    omap ic <Plug>(coc-classobj-i)
-    xmap ac <Plug>(coc-classobj-a)
-    omap ac <Plug>(coc-classobj-a)
-
-    " Use CTRL-S for selections ranges.
-    " Requires 'textDocument/selectionRange' support of language server.
-    nmap <silent> <C-s> <Plug>(coc-range-select)
-    xmap <silent> <C-s> <Plug>(coc-range-select)
-
-    " Add `:Format` command to format current buffer.
-    command! -nargs=0 Format :call CocAction('format')
-
-    " Add `:Fold` command to fold current buffer.
-    command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-    " Add `:OR` command for organize imports of the current buffer.
-    command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-    " Add (Neo)Vim's native statusline support.
-    " NOTE: Please see `:h coc-status` for integrations with external plugins that
-    " provide custom statusline: lightline.vim, vim-airline.
-    set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-    " Mappings for CoCList
-    " Show all diagnostics.
-    nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-    " Manage extensions.
-    nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-    " Show commands.
-    nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-    " Find symbol of current document.
-    nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-    " Search workspace symbols.
-    nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-    " Do default action for next item.
-    nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-    " Do default action for previous item.
-    nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-    " Resume latest coc list.
-    nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-    " coc-spell-checker
-    vmap <leader>a <Plug>(coc-codeaction-selected)
-    nmap <leader>a <Plug>(coc-codeaction-selected)
-
-" CoC Setup
-endif
 
 " Scrolling setup
 set scrolloff=3           " Display at least 3 lines around you cursor
@@ -811,6 +637,280 @@ endfunction
 command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
 noremap <silent> <F8> :ToggleSlash<CR>
 
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
+" +++++++++++++++ Trouble Specific Stuff +++++++++++++++
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+lua << EOF
+local actions = require("telescope.actions")
+local trouble = require("trouble.providers.telescope")
+
+local telescope = require("telescope")
+
+telescope.setup {
+  defaults = {
+    mappings = {
+      i = { ["<c-t>"] = trouble.open_with_trouble },
+      n = { ["<c-t>"] = trouble.open_with_trouble },
+    },
+  },
+}
+EOF
+
+" +++++++++++++++ Trouble Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+lua << EOF
+
+require("telescope").load_extension("neoclip")
+require('neoclip').setup({
+  history = 1000,
+  enable_persistant_history = true,
+  preview = true,
+})
+
+EOF
+" +++++++++++++++ Neoclip Specific Stuff +++++++++++++++
+
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c
+
+" Configure LSP through rust-tools.nvim plugin.
+" rust-tools will configure and enable certain LSP features for us.
+" See https://github.com/simrat39/rust-tools.nvim#configuration
+lua <<EOF
+local nvim_lsp = require'lspconfig'
+
+local opts = {
+    tools = { -- rust-tools options
+        autoSetHints = true,
+        hover_with_actions = true,
+        inlay_hints = {
+            show_parameter_hints = false,
+            parameter_hints_prefix = "",
+            other_hints_prefix = "",
+        },
+    },
+
+    -- all the opts to send to nvim-lspconfig
+    -- these override the defaults set by rust-tools.nvim
+    -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
+    server = {
+        -- on_attach is a callback called when the language server attachs to the buffer
+        -- on_attach = on_attach,
+        settings = {
+            -- to enable rust-analyzer settings visit:
+            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            ["rust-analyzer"] = {
+                -- enable clippy on save
+                checkOnSave = {
+                    command = "clippy"
+                },
+            }
+        }
+    },
+}
+
+require('rust-tools').setup(opts)
+EOF
+
+" Setup Completion
+" See https://github.com/hrsh7th/nvim-cmp#basic-configuration
+lua <<EOF
+local cmp = require'cmp'
+cmp.setup({
+  -- Enable LSP snippets
+  snippet = {
+    expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    -- Add tab support
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    })
+  },
+
+  -- Installed sources
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'path' },
+    { name = 'buffer' },
+  },
+})
+EOF
+
+" +++++++++++++++ Rust Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Telescope Specific Stuff +++++++++++++++
+lua <<EOF
+-- You dont need to set any of these options. These are the default ones. Only
+-- the loading is important
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
+EOF
+" +++++++++++++++ Telescope Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Zoxide Specific Stuff +++++++++++++++
+lua <<EOF
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>cd",
+	":lua require'telescope'.extensions.zoxide.list{}<CR>",
+	{noremap = true, silent = true}
+)
+EOF
+" +++++++++++++++ Zoxide Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++
+
+" Python configuration
+lua <<EOF
+local python_lsp = require'lspconfig'
+python_lsp.pyright.setup{}
+EOF
+
+" Bash configuration
+lua <<EOF
+local bash_lsp = require'lspconfig'
+bash_lsp.bashls.setup{}
+EOF
+
+" Go configuration
+lua <<EOF
+local go_lsp = require'lspconfig'
+go_lsp.gopls.setup{}
+EOF
+
+" Vim configuration
+lua <<EOF
+local vim_lsp = require'lspconfig'
+vim_lsp.vimls.setup{}
+EOF
+
+" Yaml configuration
+lua <<EOF
+local yaml_lsp = require'lspconfig'
+yaml_lsp.yamlls.setup{}
+EOF
+" +++++++++++++++ Neovim LSP Specific Stuff +++++++++++++++
+
+" +++++++++++++++ Treesitter Stuff +++++++++++++++
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  --ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  ignore_install = { }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    -- disable = { "c", "rust" },  -- list of language that will be disabled
+    disable = { },  -- list of language that will be disabled
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
+" +++++++++++++++ Treesitter Stuff +++++++++++++++
+
+" +++++++++++++++ Wilder Specific Stuff ++++++++++++++
+call wilder#setup({'modes': [':', '/', '?']})
+call wilder#set_option('use_python_remote_plugin', 0)
+
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 1,
+      \       'fuzzy_filter': wilder#lua_fzy_filter(),
+      \     }),
+      \     wilder#vim_search_pipeline(),
+      \   ),
+      \ ])
+
+call wilder#set_option('renderer', wilder#renderer_mux({
+      \ ':': wilder#popupmenu_renderer({
+      \   'highlighter': wilder#lua_fzy_highlighter(),
+      \   'left': [
+      \     ' ',
+      \     wilder#popupmenu_devicons(),
+      \   ],
+      \   'right': [
+      \     ' ',
+      \     wilder#popupmenu_scrollbar(),
+      \   ],
+      \ }),
+      \ '/': wilder#wildmenu_renderer({
+      \   'highlighter': wilder#lua_fzy_highlighter(),
+      \ }),
+      \ }))
+" +++++++++++++++ Wilder Specific Stuff +++++++++++++++
+
+" +++++++++++++++ LSPSaga Specific Stuff +++++++++++++++
+lua <<EOF
+local saga = require 'lspsaga'
+saga.init_lsp_saga {
+  error_sign = '',
+  warn_sign = '',
+  hint_sign = '',
+  infor_sign = '',
+  border_style = "round",
+}
+EOF
+
+" show hover doc
+nnoremap <silent>K :Lspsaga hover_doc<CR>
+inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
+nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
+" +++++++++++++++ LSPSaga Specific Stuff +++++++++++++++
 
 " ------------------------------------------------------------------------------
 " FileType mappings
@@ -827,12 +927,6 @@ augroup filetype_yaml
 " In VIM's command mode enter the following
 " :set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 " :retab
-augroup END
-
-augroup filetype_json
-  autocmd!
-
-  autocmd FileType json setlocal foldmethod=syntax
 augroup END
 
 augroup filetype_csv
@@ -853,16 +947,6 @@ augroup filetype_toml
   autocmd!
 
   autocmd FileType toml setlocal commentstring=#\ %s
-augroup END
-
-function! s:init_fern() abort
-  " Use 'select' instead of 'edit' for default 'open' action
-  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
-endfunction
-
-augroup fern-custom
-  autocmd! *
-  autocmd FileType fern call s:init_fern()
 augroup END
 
 " " highlights yanked text
