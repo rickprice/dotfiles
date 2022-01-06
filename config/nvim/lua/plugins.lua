@@ -152,6 +152,8 @@ return require("packer").startup({
     use({ "goolord/alpha-nvim", config = get_setup("alpha") })
 
     use({ "luukvbaal/stabilize.nvim", config = get_setup("stabilize") })
+
+    -- SymbolsOutline
     use({
       "simrat39/symbols-outline.nvim",
       cmd = { "SymbolsOutline" },
