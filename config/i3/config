@@ -68,7 +68,8 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 # Start Applications
 # bindsym $mod+Ctrl+b exec wezterm start -- 'bmenu'
 # bindsym $mod+F2 exec google-chrome-stable
-bindsym $mod+F2 exec nyxt
+# bindsym $mod+F2 exec nyxt
+bindsym $mod+F2 exec qutebrowser
 bindsym $mod+F4 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
@@ -169,6 +170,7 @@ set $ws8 8
 set $ws9 9
 
 set $ws10 "10:ext"
+set $ws11 "11:ext2"
 
 # Assign to workspaces
 workspace 1 output primary
