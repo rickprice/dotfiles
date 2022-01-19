@@ -69,8 +69,9 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 # bindsym $mod+Ctrl+b exec wezterm start -- 'bmenu'
 # bindsym $mod+F2 exec google-chrome-stable
 # bindsym $mod+F2 exec nyxt
-bindsym $mod+F2 exec qutebrowser
-bindsym $mod+F4 exec firefox-developer-edition
+bindsym $mod+F2 exec firefox-developer-edition
+# bindsym $mod+F4 exec qutebrowser
+bindsym $mod+F4 exec luakit
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -86,7 +87,8 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
-focus_follows_mouse yes
+#focus_follows_mouse yes
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+j focus left
