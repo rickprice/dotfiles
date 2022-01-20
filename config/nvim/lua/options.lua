@@ -36,7 +36,8 @@ opt.shiftwidth = 4 -- Size of an indent
 opt.showmode = false -- Don't display mode
 opt.sidescrolloff = 8 -- Columns of context
 -- opt.signcolumn = "yes:1" -- always show signcolumns
-opt.signcolumn = "auto"
+-- Auto show sign column up to 9 sign columns
+opt.signcolumn = "auto:9"
 opt.smartcase = true -- Do not ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { "en_gb" }
