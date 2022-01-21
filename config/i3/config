@@ -69,10 +69,10 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 # bindsym $mod+Ctrl+b exec wezterm start -- 'bmenu'
 # bindsym $mod+F2 exec google-chrome-stable
 # bindsym $mod+F2 exec nyxt
-bindsym $mod+F2 exec firefox-developer-edition
 # bindsym $mod+F4 exec qutebrowser
-bindsym $mod+F4 exec luakit
+bindsym $mod+F2 exec luakit
 bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F4 exec firefox-developer-edition
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e ranger
