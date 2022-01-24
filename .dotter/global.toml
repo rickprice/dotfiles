@@ -64,9 +64,7 @@
 
 [local.files]
 "local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
-"local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
-"local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
 "local/bin/weather.sh"="~/.local/bin/weather"
 "local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
