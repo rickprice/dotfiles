@@ -12,7 +12,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 DOWNLOADS_DIR=~/Downloads
 GOOGLE_TAKEOUT_DIR=./Takeout
 LOCATION_HISTORY_FILE_GPX="$GOOGLE_TAKEOUT_DIR/Location History/Location History.gpx"
-LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Location History.json"
+LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Records.json"
 LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 

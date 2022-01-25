@@ -19,6 +19,7 @@
 
 from __future__ import division
 
+import dateutil.parser
 import sys
 import json
 import math
@@ -374,7 +375,8 @@ def convert(locations, output, format="kml",
     """
 
     if chronological:
-        locations = sorted(locations, key=lambda item: item["timestampMs"])
+        # TODO: Double check that we can sort on a ISO string instead of a MS here in timestamp
+        locations = sorted(locations, key=lambda item: item["timestamp"])
 
     _write_header(output, format, js_variable, separator)
 
@@ -383,10 +385,14 @@ def convert(locations, output, format="kml",
     added = 0
     print("Progress:")
     for item in locations:
-        if "longitudeE7" not in item or "latitudeE7" not in item or "timestampMs" not in item:
+        if "longitudeE7" not in item or "latitudeE7" not in item or "timestamp" not in item:
             continue
 
-        time = datetime.utcfromtimestamp(int(item["timestampMs"]) / 1000)
+        time = dateutil.parser.parse(item["timestamp"])
+
+        # We need the timestamp in milliseconds like everywhere...
+        item["timestampMs"]=time.strftime('%s%f')
+
         print("\r%s / Locations written: %s" % (time.strftime("%Y-%m-%d %H:%M"), added), end="")
 
         if accuracy is not None and "accuracy" in item and item["accuracy"] > accuracy:
