@@ -3,6 +3,7 @@ aws.disabled=true
 golang.disabled=true
 python.disabled=true
 perl.disabled=true
+nodejs.disabled=true
 # git_branch.disabled=true
 # git_commit.disabled=true
 # git_state.disabled=true
