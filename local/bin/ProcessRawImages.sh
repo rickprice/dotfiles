@@ -54,7 +54,8 @@ echo Setup Google Takeout data
 rm -rf "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
     tar -xzf $DOWNLOADS_DIR/takeout-*
-    location-history-json-converter -f kml -s 2021-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
+    location-history-json-converter -f kml -s 2022-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
+    # location-history-json-converter -f kml "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
     # location-history-json-converter -f gpxtracks -s 2021-11-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_GPX"
 else
     figlet Too many or too few takeout location zip files
