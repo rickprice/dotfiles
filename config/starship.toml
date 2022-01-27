@@ -1,0 +1,13 @@
+status.disabled=false
+aws.disabled=true
+golang.disabled=true
+python.disabled=true
+perl.disabled=true
+# git_branch.disabled=true
+# git_commit.disabled=true
+# git_state.disabled=true
+# git_metrics.disabled=true
+# git_status.disabled=true # This one has odd symbols to me
+[env_var]
+variable='AS_PLATFORM'
+format="[PR](red bold)\\[$env_value\\] "

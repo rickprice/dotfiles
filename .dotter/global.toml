@@ -34,6 +34,9 @@
 "config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
 "config/starship.toml" = "~/.config/starship.toml"
 
+[bash.files]
+"config/bashrc" = "~/.bashrc"
+
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
 
