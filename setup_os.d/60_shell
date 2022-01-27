@@ -32,6 +32,9 @@ yay --noconfirm -S bat
 # Better cd
 yay --noconfirm -S zoxide-git
 
+# Better prompt
+yay --noconfirm -S starship
+
 # Default shell is set as fish in initial machine build script
 # chsh -s $(which fish)
 
