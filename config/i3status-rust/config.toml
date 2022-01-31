@@ -1,20 +1,20 @@
 theme = "solarized-dark"
 icons = "awesome5"
 
-[[block]]
-block = "supertoggle"
-
-command_current_state="timew; timew day"
-command_on="timew continue; notify-send 'Starting TimeWarrior tracking.'"
-command_off="timew stop; notify-send 'Stopping TimeWarrior tracking.'"
-
-format_on="TW [ {tags} ] {hours}:{minutes}"
-format_off="TW IDLE"
-
-command_status_on_regex="(?m)(?s)Tracking\\s+(?P<tags>\\w*).*Tracked\\s+(?P<hours>\\d{1,2}):(?P<minutes>\\d{1,2}):(?P<seconds>\\d{1,2})"
-command_status_off_regex="(?m)There is no active time tracking\\.$"
-
-interval = 60
+# [[block]]
+# block = "supertoggle"
+#
+# command_current_state="timew; timew day"
+# command_on="timew continue; notify-send 'Starting TimeWarrior tracking.'"
+# command_off="timew stop; notify-send 'Stopping TimeWarrior tracking.'"
+#
+# format_on="TW [ {tags} ] {hours}:{minutes}"
+# format_off="TW IDLE"
+#
+# command_status_on_regex="(?m)(?s)Tracking\\s+(?P<tags>\\w*).*Tracked\\s+(?P<hours>\\d{1,2}):(?P<minutes>\\d{1,2}):(?P<seconds>\\d{1,2})"
+# command_status_off_regex="(?m)There is no active time tracking\\.$"
+#
+# interval = 60
 
 [[block]]
 block = "pomodoro"
