@@ -33,7 +33,7 @@ require("telescope").setup({
       theme = "ivy",
       mappings = {
         ["i"] = {
-          ["<S-M>"] = fb_actions.move_file,
+          ["<S-M>"] = fb_actions.move,
         },
         ["n"] = {
           -- your custom normal mode mappings
@@ -92,5 +92,5 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("fzf")
-require("telescope").load_extension("sessions")
+-- require("telescope").load_extension("sessions")
 require("telescope").load_extension("file_browser")
