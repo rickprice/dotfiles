@@ -82,6 +82,7 @@
 "local/bin/weather.sh"="~/.local/bin/weather"
 "local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
+"local/bin/ManageTouchpad.sh"="~/.local/bin/ManageTouchpad"
 
 [touchpad.files]
 "udev/90-ManageTouchpad.rules"="/etc/udev/rules.d/90-ManageTouchpad.rules"

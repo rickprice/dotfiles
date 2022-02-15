@@ -94,3 +94,6 @@ yay --noconfirm -S solaar
 
 ## lfs is an improved du
 yay --noconfirm -S lfs
+
+## xpub lets you figure out your X variables more or less anywhere
+yay --noconfirm -S xpub
