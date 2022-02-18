@@ -1,0 +1,38 @@
+# Manage touchpad by looking for Logitech mouse battery
+# This is because the battery is updated when the mouse is turned on and off, but the USB is always on
+ACTION=="change" \
+, SUBSYSTEM=="power_supply" \
+, ATTR{online}=="1" \
+, ATTR{manufacturer}=="Logitech" \
+, ATTR{scope}=="Device" \
+, ATTR{type}=="Battery" \
+, IMPORT{program}="/usr/bin/xpub", \
+, RUN+="/bin/su $env{XUSER} -c '/usr/local/bin/ManageTouchpad off'" \
+#, RUN+="/bin/su $env{XUSER} -c '/usr/bin/notify-send Hello_MouseOn'" \
+
+ACTION=="change" \
+, SUBSYSTEM=="power_supply" \
+, ATTR{online}=="0" \
+, ATTR{manufacturer}=="Logitech" \
+, ATTR{scope}=="Device" \
+, ATTR{type}=="Battery" \
+, IMPORT{program}="/usr/bin/xpub", \
+, RUN+="/bin/su $env{XUSER} -c '/usr/local/bin/ManageTouchpad on'" \
+#, RUN+="/bin/su $env{XUSER} -c '/usr/bin/notify-send Hello_MouseOff'" \
+
+#ACTION=="add" \
+#, SUBSYSTEM=="input" \
+#, KERNEL=="mouse[0-9]*" \
+#, IMPORT{program}="/usr/bin/xpub", \
+#, RUN+="/bin/su $env{XUSER} -c '/usr/local/bin/ManageTouchpad off'" \
+#, RUN+="/bin/sh -c 'echo == >> /tmp/udev-env.txt; env >> /tmp/udev-env.txt'"
+#, RUN+="/bin/su $env{XUSER} -c '/usr/bin/notify-send Hello_MouseRemove'" \
+
+ACTION=="remove" \
+, SUBSYSTEM=="input" \
+, KERNEL=="mouse[0-9]*" \
+, IMPORT{program}="/usr/bin/xpub", \
+, RUN+="/bin/su $env{XUSER} -c '/usr/local/bin/ManageTouchpad on'" \
+#, RUN+="/bin/sh -c 'echo == >> /tmp/udev-env.txt; env >> /tmp/udev-env.txt'"
+#, RUN+="/bin/su $env{XUSER} -c '/usr/bin/notify-send Hello_MouseRemove'" \
+
