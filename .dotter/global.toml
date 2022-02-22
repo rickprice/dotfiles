@@ -117,3 +117,20 @@
 "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
 
 [user.files]
+
+[leftwm.files]
+"config/leftwm/config.toml" = "~/.config/leftwm/config.toml"
+"config/leftwm/themes.toml" = "~/.config/leftwm/themes.toml"
+
+[leftwm_Theme_FrederickPrice.files]
+"config/leftwm/themes/FrederickPrice/background.jpg" = "~/.config/leftwm/themes/FrederickPrice/background.jpg"
+"config/leftwm/themes/FrederickPrice/change_to_tag" = "~/.config/leftwm/themes/FrederickPrice/change_to_tag"
+"config/leftwm/themes/FrederickPrice/down" = "~/.config/leftwm/themes/FrederickPrice/down"
+"config/leftwm/themes/FrederickPrice/down.jpg" = "~/.config/leftwm/themes/FrederickPrice/down.jpg"
+"config/leftwm/themes/FrederickPrice/polybar.config" = "~/.config/leftwm/themes/FrederickPrice/polybar.config"
+"config/leftwm/themes/FrederickPrice/sizes.liquid" = "~/.config/leftwm/themes/FrederickPrice/sizes.liquid"
+"config/leftwm/themes/FrederickPrice/template.liquid" = "~/.config/leftwm/themes/FrederickPrice/template.liquid"
+"config/leftwm/themes/FrederickPrice/theme.toml" = "~/.config/leftwm/themes/FrederickPrice/theme.toml"
+"config/leftwm/themes/FrederickPrice/up" = "~/.config/leftwm/themes/FrederickPrice/up"
+
+
