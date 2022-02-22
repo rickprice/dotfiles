@@ -9,6 +9,11 @@ disable_current_tag_swap = true
 focus_behaviour = "Sloppy"
 focus_new_windows = true
 
+window_rules = [
+ # Spawn Zoom on tag #10
+ {window_class = "zoom", spawn_on_tag = 10},
+]
+
 [[keybind]]
 command = "Execute"
 value = "dmenu_run"
