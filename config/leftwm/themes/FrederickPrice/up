@@ -63,4 +63,6 @@ run_if_exists "nm-applet"
 run_if_exists "xfce4-power-manager"
 run_if_exists "pamac-tray"
 run_if_exists "udiskie"
+run_if_exists "slack"
+run_if_exists "discord"
 

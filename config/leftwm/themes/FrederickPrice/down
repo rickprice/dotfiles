@@ -22,3 +22,5 @@ pkill xfce4-power-manager
 pkill pamac-tray
 pkill udiskie
 pkill xcape
+pkill discord
+pkill slack
