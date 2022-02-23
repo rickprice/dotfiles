@@ -128,8 +128,8 @@
 "config/leftwm/themes/FrederickPrice/down" = "~/.config/leftwm/themes/FrederickPrice/down"
 "config/leftwm/themes/FrederickPrice/down.jpg" = "~/.config/leftwm/themes/FrederickPrice/down.jpg"
 "config/leftwm/themes/FrederickPrice/polybar.config" = "~/.config/leftwm/themes/FrederickPrice/polybar.config"
-"config/leftwm/themes/FrederickPrice/sizes.liquid" = "~/.config/leftwm/themes/FrederickPrice/sizes.liquid"
-"config/leftwm/themes/FrederickPrice/template.liquid" = "~/.config/leftwm/themes/FrederickPrice/template.liquid"
+"config/leftwm/themes/FrederickPrice/sizes.liquid" = {target="~/.config/leftwm/themes/FrederickPrice/sizes.liquid",type="symbolic"}
+"config/leftwm/themes/FrederickPrice/template.liquid" = {target="~/.config/leftwm/themes/FrederickPrice/template.liquid",type="symbolic"}
 "config/leftwm/themes/FrederickPrice/theme.toml" = "~/.config/leftwm/themes/FrederickPrice/theme.toml"
 "config/leftwm/themes/FrederickPrice/up" = "~/.config/leftwm/themes/FrederickPrice/up"
 
