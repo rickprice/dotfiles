@@ -1,7 +1,7 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9","10","11"]
+tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9","10","11","12"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 layout_mode = "Workspace"
 scratchpad = []
@@ -10,8 +10,11 @@ focus_behaviour = "Sloppy"
 focus_new_windows = true
 
 window_rules = [
- # Spawn Zoom on tag #10
- {window_class = "zoom", spawn_on_tag = 10},
+ # Spawn Zoom on tag #11
+ {window_class = "zoom", spawn_on_tag = 11},
+ # Spawn IM on tag #12
+ {window_class = "slack", spawn_on_tag = 12},
+ {window_class = "discord", spawn_on_tag = 12},
 ]
 
 [[keybind]]
@@ -197,7 +200,6 @@ value = "9"
 modifier = ["modkey"]
 key = "9"
 
-
 [[keybind]]
 command = "GotoTag"
 value = "10"
@@ -209,6 +211,13 @@ command = "GotoTag"
 value = "11"
 modifier = ["modkey"]
 key = "F11"
+
+[[keybind]]
+command = "GotoTag"
+value = "12"
+modifier = ["modkey"]
+key = "F12"
+
 
 [[keybind]]
 command = "MoveToTag"
@@ -275,3 +284,9 @@ command = "MoveToTag"
 value = "11"
 modifier = ["modkey", "Shift"]
 key = "F11"
+
+[[keybind]]
+command = "MoveToTag"
+value = "12"
+modifier = ["modkey", "Shift"]
+key = "F12"
