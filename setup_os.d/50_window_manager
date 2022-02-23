@@ -37,3 +37,8 @@ yay --noconfirm -S polkit-gnome
 # i3status-rust
 yay --noconfirm -S i3status-rust alsa-utils
 
+# Now LeftWM specific dependencies
+yay --noconfirm -S leftwm-git
+yay --noconfirm -S leftwm-theme-git
+yay --noconfirm -S polybar-git
+
