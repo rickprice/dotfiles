@@ -25,6 +25,5 @@ packages = ["alacritty","autorandr","fish","flake8","i3","mypy","hub","nvim","us
 # Unlike files, it's impossible to delete variables.
 # font_size = 18
 
-[leftwm.variables.leftwm]
-    theme="FrederickPrice"
+leftwm_theme="FrederickPrice"
 
