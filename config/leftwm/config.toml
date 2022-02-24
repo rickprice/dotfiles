@@ -18,6 +18,7 @@ window_rules = [
 
 scratchpad = [
     { name = "Wezterm", value = "wezterm start --always-new-process -- vi -c VimwikiIndex", x = 0.20, y = 0.20, height = 0.80, width = 0.80 },
+    { name = "1Password", value = "1password", x = 0.50, y = 0.20, height = 0.80, width = 0.80 },
 ]
 
 [[keybind]]
@@ -74,10 +75,10 @@ command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
 key = "j"
 
-[[keybind]]
-command = "MoveWindowTop"
-modifier = ["modkey"]
-key = "Return"
+# [[keybind]]
+# command = "MoveWindowTop"
+# modifier = ["modkey"]
+# key = "Return"
 
 [[keybind]]
 command = "FocusWindowUp"
@@ -295,12 +296,19 @@ modifier = ["modkey", "Shift"]
 key = "F12"
 
 [[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "f"
+
+[[keybind]]
 command = "ToggleScratchPad"
-value = "Wezterm" # Name set for the scratchpad
+value = "1Password" # Name set for the scratchpad
 modifier = ["modkey"]
 key = "p"
 
 [[keybind]]
-command = "ToggleFullScreen"
+command = "ToggleScratchPad"
+value = "Wezterm" # Name set for the scratchpad
 modifier = ["modkey"]
-key = "f"
+key = "Return"
+
