@@ -133,4 +133,5 @@
 "config/leftwm/themes/FrederickPrice/theme.toml" = "~/.config/leftwm/themes/FrederickPrice/theme.toml"
 "config/leftwm/themes/FrederickPrice/up" = "~/.config/leftwm/themes/FrederickPrice/up"
 
-
+[sound.files]
+"etc/modprobe.d/disable_dmic.conf" = "/etc/modprobe.d/disable_dmic.conf"

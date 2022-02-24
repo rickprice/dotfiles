@@ -57,12 +57,12 @@ do
 done
 
 run_if_exists "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-run_if_exists "variety"
 run_if_exists "dropbox"
 run_if_exists "nm-applet"
 run_if_exists "xfce4-power-manager"
 run_if_exists "pamac-tray"
 run_if_exists "udiskie"
+run_if_exists "variety"
 run_if_exists "slack"
 run_if_exists "discord"
 
