@@ -4,7 +4,6 @@ workspaces = []
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9","10","11","12"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 layout_mode = "Workspace"
-scratchpad = []
 disable_current_tag_swap = true
 focus_behaviour = "Sloppy"
 focus_new_windows = true
@@ -17,11 +16,15 @@ window_rules = [
  {window_class = "discord", spawn_on_tag = 12},
 ]
 
+scratchpad = [
+    { name = "Wezterm", value = "wezterm start --always-new-process -- vi -c VimwikiIndex", x = 0.20, y = 0.20, height = 0.80, width = 0.80 },
+]
+
 [[keybind]]
 command = "Execute"
 value = "dmenu_run"
 modifier = ["modkey"]
-key = "p"
+key = "d"
 
 [[keybind]]
 command = "Execute"
@@ -290,3 +293,14 @@ command = "MoveToTag"
 value = "12"
 modifier = ["modkey", "Shift"]
 key = "F12"
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Wezterm" # Name set for the scratchpad
+modifier = ["modkey"]
+key = "p"
+
+[[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "f"
