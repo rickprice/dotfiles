@@ -96,7 +96,7 @@ myawesomemenu = {
       hotkeys_popup.show_help(nil, awful.screen.focused())
     end,
   },
-  { "manual", terminal .. " -e man awesome" },
+  { "manual", terminal .. " start man awesome" },
   { "edit config", editor_cmd .. " " .. awesome.conffile },
   { "restart", awesome.restart },
   {
