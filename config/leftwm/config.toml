@@ -17,8 +17,8 @@ window_rules = [
 ]
 
 scratchpad = [
-    { name = "Wezterm", value = "wezterm start --always-new-process -- vi -c VimwikiIndex", x = 0.20, y = 0.20, height = 0.80, width = 0.80 },
-    { name = "1Password", value = "1password", x = 0.50, y = 0.20, height = 0.80, width = 0.80 },
+    { name = "Wezterm", value = "wezterm start --always-new-process -- vi -c VimwikiIndex", x = 0.20, y = 0.20, height = 0.80, width = 0.50 },
+    { name = "1Password", value = "1password", x = 0.50, y = 0.20, height = 0.80, width = 0.50 },
 ]
 
 [[keybind]]
