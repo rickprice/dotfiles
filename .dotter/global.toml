@@ -135,3 +135,6 @@
 
 [sound.files]
 "etc/modprobe.d/disable_dmic.conf" = "/etc/modprobe.d/disable_dmic.conf"
+
+[awesome.files]
+"config/awesome/rc.lua" = {target = "~/.config/awesome/rc.lua", type = "symbolic"}
