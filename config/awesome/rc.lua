@@ -190,7 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -514,9 +514,9 @@ awful.rules.rules = {
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
-  { rule = { class = "zoom" }, properties = { tag = "8" } },
-  { rule = { class = "slack" }, properties = { tag = "9" } },
-  { rule = { class = "discord" }, properties = { tag = "9" } },
+  { rule = { class = "zoom" }, properties = { screen = 1, tag = "10" } },
+  { rule = { class = "slack" }, properties = { screen = 1 tag = "11" } },
+  { rule = { class = "discord" }, properties = { screen = 1, tag = "11" } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
   -- { rule = { class = "Firefox" },
