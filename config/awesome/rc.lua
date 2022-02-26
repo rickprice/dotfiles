@@ -439,15 +439,14 @@ function setWorkspaceKey(key, offset)
 
   -- Set keys
   root.keys(globalkeys)
-
 end
 
 -- Place 10th workspace on the F10 key
-setWorkspaceKey("F10",10)
+setWorkspaceKey("F10", 10)
 -- Place 11th workspace on the F11 key
-setWorkspaceKey("F11",11)
+setWorkspaceKey("F11", 11)
 -- Place 12th workspace on the F12 key
-setWorkspaceKey("F12",12)
+setWorkspaceKey("F12", 12)
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
