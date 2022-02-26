@@ -68,19 +68,19 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-  awful.layout.suit.floating,
-  awful.layout.suit.tile,
+  awful.layout.suit.spiral,
+  awful.layout.suit.spiral.dwindle,
   awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
   awful.layout.suit.tile.top,
   awful.layout.suit.fair,
   awful.layout.suit.fair.horizontal,
-  awful.layout.suit.spiral,
-  awful.layout.suit.spiral.dwindle,
   awful.layout.suit.max,
   awful.layout.suit.max.fullscreen,
   awful.layout.suit.magnifier,
   awful.layout.suit.corner.nw,
+  awful.layout.suit.tile,
+  awful.layout.suit.floating,
   -- awful.layout.suit.corner.ne,
   -- awful.layout.suit.corner.sw,
   -- awful.layout.suit.corner.se,
@@ -226,7 +226,7 @@ awful.screen.connect_for_each_screen(function(s)
   })
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s })
+  s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
   -- Add widgets to the wibox
   s.mywibox:setup({
@@ -514,6 +514,9 @@ awful.rules.rules = {
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
+  { rule = { class = "zoom" }, properties = { tag = "8" } },
+  { rule = { class = "slack" }, properties = { tag = "9" } },
+  { rule = { class = "discord" }, properties = { tag = "9" } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
   -- { rule = { class = "Firefox" },
@@ -587,4 +590,15 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 
+-- System programs
 awful.spawn.with_shell("picom")
+awful.spawn.with_shell("dropbox")
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("xfce4-power-manager")
+awful.spawn.with_shell("pamac-tray")
+awful.spawn.with_shell("udiskie")
+awful.spawn.with_shell("volumeicon")
+
+-- IM Programs
+awful.spawn.with_shell("slack")
+awful.spawn.with_shell("discord")
