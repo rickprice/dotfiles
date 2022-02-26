@@ -684,3 +684,20 @@ end)
 client.connect_signal("mouse::enter", function(c)
   c:activate({ context = "mouse_enter", raise = false })
 end)
+
+-- System programs
+awful.spawn.with_shell("setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'")
+awful.spawn.with_shell("xcape -e 'Control_L=Escape'")
+
+awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+awful.spawn.with_shell("picom")
+awful.spawn.with_shell("dropbox")
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("xfce4-power-manager")
+awful.spawn.with_shell("pamac-tray")
+awful.spawn.with_shell("udiskie")
+awful.spawn.with_shell("volumeicon")
+
+-- IM Programs
+awful.spawn.with_shell("slack")
+awful.spawn.with_shell("discord")
