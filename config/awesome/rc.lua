@@ -106,14 +106,38 @@ end)
 -- }}}
 
 -- {{{ Wallpaper
+-- screen.connect_signal("request::wallpaper", function(s)
+--   awful.wallpaper({
+--     screen = s,
+--     widget = {
+--       {
+--         image = beautiful.wallpaper,
+--         upscale = true,
+--         downscale = true,
+--         widget = wibox.widget.imagebox,
+--       },
+--       valign = "center",
+--       halign = "center",
+--       tiled = false,
+--       widget = wibox.container.tile,
+--     },
+--   })
+-- end)
+-- }}}
+
+-- {{{ Wallpaper - mine
 screen.connect_signal("request::wallpaper", function(s)
   awful.wallpaper({
     screen = s,
+    bg = "#000000",
     widget = {
       {
-        image = beautiful.wallpaper,
-        upscale = true,
-        downscale = true,
+        image = gears.filesystem.get_random_file_from_dir(
+          "/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds",
+          { ".jpg", ".png", ".svg" },
+          true
+        ),
+        resize = true,
         widget = wibox.widget.imagebox,
       },
       valign = "center",
@@ -123,6 +147,16 @@ screen.connect_signal("request::wallpaper", function(s)
     },
   })
 end)
+
+gears.timer({
+  timeout = 1800,
+  autostart = true,
+  callback = function()
+    for s in screen do
+      s:emit_signal("request::wallpaper")
+    end
+  end,
+})
 -- }}}
 
 -- {{{ Wibar
