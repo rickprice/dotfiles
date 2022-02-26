@@ -190,7 +190,7 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }, s, awful.layout.layouts[1])
+  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -398,6 +398,57 @@ clientkeys = gears.table.join(
   end, { description = "(un)maximize horizontally", group = "client" })
 )
 
+function setWorkspaceKey(key, offset)
+  globalkeys = gears.table.join(
+    globalkeys,
+    -- View tag only.
+    awful.key({ modkey }, key, function()
+      local screen = awful.screen.focused()
+      local tag = screen.tags[offset]
+      if tag then
+        tag:view_only()
+      end
+    end, { description = "view tag #" .. offset, group = "tag" }),
+    -- Toggle tag display.
+    awful.key({ modkey, "Control" }, key, function()
+      local screen = awful.screen.focused()
+      local tag = screen.tags[offset]
+      if tag then
+        awful.tag.viewtoggle(tag)
+      end
+    end, { description = "toggle tag #" .. offset, group = "tag" }),
+    -- Move client to tag.
+    awful.key({ modkey, "Shift" }, key, function()
+      if client.focus then
+        local tag = client.focus.screen.tags[offset]
+        if tag then
+          client.focus:move_to_tag(tag)
+        end
+      end
+    end, { description = "move focused client to tag #" .. offset, group = "tag" }),
+    -- Toggle tag on focused client.
+    awful.key({ modkey, "Control", "Shift" }, key, function()
+      if client.focus then
+        local tag = client.focus.screen.tags[offset]
+        if tag then
+          client.focus:toggle_tag(tag)
+        end
+      end
+    end, { description = "toggle focused client on tag #" .. offset, group = "tag" })
+  )
+
+  -- Set keys
+  root.keys(globalkeys)
+
+end
+
+-- Place 10th workspace on the F10 key
+setWorkspaceKey("F10",10)
+-- Place 11th workspace on the F11 key
+setWorkspaceKey("F11",11)
+-- Place 12th workspace on the F12 key
+setWorkspaceKey("F12",12)
+
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
@@ -514,9 +565,9 @@ awful.rules.rules = {
 
   -- Add titlebars to normal clients and dialogs
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
-  { rule = { class = "zoom" }, properties = { screen = 1, tag = "10" } },
-  { rule = { class = "slack" }, properties = { screen = 1, tag = "11" } },
-  { rule = { class = "discord" }, properties = { screen = 1, tag = "11" } },
+  { rule = { class = "zoom" }, properties = { screen = 1, tag = "11" } },
+  { rule = { class = "slack" }, properties = { screen = 1, tag = "12" } },
+  { rule = { class = "discord" }, properties = { screen = 1, tag = "12" } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
   -- { rule = { class = "Firefox" },
