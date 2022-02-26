@@ -515,7 +515,7 @@ awful.rules.rules = {
   -- Add titlebars to normal clients and dialogs
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
   { rule = { class = "zoom" }, properties = { screen = 1, tag = "10" } },
-  { rule = { class = "slack" }, properties = { screen = 1 tag = "11" } },
+  { rule = { class = "slack" }, properties = { screen = 1, tag = "11" } },
   { rule = { class = "discord" }, properties = { screen = 1, tag = "11" } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -591,6 +591,10 @@ end)
 -- }}}
 
 -- System programs
+awful.spawn.with_shell("setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'")
+awful.spawn.with_shell("xcape -e 'Control_L=Escape'")
+
+awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("dropbox")
 awful.spawn.with_shell("nm-applet")
