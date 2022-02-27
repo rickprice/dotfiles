@@ -44,6 +44,6 @@ yay --noconfirm -S polybar-git
 
 # Awesome Window Manager
 yay --noconfirm -S awesome
-yay --noconfirm -S rlwrap dex vicous
+yay --noconfirm -S rlwrap dex vicious
 yay --noconfirm -S alsa-utils pulseaudio pavucontrol
 git clone git@github.com:streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
