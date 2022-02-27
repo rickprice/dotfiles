@@ -21,6 +21,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -258,6 +260,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       s.mytasklist, -- Middle widget
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
+        cpu_widget(),
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
