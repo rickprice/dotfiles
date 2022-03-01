@@ -717,4 +717,5 @@ awful.spawn.with_shell("volumeicon")
 
 -- IM Programs
 awful.spawn.with_shell("Slack")
+awful.spawn.with_shell("slack")
 awful.spawn.with_shell("discord")
