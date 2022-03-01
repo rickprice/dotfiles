@@ -263,7 +263,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
         cpu_widget(),
-        fs_widget({ mounts = { '/', '/home' } }),
+        fs_widget({ mounts = { "/" } }),
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
