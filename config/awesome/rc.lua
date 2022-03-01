@@ -22,7 +22,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
--- local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 
 -- {{{ Error handling
@@ -263,7 +262,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
       s.mytasklist, -- Middle widget
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
-        -- volume_widget{ widget_type = 'arc' },
         cpu_widget(),
         fs_widget({ mounts = { '/', '/home' } }),
         mykeyboardlayout,
@@ -384,13 +382,6 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey, "Shift" }, "space", function()
     awful.layout.inc(-1)
   end, { description = "select previous", group = "layout" }),
-})
-
--- Volume Icon keys
-awful.keyboard.append_global_keybindings({
-awful.key({ modkey }, "]", function() volume_widget:inc(5) end),
-awful.key({ modkey }, "[", function() volume_widget:dec(5) end),
-awful.key({ modkey }, "\\", function() volume_widget:toggle() end),
 })
 
 awful.keyboard.append_global_keybindings({
