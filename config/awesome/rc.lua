@@ -83,9 +83,9 @@ powermenu = {
     end,
   },
   {
-    "Reboot",
+    "Lock",
     function()
-      awful.spawn.with_shell("systemctl reboot")
+      awful.spawn.with_shell("blurlock")
     end,
   },
   {
@@ -98,6 +98,12 @@ powermenu = {
     "Hibernate",
     function()
       awful.spawn.with_shell("systemctl hibernate")
+    end,
+  },
+  {
+    "Reboot",
+    function()
+      awful.spawn.with_shell("systemctl reboot")
     end,
   },
   {
