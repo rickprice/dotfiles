@@ -75,9 +75,43 @@ myawesomemenu = {
   },
 }
 
+powermenu = {
+  {
+    "Log out",
+    function()
+      awesome.quit()
+    end,
+  },
+  {
+    "Reboot",
+    function()
+      awful.spawn.with_shell("systemctl reboot")
+    end,
+  },
+  {
+    "Suspend",
+    function()
+      awful.spawn.with_shell("systemctl suspend")
+    end,
+  },
+  {
+    "Hibernate",
+    function()
+      awful.spawn.with_shell("systemctl hibernate")
+    end,
+  },
+  {
+    "Power off",
+    function()
+      awful.spawn.with_shell("systemctl poweroff")
+    end,
+  },
+}
+
 mymainmenu = awful.menu({
   items = {
     { "awesome", myawesomemenu, beautiful.awesome_icon },
+    { "Power menu", powermenu },
     { "open terminal", terminal },
   },
 })
