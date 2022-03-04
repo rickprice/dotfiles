@@ -600,6 +600,25 @@ setWorkspaceKey("F10", 10)
 setWorkspaceKey("F11", 11)
 -- Place 12th workspace on the F12 key
 setWorkspaceKey("F12", 12)
+
+function setShortcutKey(key, program, description)
+  globalkeys = gears.table.join(
+    globalkeys,
+    -- Set key with Mod
+    awful.key({ modkey }, key, function()
+      awful.spawn.with_shell(program)
+    end, { description = description, group = "launcher" })
+  )
+
+  -- Set keys
+  root.keys(globalkeys)
+end
+
+-- F2 is Firefox
+setShortcutKey("F2", "firefox-developer-edition", "Start Browser")
+-- F3 is PCManFM
+setShortcutKey("F3", "pcmanfm", "Start File Manager")
+
 -- }}}
 
 -- {{{ Rules
