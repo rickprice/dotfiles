@@ -15,3 +15,6 @@ yay --noconfirm -S calibre
 
 # Markdown preview (and others) in terminal
 yay --noconfirm -S bat
+
+# PDF Posterizing
+yay --noconfirm -S pdfposter
