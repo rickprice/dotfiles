@@ -142,3 +142,7 @@
 
 [picom.files]
 "config/picom/picom.conf" = {target = "~/.config/picom/picom.conf", type = "symbolic"}
+
+[i3-scrot.files]
+"config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
+
