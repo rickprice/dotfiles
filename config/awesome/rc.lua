@@ -771,7 +771,7 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-power-manager")
 awful.spawn.with_shell("pamac-tray")
 awful.spawn.with_shell("udiskie --tray")
-awful.spawn.with_shell("volumeicon")
+awful.spawn.with_shell("killall volumeicon;volumeicon")
 
 -- IM Programs
 awful.spawn.with_shell("slack")
