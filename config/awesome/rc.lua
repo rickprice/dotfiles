@@ -607,7 +607,7 @@ function setShortcutKey(key, modkeys, program, group, description)
     -- Set key with Mod
     awful.key(modkeys, key, function()
       awful.spawn.with_shell(program)
-    end, { description = description, group = group } )
+    end, { description = description, group = group })
   )
 
   -- Set keys
@@ -620,7 +620,7 @@ setShortcutKey("F2", { modkey }, "firefox-developer-edition", "launcher", "Start
 setShortcutKey("F3", { modkey }, "pcmanfm", "launcher", "Start File Manager")
 
 -- PrintScreen
-setShortcutKey("Print", { }, "i3-scrot", "screen", "Print Screen")
+setShortcutKey("Print", {}, "i3-scrot", "screen", "Print Screen")
 setShortcutKey("Print", { "Shift" }, "i3-scrot -w", "screen", "Print Screen")
 setShortcutKey("Print", { "Shift", "Control" }, "i3-scrot -s", "screen", "Print Screen")
 
