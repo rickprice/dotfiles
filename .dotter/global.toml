@@ -100,4 +100,7 @@
 "config/systemd/user/dropbox.service" = "~/.config/systemd/user/dropbox.service"
 # "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
 
+[i3-scrot.files]
+"config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
+
 [user.files]
