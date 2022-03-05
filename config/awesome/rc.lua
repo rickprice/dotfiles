@@ -774,5 +774,6 @@ awful.spawn.with_shell("killall udiskie;udiskie --tray")
 awful.spawn.with_shell("killall volumeicon;volumeicon")
 
 -- IM Programs
-awful.spawn.with_shell("slack")
+local tag_12 = awful.tag.find_by_name(awful.screen.focused(), "12")
+awful.spawn.with_shell("slack", { tag = tag_12 })
 awful.spawn.with_shell("discord")
