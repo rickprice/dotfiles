@@ -774,5 +774,5 @@ awful.spawn.with_shell("killall udiskie;udiskie --tray")
 awful.spawn.with_shell("killall volumeicon;volumeicon")
 
 -- IM Programs
-awful.spawn.with_shell("slack;slack")
+awful.spawn.with_shell("slack")
 awful.spawn.with_shell("discord")
