@@ -770,7 +770,7 @@ awful.spawn.with_shell("dropbox")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-power-manager")
 awful.spawn.with_shell("pamac-tray")
-awful.spawn.with_shell("udiskie --tray")
+awful.spawn.with_shell("killall udiskie;udiskie --tray")
 awful.spawn.with_shell("killall volumeicon;volumeicon")
 
 -- IM Programs
