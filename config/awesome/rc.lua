@@ -614,6 +614,8 @@ function setShortcutKey(key, modkeys, program, group, description)
   root.keys(globalkeys)
 end
 
+-- F1 is 1Password
+setShortcutKey("F1", { modkey }, "1password", "launcher", "Run 1password")
 -- F2 is Firefox
 setShortcutKey("F2", { modkey }, "firefox-developer-edition", "launcher", "Start Browser")
 -- F3 is PCManFM
