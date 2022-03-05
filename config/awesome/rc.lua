@@ -601,13 +601,13 @@ setWorkspaceKey("F11", 11)
 -- Place 12th workspace on the F12 key
 setWorkspaceKey("F12", 12)
 
-function setShortcutKey(key, program, description)
+function setShortcutKey(key, modkeys, program, group, description)
   globalkeys = gears.table.join(
     globalkeys,
     -- Set key with Mod
-    awful.key({ modkey }, key, function()
+    awful.key(modkeys, key, function()
       awful.spawn.with_shell(program)
-    end, { description = description, group = "launcher" })
+    end, { description = description, group = group } )
   )
 
   -- Set keys
@@ -615,9 +615,14 @@ function setShortcutKey(key, program, description)
 end
 
 -- F2 is Firefox
-setShortcutKey("F2", "firefox-developer-edition", "Start Browser")
+setShortcutKey("F2", { modkey }, "firefox-developer-edition", "launcher", "Start Browser")
 -- F3 is PCManFM
-setShortcutKey("F3", "pcmanfm", "Start File Manager")
+setShortcutKey("F3", { modkey }, "pcmanfm", "launcher", "Start File Manager")
+
+-- PrintScreen
+setShortcutKey("Print", { }, "i3-scrot", "screen", "Print Screen")
+setShortcutKey("Print", { "Shift" }, "i3-scrot -w", "screen", "Print Screen")
+setShortcutKey("Print", { "Shift", "Control" }, "i3-scrot -s", "screen", "Print Screen")
 
 -- }}}
 
