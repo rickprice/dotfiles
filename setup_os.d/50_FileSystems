@@ -9,3 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 yay --noconfirm -S ntfs-3g
+yay --noconfirm -S ntfsprogs
+yay --noconfirm -S dosfstools
+yay --noconfirm -S gnome-disk-utility # Gives us gnome-disks
+yay --noconfirm -S gparted # Gives us gparted
