@@ -27,6 +27,7 @@ yay --noconfirm -S python37
 yay --noconfirm -S python-black
 yay --noconfirm -S python-isort
 yay --noconfirm -S mypy
+yay --noconfirm -S perl-tidy
 
 
 # Hub
