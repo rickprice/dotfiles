@@ -23,6 +23,7 @@ require("awful.hotkeys_popup.keys")
 
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -307,6 +308,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
+        volume_widget(),
         s.mylayoutbox,
       },
     },
@@ -358,6 +360,19 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
   awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
   awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
+})
+
+-- Volume control keybindings
+awful.keyboard.append_global_keybindings({
+  awful.key({ modkey }, "]", function()
+    volume_widget:inc(5)
+  end),
+  awful.key({ modkey }, "[", function()
+    volume_widget:dec(5)
+  end),
+  awful.key({ modkey }, "\\", function()
+    volume_widget:toggle()
+  end),
 })
 
 -- Focus related keybindings
@@ -756,9 +771,9 @@ end)
 -- }}}
 
 -- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal("mouse::enter", function(c)
---   c:activate({ context = "mouse_enter", raise = false })
--- end)
+client.connect_signal("mouse::enter", function(c)
+  c:activate({ context = "mouse_enter", raise = false })
+end)
 
 -- System programs
 awful.spawn.with_shell("setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'")
@@ -771,7 +786,9 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("xfce4-power-manager")
 awful.spawn.with_shell("pamac-tray")
 awful.spawn.with_shell("killall udiskie;udiskie --tray")
-awful.spawn.with_shell("killall volumeicon;volumeicon")
+-- awful.spawn.with_shell("killall volumeicon;volumeicon")
+-- awful.spawn.with_shell("mictray")
+awful.spawn.with_shell("blueman-applet")
 
 -- This doesn't seem to work, but generally should
 -- IM Programs
