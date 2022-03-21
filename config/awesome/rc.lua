@@ -707,7 +707,14 @@ ruled.client.connect_signal("request::rules", function()
   ruled.client.append_rule({ rule = { class = "zoom" }, properties = { screen = 1, tag = "11" } })
   ruled.client.append_rule({ rule = { class = "slack" }, properties = { screen = 1, tag = "12" } })
   ruled.client.append_rule({ rule = { class = "discord" }, properties = { screen = 1, tag = "12" } })
+
+  -- Fix firefox bad behaviour
+  ruled.client.append_rule({
+    rule = { class = "firefox" },
+    properties = { opacity = 1, maximized = false, floating = false },
+  })
 end)
+
 -- }}}
 
 -- Add titlebars to normal clients and dialogs
