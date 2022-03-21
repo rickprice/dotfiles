@@ -304,6 +304,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       s.mytasklist, -- Middle widget
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
+        spacing = 10,
         cpu_widget(),
         fs_widget({ mounts = { "/" } }),
         mykeyboardlayout,
