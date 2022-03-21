@@ -24,6 +24,7 @@ require("awful.hotkeys_popup.keys")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -308,6 +309,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
+        batteryarc_widget(),
         volume_widget(),
         s.mylayoutbox,
       },
@@ -783,7 +785,7 @@ awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("dropbox")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("xfce4-power-manager")
+-- awful.spawn.with_shell("xfce4-power-manager")
 awful.spawn.with_shell("pamac-tray")
 awful.spawn.with_shell("killall udiskie;udiskie --tray")
 -- awful.spawn.with_shell("killall volumeicon;volumeicon")
