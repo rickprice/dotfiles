@@ -633,11 +633,11 @@ function setShortcutKey(key, modkeys, program, group, description)
 end
 
 -- F1 is 1Password
-setShortcutKey("F1", { modkey }, "1password", "launcher", "Run 1password")
+setShortcutKey("F7", { modkey }, "1password", "launcher", "Run 1password")
 -- F2 is Firefox
-setShortcutKey("F2", { modkey }, "firefox-developer-edition", "launcher", "Start Browser")
+setShortcutKey("F8", { modkey }, "firefox-developer-edition", "launcher", "Start Browser")
 -- F3 is PCManFM
-setShortcutKey("F3", { modkey }, "pcmanfm", "launcher", "Start File Manager")
+setShortcutKey("F9", { modkey }, "pcmanfm", "launcher", "Start File Manager")
 
 -- PrintScreen
 setShortcutKey("Print", {}, "i3-scrot", "screen", "Print Screen")
