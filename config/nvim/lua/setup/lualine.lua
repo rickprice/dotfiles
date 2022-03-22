@@ -35,13 +35,13 @@ local function diff_source()
 end
 
 -- get colors from Nightfox to use in the words count
-local nfColors = require("nightfox.colors").init("duskfox")
+-- local nfColors = require("nightfox.colors").init("duskfox")
 
 -- print(vim.inspect(nfColors))
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "nightfox",
+    -- theme = "nightfox",
     component_separators = { " ", " " },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {},
@@ -66,7 +66,7 @@ require("lualine").setup({
       "filename",
       {
         getWords,
-        color = { fg = nfColors["bg_alt"] or "#333333", bg = nfColors["fg"] or "#eeeeee" },
+        -- color = { fg = nfColors["bg_alt"] or "#333333", bg = nfColors["fg"] or "#eeeeee" },
         separator = { left = "", right = "" },
       },
     },
