@@ -310,7 +310,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
-        batteryarc_widget(),
+        batteryarc_widget({ show_current_level = true }),
         volume_widget(),
         s.mylayoutbox,
       },
