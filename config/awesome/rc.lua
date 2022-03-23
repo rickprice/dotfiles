@@ -24,7 +24,8 @@ require("awful.hotkeys_popup.keys")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+-- local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -310,7 +311,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
-        batteryarc_widget({ show_current_level = true }),
+        battery_widget({ show_current_level = true }),
         volume_widget(),
         s.mylayoutbox,
       },
