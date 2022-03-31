@@ -146,3 +146,7 @@
 [i3-scrot.files]
 "config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
 
+[jira.files]
+"config/jira/jira.yml" = "~/.config/jira/jira.yml"
+
+

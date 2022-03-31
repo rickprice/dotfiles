@@ -1,0 +1,4 @@
+---
+url: "{{ jira.url }}"
+username: "{{ jira.user }}"
+token: "{{ jira.token }}"
