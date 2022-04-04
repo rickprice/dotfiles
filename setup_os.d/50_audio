@@ -11,4 +11,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 sudo pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth pa-applet-git pavucontrol
 yay --noconfirm -S pa-applet-git
 
+# Needed for Lenovo Thinkpad X1 to have onboard and HDMI sound to work
 sudo pacman --noconfirm -S sof-firmware
+
+# Needed for awesomeWM sound widget to work
+sudo pacman --noconfirm -S amixer pacmd
