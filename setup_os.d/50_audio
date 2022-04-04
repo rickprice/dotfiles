@@ -10,3 +10,5 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 sudo pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth pa-applet-git pavucontrol
 yay --noconfirm -S pa-applet-git
+
+sudo pacman --noconfirm -S sof-firmware
