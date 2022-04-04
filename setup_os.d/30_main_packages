@@ -47,6 +47,7 @@ yay --noconfirm -S arandr
 yay --noconfirm -S ripgrep
 yay --noconfirm -S jpegoptim # Lets you reduce size of JPEGs to fit
 yay --noconfirm -S inetutils
+yay --noconfirm -S trash-cli
 
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer file-roller atril evince
