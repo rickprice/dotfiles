@@ -23,6 +23,7 @@ yay --noconfirm -S openexr
 yay --noconfirm -S dcraw
 yay --noconfirm -S gnuplot
 yay --noconfirm -S darktable-git
+yay --noconfirm -S hugin
 
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
