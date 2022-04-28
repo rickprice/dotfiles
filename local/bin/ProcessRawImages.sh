@@ -25,8 +25,8 @@ function process_photo_directory() {
     local directory_dropbox="${directory}_dropbox"
 
     echo "Clear out directories if we can ${directory}"
-    trash "$directory_location_data"
-    [ -d $directory_dropbox ] && trash "$directory_dropbox"
+    trash -f "$directory_location_data"
+    [ -d $directory_dropbox ] && trash -f "$directory_dropbox"
 
     echo "Copy pictures to be geolocated ${directory}"
     mkdir -p "$directory_location_data"
@@ -51,7 +51,7 @@ function process_photo_directory() {
 }
 
 echo Setup Google Takeout data
-trash "$GOOGLE_TAKEOUT_DIR"
+trash -f "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
     tar -xzf $DOWNLOADS_DIR/takeout-*
     location-history-json-converter -f kml -s 2022-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
