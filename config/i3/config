@@ -388,13 +388,16 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-        mode hide
-        hidden_state hide
+        # mode hide
+        # Tamara would like to try having the bar on all the time
+        mode dock
+        # hidden_state hide
         # modifier Mod4 # should be default anyway
 
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	# position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
