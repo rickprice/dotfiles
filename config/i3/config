@@ -330,8 +330,7 @@ exec --no-startup-id picom -b
 # exec --no-startup-id manjaro-hello
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
+exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
@@ -343,6 +342,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id udiskie --tray&
 # Run Browser for user
 exec --no-startup-id i3-msg workspace 1
+exec --no-startup-id pamac-tray
 exec_always --no-startup-id firefox-developer-edition
 
 # Change keyboard layout
