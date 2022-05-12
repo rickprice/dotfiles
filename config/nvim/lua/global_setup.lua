@@ -6,6 +6,9 @@ augroup global_setup_autocommands
 " Remember last cursor position when file loaded
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
 
+" Setup vim-markdown-folding
+" autocmd BufReadPost * if @%autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
+
 augroup END
 ]],
   false

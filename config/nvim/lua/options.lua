@@ -54,3 +54,5 @@ vim.g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "
 vim.g.suda_smart_edit = 1 -- Suda plugin
 vim.o.lazyredraw = true
 vim.o.whichwrap = vim.o.whichwrap .. "<,>" -- Wrap movement between lines in edit mode with arrows
+-- This disables vimwiki thinking that every .md file is also a .wiki file
+vim.g.vimwiki_global_ext = 0

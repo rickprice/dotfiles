@@ -186,6 +186,7 @@ return require("packer").startup({
 
     -- Markdown
     use({ "ellisonleao/glow.nvim" })
+    use({ "masukomi/vim-markdown-folding" })
 
     -- Better Selects
     use({
