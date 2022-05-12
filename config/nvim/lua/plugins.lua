@@ -213,6 +213,8 @@ return require("packer").startup({
     -- TODO: At some point this should be going away when NeoVim subsumes it
     use("lewis6991/impatient.nvim")
 
+    use({ "eddiebergman/nvim-treesitter-pyfold", requires = "nvim-treesitter/nvim-treesitter" })
+
     if packer_bootstrap then
       require("packer").sync()
     end

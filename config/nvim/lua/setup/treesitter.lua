@@ -22,6 +22,10 @@ require("nvim-treesitter.configs").setup({
       node_decremental = "<TAB>",
     },
   },
+  pyfold = {
+    enable = true,
+    custom_foldtext = true, -- Sets provided foldtext on window where module is active
+  },
 })
 -- Setup treesitter
 local ts = require("nvim-treesitter.configs")
