@@ -11,6 +11,7 @@
     token = {{ pivotal.token }}
 [hub]
     host = github.com
+    protocol = https
 [pull]
 	rebase = true
 [merge]
