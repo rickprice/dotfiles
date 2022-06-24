@@ -9,6 +9,9 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 " Setup vim-markdown-folding
 " autocmd BufReadPost * if @%autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
 
+" Setup Go automatic formatting
+autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+
 augroup END
 ]],
   false

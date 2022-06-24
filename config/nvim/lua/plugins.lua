@@ -168,18 +168,21 @@ return require("packer").startup({
 
     -- Handle marks
     use({
-      "chentau/marks.nvim",
+      "chentoast/marks.nvim",
       config = function()
         require("marks").setup({})
       end,
     })
 
     -- Handle CSV files
-    use({
-      "chrisbra/csv.vim",
-      ft = "csv",
-      config = get_setup("csv"),
-    })
+    -- use({
+    --   "chrisbra/csv.vim",
+    --   ft = "csv",
+    --   config = get_setup("csv"),
+    -- })
+
+    -- VimWiki
+    use({ "ray-x/go.nvim", config = get_setup("golang") })
 
     -- VimWiki
     use({ "vimwiki/vimwiki" })
@@ -205,7 +208,7 @@ return require("packer").startup({
     })
 
     -- Git and Diff stuff
-    use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
+    -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
     use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
 
     -- Is using a standard Neovim install, i.e. built from source or using a
@@ -214,6 +217,9 @@ return require("packer").startup({
     use("lewis6991/impatient.nvim")
 
     use({ "eddiebergman/nvim-treesitter-pyfold", requires = "nvim-treesitter/nvim-treesitter" })
+
+    -- Clojure
+    use("Olical/conjure")
 
     if packer_bootstrap then
       require("packer").sync()
