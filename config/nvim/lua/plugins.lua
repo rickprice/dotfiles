@@ -182,7 +182,7 @@ return require("packer").startup({
     -- })
 
     -- VimWiki
-    use({ "ray-x/go.nvim", config = get_setup("golang") })
+ --   use({ "ray-x/go.nvim", config = get_setup("golang") })
 
     -- VimWiki
     use({ "vimwiki/vimwiki" })
@@ -219,7 +219,7 @@ return require("packer").startup({
     use({ "eddiebergman/nvim-treesitter-pyfold", requires = "nvim-treesitter/nvim-treesitter" })
 
     -- Clojure
-    use("Olical/conjure")
+    --use("Olical/conjure")
 
     if packer_bootstrap then
       require("packer").sync()
