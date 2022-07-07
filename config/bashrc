@@ -14,3 +14,5 @@ export PATH="/home/fprice/.cache/activestate/bin:$PATH"
 export PATH="$PATH:/home/fprice/.local/bin" # ActiveState State Tool
 
 eval "$(starship init bash)"
+
+[[ -s "/home/fprice/.gvm/scripts/gvm" ]] && source "/home/fprice/.gvm/scripts/gvm"
