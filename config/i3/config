@@ -46,6 +46,10 @@ bindsym $mod+Shift+q kill
 # start program launcher
 # bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+d exec --no-startup-id dmenu-frecency
+bindsym $mod+r exec --no-startup-id dmenu-frecency
+
+# Nitrogen background manager
+bindsym $mod+b exec --no-startup-id nitrogen
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -115,8 +119,8 @@ bindsym $mod+Shift+Right move right
 # I don't like workspace_auto_back_and_forth to be on
 # workspace_auto_back_and_forth yes
 workspace_auto_back_and_forth no
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+#bindsym $mod+b workspace back_and_forth
+#bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
@@ -244,7 +248,7 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="(?i)nitrogen"] floating enable sticky enable border normal 2
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
@@ -295,7 +299,7 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+#bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
