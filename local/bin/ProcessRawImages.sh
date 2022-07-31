@@ -16,6 +16,11 @@ LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Records.json"
 LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 
+ARTIST="Frederick Price"
+COMPANY="PricePixel Photography"
+# ARTIST="Joshua Murphy"
+# COMPANY=""
+
 cd "$WORKING_DIR"
 
 function process_photo_directory() {
@@ -34,7 +39,7 @@ function process_photo_directory() {
 
     echo "Add location data $directory"
     # [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
-    [ "$(ls -A $directory)" ] && exiftool -v5 -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+    [ "$(ls -A $directory)" ] && exiftool -v5 -Copyright="All rights reserved. $COMPANY" CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
 
     # Sort the processed files in the location directory
     pushd .
