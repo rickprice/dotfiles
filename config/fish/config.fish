@@ -5,7 +5,7 @@ if status is-interactive
     starship init fish | source
 end
 # -- START ACTIVESTATE INSTALLATION
-set -xg PATH "/home/fprice/.local/ActiveState/StateTool/release:$PATH"
+set -xg PATH "/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"

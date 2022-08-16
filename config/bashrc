@@ -7,11 +7,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-export PATH="/home/fprice/.cache/activestate/bin:$PATH"
-# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 
-export PATH="$PATH:/home/fprice/.local/bin" # ActiveState State Tool
 
 eval "$(starship init bash)"
 
