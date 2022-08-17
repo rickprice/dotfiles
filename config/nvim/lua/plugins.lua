@@ -182,7 +182,7 @@ return require("packer").startup({
     -- })
 
     -- VimWiki
- --   use({ "ray-x/go.nvim", config = get_setup("golang") })
+    --   use({ "ray-x/go.nvim", config = get_setup("golang") })
 
     -- VimWiki
     use({ "vimwiki/vimwiki" })

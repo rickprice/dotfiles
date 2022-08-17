@@ -81,6 +81,7 @@
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
 "local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
 "local/bin/weather.sh"="~/.local/bin/weather"
+"local/bin/kloglog.sh"="~/.local/bin/kloglog"
 
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
