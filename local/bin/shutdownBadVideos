@@ -4,62 +4,60 @@ CLASS="firefox"
 
 # Declare a string array with type
 declare -a StringArray=(
-"Dark angel" \
-"Demon" \
-"Mermaid" \
-"Dreams" \
-"Horror" \
-"Dead" \
-"Aphmau" \
-"Werewolve" \
-"Werewolf" \
-"Containment breach" \
-"Cursed" \
-"Scarier" \
-"Scary" \
-"Survival" \
-"Possessed" \
-"Autopsy" \
-"Nightmare" \
-"Observation duty" \
-"Herobrine" \
-"Kills" \
-"Problems at the port" \
-"Ready or not" \
-"Creepiest" \
-"Terrify" \
-"Dying" \
-"Carrion" \
-"Fortnight" \
-"Invasion" \
-"Girlfriend" \
-"Freddy" \
-"Zeta" \
-"Ghost" \
-"Dangerous" \
-"Witch" \
-"Hell" \
-"One who knocks" \
-"Secret lab" \
-"Roblox" \
-"Goddess" \
-"Slime girl" \
-"Body swap" \
-"Monster" \
-"Baby" \
-"Dragon" \
-"Murder" \
-"Winter ultima" \
-"Ninja" \
-"Haunted" \
-"Wolf" \
-"Danger" \
-"Shapeshift" \
-"Scary" \
-"zombie" \
+"aphmau" \
+"autopsy" \
+"baby" \
+"body swap" \
+"carrion" \
+"containment breach" \
+"creepiest" \
+"cursed" \
+"danger" \
+"dangerous" \
+"dark angel" \
 "dead" \
-"xbox" \
+"demon" \
+"dragon" \
+"dreams" \
+"dying" \
+"fortnight" \
+"freddy" \
+"ghost" \
+"girlfriend" \
+"goddess" \
+"haunted" \
+"hell" \
+"herobrine" \
+"horror" \
+"invasion" \
+"kills" \
+"mermaid" \
+"monster" \
+"murder" \
+"nightmare" \
+"ninja" \
+"observation duty" \
+"one who knocks" \
+"possessed" \
+"problems at the port" \
 "puppet" \
+"ready or not" \
+"roblox" \
+"scarier" \
+"scary" \
+"secret lab" \
+"shapeshift" \
+"slime girl" \
+"survival" \
+"terrify" \
+"werewolf" \
+"werewolve" \
+"winter ultima" \
+"witch" \
+"wolf" \
+"xbox" \
+"zeta" \
+"zombie" \
 )
  
 while true
