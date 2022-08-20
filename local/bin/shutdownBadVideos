@@ -5,7 +5,7 @@ CLASS="firefox"
 while true
 do
     echo "Waiting to check for bad videos"
-    sleep 150
+    sleep 5
     echo "Checking for bad videos"
     xdotool search --class $CLASS search  --name "zombie" windowkill
     xdotool search --class $CLASS search  --name "dead" windowkill
