@@ -67,6 +67,7 @@
 "local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
+"local/bin/shutdownBadVideos"="~/.local/bin/shutdownBadVideos"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"

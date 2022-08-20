@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
 
-WINDOW_TITLE=$(xdodool getactivewindow getwindowname)
+CLASS="firefox"
+
+while true
+do
+    echo "Waiting to check for bad videos"
+    sleep 150
+    echo "Checking for bad videos"
+    xdotool search --class $CLASS search  --name "zombie" windowkill
+    xdotool search --class $CLASS search  --name "dead" windowkill
+    xdotool search --class $CLASS search  --name "xbox" windowkill
+    xdotool search --class $CLASS search  --name "puppet" windowkill
+    echo "Checked for bad videos"
+done
