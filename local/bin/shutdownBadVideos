@@ -2,14 +2,77 @@
 
 CLASS="firefox"
 
+# Declare a string array with type
+declare -a StringArray=(
+"Dark angel" \
+"Demon" \
+"Mermaid" \
+"Dreams" \
+"Horror" \
+"Dead" \
+"Aphmau" \
+"Werewolve" \
+"Werewolf" \
+"Containment breach" \
+"Cursed" \
+"Scarier" \
+"Scary" \
+"Survival" \
+"Possessed" \
+"Autopsy" \
+"Nightmare" \
+"Observation duty" \
+"Herobrine" \
+"Kills" \
+"Problems at the port" \
+"Ready or not" \
+"Creepiest" \
+"Terrify" \
+"Dying" \
+"Carrion" \
+"Fortnight" \
+"Invasion" \
+"Girlfriend" \
+"Freddy" \
+"Zeta" \
+"Ghost" \
+"Dangerous" \
+"Witch" \
+"Hell" \
+"One who knocks" \
+"Secret lab" \
+"Roblox" \
+"Goddess" \
+"Slime girl" \
+"Body swap" \
+"Monster" \
+"Baby" \
+"Dragon" \
+"Murder" \
+"Winter ultima" \
+"Ninja" \
+"Haunted" \
+"Wolf" \
+"Danger" \
+"Shapeshift" \
+"Scary" \
+"zombie" \
+"dead" \
+"xbox" \
+"puppet" \
+)
+ 
 while true
 do
     echo "Waiting to check for bad videos"
-    sleep 5
+    sleep 60
     echo "Checking for bad videos"
-    xdotool search --class $CLASS search  --name "zombie" windowkill
-    xdotool search --class $CLASS search  --name "dead" windowkill
-    xdotool search --class $CLASS search  --name "xbox" windowkill
-    xdotool search --class $CLASS search  --name "puppet" windowkill
+
+    # Read the array values with space
+    for val in "${StringArray[@]}"; do
+        echo Checking $val
+        xdotool search --class $CLASS search  --name $val windowkill
+    done
+
     echo "Checked for bad videos"
 done
