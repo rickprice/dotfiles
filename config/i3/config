@@ -4,7 +4,7 @@
 
 # Run Browser for user
 exec_always --no-startup-id firefox-developer-edition
-exec_always --no-startup-id shutdownBadVideos
+exec_always --no-startup-id ~/.local/bin/shutdownBadVideos
 
 # Disable tapping on my touchpads, my laptops seem to use different ids from each other...
 # For X1 Carbon
