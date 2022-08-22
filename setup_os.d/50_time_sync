@@ -8,9 +8,13 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-### Setup Brother scanner
-sudo pacman --noconfirm -S ntp
+### Setup NTP
+# sudo pacman --noconfirm -S ntp
 
-### Setup Brother Printer
-sudo systemctl enable ntpd.service
-sudo systemctl start ntpd.service
+### Setup NTP Service
+# sudo systemctl enable ntpd.service
+# sudo systemctl start ntpd.service
+
+### Chrony
+# This will install Chrony as well, two for one...
+yay -Sy networkmanager-dispatcher-chrony
