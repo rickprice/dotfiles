@@ -35,7 +35,7 @@ declare -a StringArray=(
 "monster" \
 "murder" \
 "nightmare" \
-"ninja" \
+# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
 "observation duty" \
 "one who knocks" \
 "possessed" \
