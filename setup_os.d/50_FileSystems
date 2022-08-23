@@ -17,6 +17,4 @@ yay --noconfirm -S gparted # Gives us gparted
 
 # SSD Trimming
 yay --noconfirm -S util-linux # Gives us gparted
-
 sudo systemctl enable fstrim.timer
-sudo systemctl start fstrim.timer
