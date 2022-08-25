@@ -11,3 +11,12 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Video
 yay --noconfirm -S vlc
 yay --noconfirm -S flowblade
+
+# OpenCL
+
+yay --noconfirm -S intel-opencl-sdk
+yay --noconfirm -S intel-compute-runtime
+yay --noconfirm -S dmidecode
+yay --noconfirm -S clinfo
+
+
