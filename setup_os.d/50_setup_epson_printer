@@ -18,3 +18,5 @@ sudo gpasswd -a `whoami` lp
 # sudo systemctl start org.cups.cupsd.service
 # sudo systemctl enable org.cups.cupsd.service
 # ! Doesn't seem to be needed
+yay --noconfirm -S epsonscan2
+
