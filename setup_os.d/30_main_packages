@@ -106,5 +106,8 @@ yay --noconfirm -S xpub
 yay --noconfirm -S github-cli
 
 ## Seems to be needed for Perl for the epson printer drivers
-yay --noconfirm -S perl-list-allutils
+# yay --noconfirm -S perl-list-allutils
+
+## Handwriting notetaking software
+yay --noconfirm -S xournalpp
 
