@@ -28,6 +28,9 @@ return require("packer").startup({
   function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
+
+    use({ "nvim-lua/plenary.nvim" })
+
     use({ "nathom/filetype.nvim", config = get_setup("filetype") })
     use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
     use({ "kyazdani42/nvim-web-devicons" })
@@ -84,7 +87,8 @@ return require("packer").startup({
 
     use("p00f/nvim-ts-rainbow")
 
-    use({ "jose-elias-alvarez/null-ls.nvim", config = get_setup("null-ls") })
+    -- This needs plenary
+    use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("null-ls") })
     use({ "neovim/nvim-lspconfig", config = get_setup("lsp") })
     use({
       "numToStr/Comment.nvim",
@@ -140,7 +144,7 @@ return require("packer").startup({
       event = "BufReadPre",
       config = get_setup("hop"),
     })
-    use({ "Shatur/neovim-session-manager", config = get_setup("session") })
+    use({ "Shatur/neovim-session-manager", requires = "nvim-lua/plenary.nvim", config = get_setup("session") })
     use({ "windwp/nvim-ts-autotag" })
 
     use({
@@ -148,7 +152,7 @@ return require("packer").startup({
       requires = { { "winston0410/cmd-parser.nvim" } },
       config = get_setup("range-highlight"),
     })
-    use({ "filipdutescu/renamer.nvim", config = get_setup("renamer") })
+    use({ "filipdutescu/renamer.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("renamer") })
     use({ "goolord/alpha-nvim", config = get_setup("alpha") })
 
     use({ "luukvbaal/stabilize.nvim", config = get_setup("stabilize") })
@@ -209,7 +213,8 @@ return require("packer").startup({
 
     -- Git and Diff stuff
     -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
-    use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
+    -- FIX: This one is causing problems
+    -- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
 
     -- Is using a standard Neovim install, i.e. built from source or using a
     -- provided appimage.
