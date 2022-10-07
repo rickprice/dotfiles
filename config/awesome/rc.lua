@@ -806,5 +806,5 @@ awful.spawn.with_shell("blueman-applet")
 -- IM Programs
 -- local tag_12 = awful.tag.find_by_name(awful.screen.focused(), "12")
 -- awful.spawn("slack", { tag = tag_12 , class = "slack" })
-awful.spawn.with_shell("slack")
 awful.spawn.with_shell("discord")
+awful.spawn.with_shell("slack")
