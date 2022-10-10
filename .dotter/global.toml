@@ -68,6 +68,7 @@
 "local/bin/weather.sh"="~/.local/bin/weather"
 "local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
+"local/bin/ManageTouchpad.sh"="~/.local/bin/ManageTouchpad"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"
