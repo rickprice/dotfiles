@@ -1,5 +1,9 @@
 local opt = vim.opt -- to set options
 
+-- disable netrw at the very start of your init.lua (strongly advised) - From nvim-tree
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 opt.backspace = { "indent", "eol", "start" }
 -- opt.clipboard = "unnamedplus"
 opt.colorcolumn = "100"

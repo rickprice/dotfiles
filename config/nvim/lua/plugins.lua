@@ -76,7 +76,7 @@ return require("packer").startup({
       },
       config = get_setup("cmp"),
     })
-    use({ "kyazdani42/nvim-tree.lua", config = get_setup("tree") })
+    use({ "kyazdani42/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }, config = get_setup("tree") })
 
     use({
       "lewis6991/gitsigns.nvim",
@@ -210,6 +210,11 @@ return require("packer").startup({
       requires = "nvim-lua/plenary.nvim",
       config = get_setup("todo-comments"),
     })
+
+    -- use({
+    --   "folke/which-key.nvim",
+    --   config = get_setup("which-key"),
+    -- })
 
     -- Git and Diff stuff
     -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
