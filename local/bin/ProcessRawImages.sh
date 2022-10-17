@@ -3,6 +3,9 @@
 # Fail script if any command fails
 set -e
 
+# Echo commands
+# set -x
+
 ## keep track of the last executed command
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
@@ -39,7 +42,7 @@ function process_photo_directory() {
 
     echo "Add location data $directory"
     # [ "$(ls -A $directory)" ] && exiftool -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-04:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
-    [ "$(ls -A $directory)" ] && exiftool -v5 -Copyright="All rights reserved. $COMPANY" CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
+    [ "$(ls -A $directory)" ] && exiftool -v5 -Copyright="All rights reserved. $COMPANY" -CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data/*
 
     # Sort the processed files in the location directory
     pushd .
