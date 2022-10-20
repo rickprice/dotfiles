@@ -23,6 +23,7 @@ sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
 sudo pacman --noconfirm -S enscript
 sudo pacman --noconfirm -S psutils
 sudo pacman --noconfirm -S dos2unix
+sudo pacman --noconfirm -S xorg-xev
 
 ## Install AUR packages I want
 yay --noconfirm -S poppler
