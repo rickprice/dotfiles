@@ -802,6 +802,9 @@ awful.spawn.with_shell("killall udiskie;udiskie --tray")
 -- awful.spawn.with_shell("mictray")
 awful.spawn.with_shell("blueman-applet")
 
+# Setup the keymapper client
+awful.spawn.with_shell("keymapper")
+
 -- This doesn't seem to work, but generally should
 -- IM Programs
 -- local tag_12 = awful.tag.find_by_name(awful.screen.focused(), "12")

@@ -151,4 +151,8 @@
 [jira.files]
 "config/jira/jira.yml" = "~/.config/jira/jira.yml"
 
+[keymapper.files]
+"config/keymapper.conf" = "~/.config/keymapper.conf"
+
+
 
