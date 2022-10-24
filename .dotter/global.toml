@@ -151,8 +151,9 @@
 [jira.files]
 "config/jira/jira.yml" = "~/.config/jira/jira.yml"
 
-[keymapper.files]
-"config/keymapper.conf" = "~/.config/keymapper.conf"
+[keyd.files]
+"etc/keyd/default.conf" = { target = "/etc/keyd/default.conf", type = "symbolic", owner = "root" }
+"etc/keyd/12keymini.conf" = { target = "/etc/keyd/12keymini.conf", type = "symbolic", owner = "root" }
 
 
 

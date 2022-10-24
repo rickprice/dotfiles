@@ -787,10 +787,6 @@ end)
 --   c:activate({ context = "mouse_enter", raise = false })
 -- end)
 
--- System programs
-awful.spawn.with_shell("setxkbmap -model thinkpad -layout us -variant dvorak -option 'ctrl:nocaps'")
-awful.spawn.with_shell("xcape -e 'Control_L=Escape'")
-
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("dropbox")
@@ -803,7 +799,7 @@ awful.spawn.with_shell("killall udiskie;udiskie --tray")
 awful.spawn.with_shell("blueman-applet")
 
 -- Setup the keymapper client
-awful.spawn.with_shell("keymapper")
+awful.spawn.with_shell("keyd-application-mapper")
 
 -- This doesn't seem to work, but generally should
 -- IM Programs
