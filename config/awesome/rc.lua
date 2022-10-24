@@ -799,7 +799,7 @@ awful.spawn.with_shell("killall udiskie;udiskie --tray")
 awful.spawn.with_shell("blueman-applet")
 
 -- Setup the keymapper client
-awful.spawn.with_shell("keyd-application-mapper")
+awful.spawn.with_shell("keyd-application-mapper -d")
 
 -- This doesn't seem to work, but generally should
 -- IM Programs

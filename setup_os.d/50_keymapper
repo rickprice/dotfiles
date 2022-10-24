@@ -13,5 +13,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 ## Install AUR packages I want
 yay --noconfirm -S keyd
 
+## Setup groups
+sudo usermod --append --groups keyd `whoami`
+
 ## Setup services
 systemctl enable keyd
