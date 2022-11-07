@@ -211,6 +211,16 @@ return require("packer").startup({
       config = get_setup("todo-comments"),
     })
 
+    use({
+      "nvim-neorg/neorg",
+      tag = "*",
+      -- ft = "norg",
+      after = "nvim-treesitter", -- You may want to specify Telescope here as well
+      config = get_setup("neorg"),
+      requires = "nvim-lua/plenary.nvim",
+      run = ":Neorg sync-parsers",
+    })
+
     -- use({
     --   "folke/which-key.nvim",
     --   config = get_setup("which-key"),
