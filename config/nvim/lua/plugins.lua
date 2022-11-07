@@ -211,14 +211,34 @@ return require("packer").startup({
       config = get_setup("todo-comments"),
     })
 
-    use({
-      "nvim-neorg/neorg",
-      tag = "*",
-      -- ft = "norg",
-      -- after = { "nvim-treesitter", "telescope.nvim" },
-      config = get_setup("neorg"),
-      requires = "nvim-lua/plenary.nvim",
-      run = ":Neorg sync-parsers",
+     use({
+       "nvim-neorg/neorg",
+       -- tag = "*",
+       -- ft = "norg",
+       -- after = { "nvim-treesitter", "telescope.nvim" },
+      after = "nvim-treesitter",
+      config = function() 
+       require("neorg").setup{
+       load = {
+       ["core.defaults"] = {},
+       ["core.norg.concealer"] = {},
+        -- ["core.gtd.base"] = {},
+        -- ["core.norg.journal"] = {},
+        -- ["core.norg.qol.toc"] = {},
+        -- ["core.presenter"] = {},
+         ["core.norg.dirman"] = {
+           config = {
+               workspaces = {
+                work = "~/notes/work",
+               home = "~/notes/home",
+               },
+            },
+           },
+        },
+      }
+   end,
+       requires = "nvim-lua/plenary.nvim",
+       run = ":Neorg sync-parsers",
     })
 
     -- use({
@@ -234,7 +254,7 @@ return require("packer").startup({
     -- Is using a standard Neovim install, i.e. built from source or using a
     -- provided appimage.
     -- TODO: At some point this should be going away when NeoVim subsumes it
-    use("lewis6991/impatient.nvim")
+    --use("lewis6991/impatient.nvim")
 
     use({ "eddiebergman/nvim-treesitter-pyfold", requires = "nvim-treesitter/nvim-treesitter" })
 
