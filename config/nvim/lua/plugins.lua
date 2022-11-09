@@ -76,6 +76,8 @@ return require("packer").startup({
       },
       config = get_setup("cmp"),
     })
+
+    -- Better File Tree Directory Browser
     use({ "kyazdani42/nvim-tree.lua", requires = { "nvim-tree/nvim-web-devicons" }, config = get_setup("tree") })
 
     use({
@@ -222,6 +224,7 @@ return require("packer").startup({
        load = {
        ["core.defaults"] = {},
        ["core.norg.concealer"] = {},
+       ["core.keybinds"] = {},
         -- ["core.gtd.base"] = {},
         -- ["core.norg.journal"] = {},
         -- ["core.norg.qol.toc"] = {},
