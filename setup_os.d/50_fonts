@@ -20,7 +20,9 @@ yay --noconfirm -S powerline-fonts
 yay --noconfirm -S adobe-source-code-pro-fonts
 yay --noconfirm -S ttf-font-awesome
 
-# Fonts for Wounded Women Rising
 # Cambria, Garamond, Mongolian Baiti, Palatina Linotype, Segeo UI
 yay --noconfirm -S ttf-vista-fonts # Cambria
 yay --noconfirm -S ebgaramond-otf  # Garamond
+
+# Fonts for Amazon stuff
+yay --noconfirm -S amazon-fonts  # Bookerly, Amazon Ember
