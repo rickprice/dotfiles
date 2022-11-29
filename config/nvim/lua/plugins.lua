@@ -143,6 +143,7 @@ return require("packer").startup({
     use({ "wellle/targets.vim" })
     use({
       "phaazon/hop.nvim",
+      branch='v2',
       event = "BufReadPre",
       config = get_setup("hop"),
     })
