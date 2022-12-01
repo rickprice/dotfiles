@@ -35,3 +35,6 @@ yay --noconfirm -S ctags
 # Markdown
 yay --noconfirm -S glow
 
+# Shell
+yay --noconfirm -S shellcheck
+
