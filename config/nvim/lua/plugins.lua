@@ -182,11 +182,11 @@ return require("packer").startup({
     })
 
     -- Handle CSV files
-    -- use({
-    --   "chrisbra/csv.vim",
-    --   ft = "csv",
-    --   config = get_setup("csv"),
-    -- })
+    use({
+      "chrisbra/csv.vim",
+      ft = "csv",
+      config = get_setup("csv"),
+    })
 
     -- VimWiki
     --   use({ "ray-x/go.nvim", config = get_setup("golang") })
