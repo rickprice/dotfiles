@@ -15,4 +15,4 @@ yay --noconfirm -S pa-applet-git pavucontrol
 sudo pacman --noconfirm -S sof-firmware
 
 # Needed for awesomeWM sound widget to work
-#sudo pacman --noconfirm -S amixer pacmd
+sudo pacman --noconfirm -S alsa-utils
