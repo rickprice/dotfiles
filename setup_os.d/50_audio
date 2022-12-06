@@ -16,3 +16,6 @@ sudo pacman --noconfirm -S sof-firmware
 
 # Needed for awesomeWM sound widget to work
 sudo pacman --noconfirm -S alsa-utils
+
+# Probably needed for switching audio automatically
+yay --noconfirm -S alsa-plugins
