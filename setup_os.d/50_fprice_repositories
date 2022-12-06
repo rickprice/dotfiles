@@ -19,7 +19,7 @@ function git_clone() {
     if [ ! -d "$directory" ] ; then
 
         # Check out the repository
-        git clone "$git_repository" "$directory"
+        gh repo clone "$git_repository" "$directory"
 
         # LFS
         pushd .
@@ -36,4 +36,4 @@ function git_clone() {
     fi
 }
 
-git_clone "git@github.com:rickprice/VimWikiFiles.git" "vimwiki"
+git_clone "rickprice/VimWikiFiles" "vimwiki"

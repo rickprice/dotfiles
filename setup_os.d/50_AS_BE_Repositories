@@ -8,10 +8,10 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-HOME_REPOT_REPOSITORY=git@github.com:ActiveState/TheHomeRepot.git
+HOME_REPOT_REPOSITORY=ActiveState/TheHomeRepot
 HOME_REPOT_NAME=TheHomeRepot
 
-CAMEL_REPOSITORY=git@github.com:ActiveState/camel.git
+CAMEL_REPOSITORY=ActiveState/camel
 CAMEL_NAME=camel
 
 # Make sure the directory exists
@@ -25,7 +25,7 @@ function git_clone() {
     if [ ! -d "$directory" ] ; then
 
         # Check out the repository
-        git clone "$git_repository" "$directory"
+        gh repo clone "$git_repository" "$directory"
 
         # LFS
         pushd .

@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Geolocating
 yay --noconfirm -S perl-image-exiftool
-yay --confonfirm -S gpsbabel
+yay --noconfirm -S gpsbabel
 yay --noconfirm -S python-ijson
 
 # Photographic processing
@@ -22,7 +22,7 @@ yay --noconfirm -S imagemagick
 yay --noconfirm -S openexr
 yay --noconfirm -S dcraw
 yay --noconfirm -S gnuplot
-yay --noconfirm -S darktable-git
+yay --noconfirm -S darktable
 yay --noconfirm -S hugin
 yay --noconfirm -S gphoto2
 
