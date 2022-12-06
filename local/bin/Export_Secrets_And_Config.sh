@@ -41,7 +41,7 @@ mkdir -p $EXPORT_DIRECTORY/$DIR_TO_COPY
 cp -Rp ~/$DIR_TO_COPY/* $EXPORT_DIRECTORY/$DIR_TO_COPY/.
 
 # ActiveState.yaml
-DIR_TO_COPY=home/fprice/TheHomeRepot
+DIR_TO_COPY=TheHomeRepot
 mkdir -p $EXPORT_DIRECTORY/$DIR_TO_COPY
 cp -Rp ~/$DIR_TO_COPY/activestate.yaml.fish_fixes $EXPORT_DIRECTORY/$DIR_TO_COPY/.
 
