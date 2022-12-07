@@ -18,3 +18,6 @@ sudo usermod --append --groups keyd `whoami`
 
 ## Setup services
 systemctl enable keyd
+
+## Setup keyboard layout correctly
+sudo localectl set-x11-keymap us thinkpad dvorak "terminate:ctl_alt_bksp"
