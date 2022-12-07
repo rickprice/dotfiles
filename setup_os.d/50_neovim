@@ -24,7 +24,7 @@ yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
 yay --noconfirm -S xclip
 
 # Language Servers
-#yay --noconfirm -S pyright-git
+yay --noconfirm -S pyright-git
 yay --noconfirm -S bash-language-server
 yay --noconfirm -S gopls
 yay --noconfirm -S vim-language-server
@@ -33,7 +33,7 @@ yay --noconfirm -S yaml-language-server
 #yay --noconfirm -S ctags
 
 # Markdown
-#yay --noconfirm -S glow
+# yay --noconfirm -S glow
 
 # Shell
 yay --noconfirm -S shellcheck
