@@ -47,7 +47,7 @@ function process_photo_directory() {
     # Sort the processed files in the location directory
     pushd .
     cd $directory_location_data
-    SortFilesInDirectory --extension CR2 --extension JPG
+    SortImageFilesInDirectory --extension CR2 --extension JPG
     popd
 
     # echo "Copy pictures to dropbox directory ${directory}"
