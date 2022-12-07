@@ -19,3 +19,4 @@ sudo pacman --noconfirm -S alsa-utils
 
 # Probably needed for switching audio automatically
 yay --noconfirm -S alsa-plugins
+yay --noconfirm -S pulse-autoconf
