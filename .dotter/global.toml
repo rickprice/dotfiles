@@ -84,6 +84,7 @@
 "local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
 "local/bin/SortImageFilesInDirectory.py"="~/.local/bin/SortImageFilesInDirectory"
+"local/bin/FindOrphanedXMPFiles.py"="~/.local/bin/FindOrphanedXMPFiles"
 "local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
 "local/bin/weather.sh"="~/.local/bin/weather"
 "local/bin/klogglog.sh"="~/.local/bin/klogglog"
