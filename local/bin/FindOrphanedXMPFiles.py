@@ -6,6 +6,7 @@ import errno
 import glob
 import os
 from os.path import isfile
+import re
 import sys
 import subprocess
 
@@ -19,33 +20,52 @@ def create_file_list(CWD):
 def discover_and_fix_orphaned_control_files(files):
 
     fileCount=0
-    for i in files:
+    for controlFileFilename in files:
         try:
-            originalFilename=i
-            (originalFilenameFile,originalFilenameExtension)=os.path.splitext(originalFilename)
+            (controlFileFilenameFile,controlFileFilenameExtension)=os.path.splitext(controlFileFilename)
 
-            # This is the actual CR2 type file since we removed the extension
-            existingLocation=os.path.join(CWD, originalFilenameFile)
+
+            # Look for exact match on image file
+            existingLocation=os.path.join(CWD, controlFileFilenameFile)
             if not os.path.isfile(existingLocation):
-                print(f"{originalFilename}")
+                print(f"{controlFileFilename}")
                 fileCount=fileCount+1
 
                 # Look for possible CR2 files that it could go with
-                (imageFilename,imageFileExtension)=os.path.splitext(os.path.basename(originalFilenameFile))
+                (imageFilename,imageFileExtension)=os.path.splitext(os.path.basename(controlFileFilenameFile))
+
+                # print(f"Originally checking for this name: {imageFilename}")
+
+                # Check if the control file is a duplicate orphaned
+                if re.fullmatch(r"[I_]MG_\d{4}_\d+",imageFilename):
+                    imageFilename = re.sub(r"([I_]MG_\d{4})_\d+",r"\1",imageFilename)
+                    # Okay, need to fix the filename
+                    # print(f"Duplicate control file, fixing name to {imageFilename}")
+
+                # print(f"Looking for an image file with this name: {imageFilename}")
+                
+
                 checkFiles = [f for f in glob.iglob(os.path.join(CWD,"**",f"{imageFilename}*{imageFileExtension}"))]
+                # Check for easy match
                 if len(checkFiles) == 1:
-                    correctedFilePath=f"{checkFiles[0]}{originalFilenameExtension}"
-                    print(f"Fixing {originalFilename}\nto: {correctedFilePath}")
-                    os.rename(originalFilename,correctedFilePath)
+                    correctedFilePath=f"{checkFiles[0]}{controlFileFilenameExtension}"
+                    print(f"Fixing {controlFileFilename}\nto: {correctedFilePath}")
+                    os.rename(controlFileFilename,correctedFilePath)
 
                 else:
-                    secondaryCheckFiles=[f for f in checkFiles if f < originalFilename]
+                    # Now remove any matches that couldn't happen because the images are after the control file
+                    secondaryCheckFiles=[f for f in checkFiles if f < controlFileFilename]
                     if len(secondaryCheckFiles)==1:
-                        correctedFilePath=f"{secondaryCheckFiles[0]}{originalFilenameExtension}"
-                        print(f"Secondary Fixing {originalFilename}\nto: {correctedFilePath}")
-                        os.rename(originalFilename,correctedFilePath)
+                        correctedFilePath=f"{secondaryCheckFiles[0]}{controlFileFilenameExtension}"
+                        print(f"Secondary Fixing {controlFileFilename}\nto: {correctedFilePath}")
+                        os.rename(controlFileFilename,correctedFilePath)
                     else:
-                        print(f"Possible matches: {checkFiles}")
+                        if len(checkFiles) == 0:
+                            print(f"No matches found, looking for duplicate image control files")
+                            print(f"Original filename path {controlFileFilenameFile}")
+                            print(f"Original filename {controlFileFilename}")
+                        else:
+                            print(f"Possible matches: {checkFiles}")
 
 
         except Exception as e:
