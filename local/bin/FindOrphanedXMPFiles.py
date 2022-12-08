@@ -27,7 +27,7 @@ def discover_orphaned_control_files(files):
             # This is the actual CR2 type file since we removed the extension
             existingLocation=os.path.join(CWD, originalFilenameFile)
             if not os.path.isfile(existingLocation):
-                print(f"Couldn't find data file {existingLocation} for control file {originalFilename}")
+                print(f"{originalFilename}")
                 fileCount=fileCount+1
 
         except Exception as e:
