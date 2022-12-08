@@ -3,6 +3,7 @@
 import argparse
 import datetime
 import errno
+import glob
 import os
 from os.path import isfile
 import sys
@@ -12,13 +13,7 @@ import subprocess
 def create_file_list(CWD):
     """takes string as path, returns tuple(files,date)"""
 
-    xmp_files = []
-    for filename in [f for f in os.listdir(CWD) if os.path.splitext(f)[1] in ext]:
-
-        xmp_files.append(filename)
-
-    return xmp_files
-
+    return [f for f in glob.iglob(os.path.join(CWD,'**','*')) if os.path.splitext(f)[1] in ext]
 
 def discover_orphaned_control_files(files):
     """gets tuple(file,date) from create_file_list()"""
