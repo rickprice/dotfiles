@@ -50,7 +50,7 @@ def discover_and_fix_orphaned_control_files(files):
                 if len(checkFiles) == 1:
                     correctedFilePath=f"{checkFiles[0]}{controlFileFilenameExtension}"
                     print(f"Fixing {controlFileFilename}\nto: {correctedFilePath}")
-                    os.rename(controlFileFilename,correctedFilePath)
+                    # os.rename(controlFileFilename,correctedFilePath)
 
                 else:
                     # Now remove any matches that couldn't happen because the images are after the control file
@@ -58,14 +58,18 @@ def discover_and_fix_orphaned_control_files(files):
                     if len(secondaryCheckFiles)==1:
                         correctedFilePath=f"{secondaryCheckFiles[0]}{controlFileFilenameExtension}"
                         print(f"Secondary Fixing {controlFileFilename}\nto: {correctedFilePath}")
-                        os.rename(controlFileFilename,correctedFilePath)
+                        # os.rename(controlFileFilename,correctedFilePath)
                     else:
                         if len(checkFiles) == 0:
                             print(f"No matches found, looking for duplicate image control files")
                             print(f"Original filename path {controlFileFilenameFile}")
                             print(f"Original filename {controlFileFilename}")
                         else:
-                            print(f"Possible matches: {checkFiles}")
+                            list.sort(checkFiles)
+                            list.reverse(checkFiles)
+                            correctedFilePath=f"{checkFiles[0]}{controlFileFilenameExtension}"
+                            print(f"Tertiary Fixing {controlFileFilename}\nto: {correctedFilePath}")
+                            os.rename(controlFileFilename,correctedFilePath)
 
 
         except Exception as e:
