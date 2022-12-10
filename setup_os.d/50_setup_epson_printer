@@ -20,3 +20,6 @@ sudo gpasswd -a `whoami` lp
 # ! Doesn't seem to be needed
 yay --noconfirm -S epsonscan2
 
+# Turboprint - special drivers for colour printers
+yay --noconfirm -S turboprint
+
