@@ -18,4 +18,4 @@ require('kanagawa').setup({
     theme = "default"           -- Load "default" theme or the experimental "light" theme
 })
 
-vim.cmd([[colorscheme kanagawa]]) -- Put your favorite colorscheme here
+-- vim.cmd([[colorscheme kanagawa]]) -- Put your favorite colorscheme here
