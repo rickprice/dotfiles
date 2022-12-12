@@ -33,6 +33,8 @@ return require("packer").startup({
 
     use({ "nathom/filetype.nvim", config = get_setup("filetype") })
     use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+    use({ "rebelot/kanagawa.nvim", config = get_setup("kanagawa") })
+
     use({ "kyazdani42/nvim-web-devicons" })
     use({
       "nvim-lualine/lualine.nvim",
