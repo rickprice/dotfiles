@@ -18,4 +18,8 @@ sudo pacman --noconfirm -S sof-firmware
 sudo pacman --noconfirm -S alsa-utils
 
 # Probably needed for switching audio automatically
-yay --noconfirm -S alsa-plugins
+# yay --noconfirm -S alsa-plugins
+
+# Switching to Pipewire
+sudo pacman -S pipewire-pulse pipewire-jack pipewire-alsa wireplumber qpwgraph
+
