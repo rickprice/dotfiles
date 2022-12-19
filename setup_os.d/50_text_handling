@@ -18,3 +18,6 @@ yay --noconfirm -S bat
 
 # PDF Posterizing
 #yay --noconfirm -S pdfposter
+
+# Office Suite
+sudo pacman --noconfirm -S libreoffice-fresh
