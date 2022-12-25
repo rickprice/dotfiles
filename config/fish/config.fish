@@ -10,3 +10,7 @@ set -xg PATH "/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
 # -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+# Haskell Cabal Setup
+set -xg PATH "/home/fprice/.cabal/bin:$PATH"
+# Haskell Cabal Setup
+
