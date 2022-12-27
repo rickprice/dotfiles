@@ -38,3 +38,5 @@ yay --noconfirm -S yaml-language-server
 # Shell
 yay --noconfirm -S shellcheck
 
+# Perl
+cpanm -n Neovim::Ext
