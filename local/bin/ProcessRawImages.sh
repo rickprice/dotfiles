@@ -19,6 +19,7 @@ LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Records.json"
 LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 
+# ARTIST="Tamara Price"
 ARTIST="Frederick Price"
 COMPANY="PricePixel Photography"
 # ARTIST="Joshua Murphy"
