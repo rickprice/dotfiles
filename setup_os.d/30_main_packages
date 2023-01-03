@@ -37,7 +37,7 @@ yay --noconfirm -S googler
 yay --noconfirm -S so-git
 # yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
-yay --noconfirm -S bazelisk-bin
+yay --noconfirm -S bazelisk
 yay --noconfirm -S meld
 yay --noconfirm -S aws-cli
 yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
