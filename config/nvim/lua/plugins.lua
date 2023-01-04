@@ -217,17 +217,20 @@ return require("packer").startup({
     })
 
      use({
-       "nvim-neorg/neorg",
-       -- tag = "*",
-       -- ft = "norg",
-       -- after = { "nvim-treesitter", "telescope.nvim" },
-      after = "nvim-treesitter",
-      config = function() 
-       require("neorg").setup{
-       load = {
-       ["core.defaults"] = {},
-       ["core.norg.concealer"] = {},
-       ["core.keybinds"] = {},
+        "nvim-neorg/neorg",
+        -- tag = "*",
+        ft = "norg",
+        after = { "nvim-treesitter", "telescope.nvim" },
+        config = function() 
+        require("neorg").setup{
+        load = {
+        ["core.defaults"] = {},
+        ["core.norg.concealer"] = {},
+        ["core.keybinds"] = {
+            config = {
+                default_keybinds = false,
+            }
+        },
         -- ["core.gtd.base"] = {},
         -- ["core.norg.journal"] = {},
         -- ["core.norg.qol.toc"] = {},
