@@ -25,6 +25,7 @@ declare -a StringArray=(
 "ghost" \
 "girlfriend" \
 "goddess" \
+"hardcore" \
 "haunted" \
 "hell" \
 "herobrine" \
