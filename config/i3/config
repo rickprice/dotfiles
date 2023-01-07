@@ -331,7 +331,7 @@ mode "resize" {
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg;sleep 1;picom -b
 # exec --no-startup-id nitrogen --restore 
-exec --no-startup-id nitrogen --set-scaled --random ~/Documents/Dropbox/TamaraDocuments/Backgrounds
+exec --no-startup-id nitrogen --set-auto --random ~/Documents/Dropbox/TamaraDocuments/Backgrounds
 # exec --no-startup-id variety
 exec --no-startup-id picom -b
 # exec --no-startup-id manjaro-hello
