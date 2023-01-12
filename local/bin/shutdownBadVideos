@@ -25,6 +25,7 @@ declare -a StringArray=(
 "ghost" \
 "girlfriend" \
 "goddess" \
+"halloween" \
 "hardcore" \
 "haunted" \
 "hell" \
@@ -48,6 +49,7 @@ declare -a StringArray=(
 "scary" \
 "secret lab" \
 "shapeshift" \
+"skywalker" \
 "slime girl" \
 "survival" \
 "terrify" \
