@@ -89,6 +89,7 @@
 "local/bin/weather.sh"="~/.local/bin/weather"
 "local/bin/klogglog.sh"="~/.local/bin/klogglog"
 "local/bin/Export_Secrets_And_Config.sh"="~/.local/bin/Export_Secrets_And_Config"
+"local/bin/altlog.sh"="~/.local/bin/altlog"
 
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
