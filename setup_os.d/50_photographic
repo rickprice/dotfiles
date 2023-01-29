@@ -29,5 +29,8 @@ yay --noconfirm -S gphoto2
 # Collages
 yay --noconfirm -S photocollage
 
+# Drawing
+yay --noconfirm -S inkscape
+
 # Ensure we have my favourite file manager and the thumbnailers it needs
 yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
