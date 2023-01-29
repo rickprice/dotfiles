@@ -33,6 +33,7 @@ declare -a StringArray=(
 "horror" \
 "invasion" \
 "kills" \
+"marvel" \
 "mermaid" \
 "monster" \
 "murder" \
