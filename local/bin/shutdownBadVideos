@@ -52,6 +52,7 @@ declare -a StringArray=(
 "shapeshift" \
 "skywalker" \
 "slime girl" \
+"spyhunter" \
 "survival" \
 "terrify" \
 "werewolf" \
