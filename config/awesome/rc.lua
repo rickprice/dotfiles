@@ -707,7 +707,8 @@ ruled.client.connect_signal("request::rules", function()
   --     properties = { screen = 1, tag = "2" }
   -- }
   ruled.client.append_rule({ rule = { class = "zoom" }, properties = { screen = 1, tag = "11" } })
-  ruled.client.append_rule({ rule = { class = "slack" }, properties = { screen = 1, tag = "12" } })
+  -- ruled.client.append_rule({ rule = { class = "slack" }, properties = { screen = 1, tag = "12" } })
+  ruled.client.append_rule({ rule = { name = "Slack" }, properties = { screen = 1, tag = "12" } })
   ruled.client.append_rule({ rule = { class = "discord" }, properties = { screen = 1, tag = "12" } })
 
   -- Fix firefox bad behaviour
