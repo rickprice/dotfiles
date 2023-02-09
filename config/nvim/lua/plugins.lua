@@ -218,7 +218,7 @@ return require("packer").startup({
 
      use({
         "nvim-neorg/neorg",
-        -- tag = "*",
+        tag = "*",
         ft = "norg",
         after = { "nvim-treesitter", "telescope.nvim" },
         config = function() 
@@ -247,7 +247,7 @@ return require("packer").startup({
       }
    end,
        requires = "nvim-lua/plenary.nvim",
-       run = ":Neorg sync-parsers",
+       -- run = ":Neorg sync-parsers",
     })
 
     -- use({
@@ -258,7 +258,7 @@ return require("packer").startup({
     -- Git and Diff stuff
     -- use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = get_setup("diffview") })
     -- FIX: This one is causing problems
-    -- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
+    use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim", config = get_setup("neogit") })
 
     -- Is using a standard Neovim install, i.e. built from source or using a
     -- provided appimage.
