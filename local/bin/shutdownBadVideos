@@ -7,19 +7,26 @@ declare -a StringArray=(
 "aphmau" \
 "autopsy" \
 "baby" \
+"blood" \
 "body swap" \
 "carrion" \
 "containment breach" \
 "creepiest" \
+"crystal" \
 "cursed" \
 "danger" \
 "dangerous" \
 "dark angel" \
+"dark" \
+"darkest" \
 "dead" \
+"deadpool" \
+"death" \
 "demon" \
 "dragon" \
 "dreams" \
 "dying" \
+"evil" \
 "fortnight" \
 "freddy" \
 "ghost" \
@@ -32,10 +39,14 @@ declare -a StringArray=(
 "herobrine" \
 "horror" \
 "invasion" \
+"joker" \
+"killing" \
 "kills" \
 "marvel" \
+"mature" \
 "mermaid" \
 "monster" \
+"mystic" \
 "murder" \
 "nightmare" \
 # "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
@@ -44,17 +55,25 @@ declare -a StringArray=(
 "possessed" \
 "problems at the port" \
 "puppet" \
+"rage" \
+"raw" \
 "ready or not" \
 "roblox" \
 "scarier" \
 "scary" \
+"seed of evil" \
 "secret lab" \
 "shapeshift" \
 "skywalker" \
+"slashers" \
 "slime girl" \
 "spyhunter" \
+"stranger within" \
 "survival" \
+"terminator" \
 "terrify" \
+"trick or treat" \
+"vengeful" \
 "werewolf" \
 "werewolve" \
 "winter ultima" \
