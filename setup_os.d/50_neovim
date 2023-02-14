@@ -29,6 +29,8 @@ yay --noconfirm -S bash-language-server
 yay --noconfirm -S gopls
 yay --noconfirm -S vim-language-server
 yay --noconfirm -S yaml-language-server
+yay --noconfirm -S tree-sitter-c
+yay --noconfirm -S tree-sitter-cpp
 
 #yay --noconfirm -S ctags
 
