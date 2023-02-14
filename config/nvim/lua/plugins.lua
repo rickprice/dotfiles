@@ -31,7 +31,7 @@ return require("packer").startup({
 
     use({ "nvim-lua/plenary.nvim" })
 
-    use({ "nathom/filetype.nvim", config = get_setup("filetype") })
+    -- use({ "nathom/filetype.nvim", config = get_setup("filetype") })
     use({ "EdenEast/nightfox.nvim", config = get_setup("nightfox") })
     -- use({ "rebelot/kanagawa.nvim", config = get_setup("kanagawa") })
 
