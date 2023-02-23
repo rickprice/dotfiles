@@ -32,7 +32,7 @@ paru --noconfirm -S go
 paru --noconfirm -S x11-ssh-askpass
 paru --noconfirm -S mosh
 paru --noconfirm -S googler
-paru --noconfirm -S so-git
+# paru --noconfirm -S so-git
 # paru --noconfirm -S luakit-git
 paru --noconfirm -S fwupd
 # paru --noconfirm -S bazelisk-bin
