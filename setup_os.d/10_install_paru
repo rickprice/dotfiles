@@ -8,12 +8,5 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-# Install Yay
-pushd .
-cd /tmp
-rm -rf yay
 sudo pacman --noconfirm -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-popd
+sudo pacman --noconfirm -S --needed paru
