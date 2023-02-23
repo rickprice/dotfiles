@@ -10,9 +10,9 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Setup DropBox
 
-yay --noconfirm -S python-gpgme
-yay --noconfirm -S qt5-base
-yay --noconfirm -S dropbox
+paru --noconfirm -S python-gpgme
+paru --noconfirm -S qt5-base
+paru --noconfirm -S dropbox
 
 # From the Arch Wiki Prevent Automatic updates which always go wrong...
 rm -rf ~/.dropbox-dist

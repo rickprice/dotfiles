@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Password
-yay --noconfirm -S x11-ssh-askpass
+paru --noconfirm -S x11-ssh-askpass
 
 ## ssh-agent configuration
 sudo ln --force -s ~/.dotfiles/X11/xinit/xinitrc.d/60-ssh-agent.sh /etc/X11/xinit/xinitrc.d/60-ssh-agent.share

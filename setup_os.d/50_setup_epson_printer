@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup Epson ET-2720 printer
 sudo pacman --noconfirm -Sy patch
-yay --noconfirm -S epson-inkjet-printer-escpr
+paru --noconfirm -S epson-inkjet-printer-escpr
 sudo pacman --noconfirm -Sy cups cups-pdf
 sudo gpasswd -a `whoami` lp
 # ! Doesn't seem to be needed
@@ -18,5 +18,5 @@ sudo gpasswd -a `whoami` lp
 # sudo systemctl start org.cups.cupsd.service
 # sudo systemctl enable org.cups.cupsd.service
 # ! Doesn't seem to be needed
-yay --noconfirm -S epsonscan2
+paru --noconfirm -S epsonscan2
 
