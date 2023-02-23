@@ -17,7 +17,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ### Chrony
 # This will install Chrony as well, two for one...
-yay -Sy networkmanager-dispatcher-chrony
+paru -Sy networkmanager-dispatcher-chrony
 
 sudo systemctl enable chronyd.service
 sudo systemctl start chronyd.service

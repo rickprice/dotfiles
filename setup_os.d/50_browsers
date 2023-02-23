@@ -9,8 +9,8 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Google Chrome
-yay --noconfirm -S google-chrome
+paru --noconfirm -S google-chrome
 # xdg-settings set default-web-browser google-chrome.desktop
 
 ## Firefox
-yay --noconfirm -S firefox-developer-edition
+paru --noconfirm -S firefox-developer-edition

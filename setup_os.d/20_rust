@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Remove rust package because we want to use rustup instead
 echo An error about Rust not being installed might occur in a clean install
-# yay --force --noconfirm -R rust || true
+# paru --force --noconfirm -R rust || true
 
 ## Rust
 # sudo pacman --noconfirm -S rustup

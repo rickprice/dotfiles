@@ -12,8 +12,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 PRINTER_IP="192.168.50.253"
 
 ### Setup Brother scanner
-yay --noconfirm -S brother-mfc-l2710dw
-yay --noconfirm -S brscan4
+paru --noconfirm -S brother-mfc-l2710dw
+paru --noconfirm -S brscan4
 sudo pacman --noconfirm -S simple-scan
 sudo brsaneconfig4 -a name=BROTHER model=MFC-L2700DW ip="$PRINTER_IP"
 # Seems you can also do this:

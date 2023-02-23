@@ -19,18 +19,18 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # chsh -s $(which zsh)
 
 # install the fish shell
-yay --noconfirm -S fish
+paru --noconfirm -S fish
 # Firsher plugin manager
-yay --noconfirm -S fisher-git
+paru --noconfirm -S fisher-git
 
 # fzf plugin
-yay --noconfirm -S fzf-git
-# yay --noconfirm -S fzf-extras-git
-yay --noconfirm -S fd
-yay --noconfirm -S bat
+paru --noconfirm -S fzf-git
+# paru --noconfirm -S fzf-extras-git
+paru --noconfirm -S fd
+paru --noconfirm -S bat
 
 # Better cd
-yay --noconfirm -S zoxide-git
+paru --noconfirm -S zoxide-git
 
 # Default shell is set as fish in initial machine build script
 # chsh -s $(which fish)

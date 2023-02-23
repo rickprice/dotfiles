@@ -9,13 +9,13 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Fonts
-yay --noconfirm -S xorg-xfontsel
-yay --noconfirm -S nerd-fonts-complete
-yay --noconfirm -S ttf-iosevka
-yay --noconfirm -S noto-fonts
-yay --noconfirm -S noto-fonts-emoji
-yay --noconfirm -S noto-fonts-extra
-yay --noconfirm -S ttf-linux-libertine
-yay --noconfirm -S powerline-fonts
-yay --noconfirm -S adobe-source-code-pro-fonts
-yay --noconfirm -S ttf-font-awesome
+paru --noconfirm -S xorg-xfontsel
+paru --noconfirm -S nerd-fonts-complete
+paru --noconfirm -S ttf-iosevka
+paru --noconfirm -S noto-fonts
+paru --noconfirm -S noto-fonts-emoji
+paru --noconfirm -S noto-fonts-extra
+paru --noconfirm -S ttf-linux-libertine
+paru --noconfirm -S powerline-fonts
+paru --noconfirm -S adobe-source-code-pro-fonts
+paru --noconfirm -S ttf-font-awesome

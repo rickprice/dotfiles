@@ -9,23 +9,23 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## i3 things
-yay --noconfirm -S dmenu-frecency
-yay --noconfirm -S i3exit
-yay --noconfirm -S polkit-gnome
-yay --noconfirm -S nitrogen
-yay --noconfirm -S picom
-# yay --noconfirm -S network-manager-applet-git
-yay --noconfirm -S xfce4-power-manager
-yay --noconfirm -S pamac-aur
-yay --noconfirm -S xautolock
-# yay --noconfirm -S i3lock-blur
-# yay --noconfirm -S ff-theme-util
-yay --noconfirm -S volumeicon
-yay --noconfirm -S alsa-utils
-yay --noconfirm -S i3-scrot
-yay --noconfirm -S xorg-xkill
-yay --noconfirm -S network-manager-applet
-yay --noconfirm -R i3-wm i3status i3exit || true
-yay --noconfirm -S i3-git i3status-git i3exit
-yay --noconfirm -S dunst
-yay --noconfirm -S polkit-gnome
+paru --noconfirm -S dmenu-frecency
+paru --noconfirm -S i3exit
+paru --noconfirm -S polkit-gnome
+paru --noconfirm -S nitrogen
+paru --noconfirm -S picom
+# paru --noconfirm -S network-manager-applet-git
+paru --noconfirm -S xfce4-power-manager
+paru --noconfirm -S pamac-aur
+paru --noconfirm -S xautolock
+# paru --noconfirm -S i3lock-blur
+# paru --noconfirm -S ff-theme-util
+paru --noconfirm -S volumeicon
+paru --noconfirm -S alsa-utils
+paru --noconfirm -S i3-scrot
+paru --noconfirm -S xorg-xkill
+paru --noconfirm -S network-manager-applet
+paru --noconfirm -R i3-wm i3status i3exit || true
+paru --noconfirm -S i3-git i3status-git i3exit
+paru --noconfirm -S dunst
+paru --noconfirm -S polkit-gnome

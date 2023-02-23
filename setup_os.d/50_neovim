@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Neovim
-yay --noconfirm -S neovim-git
+paru --noconfirm -S neovim-git
 
 ## Required for Neovim
 sudo pip install neovim
@@ -20,5 +20,5 @@ sudo pacman --noconfirm -S ruby
 gem install neovim
 # sudo cpanm Neovim::Ext
 # Can't use noconfirm with this because it defaults to N to delete vi and Vim
-yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
-yay --noconfirm -S xclip
+yes | LC_ALL=en_US.UTF-8 paru -S neovim-symlinks
+paru --noconfirm -S xclip

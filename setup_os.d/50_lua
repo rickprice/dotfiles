@@ -10,5 +10,5 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Lua stuff
 # LuaRocks is getting a uknown trust error right now
-# yay --noconfirm -S lua luarocks
-yay --noconfirm -S lua
+# paru --noconfirm -S lua luarocks
+paru --noconfirm -S lua
