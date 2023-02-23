@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Fonts
 yay --noconfirm -S xorg-xfontsel
-yay --noconfirm -S nerd-fonts-complete
+# yay --noconfirm -S nerd-fonts-complete
 yay --noconfirm -S ttf-iosevka
 yay --noconfirm -S noto-fonts
 yay --noconfirm -S noto-fonts-emoji

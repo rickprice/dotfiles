@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Install Main packages I want
 sudo pacman --noconfirm -S base-devel
-sudo pacman --noconfirm -S stow
+# sudo pacman --noconfirm -S stow
 sudo pacman --noconfirm -S python
 sudo pacman --noconfirm -S python-pip
 sudo pacman --noconfirm -S figlet
@@ -35,13 +35,13 @@ yay --noconfirm -S googler
 yay --noconfirm -S so-git
 # yay --noconfirm -S luakit-git
 yay --noconfirm -S fwupd
-yay --noconfirm -S bazelisk-bin
-yay --noconfirm -S meld
-yay --noconfirm -S aws-cli
-yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
-yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
-yay --noconfirm -S python-pipenv # Needed for BE tools
-yay --noconfirm -S pyenv # Needed for BE tools
+# yay --noconfirm -S bazelisk-bin
+# yay --noconfirm -S meld
+# yay --noconfirm -S aws-cli
+# yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
+# yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
+# yay --noconfirm -S python-pipenv # Needed for BE tools
+# yay --noconfirm -S pyenv # Needed for BE tools
 yay --noconfirm -S autorandr
 yay --noconfirm -S arandr
 yay --noconfirm -S ripgrep
@@ -58,32 +58,33 @@ sudo pacman --noconfirm -S xcape
 yay --noconfirm -S keepassxc
 
 ## Klogg
-yay --noconfirm -S klogg
+# yay --noconfirm -S klogg
 
 ## Git-LFS
-yay --noconfirm -S git-lfs
-git lfs install
+# yay --noconfirm -S git-lfs
+# git lfs install
 
 ## Man packages
-yay --noconfirm -S man-db
+# yay --noconfirm -S man-db
 
 ## Remmina
-yay --noconfirm -S remmina
-yay --noconfirm -S freerdp
+# yay --noconfirm -S remmina
+# yay --noconfirm -S freerdp
 
 ## Dotter
-yay --noconfirm -S dotter-rs-git
+# yay --noconfirm -S dotter-rs-git
+yay --noconfirm -S dotter-rs
 
 ## Delta
-yay --noconfirm -S git-delta-git
+# yay --noconfirm -S git-delta-git
 
 ## Perl
-sudo pacman --noconfirm -S perl
-sudo pacman --noconfirm -S perl-local-lib
-SHELL=/bin/bash
-eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-sudo pacman --noconfirm -S perl-archive-zip
-yay --noconfirm -S cpanminus
+# sudo pacman --noconfirm -S perl
+# sudo pacman --noconfirm -S perl-local-lib
+# SHELL=/bin/bash
+# eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+# sudo pacman --noconfirm -S perl-archive-zip
+# yay --noconfirm -S cpanminus
 
 ## Lazy Git seems interesting
 yay --noconfirm -S lazygit
