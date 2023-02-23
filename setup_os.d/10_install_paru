@@ -12,7 +12,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 pushd .
 cd /tmp
 rm -rf paru
-sudo pacman --noconfirm -S --needed git base-devel
+sudo pacman --noconfirm -S --needed git base-devel rustup
+rustup default stable
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si --noconfirm
