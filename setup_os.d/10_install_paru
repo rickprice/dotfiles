@@ -8,14 +8,16 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-# Install Paru
-pushd .
-cd /tmp
-rm -rf paru
-sudo pacman --noconfirm -S --needed git base-devel rustup
-rustup default stable
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-popd
-
+# Install Paru if not already available
+if ! command -v paru &> /dev/null
+then
+    pushd .
+    cd /tmp
+    rm -rf paru
+    sudo pacman --noconfirm -S --needed git base-devel rustup
+    rustup default stable
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+    popd
+fi
