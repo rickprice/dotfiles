@@ -22,7 +22,7 @@ paru --noconfirm -S xautolock
 # paru --noconfirm -S ff-theme-util
 paru --noconfirm -S volumeicon
 paru --noconfirm -S alsa-utils
-paru --noconfirm -S i3-scrot
+paru --noconfirm -S xclip i3-scrot
 paru --noconfirm -S xorg-xkill
 paru --noconfirm -S network-manager-applet
 paru --noconfirm -R i3-wm i3status i3exit || true
