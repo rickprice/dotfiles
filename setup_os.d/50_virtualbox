@@ -17,4 +17,4 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # sudo pacman -S linux-headers
 sudo groupadd --force vboxusers  # Force to avoid errors when group exists already
 sudo usermod -aG vboxusers $USER
-yay --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle
+paru --noconfirm -S virtualbox virtualbox-guest-iso virtualbox-ext-oracle

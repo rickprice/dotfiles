@@ -27,62 +27,62 @@ sudo pacman --noconfirm -S xorg-xev
 sudo pacman --noconfirm -S paru
 
 ## Install AUR packages I want
-yay --noconfirm -S poppler
-yay --noconfirm -S pdfjam
-yay --noconfirm -S pass
-yay --noconfirm -S udiskie
-yay --noconfirm -S go
-yay --noconfirm -S x11-ssh-askpass
-yay --noconfirm -S mosh
-yay --noconfirm -S googler
-yay --noconfirm -S so-git
-# yay --noconfirm -S luakit-git
-yay --noconfirm -S fwupd
-yay --noconfirm -S bazelisk
-yay --noconfirm -S meld
-yay --noconfirm -S aws-cli
-yay --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
-yay --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
-yay --noconfirm -S python-pipenv # Needed for BE tools
-yay --noconfirm -S pyenv # Needed for BE tools
-yay --noconfirm -S autorandr
-yay --noconfirm -S arandr
-yay --noconfirm -S ripgrep
-yay --noconfirm -S jpegoptim # Lets you reduce size of JPEGs to fit
-yay --noconfirm -S inetutils
-yay --noconfirm -S trash-cli
+paru --noconfirm -S poppler
+paru --noconfirm -S pdfjam
+paru --noconfirm -S pass
+paru --noconfirm -S udiskie
+paru --noconfirm -S go
+paru --noconfirm -S x11-ssh-askpass
+paru --noconfirm -S mosh
+paru --noconfirm -S googler
+paru --noconfirm -S so-git
+# paru --noconfirm -S luakit-git
+paru --noconfirm -S fwupd
+paru --noconfirm -S bazelisk
+paru --noconfirm -S meld
+paru --noconfirm -S aws-cli
+paru --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
+paru --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
+paru --noconfirm -S python-pipenv # Needed for BE tools
+paru --noconfirm -S pyenv # Needed for BE tools
+paru --noconfirm -S autorandr
+paru --noconfirm -S arandr
+paru --noconfirm -S ripgrep
+paru --noconfirm -S jpegoptim # Lets you reduce size of JPEGs to fit
+paru --noconfirm -S inetutils
+paru --noconfirm -S trash-cli
 
 # Stuff to read X Window information
-yay --noconfirm -S xdotool
+paru --noconfirm -S xdotool
 
 # Ensure we have my favourite file manager and the thumbnailers it needs
-yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer file-roller atril evince
+paru --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer file-roller atril evince
 
 ## X11 stuff
 sudo pacman --noconfirm -S xcape
 
 ## Keypass
-yay --noconfirm -S keepassxc
+paru --noconfirm -S keepassxc
 
 ## Klogg
-yay --noconfirm -S klogg
+paru --noconfirm -S klogg
 
 ## Git-LFS
-yay --noconfirm -S git-lfs
+paru --noconfirm -S git-lfs
 git lfs install
 
 ## Man packages
-yay --noconfirm -S man-db
+paru --noconfirm -S man-db
 
 ## Remmina
-yay --noconfirm -S remmina
-yay --noconfirm -S freerdp
+paru --noconfirm -S remmina
+paru --noconfirm -S freerdp
 
 ## Dotter
-yay --noconfirm -S dotter-rs-git
+paru --noconfirm -S dotter-rs-git
 
 ## Delta
-yay --noconfirm -S git-delta-git
+paru --noconfirm -S git-delta-git
 
 ## Perl
 sudo pacman --noconfirm -S perl
@@ -90,29 +90,29 @@ sudo pacman --noconfirm -S perl-local-lib
 SHELL=/bin/bash
 eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 sudo pacman --noconfirm -S perl-archive-zip
-yay --noconfirm -S cpanminus
+paru --noconfirm -S cpanminus
 
 ## Lazy Git is a lifechanger for Git
-yay --noconfirm -S lazygit
+paru --noconfirm -S lazygit
 
 ## For handling mice and touchpads
-yay --noconfirm -S xorg-xinput
-yay --noconfirm -S solaar
+paru --noconfirm -S xorg-xinput
+paru --noconfirm -S solaar
 
 ## lfs is an improved du
-yay --noconfirm -S lfs
+paru --noconfirm -S lfs
 
 ## xpub lets you figure out your X variables more or less anywhere
-yay --noconfirm -S xpub
+paru --noconfirm -S xpub
 
 ## Github command line
-yay --noconfirm -S github-cli
+paru --noconfirm -S github-cli
 
 ## Seems to be needed for Perl for the epson printer drivers
-# yay --noconfirm -S perl-list-allutils
+# paru --noconfirm -S perl-list-allutils
 
 ## Handwriting notetaking software
-yay --noconfirm -S xournalpp
+paru --noconfirm -S xournalpp
 
-yay --noconfirm -S nethogs
+paru --noconfirm -S nethogs
 sudo setcap "cap_net_admin,cap_net_raw+pe" /usr/bin/nethogs

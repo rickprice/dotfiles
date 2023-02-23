@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Wezterm
-yay --noconfirm -S wezterm-git
+paru --noconfirm -S wezterm-git
 
 ## Alacritty
-# yay --noconfirm -S alacritty
+# paru --noconfirm -S alacritty

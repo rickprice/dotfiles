@@ -11,7 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 ## Install Main packages I want
 
 ## Install AUR packages I want
-yay --noconfirm -S keyd
+paru --noconfirm -S keyd
 
 ## Setup groups
 sudo usermod --append --groups keyd `whoami`

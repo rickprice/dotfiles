@@ -12,4 +12,4 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 sudo pacman --noconfirm -Syu
 
 ## Update everything in the AUR
-yay --noconfirm -Syu
+paru --noconfirm -Syu

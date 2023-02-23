@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 sudo pacman --noconfirm -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth
-yay --noconfirm -S pa-applet-git pavucontrol
+paru --noconfirm -S pa-applet-git pavucontrol
 
 # Needed for Lenovo Thinkpad X1 to have onboard and HDMI sound to work
 sudo pacman --noconfirm -S sof-firmware
@@ -18,7 +18,7 @@ sudo pacman --noconfirm -S sof-firmware
 sudo pacman --noconfirm -S alsa-utils
 
 # Probably needed for switching audio automatically
-# yay --noconfirm -S alsa-plugins
+# paru --noconfirm -S alsa-plugins
 
 # Switching to Pipewire
 sudo pacman -S pipewire-pulse pipewire-jack pipewire-alsa wireplumber qpwgraph

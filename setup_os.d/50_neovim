@@ -9,7 +9,7 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## Neovim
-yay --noconfirm -S neovim-nightly-bin
+paru --noconfirm -S neovim-nightly-bin
 
 ## Required for Neovim
 sudo pip install neovim
@@ -20,25 +20,25 @@ sudo pacman --noconfirm -S ruby
 gem install neovim
 # sudo cpanm Neovim::Ext
 # Can't use noconfirm with this because it defaults to N to delete vi and Vim
-yes | LC_ALL=en_US.UTF-8 yay -S neovim-symlinks
-yay --noconfirm -S xclip
+yes | LC_ALL=en_US.UTF-8 paru -S neovim-symlinks
+paru --noconfirm -S xclip
 
 # Language Servers
-yay --noconfirm -S pyright-git
-yay --noconfirm -S bash-language-server
-yay --noconfirm -S gopls
-yay --noconfirm -S vim-language-server
-yay --noconfirm -S yaml-language-server
-yay --noconfirm -S tree-sitter-c
-yay --noconfirm -S tree-sitter-cpp
+paru --noconfirm -S pyright-git
+paru --noconfirm -S bash-language-server
+paru --noconfirm -S gopls
+paru --noconfirm -S vim-language-server
+paru --noconfirm -S yaml-language-server
+paru --noconfirm -S tree-sitter-c
+paru --noconfirm -S tree-sitter-cpp
 
-#yay --noconfirm -S ctags
+#paru --noconfirm -S ctags
 
 # Markdown
-# yay --noconfirm -S glow
+# paru --noconfirm -S glow
 
 # Shell
-yay --noconfirm -S shellcheck
+paru --noconfirm -S shellcheck
 
 # Perl
 cpanm -n Neovim::Ext

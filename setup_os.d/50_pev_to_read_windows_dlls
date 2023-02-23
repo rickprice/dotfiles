@@ -9,4 +9,4 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # This is a tool that is very useful for reading Windows DLLs
-yay --noconfirm -S pev
+paru --noconfirm -S pev

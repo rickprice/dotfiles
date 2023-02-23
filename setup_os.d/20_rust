@@ -10,7 +10,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Remove rust package because we want to use rustup instead
 echo An error about Rust not being installed might occur in a clean install
-# yay --force --noconfirm -R rust || true
+# paru --force --noconfirm -R rust || true
 
 ## Rust
 sudo pacman --noconfirm -S rustup
@@ -19,7 +19,7 @@ rustup default stable
 rustup component add rustfmt
 rustup component add rls
 
-yay --noconfirm -S rust-analyzer-git
+paru --noconfirm -S rust-analyzer-git
 
 # For some reason, Wezterm-git is causing rustup to be removed in favour of rust when I install it, so just use rust for now...
 # sudo pacman --noconfirm -S rust

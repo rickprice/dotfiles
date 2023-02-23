@@ -10,4 +10,4 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 
 # Remove autosnap so other things are faster, this is initial setup after all...
-yay --force --noconfirm -R timeshift-autosnap || true
+paru --force --noconfirm -R timeshift-autosnap || true

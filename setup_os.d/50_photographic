@@ -9,28 +9,28 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Geolocating
-yay --noconfirm -S perl-image-exiftool
-yay --noconfirm -S gpsbabel
-yay --noconfirm -S python-ijson
+paru --noconfirm -S perl-image-exiftool
+paru --noconfirm -S gpsbabel
+paru --noconfirm -S python-ijson
 
 # Photographic processing
-yay --noconfirm -S rawtherapee
-yay --noconfirm -S gimp
-yay --noconfirm -S perl-image-exiftool
-yay --noconfirm -S nomacs
-yay --noconfirm -S imagemagick
-yay --noconfirm -S openexr
-yay --noconfirm -S dcraw
-yay --noconfirm -S gnuplot
-yay --noconfirm -S darktable
-yay --noconfirm -S hugin
-yay --noconfirm -S gphoto2
+paru --noconfirm -S rawtherapee
+paru --noconfirm -S gimp
+paru --noconfirm -S perl-image-exiftool
+paru --noconfirm -S nomacs
+paru --noconfirm -S imagemagick
+paru --noconfirm -S openexr
+paru --noconfirm -S dcraw
+paru --noconfirm -S gnuplot
+paru --noconfirm -S darktable
+paru --noconfirm -S hugin
+paru --noconfirm -S gphoto2
 
 # Collages
-yay --noconfirm -S photocollage
+paru --noconfirm -S photocollage
 
 # Drawing
-yay --noconfirm -S inkscape
+paru --noconfirm -S inkscape
 
 # Ensure we have my favourite file manager and the thumbnailers it needs
-yay --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer
+paru --noconfirm -S pcmanfm tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf raw-thumbnailer ufraw-thumbnailer

@@ -9,8 +9,8 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 
-yay --noconfirm -S discord
-yay --noconfirm -S slack-desktop
-yay --noconfirm -S neomutt
-# yay --noconfirm -S mosh
-yay --noconfirm -S zoom
+paru --noconfirm -S discord
+paru --noconfirm -S slack-desktop
+paru --noconfirm -S neomutt
+# paru --noconfirm -S mosh
+paru --noconfirm -S zoom

@@ -16,37 +16,37 @@ export PATH=$PATH:~/.local/bin
 yes | sh <(curl -q https://platform.activestate.com/dl/cli/install.sh)
 
 # ActiveState BE Tooling
-yay --noconfirm -S yarn
+paru --noconfirm -S yarn
 # ! I'm really not sure why this is already installed, need to loop back and look at this
-# yay --noconfirm -S node
+# paru --noconfirm -S node
 # ! I'm really not sure why this is already installed, need to loop back and look at this
-yay --noconfirm -S prettier
-yay --noconfirm -S jq
-yay --noconfirm -S jqp -- GUI Interface to JQ
-yay --noconfirm -S yq
-yay --noconfirm -S gron
-yay --noconfirm -S python37
-yay --noconfirm -S python-black
-yay --noconfirm -S python-isort
-yay --noconfirm -S mypy
-yay --noconfirm -S perl-tidy
-# yay --noconfirm -S python-requests-cache
+paru --noconfirm -S prettier
+paru --noconfirm -S jq
+paru --noconfirm -S jqp -- GUI Interface to JQ
+paru --noconfirm -S yq
+paru --noconfirm -S gron
+paru --noconfirm -S python37
+paru --noconfirm -S python-black
+paru --noconfirm -S python-isort
+paru --noconfirm -S mypy
+paru --noconfirm -S perl-tidy
+# paru --noconfirm -S python-requests-cache
 
 
 # Hub
-yay --noconfirm -S hub
+paru --noconfirm -S hub
 
 # BE Tools setup
 # We really don't need this to be run AFAIK, and it has issues when run here...
 # ~/TheHomeRepot/install-dev-tools.sh
 
 # VPN stuff for ActiveState
-yay --noconfirm -S networkmanager-openvpn
+paru --noconfirm -S networkmanager-openvpn
 
 # Ansible stuff for ActiveState
-yay --noconfirm -S python-ansible
-yay --noconfirm -S python-pywinrm
+paru --noconfirm -S python-ansible
+paru --noconfirm -S python-pywinrm
 
 
 # 1Password
-yay --noconfirm -S 1password
+paru --noconfirm -S 1password

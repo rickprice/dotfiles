@@ -9,14 +9,14 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Video
-yay --noconfirm -S vlc
-yay --noconfirm -S flowblade
+paru --noconfirm -S vlc
+paru --noconfirm -S flowblade
 
 # OpenCL
 
-yay --noconfirm -S intel-opencl-sdk
-yay --noconfirm -S intel-compute-runtime
-yay --noconfirm -S dmidecode
-yay --noconfirm -S clinfo
+paru --noconfirm -S intel-opencl-sdk
+paru --noconfirm -S intel-compute-runtime
+paru --noconfirm -S dmidecode
+paru --noconfirm -S clinfo
 
 
