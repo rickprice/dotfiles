@@ -26,6 +26,6 @@ paru --noconfirm -S xclip i3-scrot
 paru --noconfirm -S xorg-xkill
 paru --noconfirm -S network-manager-applet
 paru --noconfirm -R i3-wm i3status i3exit || true
-paru --noconfirm -S i3-git i3status-git i3exit
+paru --noconfirm -S i3 i3status i3exit
 paru --noconfirm -S dunst
 paru --noconfirm -S polkit-gnome

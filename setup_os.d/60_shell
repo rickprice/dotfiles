@@ -21,10 +21,10 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # install the fish shell
 paru --noconfirm -S fish
 # Firsher plugin manager
-paru --noconfirm -S fisher-git
+paru --noconfirm -S fisher
 
 # fzf plugin
-paru --noconfirm -S fzf-git
+paru --noconfirm -S fzf
 # paru --noconfirm -S fzf-extras-git
 paru --noconfirm -S fd
 paru --noconfirm -S bat
