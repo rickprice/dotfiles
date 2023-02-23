@@ -24,14 +24,14 @@ yes | LC_ALL=en_US.UTF-8 paru -S neovim-symlinks
 paru --noconfirm -S xclip
 
 # Language Servers
-paru --noconfirm -S pyright-git
-paru --noconfirm -S bash-language-server
-paru --noconfirm -S gopls
-paru --noconfirm -S vim-language-server
-paru --noconfirm -S yaml-language-server
+# paru --noconfirm -S pyright-git
+# paru --noconfirm -S bash-language-server
+# paru --noconfirm -S gopls
+# paru --noconfirm -S vim-language-server
+# paru --noconfirm -S yaml-language-server
 
-paru --noconfirm -S ctags
+# paru --noconfirm -S ctags
 
 # Markdown
-paru --noconfirm -S glow
+# paru --noconfirm -S glow
 

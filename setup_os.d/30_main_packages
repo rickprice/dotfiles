@@ -20,8 +20,8 @@ sudo pacman --noconfirm -S zip
 sudo pacman --noconfirm -S unzip
 sudo pacman --noconfirm -S zenity
 sudo pacman --noconfirm -S tlp tlp-rdw acpi_call
-sudo pacman --noconfirm -S enscript
-sudo pacman --noconfirm -S psutils
+# sudo pacman --noconfirm -S enscript
+# sudo pacman --noconfirm -S psutils
 
 ## Install AUR packages I want
 paru --noconfirm -S poppler
