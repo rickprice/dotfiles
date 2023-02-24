@@ -39,7 +39,10 @@ paru --noconfirm -S so-git
 # paru --noconfirm -S luakit-git
 paru --noconfirm -S fwupd
 paru --noconfirm -S bazelisk
+
 paru --noconfirm -S meld
+git config --global merge.tool meld
+
 paru --noconfirm -S aws-cli
 paru --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 paru --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
