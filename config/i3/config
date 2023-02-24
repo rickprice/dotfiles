@@ -42,6 +42,7 @@ floating_modifier $mod
 bindsym $mod+Return exec wezterm
 
 # kill focused window
+bindsym $mod+Shift+c kill
 bindsym $mod+Shift+q kill
 
 # start program launcher
