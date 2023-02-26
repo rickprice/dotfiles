@@ -7,9 +7,9 @@ exec_always --no-startup-id ManageTouchpad off
 
 # Disable tapping on my touchpads, my laptops seem to use different ids from each other...
 # For X1 Carbon
-exec_always --no-startup-id xinput set-prop 12 334 0
+# exec_always --no-startup-id xinput set-prop 12 334 0
 # For Lenovo T430S
-exec_always --no-startup-id xinput set-prop 10 304 0
+# exec_always --no-startup-id xinput set-prop 10 304 0
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
