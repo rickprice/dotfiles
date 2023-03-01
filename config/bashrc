@@ -12,3 +12,9 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 
 [[ -s "/home/fprice/.gvm/scripts/gvm" ]] && source "/home/fprice/.gvm/scripts/gvm"
+# -- START ACTIVESTATE INSTALLATION
+export PATH="/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
+# -- STOP ACTIVESTATE INSTALLATION
+# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+export PATH="/home/fprice/.cache/activestate/bin:$PATH"
+# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
