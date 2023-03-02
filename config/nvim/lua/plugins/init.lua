@@ -294,15 +294,11 @@ return {
     end,
   },
 
-  require("notify").setup({
-    background_colour = "#000000",
-  }),
-
   { "chentoast/marks.nvim" },
 
   {
     "phaazon/hop.nvim",
-    branch = "v2",
+    -- branch = "v2",
     config = function()
       vim.cmd("hi HopNextKey guifg=#ff9900")
       vim.cmd("hi HopNextKey1 guifg=#ff9900")
@@ -318,4 +314,27 @@ return {
   { "folke/todo-comments.nvim" },
   { "p00f/nvim-ts-rainbow" },
   { "chrisbra/csv.vim" },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+    },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          undo = {
+            -- telescope-undo.nvim config, see below
+          },
+        },
+      })
+      require("telescope").load_extension("undo")
+      vim.keymap.set("n", "<leader>uu", "<cmd>Telescope undo<cr>")
+    end,
+  },
+
+  require("notify").setup({
+    background_colour = "#000000",
+  }),
 }
