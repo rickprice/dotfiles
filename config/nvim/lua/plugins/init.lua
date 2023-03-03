@@ -378,6 +378,16 @@ return {
     end,
   },
 
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+    keys = {
+      { "<leader>t", "<cmd>ToggleTerm<cr>", mode = "n", desc = "ToggleTerm" },
+      open_mapping = true,
+    },
+  },
+
   require("notify").setup({
     background_colour = "#000000",
   }),
