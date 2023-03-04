@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+## sound setup
+paru --noconfirm -S pipewire
+paru --noconfirm -S pipewire-pulse
+paru --noconfirm -S pipewire-audio
+paru --noconfirm -S pipewire-alsa
+paru --noconfirm -S wireplumber
+paru --noconfirm -S pavucontrol
+paru --noconfirm -S alsa-utils
+
+## Sound drivers which Tamara's laptop needs for audio
+paru --noconfirm -S alsa-firmware
+paru --noconfirm -S sof-firmware
+paru --noconfirm -S alsa-ucm-conf

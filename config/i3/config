@@ -60,7 +60,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -342,6 +342,10 @@ exec --no-startup-id picom -b
 exec --no-startup-id dropbox
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id udiskie --tray&
+exec --no-startup-id i3-msg workspace 1
+exec --no-startup-id pamac-tray
+exec --no-startup-id volumeicon
 # exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
@@ -350,10 +354,7 @@ exec --no-startup-id xfce4-power-manager
 # exec --no-startup-id xautolock -time 60 -locker blurlock
 # exec_always --no-startup-id ff-theme-util
 # exec_always --no-startup-id fix_xcursor
-exec --no-startup-id udiskie --tray&
 # Run Browser for user
-exec --no-startup-id i3-msg workspace 1
-exec --no-startup-id pamac-tray
 exec_always --no-startup-id firefox-developer-edition
 
 # Change keyboard layout
