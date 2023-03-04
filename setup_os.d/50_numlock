@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# Fail script if any command fails
+set -e
+
+## keep track of the last executed command
+trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
+## echo an error message before exiting
+trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
+
+## Enable numlock all the  time
+paru --noconfirm -S mkiniticpio-numlock
+
+# Then do this for 1.1 Early Bootup
+# https://wiki.archlinux.org/title/Activating_numlock_on_bootup
