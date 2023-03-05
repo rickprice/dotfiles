@@ -24,6 +24,9 @@
 "config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
 "config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
 
+[bash.files]
+"home/bashrc" = "~/.bashrc"
+
 [fish.files]
 # Fish config (probably unused)
 "config/fish/config.fish" = "~/.config/fish/config.fish"
