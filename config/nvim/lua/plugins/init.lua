@@ -407,6 +407,41 @@ return {
     },
   },
 
+  {
+    "filipdutescu/renamer.nvim",
+
+    keys = {
+      { "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', mode = "n", desc = "Rename" },
+      { "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', mode = "v", desc = "Rename" },
+    },
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+    },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          undo = {
+            side_by_side = true,
+            layout_strategy = "vertical",
+            layout_config = {
+              preview_height = 0.8,
+            },
+          },
+        },
+      })
+      require("telescope").load_extension("undo")
+      -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+    end,
+    keys = {
+      { "<leader>u", "<cmd>Telescope undo<cr>", mode = "n", desc = "Undo" },
+    },
+  },
+
   require("notify").setup({
     background_colour = "#000000",
   }),
