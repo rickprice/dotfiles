@@ -278,6 +278,7 @@ return {
         "dockerfile-language-server",
         "python-lsp-server",
         "haskell-language-server",
+        "markdownlint",
       },
     },
   },
