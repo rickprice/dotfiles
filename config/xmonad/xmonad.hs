@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Config.Desktop
 import XMonad.Hooks.ManageDocks
+import XMonad.Util.EZConfig (additionalKeys)
 
 myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
@@ -19,6 +20,14 @@ myStartupHook = do
   spawn "discord &"
   spawn "autorandr mobile; autorandr docked"
 
+
+myAdditionalKeys =
+    [ ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
+    , ((mod4Mask, xK_F9), spawn "pcmanfm")
+    , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
+     ]
+
+
 main=do 
     xmonad $ docks def 
         { 
@@ -27,4 +36,4 @@ main=do
         , layoutHook=avoidStruts $ layoutHook def
         , manageHook=manageHook def <+> manageDocks
         , startupHook = myStartupHook
-        } 
+        } `additionalKeys` myAdditionalKeys 
