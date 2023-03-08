@@ -2,6 +2,6 @@ import XMonad
 import XMonad.Config.Desktop
 
 main = xmonad desktopConfig
-    { terminal    = "urxvt"
+    { terminal    = "wezterm"
     , modMask     = mod4Mask
     }
