@@ -51,18 +51,12 @@ myConfig = def
         , layoutHook=myLayout
         , manageHook=myManageHook
         , startupHook = myStartupHook
-        } `additionalKeysP` myAdditionalKeys
+        } `additionalKeys` myAdditionalKeys
 
-
--- myAdditionalKeys =
---     [ ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
---     , ((mod4Mask, xK_F9), spawn "pcmanfm")
---     , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
---      ]
 myAdditionalKeys =
-    [ ("M-F8", spawn "firefox-developer-edition")
-    , ("M-F9", spawn "pcmanfm")
-    , ("M-S-Return", spawn "wezterm")
+    [ ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
+    , ((mod4Mask, xK_F9), spawn "pcmanfm")
+    , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
      ]
 
 myManageHook :: ManageHook
