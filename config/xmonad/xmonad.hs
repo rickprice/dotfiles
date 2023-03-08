@@ -1,6 +1,8 @@
 import XMonad
 import XMonad.Config.Desktop
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.EZConfig (additionalKeys)
 
 myStartupHook = do
@@ -28,8 +30,7 @@ myAdditionalKeys =
      ]
 
 
-main=do 
-    xmonad $ docks def 
+main = xmonad $ ewmhFullscreen . ewmh $ docks def 
         { 
         terminal    = "wezterm"
         , modMask     = mod4Mask
