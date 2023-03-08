@@ -39,6 +39,9 @@
 [bash.files]
 "config/bashrc" = "~/.bashrc"
 
+[xmonad.files]
+"config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
+
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
 
