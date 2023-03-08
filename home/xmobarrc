@@ -3,7 +3,7 @@ Config { overrideRedirect = False
        , bgColor  = "#5f5f5f"
        , fgColor  = "#f8f8f2"
        , position = TopW L 85
-       , commands = [ Run Weather "CYEE"
+       , commands = [ Run Weather "CYYZ"
                         [ "--template", "<weather> <tempC>°C"
                         , "-L", "0"
                         , "-H", "25"
@@ -30,6 +30,6 @@ Config { overrideRedirect = False
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = "%XMonadLog% }{ %alsa:default:Master% | %cpu% | %memory% * %swap% | %CYEE% | %date% "
+       , template = "%XMonadLog% }{ %alsa:default:Master% | %cpu% | %memory% * %swap% | %CYYZ% | %date% "
        }
 
