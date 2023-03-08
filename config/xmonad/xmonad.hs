@@ -3,7 +3,10 @@ import XMonad.Config.Desktop
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.UrgencyHook
 import XMonad.Util.EZConfig (additionalKeys)
+import XMonad.Layout.Named
+import XMonad.Layout.NoBorders
 
 myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
@@ -34,7 +37,7 @@ main = xmonad $ ewmhFullscreen . ewmh $ docks def
         { 
         terminal    = "wezterm"
         , modMask     = mod4Mask
-        , layoutHook=avoidStruts $ layoutHook def
+        , layoutHook=avoidStruts $ smartBorders $ layoutHook def
         , manageHook=manageHook def <+> manageDocks
         , startupHook = myStartupHook
         } `additionalKeys` myAdditionalKeys 
