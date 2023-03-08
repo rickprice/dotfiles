@@ -23,12 +23,12 @@ myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
   -- spawnOnce "picom -f --config /home/lucask/.config/picom/picom.conf &"
   -- spawnOnce "feh --bg-scale ~/Pictures/wallpaper.jpg"
-  spawn "trayer --monitor 0 --edge top --align right --width 10"
+  spawn "trayer --monitor 0 --edge top --align right --width 15"
   spawn "picom"
   spawn "dropbox"
   spawn "nm-applet"
   spawn "pamac-tray"
-  spawn "blueman-tray"
+  spawn "blueman-applet"
   spawn "xfce4-power-manager"
   spawn "volumeicon"
   spawn "killall udiskie; udiskie --tray"
@@ -51,6 +51,8 @@ myConfig = def
         , layoutHook=myLayout
         , manageHook=myManageHook
         , startupHook = myStartupHook
+        -- , normalBorderColor=myNormalBorderColor
+        , focusedBorderColor = myFocusedBorderColor
         } `additionalKeys` myAdditionalKeys
 
 myAdditionalKeys =
@@ -100,3 +102,7 @@ myXmobarPP = def
     yellow   = xmobarColor "#f1fa8c" ""
     red      = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
+
+myNormalBorderColor="#dddddd"
+myFocusedBorderColor="#FFB53A"
+
