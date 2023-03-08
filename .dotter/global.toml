@@ -42,6 +42,7 @@
 [xmonad.files]
 "config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
 "home/xmobarrc" = "~/.xmobarrc"
+"home/stalonetrayrc" = "~/.stalonetrayrc"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
