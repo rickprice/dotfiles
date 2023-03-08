@@ -40,6 +40,7 @@ myStartupHook = do
 main :: IO ()
 main = xmonad
      . ewmhFullscreen
+     . setEwmhActivateHook doAskUrgent
      . ewmh
      . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
      $ myConfig
