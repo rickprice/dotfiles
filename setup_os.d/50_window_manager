@@ -49,3 +49,10 @@ paru --noconfirm -S awesome-git
 paru --noconfirm -S rlwrap dex vicious
 paru --noconfirm -S alsa-utils pulseaudio pavucontrol
 git clone git@github.com:streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
+
+# XMonad Window Manager
+paru --noconfirm -S xmonad xmonad-contrib
+paru --noconfirm -S xmobar-dynamic
+paru --noconfirm -S trayer-srg
+paru --noconfirm -S xorg-fonts-misc
+
