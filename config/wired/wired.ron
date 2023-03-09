@@ -1,6 +1,6 @@
 (
 	max_notifications: 10,
-	timeout: 20000,
+	timeout: 10000,
 	poll_interval: 16,
 	shortcuts: (
 		notification_interact: 2,
