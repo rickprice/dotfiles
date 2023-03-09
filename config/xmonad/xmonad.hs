@@ -57,7 +57,14 @@ myConfig = def
         } `additionalKeys` myAdditionalKeys
 
 myAdditionalKeys =
-    [ ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
+    [ 
+   ((0, xF86XK_PowerDown),         spawn "sudo systemctl suspend")
+ , ((0, xF86XK_AudioRaiseVolume),  spawn "amixer -D pulse sset Master 10%+")
+ , ((0, xF86XK_AudioLowerVolume),  spawn "amixer -D pulse sset Master 10%-")
+ , ((0, xF86XK_AudioMute),         spawn "amixer -D pulse sset Master toggle")
+ , ((0, xF86XK_MonBrightnessUp),   spawn "brightnessctl set +10%")
+ , ((0, xF86XK_MonBrightnessDown), spawn "brightnessctl set 10%-")
+   , ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
     , ((mod4Mask, xK_F9), spawn "pcmanfm")
     , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
      ]
