@@ -25,6 +25,8 @@ import qualified XMonad.StackSet              as W
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
 
+myModMask = mod4Mask
+
 myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
   -- spawnOnce "picom -f --config /home/lucask/.config/picom/picom.conf &"
@@ -54,19 +56,19 @@ main = xmonad
 myConfig = def
         {
         terminal    = "wezterm"
-        , modMask     = mod4Mask
+        , modMask     = myModMask
         , layoutHook=myLayout
         , manageHook=myManageHook
         , startupHook = myStartupHook
-        -- , normalBorderColor=myNormalBorderColor
+        , normalBorderColor=myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
         } `additionalKeys` myAdditionalKeys `additionalKeysP` myNewStyleKeys
 
 
-myWorkspaces = ["W1.0","W1.1","W1.2","W2.0","W2.1","W2.2","W3.0","W3.1","W3.2"] ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
+myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
 
-myExtraWorkspaces = [(xK_0, "IM")] -- list of (key, name)
+myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM")] -- list of (key, name)
 
 myAdditionalKeys =
     [
@@ -76,14 +78,14 @@ myAdditionalKeys =
  , ((0, xF86XK_AudioMute),         spawn "amixer -D pulse sset Master toggle")
  , ((0, xF86XK_MonBrightnessUp),   spawn "brightnessctl set +10%")
  , ((0, xF86XK_MonBrightnessDown), spawn "brightnessctl set 10%-")
-   , ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
-    , ((mod4Mask, xK_F9), spawn "pcmanfm")
-    , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
+   , ((myModMask, xK_F8), spawn "firefox-developer-edition")
+    , ((myModMask, xK_F9), spawn "pcmanfm")
+    , ((myModMask .|. shiftMask, xK_Return), spawn "wezterm")
      ] ++ [
-        ((mod4Mask, key), (windows $ W.greedyView ws))
+        ((myModMask, key), (windows $ W.greedyView ws))
         | (key, ws) <- myExtraWorkspaces
     ] ++ [
-        ((mod4Mask .|. shiftMask, key), (windows $ W.shift ws))
+        ((myModMask .|. shiftMask, key), (windows $ W.shift ws))
         | (key, ws) <- myExtraWorkspaces
     ]
 
@@ -135,13 +137,12 @@ myFocusedBorderColor="#FFB53A"
 desktops=4
 desktop_panes=3
 workspacePrefix = "W"
-workspaceFocusKey = "m-w"
-workspaceMoveKey = "m-s-w"
+workspaceFocusKey = "M-w"
+workspaceMoveKey = "M-S-w"
 
-workspace_names = map desktopNameFromTuple workspace_panel_tuples
+workspaceNames = map desktopNameFromTuple workspace_panel_tuples
 workspaceShowDesktopKeys = map desktopShowDesktopKeymapFromTuple workspace_panel_tuples
 workspaceMoveFocusedWindowKeys = map desktopMoveFocusedKeyFromTuple workspace_panel_tuples
-
 
 workspace_panel_tuples = [ (x,y) | x <- [1..desktops], y <- [1..desktop_panes]]
 
@@ -163,4 +164,8 @@ desktopShowDesktopKeymapFromTuple t = (desktopKeyMapFromTuple workspaceFocusKey 
 
 desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop (desktopNameFromTuple t))
 
-myNewStyleKeys = [("M-w 1 1", spawn "firefox"       )]
+myNewStyleKeys =
+    workspaceShowDesktopKeys
+    ++ workspaceMoveFocusedWindowKeys
+    ++ [("M-w 9 8", showDesktop "W13")]
+    ++ [("M-w 9 9", spawn "firefox"       )]
