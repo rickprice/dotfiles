@@ -30,6 +30,7 @@ myBrowser = "firefox-developer-edition"
 myTerminal = "wezterm"
 myFileManager = "pcmanfm"
 myScanner = "simple-scan"
+myEbookViewer = "ebook-viewer"
 
 
 myStartupHook = do
@@ -179,6 +180,7 @@ myNewStyleKeys =
         , ("M-a f", spawn myFileManager)
         , ("M-S-<Enter>", spawn myTerminal)
         , ("M-a s", spawn myScanner)
+        , ("M-a e", spawn myEbookViewer)
         ]
     -- ++ [("M-w 9 8", showDesktop "W13")]
     -- ++ [("M-w 9 9", spawn "firefox"       )]
