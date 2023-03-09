@@ -161,6 +161,9 @@
 [i3-scrot.files]
 "config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
 
+[wired.files]
+"config/wired/wired.ron" = "~/.config/wired/wired.ron"
+
 [jira.files]
 "config/jira/jira.yml" = "~/.config/jira/jira.yml"
 

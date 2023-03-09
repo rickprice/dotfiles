@@ -26,19 +26,26 @@ import qualified XMonad.StackSet              as W
 -- import XMonad.Layout.NoBorders
 
 myModMask = mod4Mask
+myBrowser = "firefox-developer-edition"
+myTerminal = "wezterm"
+myFileManager = "pcmanfm"
+myScanner = "simple-scan"
+
 
 myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
   -- spawnOnce "picom -f --config /home/lucask/.config/picom/picom.conf &"
   -- spawnOnce "feh --bg-scale ~/Pictures/wallpaper.jpg"
-  spawn "trayer --monitor 0 --edge top --align right --width 15"
-  spawn "picom"
+  spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+  spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 15"
+  spawn "wired --run"
+  spawn "picom -b"
   spawn "dropbox"
   spawn "nm-applet"
   spawn "pamac-tray"
   spawn "blueman-applet"
   spawn "xfce4-power-manager"
-  spawn "volumeicon"
+  spawn "killall volumeicon; volumeicon"
   spawn "killall udiskie; udiskie --tray"
   spawn "slack"
   spawn "discord"
@@ -55,7 +62,7 @@ main = xmonad
 
 myConfig = def
         {
-        terminal    = "wezterm"
+        terminal    = myTerminal
         , modMask     = myModMask
         , layoutHook=myLayout
         , manageHook=myManageHook
@@ -95,7 +102,7 @@ myManageHook = composeAll
     , isDialog            --> doFloat
     ]
 
-myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
+myLayout = threeCol ||| tiled ||| Mirror tiled ||| Full
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled    = Tall nmaster delta ratio
@@ -167,5 +174,11 @@ desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, m
 myNewStyleKeys =
     workspaceShowDesktopKeys
     ++ workspaceMoveFocusedWindowKeys
-    ++ [("M-w 9 8", showDesktop "W13")]
-    ++ [("M-w 9 9", spawn "firefox"       )]
+    ++ [
+        ("M-a b", spawn myBrowser)
+        , ("M-a f", spawn myFileManager)
+        , ("M-S-<Enter>", spawn myTerminal)
+        , ("M-a s", spawn myScanner)
+        ]
+    -- ++ [("M-w 9 8", showDesktop "W13")]
+    -- ++ [("M-w 9 9", spawn "firefox"       )]
