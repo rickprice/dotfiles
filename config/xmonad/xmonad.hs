@@ -61,7 +61,7 @@ myConfig = def
         -- , normalBorderColor=myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
-        } `additionalKeys` myAdditionalKeys
+        } `additionalKeys` myAdditionalKeys `additionalKeysP` myNewStyleKeys
 
 
 myWorkspaces = ["W1.0","W1.1","W1.2","W2.0","W2.1","W2.2","W3.0","W3.1","W3.2"] ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
@@ -162,3 +162,5 @@ moveFocusedWindowToDesktop d = windows $ W.shift d
 desktopShowDesktopKeymapFromTuple t = (desktopKeyMapFromTuple workspaceFocusKey t, showDesktop (desktopNameFromTuple t))
 
 desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop (desktopNameFromTuple t))
+
+myNewStyleKeys = [("M-w 1 1", spawn "firefox"       )]
