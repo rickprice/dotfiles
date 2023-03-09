@@ -55,4 +55,5 @@ paru --noconfirm -S xmonad xmonad-contrib
 paru --noconfirm -S xmobar-dynamic
 paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
+paru --noconfirm -S wired # toaster notification manager
 
