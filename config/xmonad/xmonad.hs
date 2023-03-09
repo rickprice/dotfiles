@@ -134,6 +134,31 @@ myFocusedBorderColor="#FFB53A"
 
 desktops=4
 desktop_panes=3
+workspacePrefix = "W"
+workspaceFocusKey = "m-w"
+workspaceMoveKey = "m-s-w"
 
-desktop_names = [ [ "W" ++  show x ++ show y ] | x <- [1..desktops] , y <- [1..desktop_panes]]
-desktop_panel_keys = [ [x,y] | x <- [1..desktops], y <- [1..desktop_panes]]
+workspace_names = map desktopNameFromTuple workspace_panel_tuples
+workspaceShowDesktopKeys = map desktopShowDesktopKeymapFromTuple workspace_panel_tuples
+workspaceMoveFocusedWindowKeys = map desktopMoveFocusedKeyFromTuple workspace_panel_tuples
+
+
+workspace_panel_tuples = [ (x,y) | x <- [1..desktops], y <- [1..desktop_panes]]
+
+desktopNameFromTuple = desktopNameFromTuple' workspacePrefix
+
+desktopNameFromTuple' :: Show a => String -> (a,a) -> String
+desktopNameFromTuple' p t = p ++ show  (fst t) ++ show (snd t)
+
+desktopKeyMapFromTuple :: Show a => String -> (a,a) -> String
+desktopKeyMapFromTuple p t = p ++ " " ++ show  (fst t) ++ " " ++ show (snd t)
+
+showDesktop :: String -> X ()
+showDesktop d = windows $ W.greedyView d
+
+moveFocusedWindowToDesktop :: String -> X ()
+moveFocusedWindowToDesktop d = windows $ W.shift d
+
+desktopShowDesktopKeymapFromTuple t = (desktopKeyMapFromTuple workspaceFocusKey t, showDesktop (desktopNameFromTuple t))
+
+desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop (desktopNameFromTuple t))
