@@ -132,3 +132,8 @@ myXmobarPP = def
 myNormalBorderColor="#dddddd"
 myFocusedBorderColor="#FFB53A"
 
+desktops=4
+desktop_panes=3
+
+desktop_names = [ [ "W" ++  show x ++ show y ] | x <- [1..desktops] , y <- [1..desktop_panes]]
+desktop_panel_keys = [ [x,y] | x <- [1..desktops], y <- [1..desktop_panes]]
