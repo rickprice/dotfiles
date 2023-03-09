@@ -1,3 +1,5 @@
+{-# LANGUAGE ImportQualifiedPost #-}
+
 import           XMonad
 -- import XMonad.Config.Desktop
 import           XMonad.Hooks.DynamicLog
@@ -18,6 +20,7 @@ import           XMonad.Hooks.UrgencyHook
 
 import           Graphics.X11.ExtraTypes.XF86
 
+import qualified XMonad.StackSet              as W
 
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
@@ -57,7 +60,13 @@ myConfig = def
         , startupHook = myStartupHook
         -- , normalBorderColor=myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
+        , workspaces = myWorkspaces
         } `additionalKeys` myAdditionalKeys
+
+
+myWorkspaces = ["W1.0","W1.1","W1.2","W2.0","W2.1","W2.2","W3.0","W3.1","W3.2"] ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
+
+myExtraWorkspaces = [(xK_0, "IM")] -- list of (key, name)
 
 myAdditionalKeys =
     [
@@ -70,7 +79,13 @@ myAdditionalKeys =
    , ((mod4Mask, xK_F8), spawn "firefox-developer-edition")
     , ((mod4Mask, xK_F9), spawn "pcmanfm")
     , ((mod4Mask .|. shiftMask, xK_Return), spawn "wezterm")
-     ]
+     ] ++ [
+        ((mod4Mask, key), (windows $ W.greedyView ws))
+        | (key, ws) <- myExtraWorkspaces
+    ] ++ [
+        ((mod4Mask .|. shiftMask, key), (windows $ W.shift ws))
+        | (key, ws) <- myExtraWorkspaces
+    ]
 
 myManageHook :: ManageHook
 myManageHook = composeAll
