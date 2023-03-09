@@ -1,21 +1,20 @@
-import XMonad
+import           XMonad
 -- import XMonad.Config.Desktop
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.StatusBar
-import XMonad.Hooks.StatusBar.PP
+import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.StatusBar
+import           XMonad.Hooks.StatusBar.PP
 
-import XMonad.Util.EZConfig
-import XMonad.Util.Loggers
-import XMonad.Util.Ungrab
+import           XMonad.Util.EZConfig
+import           XMonad.Util.Loggers
+import           XMonad.Util.Ungrab
 
-import XMonad.Layout.Magnifier
-import XMonad.Layout.ThreeColumns
+import           XMonad.Layout.Magnifier
+import           XMonad.Layout.ThreeColumns
 
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.UrgencyHook
+import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.UrgencyHook
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
 
@@ -57,7 +56,7 @@ myConfig = def
         } `additionalKeys` myAdditionalKeys
 
 myAdditionalKeys =
-    [ 
+    [
    ((0, xF86XK_PowerDown),         spawn "sudo systemctl suspend")
  , ((0, xF86XK_AudioRaiseVolume),  spawn "amixer -D pulse sset Master 10%+")
  , ((0, xF86XK_AudioLowerVolume),  spawn "amixer -D pulse sset Master 10%-")
