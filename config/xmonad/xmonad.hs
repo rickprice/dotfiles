@@ -15,6 +15,10 @@ import           XMonad.Layout.ThreeColumns
 
 import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.UrgencyHook
+
+import           Graphics.X11.ExtraTypes.XF86
+
+
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
 
