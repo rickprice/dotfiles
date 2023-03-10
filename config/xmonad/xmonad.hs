@@ -36,9 +36,6 @@ myEbookViewer = "ebook-viewer"
 
 
 myStartupHook = do
-  -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
-  -- spawnOnce "picom -f --config /home/lucask/.config/picom/picom.conf &"
-  -- spawnOnce "feh --bg-scale ~/Pictures/wallpaper.jpg"
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
   spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 15"
   spawnOnce "wired --run"
@@ -50,6 +47,7 @@ myStartupHook = do
   spawnOnce "blueman-applet"
   spawnOnce "volumeicon"
   spawnOnce "killall udiskie; udiskie --tray"
+  spawn "feh --no-fehbg --bg-max --random  ~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/ ~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
   spawnOn "IM" "slack"
   spawnOn "IM" "discord"
   -- spawn "autorandr mobile; autorandr docked"
