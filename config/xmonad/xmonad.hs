@@ -33,6 +33,7 @@ myTerminal = "wezterm"
 myFileManager = "pcmanfm"
 myScanner = "simple-scan"
 myEbookViewer = "ebook-viewer"
+myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 
 
 myStartupHook = do
@@ -47,7 +48,7 @@ myStartupHook = do
   spawnOnce "blueman-applet"
   spawnOnce "volumeicon"
   spawnOnce "killall udiskie; udiskie --tray"
-  spawn "feh --no-fehbg --bg-max --random  ~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/ ~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
+  spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds ++ " " ++ myBackgrounds)
   spawnOn "IM" "slack"
   spawnOn "IM" "discord"
   -- spawn "autorandr mobile; autorandr docked"
@@ -122,7 +123,7 @@ myXmobarPP = def
     , ppHidden          = white . wrap " " ""
     , ppHiddenNoWindows = lowWhite . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
-    , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
+    , ppOrder           = \[ws, l, _, _] -> [ws, l]
     , ppExtras          = [logTitles formatFocused formatUnfocused]
     }
   where
