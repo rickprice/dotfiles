@@ -15,9 +15,6 @@
 # To clarify, folders in the repository don't have to correspond to packages.
 # On Windows, '~' is expanded to 'C:\Users\<USERNAME>\'
 
-[alacritty.files]
-"config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
-
 [autorandr.files]
 "config/autorandr/docked/config" = "~/.config/autorandr/docked/config"
 "config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
@@ -27,6 +24,11 @@
 [bash.files]
 "home/bashrc" = "~/.bashrc"
 
+[xmonad.files]
+"config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
+"home/xmobarrc" = "~/.xmobarrc"
+"home/stalonetrayrc" = "~/.stalonetrayrc"
+
 [fish.files]
 # Fish config (probably unused)
 "config/fish/config.fish" = "~/.config/fish/config.fish"
@@ -34,21 +36,10 @@
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
 
-[flake8.files]
-"config/flake8" = "~/.config/flake8"
-
 [i3.files]
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
 "config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
-
-[mypy.files]
-"config/mypy/mypy.ini" = "~/.config/mypy/mypy.ini"
-
-[hub.files]
-"config/gh/config.yml" = "~/.config/gh/config.yml"
-"config/gh/hosts.yml" = "~/.config/gh/hosts.yml"
-"config/gh/hub" = "~/.config/hub"
 
 [nvim.files]
 "config/nvim" = { target = "~/.config/nvim", type = "symbolic" }
@@ -58,9 +49,6 @@
 
 [wezterm.files]
 "config/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
-
-[yamllint.files]
-"config/yamllint/config" = "~/.config/yamllint/config"
 
 [ssh.files]
 "etc/ssh/sshd_config" = { target = "/etc/ssh/sshd_config", type = "template", owner = "root" }
@@ -73,38 +61,18 @@
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
 "local/bin/ManageTouchpad.sh"="~/.local/bin/ManageTouchpad"
 
-[gitconfig.files]
-"home/gitconfig"="~/.gitconfig"
-
-[pivotal.files]
-"home/pivotaltrackerrc"="~/.pivotaltrackerrc"
-
-[aws.files]
-"home/aws/config"="~/.aws/config"
-"home/aws/credentials"="~/.aws/credentials"
-"local/bin/get-aws-profile.py"="~/.local/bin/get-aws-profile"
-
-[activestate.files]
-"home/camel"="~/.camel"
-
-[todoist.files]
-"config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
-
-[mutt.files]
-"home/mutt/muttrc"="~/.mutt/muttrc"
-"home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
-"home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
-"home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
-"home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
-
-[gist.files]
-"config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
-
 [dropbox.files]
 "config/systemd/user/dropbox.service" = "~/.config/systemd/user/dropbox.service"
 # "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
 
+[picom.files]
+"config/picom/picom.conf" = {target = "~/.config/picom/picom.conf", type = "symbolic"}
+
 [i3-scrot.files]
 "config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
 
-[user.files]
+[wired.files]
+"config/wired/wired.ron" = "~/.config/wired/wired.ron"
+
+[pipewire.files]
+"config/pipewire/pipewire-pulse.conf" = "~/.config/pipewire/pipewire-pulse.conf"
