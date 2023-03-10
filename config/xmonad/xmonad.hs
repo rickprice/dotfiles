@@ -20,6 +20,7 @@ import           XMonad.Hooks.UrgencyHook
 
 import           Graphics.X11.ExtraTypes.XF86
 
+import           XMonad.Actions.SpawnOn
 import qualified XMonad.StackSet              as W
 
 -- import XMonad.Layout.Named
@@ -45,11 +46,11 @@ myStartupHook = do
   spawn "nm-applet"
   spawn "pamac-tray"
   spawn "blueman-applet"
-  spawn "xfce4-power-manager"
+  spawn "killall xfce4-power-manager; xfce4-power-manager"
   spawn "killall volumeicon; volumeicon"
   spawn "killall udiskie; udiskie --tray"
-  spawn "slack"
-  spawn "discord"
+  spawnOn "IM" "slack"
+  spawnOn "IM" "discord"
   -- spawn "autorandr mobile; autorandr docked"
 
 
@@ -99,8 +100,10 @@ myAdditionalKeys =
 
 myManageHook :: ManageHook
 myManageHook = composeAll
-    [ className =? "Gimp" --> doFloat
+    [
+    className =? "Gimp" --> doFloat
     , isDialog            --> doFloat
+    , manageSpawn
     ]
 
 myLayout = threeCol ||| tiled ||| Mirror tiled ||| Full
