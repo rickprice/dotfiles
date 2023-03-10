@@ -22,6 +22,7 @@ import           Graphics.X11.ExtraTypes.XF86
 
 import           XMonad.Actions.SpawnOn
 import qualified XMonad.StackSet              as W
+import XMonad.Util.SpawnOnce
 
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
@@ -38,17 +39,17 @@ myStartupHook = do
   -- spawnOnce "exec feh --bg-scale /home/lucask/Pictures/wallpapers/redwood.jpg"
   -- spawnOnce "picom -f --config /home/lucask/.config/picom/picom.conf &"
   -- spawnOnce "feh --bg-scale ~/Pictures/wallpaper.jpg"
-  spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+  spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
   spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 15"
-  spawn "wired --run"
-  spawn "picom -b"
-  spawn "dropbox"
-  spawn "nm-applet"
-  spawn "pamac-tray"
-  spawn "blueman-applet"
-  spawn "killall xfce4-power-manager; xfce4-power-manager"
-  spawn "killall volumeicon; volumeicon"
-  spawn "killall udiskie; udiskie --tray"
+  spawnOnce "wired --run"
+  spawnOnce "picom -b"
+  spawnOnce "xfce4-power-manager"
+  spawnOnce "dropbox"
+  spawnOnce "nm-applet"
+  spawnOnce "pamac-tray"
+  spawnOnce "blueman-applet"
+  spawnOnce "volumeicon"
+  spawnOnce "killall udiskie; udiskie --tray"
   spawnOn "IM" "slack"
   spawnOn "IM" "discord"
   -- spawn "autorandr mobile; autorandr docked"
