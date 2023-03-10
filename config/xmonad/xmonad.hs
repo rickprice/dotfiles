@@ -35,6 +35,7 @@ myScanner = "simple-scan"
 myEbookViewer = "ebook-viewer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 mySystemMonitor = "gnome-system-monitor"
+myDMenu = "dmenu-frecency"
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -170,6 +171,8 @@ myNewStyleKeys =
 
         , ("M-1", showDesktop "IM")
         , ("M-2", showDesktop "ZM")
+
+        , ("M-p", spawn myDMenu)
         ]
     -- ++ [("M-w 9 8", showDesktop "W13")]
     -- ++ [("M-w 9 9", spawn "firefox"       )]
