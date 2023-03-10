@@ -9,24 +9,21 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 ## i3 things
-paru --noconfirm -S dmenu-frecency-git
+# paru --noconfirm -S dmenu-frecency-git
 paru --noconfirm -S i3exit
 paru --noconfirm -S polkit-gnome
 # paru --noconfirm -S nitrogen
 paru --noconfirm -S variety
 paru --noconfirm -S picom
 # paru --noconfirm -S network-manager-applet-git
-paru --noconfirm -S xfce4-power-manager
-paru --noconfirm -S pamac-aur
 paru --noconfirm -S xautolock
 # paru --noconfirm -S i3lock-blur
 # paru --noconfirm -S ff-theme-util
-paru --noconfirm -S volumeicon
 paru --noconfirm -S alsa-utils
 paru --noconfirm -S i3-scrot
 paru --noconfirm -S xorg-xkill
 paru --noconfirm -S xorg-xwininfo
-paru --noconfirm -S network-manager-applet
+# paru --noconfirm -S network-manager-applet
 #paru --noconfirm -R i3-wm i3status i3exit || true
 #paru --noconfirm -S i3-git i3status-git i3exit
 #paru --noconfirm -S i3-git i3status-rust-git i3exit
@@ -58,3 +55,8 @@ paru --noconfirm -S xorg-fonts-misc
 paru --noconfirm -S wired # toaster notification manager
 paru --noconfirm -S feh
 paru --noconfirm -S gnome-system-monitor
+paru --noconfirm -S dmenu-frecency-git
+paru --noconfirm -S volumeicon
+paru --noconfirm -S xfce4-power-manager
+paru --noconfirm -S pamac-aur
+paru --noconfirm -S network-manager-applet
