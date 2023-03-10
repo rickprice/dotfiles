@@ -22,7 +22,7 @@ import           Graphics.X11.ExtraTypes.XF86
 
 import           XMonad.Actions.SpawnOn
 import qualified XMonad.StackSet              as W
-import XMonad.Util.SpawnOnce
+import           XMonad.Util.SpawnOnce
 
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
