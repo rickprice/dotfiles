@@ -146,7 +146,7 @@ myXmobarPP = def
 myNormalBorderColor="#dddddd"
 myFocusedBorderColor="#FFB53A"
 
-desktops=4
+desktops=6
 desktop_panes=3
 workspacePrefix = "W"
 workspaceFocusKey = "M-w"
