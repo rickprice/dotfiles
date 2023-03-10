@@ -57,3 +57,4 @@ paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
 paru --noconfirm -S wired # toaster notification manager
 paru --noconfirm -S feh
+paru --noconfirm -S gnome-system-monitor

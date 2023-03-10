@@ -34,7 +34,7 @@ myFileManager = "pcmanfm"
 myScanner = "simple-scan"
 myEbookViewer = "ebook-viewer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
-
+mySystemMonitor = "gnome-system-monitor"
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -166,6 +166,7 @@ myNewStyleKeys =
         , ("M-S-<Enter>", spawn myTerminal)
         , ("M-a s", spawn myScanner)
         , ("M-a e", spawn myEbookViewer)
+        , ("M-a m", spawn mySystemMonitor)
 
         , ("M-1", showDesktop "IM")
         , ("M-2", showDesktop "ZM")
