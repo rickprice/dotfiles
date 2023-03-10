@@ -36,6 +36,7 @@ myEbookViewer = "ebook-viewer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 mySystemMonitor = "gnome-system-monitor"
 myDMenu = "dmenu-frecency"
+myDarkTable = "darktable"
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -162,12 +163,13 @@ myNewStyleKeys =
     workspaceShowDesktopKeys
     ++ workspaceMoveFocusedWindowKeys
     ++ [
-        ("M-a b", spawn myBrowser)
-        , ("M-a f", spawn myFileManager)
-        , ("M-S-<Enter>", spawn myTerminal)
-        , ("M-a s", spawn myScanner)
+         ("M-S-<Enter>", spawn myTerminal)
+        , ("M-a b", spawn myBrowser)
+        , ("M-a d", spawn myDarktTable)
         , ("M-a e", spawn myEbookViewer)
+        , ("M-a f", spawn myFileManager)
         , ("M-a m", spawn mySystemMonitor)
+        , ("M-a s", spawn myScanner)
 
         , ("M-1", showDesktop "IM")
         , ("M-2", showDesktop "ZM")
