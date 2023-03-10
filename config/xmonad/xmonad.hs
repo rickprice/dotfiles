@@ -101,9 +101,10 @@ myAdditionalKeys =
 myManageHook :: ManageHook
 myManageHook = composeAll
     [
-    className =? "Gimp" --> doFloat
+    manageSpawn
+    , manageZoomHook
+    , className =? "Gimp" --> doFloat
     , isDialog            --> doFloat
-    , manageSpawn
     ]
 
 myLayout = threeCol ||| tiled ||| Mirror tiled ||| Full
@@ -187,3 +188,22 @@ myNewStyleKeys =
         ]
     -- ++ [("M-w 9 8", showDesktop "W13")]
     -- ++ [("M-w 9 9", spawn "firefox"       )]
+
+
+manageZoomHook =
+  composeAll $
+    [ (className =? zoomClassName) <&&> shouldFloat <$> title --> doFloat,
+      (className =? zoomClassName) <&&> shouldSink <$> title --> doSink
+    ]
+  where
+    zoomClassName = "zoom"
+    tileTitles =
+      [ "Zoom - Free Account", -- main window
+        "Zoom - Licensed Account", -- main window
+        "Zoom", -- meeting window on creation
+        "Zoom Meeting" -- meeting window shortly after creation
+      ]
+    shouldFloat title = title `notElem` tileTitles
+    shouldSink title = title `elem` tileTitles
+    doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
+
