@@ -72,31 +72,12 @@ myConfig = def
         , normalBorderColor=myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
-        } `additionalKeys` myAdditionalKeys `additionalKeysP` myNewStyleKeys
+        } `additionalKeysP` myNewStyleKeys
 
 
 myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
 
 myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM")] -- list of (key, name)
-
-myAdditionalKeys =
-    [
-   ((0, xF86XK_PowerDown),         spawn "sudo systemctl suspend")
- , ((0, xF86XK_AudioRaiseVolume),  spawn "amixer -D pulse sset Master 10%+")
- , ((0, xF86XK_AudioLowerVolume),  spawn "amixer -D pulse sset Master 10%-")
- , ((0, xF86XK_AudioMute),         spawn "amixer -D pulse sset Master toggle")
- , ((0, xF86XK_MonBrightnessUp),   spawn "brightnessctl set +10%")
- , ((0, xF86XK_MonBrightnessDown), spawn "brightnessctl set 10%-")
-   , ((myModMask, xK_F8), spawn "firefox-developer-edition")
-    , ((myModMask, xK_F9), spawn "pcmanfm")
-    , ((myModMask .|. shiftMask, xK_Return), spawn "wezterm")
-     ] ++ [
-        ((myModMask, key), (windows $ W.greedyView ws))
-        | (key, ws) <- myExtraWorkspaces
-    ] ++ [
-        ((myModMask .|. shiftMask, key), (windows $ W.shift ws))
-        | (key, ws) <- myExtraWorkspaces
-    ]
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -185,6 +166,9 @@ myNewStyleKeys =
         , ("M-S-<Enter>", spawn myTerminal)
         , ("M-a s", spawn myScanner)
         , ("M-a e", spawn myEbookViewer)
+
+        , ("M-1", showDesktop "IM")
+        , ("M-2", showDesktop "ZM")
         ]
     -- ++ [("M-w 9 8", showDesktop "W13")]
     -- ++ [("M-w 9 9", spawn "firefox"       )]
