@@ -37,7 +37,7 @@ myEbookViewer = "ebook-viewer"
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-  spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 15"
+  spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 10"
   spawnOnce "wired --run"
   spawnOnce "picom -b"
   spawnOnce "xfce4-power-manager"
