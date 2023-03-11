@@ -16,7 +16,8 @@ import           XMonad.Layout.Magnifier
 import           XMonad.Layout.ThreeColumns
 
 import           XMonad.Hooks.EwmhDesktops
-import           XMonad.Hooks.UrgencyHook
+import           XMonad.Hooks.UrgencyHook     (NoUrgencyHook (NoUrgencyHook),
+                                               withUrgencyHook)
 
 import           Graphics.X11.ExtraTypes.XF86
 
@@ -58,9 +59,9 @@ myStartupHook = do
 
 main :: IO ()
 main = xmonad
-     . ewmhFullscreen
-     . setEwmhActivateHook doAskUrgent
      . ewmh
+     . ewmhFullscreen
+     . withUrgencyHook NoUrgencyHook -- no popups only bar
      . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
      $ myConfig
 
@@ -79,7 +80,7 @@ myConfig = def
 
 myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
 
-myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "TP"),(xK_2, "FP")] -- list of (key, name)
+myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "TP"),(xK_2, "FP1"),(xK_2,"FP2")] -- list of (key, name)
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -177,11 +178,13 @@ myNewStyleKeys =
         , ("M-2", showDesktop "ZM")
         , ("M-S-2", moveFocusedWindowToDesktop "ZM")
 
-        , ("M-3", showDesktop "TP")
-        , ("M-S-3", moveFocusedWindowToDesktop "TP")
+        , ("M-t 1", showDesktop "TP")
+        , ("M-S-t 1", moveFocusedWindowToDesktop "TP")
 
-        , ("M-4", showDesktop "FP")
-        , ("M-S-4", moveFocusedWindowToDesktop "FP")
+        , ("M-w f 1", showDesktop "FP1")
+        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP")
+        , ("M-w f 2", showDesktop "FP2")
+        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP")
 
         , ("M-p", spawn myDMenu)
         ]
