@@ -79,7 +79,7 @@ myConfig = def
 
 myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
 
-myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM")] -- list of (key, name)
+myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "TP"),(xK_2, "FP")] -- list of (key, name)
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -129,7 +129,7 @@ myXmobarPP = def
 myNormalBorderColor="#dddddd"
 myFocusedBorderColor="#FFB53A"
 
-desktops=6
+desktops=4
 desktop_panes=3
 workspacePrefix = "W"
 workspaceFocusKey = "M-w"
@@ -165,14 +165,23 @@ myNewStyleKeys =
     ++ [
          ("M-S-<Enter>", spawn myTerminal)
         , ("M-a b", spawn myBrowser)
-        , ("M-a d", spawn myDarktTable)
+        , ("M-a d", spawn myDarkTable)
         , ("M-a e", spawn myEbookViewer)
         , ("M-a f", spawn myFileManager)
         , ("M-a m", spawn mySystemMonitor)
         , ("M-a s", spawn myScanner)
 
         , ("M-1", showDesktop "IM")
+        , ("M-S-1", moveFocusedWindowToDesktop "IM")
+
         , ("M-2", showDesktop "ZM")
+        , ("M-S-2", moveFocusedWindowToDesktop "ZM")
+
+        , ("M-3", showDesktop "TP")
+        , ("M-S-3", moveFocusedWindowToDesktop "TP")
+
+        , ("M-4", showDesktop "FP")
+        , ("M-S-4", moveFocusedWindowToDesktop "FP")
 
         , ("M-p", spawn myDMenu)
         ]
