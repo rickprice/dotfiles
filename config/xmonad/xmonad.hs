@@ -80,7 +80,7 @@ myConfig = def
 
 myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
 
-myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "TP"),(xK_2, "FP1"),(xK_2,"FP2")] -- list of (key, name)
+myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "DOC"),(xK_2, "TP"),(xK_2, "FP1"),(xK_2,"FP2")] -- list of (key, name)
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -178,13 +178,16 @@ myNewStyleKeys =
         , ("M-2", showDesktop "ZM")
         , ("M-S-2", moveFocusedWindowToDesktop "ZM")
 
-        , ("M-t 1", showDesktop "TP")
-        , ("M-S-t 1", moveFocusedWindowToDesktop "TP")
+        , ("M-w d 1", showDesktop "DOC")
+        , ("M-S-w d 1", moveFocusedWindowToDesktop "DOC")
+
+        , ("M-w t 1", showDesktop "TP")
+        , ("M-S-w t 1", moveFocusedWindowToDesktop "TP")
 
         , ("M-w f 1", showDesktop "FP1")
-        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP")
+        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP1")
         , ("M-w f 2", showDesktop "FP2")
-        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP")
+        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP2")
 
         , ("M-p", spawn myDMenu)
         ]
