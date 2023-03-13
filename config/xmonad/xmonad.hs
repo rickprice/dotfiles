@@ -38,7 +38,7 @@ myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 mySystemMonitor = "gnome-system-monitor"
 myDMenu = "dmenu-frecency"
 myDarkTable = "darktable"
-myExtraWorkspaces = ["IM","ZM", "CAL","DOC", "TP", "FP1","FP2"]
+myExtraWorkspaces = ["IM","ZM", "ADM","DOC", "TP", "FP1","FP2"]
 myCustomKeys = [
          ("M-S-<Enter>", spawn myTerminal)
         , ("M-a b", spawn myBrowser)
@@ -57,8 +57,8 @@ myCustomKeys = [
         , ("M-w d 1", showDesktop "DOC")
         , ("M-S-w d 1", moveFocusedWindowToDesktop "DOC")
 
-        , ("M-3", showDesktop "CAL")
-        , ("M-S-3", moveFocusedWindowToDesktop "CAL")
+        , ("M-3", showDesktop "ADM")
+        , ("M-S-3", moveFocusedWindowToDesktop "ADM")
 
         , ("M-w t 1", showDesktop "TP")
         , ("M-S-w t 1", moveFocusedWindowToDesktop "TP")
