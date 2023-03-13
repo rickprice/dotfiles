@@ -38,6 +38,40 @@ myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 mySystemMonitor = "gnome-system-monitor"
 myDMenu = "dmenu-frecency"
 myDarkTable = "darktable"
+myExtraWorkspaces = ["IM","ZM", "CAL","DOC", "TP", "FP1","FP2"]
+myCustomKeys = [
+         ("M-S-<Enter>", spawn myTerminal)
+        , ("M-a b", spawn myBrowser)
+        , ("M-a d", spawn myDarkTable)
+        , ("M-a e", spawn myEbookViewer)
+        , ("M-a f", spawn myFileManager)
+        , ("M-a m", spawn mySystemMonitor)
+        , ("M-a s", spawn myScanner)
+
+        , ("M-1", showDesktop "IM")
+        , ("M-S-1", moveFocusedWindowToDesktop "IM")
+
+        , ("M-2", showDesktop "ZM")
+        , ("M-S-2", moveFocusedWindowToDesktop "ZM")
+
+        , ("M-w d 1", showDesktop "DOC")
+        , ("M-S-w d 1", moveFocusedWindowToDesktop "DOC")
+
+        , ("M-3", showDesktop "CAL")
+        , ("M-S-3", moveFocusedWindowToDesktop "CAL")
+
+        , ("M-w t 1", showDesktop "TP")
+        , ("M-S-w t 1", moveFocusedWindowToDesktop "TP")
+
+        , ("M-w f 1", showDesktop "FP1")
+        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP1")
+        , ("M-w f 2", showDesktop "FP2")
+        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP2")
+
+        , ("M-p", spawn myDMenu)
+        ]
+    -- ++ [("M-w 9 8", showDesktop "W13")]
+    -- ++ [("M-w 9 9", spawn "firefox"       )]
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -78,9 +112,7 @@ myConfig = def
         } `additionalKeysP` myNewStyleKeys
 
 
-myWorkspaces = workspaceNames ++ (map snd myExtraWorkspaces) -- you can customize the names of the default workspaces by changing the list
-
-myExtraWorkspaces = [(xK_1, "IM"),(xK_2, "ZM"),(xK_2, "DOC"),(xK_2, "TP"),(xK_2, "FP1"),(xK_2,"FP2")] -- list of (key, name)
+myWorkspaces = workspaceNames ++ myExtraWorkspaces
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -163,36 +195,7 @@ desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, m
 myNewStyleKeys =
     workspaceShowDesktopKeys
     ++ workspaceMoveFocusedWindowKeys
-    ++ [
-         ("M-S-<Enter>", spawn myTerminal)
-        , ("M-a b", spawn myBrowser)
-        , ("M-a d", spawn myDarkTable)
-        , ("M-a e", spawn myEbookViewer)
-        , ("M-a f", spawn myFileManager)
-        , ("M-a m", spawn mySystemMonitor)
-        , ("M-a s", spawn myScanner)
-
-        , ("M-1", showDesktop "IM")
-        , ("M-S-1", moveFocusedWindowToDesktop "IM")
-
-        , ("M-2", showDesktop "ZM")
-        , ("M-S-2", moveFocusedWindowToDesktop "ZM")
-
-        , ("M-w d 1", showDesktop "DOC")
-        , ("M-S-w d 1", moveFocusedWindowToDesktop "DOC")
-
-        , ("M-w t 1", showDesktop "TP")
-        , ("M-S-w t 1", moveFocusedWindowToDesktop "TP")
-
-        , ("M-w f 1", showDesktop "FP1")
-        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP1")
-        , ("M-w f 2", showDesktop "FP2")
-        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP2")
-
-        , ("M-p", spawn myDMenu)
-        ]
-    -- ++ [("M-w 9 8", showDesktop "W13")]
-    -- ++ [("M-w 9 9", spawn "firefox"       )]
+    ++ myCustomKeys
 
 
 manageZoomHook =
