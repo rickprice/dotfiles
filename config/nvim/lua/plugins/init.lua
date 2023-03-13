@@ -279,6 +279,7 @@ return {
         "python-lsp-server",
         "haskell-language-server",
         "markdownlint",
+        "marksman",
       },
     },
   },
