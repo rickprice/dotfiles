@@ -285,7 +285,7 @@ return {
   },
 
   { "williamboman/mason-lspconfig.nvim", opts = {
-    ensure_installed = { "rust_analyzer" },
+    ensure_installed = { "rust_analyzer", "marksman" },
   } },
 
   -- Use <tab> for completion and snippets (supertab)
