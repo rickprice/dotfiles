@@ -2,6 +2,8 @@
 
 import           XMonad
 -- import XMonad.Config.Desktop
+import           XMonad.Config.Desktop        (desktopConfig,
+                                               desktopLayoutModifiers)
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
@@ -27,6 +29,9 @@ import           XMonad.Util.SpawnOnce
 
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
+import           XMonad.Layout.NoBorders      (noBorders, smartBorders)
+-- import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
+import           XMonad.Layout.ToggleLayouts
 
 myModMask = mod4Mask
 myBrowser = "firefox-developer-edition"
@@ -40,7 +45,8 @@ myDMenu = "dmenu-frecency"
 myDarkTable = "darktable"
 myExtraWorkspaces = ["IM","ZM", "ADM","DOC", "TP", "FP1","FP2"]
 myCustomKeys = [
-         ("M-S-<Enter>", spawn myTerminal)
+         ("M-f", sendMessage ToggleLayout)
+        , ("M-S-<Enter>", spawn myTerminal)
         , ("M-a b", spawn myBrowser)
         , ("M-a d", spawn myDarkTable)
         , ("M-a e", spawn myEbookViewer)
@@ -103,7 +109,7 @@ myConfig = def
         {
         terminal    = myTerminal
         , modMask     = myModMask
-        , layoutHook=myLayout
+        , layoutHook= smartBorders $ desktopLayoutModifiers $ myLayouts
         , manageHook=myManageHook
         , startupHook = myStartupHook
         , normalBorderColor=myNormalBorderColor
@@ -123,7 +129,7 @@ myManageHook = composeAll
     , isDialog            --> doFloat
     ]
 
-myLayout = threeCol ||| tiled ||| Mirror tiled ||| Full
+myLayouts = toggleLayouts ( noBorders Full) (threeCol ||| tiled ||| Mirror tiled ||| Full)
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled    = Tall nmaster delta ratio
