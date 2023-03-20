@@ -18,3 +18,5 @@ export PATH="/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 export PATH="/home/fprice/.cache/activestate/bin:$PATH"
 # -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+
+source /home/fprice/.config/broot/launcher/bash/br
