@@ -51,7 +51,7 @@ myCustomKeys = [
         , ("M-a d", spawn myDarkTable)
         , ("M-a e", spawn myEbookViewer)
         , ("M-a f", spawn myFileManager)
-        , ("M-a m", spawn mySystemMonitor)
+        , ("M-a m", spawn mySystemMonitor) -- performance monitor
         , ("M-a s", spawn myScanner)
 
         , ("M-1", showDesktop "IM")
