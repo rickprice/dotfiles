@@ -4,97 +4,97 @@ CLASS="firefox"
 
 # Declare a string array with type
 declare -a StringArray=(
-"aphmau" \
-"autopsy" \
-"baby" \
-"blood" \
-"body swap" \
-"carrion" \
-"containment breach" \
-"creepiest" \
-"crystal" \
-"cursed" \
-"danger" \
-"dangerous" \
-"dark angel" \
-"dark" \
-"darkest" \
-"dead" \
-"deadpool" \
-"death" \
-"demon" \
-"dragon" \
-"dreams" \
-"dying" \
-"evil" \
-"fortnight" \
-"freddy" \
-"ghost" \
-"girlfriend" \
-"goddess" \
-"halloween" \
-"hardcore" \
-"haunted" \
-"hell" \
-"herobrine" \
-"horror" \
-"invasion" \
-"joker" \
-"killing" \
-"kills" \
-"marvel" \
-"mature" \
-"mermaid" \
-"monster" \
-"mystic" \
-"murder" \
-"nightmare" \
-# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
-"observation duty" \
-"one who knocks" \
-"possessed" \
-"problems at the port" \
-"puppet" \
-"rage" \
-"raw" \
-"ready or not" \
-"roblox" \
-"scarier" \
-"scary" \
-"seed of evil" \
-"secret lab" \
-"shapeshift" \
-"skywalker" \
-"slashers" \
-"slime girl" \
-"spyhunter" \
-"stranger within" \
-"survival" \
-"terminator" \
-"terrify" \
-"trick or treat" \
-"vengeful" \
-"werewolf" \
-"werewolve" \
-"winter ultima" \
-"witch" \
-"wolf" \
-"xbox" \
-"zeta" \
-"zombie" \
+	"aphmau"
+	"autopsy"
+	"baby"
+	"blood"
+	"body swap"
+	"carrion"
+	"containment breach"
+	"creepiest"
+	"crystal"
+	"cursed"
+	"danger"
+	"dangerous"
+	"dark angel"
+	"dark"
+	"darkest"
+	"dead"
+	"deadpool"
+	"death"
+	"demon"
+	"dragon"
+	"dreams"
+	"dying"
+	"evil"
+	"fortnight"
+	"freddy"
+	"ghost"
+	"girlfriend"
+	"goddess"
+	"halloween"
+	"hardcore"
+	"haunted"
+	"hell"
+	"herobrine"
+	"horror"
+	"invasion"
+	"joker"
+	"killing"
+	"kills"
+	"marvel"
+	"mature"
+	"mermaid"
+	"monster"
+	"mystic"
+	"murder"
+	"nightmare"
+	# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
+	"observation duty"
+	"one who knocks"
+	"possessed"
+	"problems at the port"
+	"puppet"
+	"rage"
+	"raw"
+	"ready or not"
+	"roblox"
+	"scarier"
+	"scary"
+	"seed of evil"
+	"secret lab"
+	"shapeshift"
+	"simpsons"
+	"skywalker"
+	"slashers"
+	"slime girl"
+	"spyhunter"
+	"stranger within"
+	"survival"
+	"terminator"
+	"terrify"
+	"trick or treat"
+	"vengeful"
+	"werewolf"
+	"werewolve"
+	"winter ultima"
+	"witch"
+	"wolf"
+	"xbox"
+	"zeta"
+	"zombie"
 )
- 
-while true
-do
-    echo "Waiting to check for bad videos"
-    sleep 60
-    echo "Checking for bad videos"
 
-    # Read the array values with space
-    for val in "${StringArray[@]}"; do
-        echo Checking $val
-        xdotool search --class $CLASS search  --name $val windowkill
-    done
+while true; do
+	echo "Waiting to check for bad videos"
+	sleep 60
+	echo "Checking for bad videos"
 
-    echo "Checked for bad videos"
+	# Read the array values with space
+	for val in "${StringArray[@]}"; do
+		echo Checking $val
+		xdotool search --class $CLASS search --name $val windowkill
+	done
+
+	echo "Checked for bad videos"
 done
