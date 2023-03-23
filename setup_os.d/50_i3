@@ -16,7 +16,7 @@ paru --noconfirm -S nitrogen
 paru --noconfirm -S picom
 # paru --noconfirm -S network-manager-applet-git
 paru --noconfirm -S xfce4-power-manager
-paru --noconfirm -S pamac-aur
+# paru --noconfirm -S pamac-aur
 paru --noconfirm -S xautolock
 # paru --noconfirm -S i3lock-blur
 # paru --noconfirm -S ff-theme-util
