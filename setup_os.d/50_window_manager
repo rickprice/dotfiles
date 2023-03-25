@@ -31,7 +31,6 @@ paru --noconfirm -S xorg-xwininfo
 #paru --noconfirm -S dunst
 #paru --noconfirm -S polkit-gnome
 
-
 # i3status-rust
 paru --noconfirm -S i3status-rust alsa-utils
 
@@ -60,3 +59,4 @@ paru --noconfirm -S volumeicon
 paru --noconfirm -S xfce4-power-manager
 paru --noconfirm -S pamac-aur
 paru --noconfirm -S network-manager-applet
+paru --noconfirm -S xmlstarlet
