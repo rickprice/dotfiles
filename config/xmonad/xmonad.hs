@@ -16,6 +16,7 @@ import           XMonad.Util.Ungrab
 
 import           XMonad.Layout.Magnifier
 import           XMonad.Layout.ThreeColumns
+import XMonad.Layout.MultiColumns
 
 import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.UrgencyHook     (NoUrgencyHook (NoUrgencyHook),
@@ -129,13 +130,14 @@ myManageHook = composeAll
     , isDialog            --> doFloat
     ]
 
-myLayouts = toggleLayouts ( noBorders Full) (threeCol ||| tiled ||| Mirror tiled ||| Full)
+myLayouts = toggleLayouts ( noBorders Full) (smartBorders(multicolumn ||| threeCol ||| tiled ||| Mirror tiled ||| Full))
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled    = Tall nmaster delta ratio
     nmaster  = 1      -- Default number of windows in the master pane
     ratio    = 1/2    -- Default proportion of screen occupied by master pane
     delta    = 3/100  -- Percent of screen to increment by when resizing panes
+    multicolumn = multiCol [1] 1 0.01 (-0.5)
 
 myXmobarPP :: PP
 myXmobarPP = def
