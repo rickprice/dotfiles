@@ -48,13 +48,14 @@ paru --noconfirm -S postgresql-libs # Needed for ActiveState BE tools
 paru --noconfirm -S python-psycopg2 # Needed for DA importer go utilities
 paru --noconfirm -S python-pipenv   # Needed for BE tools
 paru --noconfirm -S pyenv           # Needed for BE tools
-paru --noconfirm -S autorandr
+paru --noconfirm -S autorandr-git
 paru --noconfirm -S arandr
 paru --noconfirm -S ripgrep
 paru --noconfirm -S jpegoptim # Lets you reduce size of JPEGs to fit
 paru --noconfirm -S inetutils
 paru --noconfirm -S trash-cli
 paru --noconfirm -S broot
+n
 
 # Stuff to read X Window information
 paru --noconfirm -S xdotool
