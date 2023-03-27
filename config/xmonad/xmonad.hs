@@ -1,5 +1,7 @@
 {-# LANGUAGE ImportQualifiedPost #-}
 
+import Data.Ratio
+
 import           XMonad
 -- import XMonad.Config.Desktop
 import           XMonad.Config.Desktop        (desktopConfig,
@@ -25,6 +27,7 @@ import           XMonad.Hooks.UrgencyHook     (NoUrgencyHook (NoUrgencyHook),
 import           Graphics.X11.ExtraTypes.XF86
 
 import           XMonad.Actions.SpawnOn
+import XMonad.Actions.Warp
 import qualified XMonad.StackSet              as W
 import           XMonad.Util.SpawnOnce
 
@@ -79,6 +82,12 @@ myCustomKeys = [
         ]
     -- ++ [("m-d 9 8", showDesktop "W13")]
     -- ++ [("m-d 9 9", spawn "firefox"       )]
+
+warpMouseKeys = [
+          ("M-C-w", warpToScreen 0 (1%2) (1%2))
+        , ("M-C-e", warpToScreen 1 (1%2) (1%2))
+        , ("M-C-r", warpToScreen 2 (1%2) (1%2))
+        ]
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -204,6 +213,7 @@ myNewStyleKeys =
     workspaceShowDesktopKeys
     ++ workspaceMoveFocusedWindowKeys
     ++ myCustomKeys
+    ++ warpMouseKeys
 
 
 manageZoomHook =
