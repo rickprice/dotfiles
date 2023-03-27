@@ -61,24 +61,24 @@ myCustomKeys = [
         , ("M-2", showDesktop "ZM")
         , ("M-S-2", moveFocusedWindowToDesktop "ZM")
 
-        , ("M-w d 1", showDesktop "DOC")
-        , ("M-S-w d 1", moveFocusedWindowToDesktop "DOC")
+        , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
+        , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
 
         , ("M-3", showDesktop "ADM")
         , ("M-S-3", moveFocusedWindowToDesktop "ADM")
 
-        , ("M-w t 1", showDesktop "TP")
-        , ("M-S-w t 1", moveFocusedWindowToDesktop "TP")
+        , (workspaceFocusKey ++ "t 1", showDesktop "TP")
+        , (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP")
 
-        , ("M-w f 1", showDesktop "FP1")
-        , ("M-S-w f 1", moveFocusedWindowToDesktop "FP1")
-        , ("M-w f 2", showDesktop "FP2")
-        , ("M-S-w f 2", moveFocusedWindowToDesktop "FP2")
+        , (workspaceFocusKey ++ "f 1", showDesktop "FP1")
+        , (workspaceMoveKey ++ "f 1", moveFocusedWindowToDesktop "FP1")
+        , (workspaceFocusKey ++ "f 2", showDesktop "FP2")
+        , (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2")
 
-        , ("M-p", spawn myDMenu)
+        -- , ("M-p", spawn myDMenu)
         ]
-    -- ++ [("M-w 9 8", showDesktop "W13")]
-    -- ++ [("M-w 9 9", spawn "firefox"       )]
+    -- ++ [("m-d 9 8", showDesktop "W13")]
+    -- ++ [("m-d 9 9", spawn "firefox"       )]
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -173,8 +173,8 @@ myFocusedBorderColor="#FFB53A"
 desktops=4
 desktop_panes=3
 workspacePrefix = "W"
-workspaceFocusKey = "M-w"
-workspaceMoveKey = "M-S-w"
+workspaceFocusKey = "M-d "
+workspaceMoveKey = "M-S-d "
 
 workspaceNames = map desktopNameFromTuple workspace_panel_tuples
 workspaceShowDesktopKeys = map desktopShowDesktopKeymapFromTuple workspace_panel_tuples
