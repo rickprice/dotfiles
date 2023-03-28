@@ -80,7 +80,7 @@ git lfs install
 paru --noconfirm -S man-db
 
 ## Remmina
-paru --noconfirm -S remmina
+paru --noconfirm -S remmina # For use with aws rdp
 paru --noconfirm -S freerdp
 
 ## Dotter
