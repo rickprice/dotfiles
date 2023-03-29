@@ -91,7 +91,7 @@ warpMouseKeys = [
 
 myStartupHook = do
   spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-  spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 10"
+  spawn "killall trayer; trayer --monitor 0 --edge top --align right --width 15"
   spawnOnce "wired --run"
   spawnOnce "picom -b"
   spawnOnce "xfce4-power-manager"
@@ -100,6 +100,8 @@ myStartupHook = do
   spawnOnce "pamac-tray"
   spawnOnce "blueman-applet"
   spawnOnce "volumeicon"
+  -- spawnOnce "meteo"
+  spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
   spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds ++ " " ++ myBackgrounds)
   spawnOn "IM" "slack"
@@ -136,6 +138,7 @@ myManageHook = composeAll
     manageSpawn
     , manageZoomHook
     , className =? "Gimp" --> doFloat
+    , className =? "meteo-qt" --> doFloat
     , isDialog            --> doFloat
     ]
 
