@@ -6,6 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 
 opt.backspace = { "indent", "eol", "start" }
 -- opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed"
 opt.colorcolumn = "100"
 opt.completeopt = "menu,menuone,noselect"
 opt.cursorcolumn = false
