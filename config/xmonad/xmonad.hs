@@ -99,7 +99,7 @@ myStartupHook = do
   spawnOnce "nm-applet"
   spawnOnce "pamac-tray"
   spawnOnce "blueman-applet"
-  spawnOnce "volumeicon"
+  spawn "killall volumeicon; sleep 15; volumeicon"
   -- spawnOnce "meteo"
   spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
