@@ -41,7 +41,7 @@
 "config/bashrc" = "~/.bashrc"
 
 [xmonad.files]
-"config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
+"config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
 "home/xmobarrc" = "~/.xmobarrc"
 "home/stalonetrayrc" = "~/.stalonetrayrc"
 
