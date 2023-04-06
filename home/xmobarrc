@@ -13,9 +13,10 @@ Config { overrideRedirect = False
 --                    , Run Date "%a %Y-%m-%d <fc=#8be9fd>%H:%M</fc>" "date" 10
                     , Run Date "%a %Y-%m-%d %H:%M" "date" 10
                     , Run XMonadLog
+                    , Run Com "date" ["+Q%q"] "quarter" 36000
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " %XMonadLog% | %cpu% | %memory% | %date% "
+       , template = " %XMonadLog% | %cpu% | %memory% | %quarter% %date% "
        }
 
