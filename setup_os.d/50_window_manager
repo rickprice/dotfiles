@@ -31,7 +31,6 @@ paru --noconfirm -S xorg-xwininfo
 #paru --noconfirm -S dunst
 #paru --noconfirm -S polkit-gnome
 
-
 # i3status-rust
 paru --noconfirm -S i3status-rust alsa-utils
 
@@ -48,8 +47,9 @@ paru --noconfirm -S alsa-utils pulseaudio pavucontrol
 git clone git@github.com:streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
 
 # XMonad Window Manager
+paru --noconfirm -S git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf
 paru --noconfirm -S xmonad xmonad-contrib
-paru --noconfirm -S xmobar-dynamic
+paru --noconfirm -S xmobar
 paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
 paru --noconfirm -S wired # toaster notification manager
@@ -60,3 +60,7 @@ paru --noconfirm -S volumeicon
 paru --noconfirm -S xfce4-power-manager
 paru --noconfirm -S pamac-aur
 paru --noconfirm -S network-manager-applet
+paru --noconfirm -S xmlstarlet
+paru --noconfirm -S meteo-gtk
+paru --noconfirm -S meteo-qt
+paru --noconfirm -S ttf-weather-icons

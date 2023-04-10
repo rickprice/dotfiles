@@ -76,3 +76,6 @@
 
 [pipewire.files]
 "config/pipewire/pipewire-pulse.conf" = "~/.config/pipewire/pipewire-pulse.conf"
+
+[meteo-qt.files]
+"config/meteo-qt/meteo-qt.conf" = "~/.config/meteo-qt/meteo-qt.conf"
