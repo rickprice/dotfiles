@@ -24,10 +24,10 @@
 [bash.files]
 "home/bashrc" = "~/.bashrc"
 
-[xmonad.files]
-"config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
-"home/xmobarrc" = "~/.xmobarrc"
-"home/stalonetrayrc" = "~/.stalonetrayrc"
+# [xmonad.files]
+# "config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
+# "home/xmobarrc" = "~/.xmobarrc"
+# "home/stalonetrayrc" = "~/.stalonetrayrc"
 
 [fish.files]
 # Fish config (probably unused)
