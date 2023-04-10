@@ -61,6 +61,6 @@ paru --noconfirm -S xfce4-power-manager
 paru --noconfirm -S pamac-aur
 paru --noconfirm -S network-manager-applet
 paru --noconfirm -S xmlstarlet
-paru --noconfirm -S meteo-gtk
-paru --noconfirm -S meteo-qt
+# paru --noconfirm -S meteo-gtk
+paru --noconfirm -S meteo-qt-git
 paru --noconfirm -S ttf-weather-icons
