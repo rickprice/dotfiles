@@ -106,7 +106,7 @@ myStartupHook = do
   -- spawnOnce "meteo"
   spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
-  spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds ++ " " ++ myBackgrounds)
+  spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds)
   spawnOn "IM" "slack"
   spawnOn "IM" "discord"
 
