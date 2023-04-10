@@ -94,7 +94,7 @@
 "local/bin/FindOrphanedXMPFiles.py"="~/.local/bin/FindOrphanedXMPFiles"
 "local/bin/location_history_json_converter.py"="~/.local/bin/location-history-json-converter"
 "local/bin/weather.sh"="/usr/local/bin/weather"
-"local/bin/sprint.sh" = { target = "~/.local/bin/sprint", type = "symbolic"}
+"local/bin/sprint.sh" = { target = "/usr/local/bin/sprint", type = "symbolic", owner = "root" }
 "local/bin/klogglog.sh"="~/.local/bin/klogglog"
 "local/bin/Export_Secrets_And_Config.sh"="~/.local/bin/Export_Secrets_And_Config"
 "local/bin/altlog.sh"="~/.local/bin/altlog"
