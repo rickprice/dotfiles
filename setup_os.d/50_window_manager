@@ -64,3 +64,4 @@ paru --noconfirm -S xmlstarlet
 # paru --noconfirm -S meteo-gtk
 paru --noconfirm -S meteo-qt-git
 paru --noconfirm -S ttf-weather-icons
+paru --noconfirm -S gnome-calculator

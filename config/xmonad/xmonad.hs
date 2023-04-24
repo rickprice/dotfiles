@@ -55,6 +55,8 @@ myDMenu = "dmenu-frecency"
 
 myDarkTable = "darktable"
 
+myCalculator = "gnome-calculator"
+
 myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP", "FP1", "FP2"]
 
 myCustomKeys =
@@ -66,6 +68,7 @@ myCustomKeys =
     ("M-a f", spawn myFileManager),
     ("M-a m", spawn mySystemMonitor), -- performance monitor
     ("M-a s", spawn myScanner),
+    ("M-a c", spawn myCalculator),
     ("M-1", showDesktop "IM"),
     ("M-S-1", moveFocusedWindowToDesktop "IM"),
     ("M-2", showDesktop "ZM"),
