@@ -40,15 +40,15 @@ paru --noconfirm -S i3status-rust alsa-utils
 #paru --noconfirm -S polybar-git
 
 # Awesome Window Manager
-paru --noconfirm -R awesome
-paru --noconfirm -S awesome-git
-paru --noconfirm -S rlwrap dex vicious
-paru --noconfirm -S alsa-utils pulseaudio pavucontrol
-git clone git@github.com:streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
+# paru --noconfirm -R awesome
+# paru --noconfirm -S awesome-git
+# paru --noconfirm -S rlwrap dex vicious
+# paru --noconfirm -S alsa-utils pulseaudio pavucontrol
+# git clone git@github.com:streetturtle/awesome-wm-widgets.git ~/.config/awesome/awesome-wm-widgets
 
 # XMonad Window Manager
 paru --noconfirm -S git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf
-paru --noconfirm -S xmonad xmonad-contrib
+paru --noconfirm -S xmonad xmonad-contrib stack
 paru --noconfirm -S xmobar
 paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
