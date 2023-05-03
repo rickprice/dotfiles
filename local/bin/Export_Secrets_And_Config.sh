@@ -2,6 +2,7 @@
 
 # Fail script if any command fails
 set -e
+set -x
 
 ## keep track of the last executed command
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
@@ -59,4 +60,3 @@ cp -Rp ~/$DIR_TO_COPY/* $EXPORT_DIRECTORY/$DIR_TO_COPY/.
 DIR_TO_COPY=etc/pulse
 mkdir -p $EXPORT_DIRECTORY/$DIR_TO_COPY
 cp -Rp /$DIR_TO_COPY/* $EXPORT_DIRECTORY/$DIR_TO_COPY/.
-
