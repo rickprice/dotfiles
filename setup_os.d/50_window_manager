@@ -48,7 +48,7 @@ paru --noconfirm -S i3status-rust alsa-utils
 
 # XMonad Window Manager
 paru --noconfirm -S git xorg-server xorg-apps xorg-xinit xorg-xmessage libx11 libxft libxinerama libxrandr libxss pkgconf
-paru --noconfirm -S xmonad xmonad-contrib stack
+paru --noconfirm -S xmonad xmonad-contrib stack ghcup-hs-bin
 paru --noconfirm -S xmobar
 paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
