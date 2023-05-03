@@ -57,7 +57,7 @@ myDarkTable = "darktable"
 
 myCalculator = "gnome-calculator"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP", "FP1", "FP2"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
 myCustomKeys =
   [ ("M-f", sendMessage ToggleLayout),
@@ -77,12 +77,16 @@ myCustomKeys =
     (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC"),
     ("M-3", showDesktop "ADM"),
     ("M-S-3", moveFocusedWindowToDesktop "ADM"),
-    (workspaceFocusKey ++ "t 1", showDesktop "TP"),
-    (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP"),
+    (workspaceFocusKey ++ "t 1", showDesktop "TP1"),
+    (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1"),
+    (workspaceFocusKey ++ "t 2", showDesktop "TP2"),
+    (workspaceMoveKey ++ "t 2", moveFocusedWindowToDesktop "TP2"),
     (workspaceFocusKey ++ "f 1", showDesktop "FP1"),
     (workspaceMoveKey ++ "f 1", moveFocusedWindowToDesktop "FP1"),
     (workspaceFocusKey ++ "f 2", showDesktop "FP2"),
-    (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2")
+    (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2"),
+    (workspaceFocusKey ++ "f 3", showDesktop "FP3"),
+    (workspaceMoveKey ++ "f 3", moveFocusedWindowToDesktop "FP3")
     -- , ("M-p", spawn myDMenu)
   ]
 
@@ -193,7 +197,7 @@ myFocusedBorderColor = "#FFB53A"
 
 desktops = 4
 
-desktop_panes = 3
+desktop_panes = 2
 
 workspacePrefix = "W"
 
