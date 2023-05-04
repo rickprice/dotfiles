@@ -110,8 +110,8 @@ myStartupHook = do
   spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
   spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds)
-  spawnOn "IM" "slack"
-  spawnOn "IM" "discord"
+  -- spawnOn "IM" "slack"
+  -- spawnOn "IM" "discord"
 
 -- spawn "autorandr mobile; autorandr docked"
 
