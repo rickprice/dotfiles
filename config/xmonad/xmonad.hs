@@ -57,6 +57,8 @@ myDarkTable = "darktable"
 
 myCalculator = "gnome-calculator"
 
+myRDPClient = "reminna"
+
 myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
 myCustomKeys =
@@ -69,6 +71,7 @@ myCustomKeys =
     ("M-a m", spawn mySystemMonitor), -- performance monitor
     ("M-a s", spawn myScanner),
     ("M-a c", spawn myCalculator),
+    ("M-a r", spawn myRDPClient),
     ("M-1", showDesktop "IM"),
     ("M-S-1", moveFocusedWindowToDesktop "IM"),
     ("M-2", showDesktop "ZM"),
