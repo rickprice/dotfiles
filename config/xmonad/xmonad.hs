@@ -57,7 +57,7 @@ myDarkTable = "darktable"
 
 myCalculator = "gnome-calculator"
 
-myRDPClient = "reminna"
+myRDPClient = "remmina"
 
 myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
