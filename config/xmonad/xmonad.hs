@@ -198,9 +198,9 @@ myNormalBorderColor = "#dddddd"
 
 myFocusedBorderColor = "#FFB53A"
 
-desktops = 4
+desktops = 3
 
-desktop_panes = 2
+desktop_panes = 3
 
 workspacePrefix = "W"
 
