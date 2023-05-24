@@ -55,6 +55,8 @@ myDMenu = "dmenu-frecency"
 
 myDarkTable = "darktable"
 
+myInkScape = "inkscape"
+
 myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
@@ -66,6 +68,7 @@ myCustomKeys =
     ("M-S-<Enter>", spawn myTerminal),
     ("M-a b", spawn myBrowser),
     ("M-a d", spawn myDarkTable),
+    ("M-a i", spawn myInkScape),
     ("M-a e", spawn myEbookViewer),
     ("M-a f", spawn myFileManager),
     ("M-a m", spawn mySystemMonitor), -- performance monitor
