@@ -254,7 +254,8 @@ manageZoomHook =
       [ "Zoom - Free Account", -- main window
         "Zoom - Licensed Account", -- main window
         "Zoom", -- meeting window on creation
-        "Zoom Meeting" -- meeting window shortly after creation
+        "Zoom Meeting", -- meeting window shortly after creation
+        "Meeting Chat" -- Meeting chat window
       ]
     shouldFloat title = title `notElem` tileTitles
     shouldSink title = title `elem` tileTitles
