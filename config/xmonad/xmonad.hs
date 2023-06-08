@@ -255,6 +255,7 @@ manageZoomHook =
         "Zoom - Licensed Account", -- main window
         "Zoom", -- meeting window on creation
         "Zoom Meeting", -- meeting window shortly after creation
+        "Zoom Cloud Meetings", -- The window they create after the Zoom meeting closes
         "Meeting Chat" -- Meeting chat window
       ]
     shouldFloat title = title `notElem` tileTitles
