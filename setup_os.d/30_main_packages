@@ -112,6 +112,7 @@ paru --noconfirm -S xpub
 
 ## Github command line
 paru --noconfirm -S github-cli
+paru --noconfirm -S difftastic
 
 ## Seems to be needed for Perl for the epson printer drivers
 # paru --noconfirm -S perl-list-allutils
