@@ -25,12 +25,6 @@
 	user = {{ hub.user }}
 [rebase]
 	autoStash = true
-[pager]
-    difftool = true
-    diff = difftastic
-    log = difftastic
-    reflog = difftastic
-    show = difftastic
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
