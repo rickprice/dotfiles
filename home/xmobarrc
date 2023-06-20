@@ -10,12 +10,13 @@ Config { overrideRedirect = False
 --                        , "--normal", "green"
                         ] 10
                     , Run Memory ["--template", "Mem: <usedratio>%"] 10
-                    , Run Date "%a %Y-%m-%d <fc=#FFB53A>%H:%M</fc>" "date" 10
+                    , Run Date "<fc=#FFB53A>%A</fc> %Y-%m-%d <fc=#FFB53A>%H:%M</fc>" "date" 10
                     , Run XMonadLog
-                    , Run Com "sprint" [] "sprint" 36000
+--                    , Run Com "sprint" [] "sprint" 36000
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
+--       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
+       , template = " %XMonadLog% | %cpu% | %memory% | %date% "
        }
 
