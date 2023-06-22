@@ -419,6 +419,27 @@ return {
   },
 
   {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers", -- This is the important bit!
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                work = "~/notes/work",
+                home = "~/notes/home",
+              },
+            },
+          },
+        },
+      })
+    end,
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
