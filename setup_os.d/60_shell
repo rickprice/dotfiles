@@ -37,9 +37,8 @@ paru --noconfirm -S starship
 
 fish -c "fisher install PatrickF1/fzf.fish"
 fish -c "fisher install danhper/fish-ssh-agent"
-fish -c "fisher install rickprice/aws_mfa"
+# fish -c "fisher install rickprice/aws_mfa"
 fish -c "fisher install rickprice/HomeRepotTools_fish"
 
 # Default shell is set as fish in initial machine build script
 chsh -s $(which fish)
-
