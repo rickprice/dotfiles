@@ -426,6 +426,11 @@ return {
         load = {
           ["core.defaults"] = {},
           ["core.concealer"] = {},
+          ["core.export"] = {},
+          ["core.export.markdown"] = {},
+          ["core.manoeuvre"] = {},
+          ["core.presenter"] = { config = { zen_mode = "zen-mode" } },
+          -- ["core.ui.calendar"] = {},
           ["core.dirman"] = {
             config = {
               workspaces = {
@@ -438,7 +443,14 @@ return {
       })
     end,
   },
-
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
