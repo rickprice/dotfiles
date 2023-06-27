@@ -61,7 +61,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "TP1", "TP2", "FP1", "FP2", "FP3"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
 myCustomKeys =
   [ ("M-f", sendMessage ToggleLayout),
@@ -83,6 +83,8 @@ myCustomKeys =
     (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC"),
     ("M-3", showDesktop "ADM"),
     ("M-S-3", moveFocusedWindowToDesktop "ADM"),
+    ("M-4", showDesktop "SCRATCH"),
+    ("M-S-4", moveFocusedWindowToDesktop "SCRATCH"),
     (workspaceFocusKey ++ "t 1", showDesktop "TP1"),
     (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1"),
     (workspaceFocusKey ++ "t 2", showDesktop "TP2"),
