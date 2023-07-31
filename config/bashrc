@@ -15,7 +15,7 @@ eval "$(starship init bash)"
 
 source /home/fprice/.config/broot/launcher/bash/br
 # -- START ACTIVESTATE INSTALLATION
-export PATH="/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
+export PATH="/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 export PATH="/home/fprice/.cache/activestate/bin:$PATH"
