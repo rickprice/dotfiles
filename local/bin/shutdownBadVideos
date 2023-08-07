@@ -39,6 +39,7 @@ declare -a StringArray=(
 	"cod"
 	"conarium"
 	"containment breach"
+	"contra bosses"
 	"covenant"
 	"creepiest"
 	"crimson"
