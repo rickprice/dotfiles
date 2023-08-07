@@ -20,6 +20,7 @@ declare -a StringArray=(
 	"baldur"
 	"bee movie"
 	"beneath the deep"
+	"beneath"
 	"bill and mandy"
 	"blade"
 	"blair witch"
@@ -242,7 +243,7 @@ declare -a StringArray=(
 
 while true; do
 	echo "Waiting to check for bad videos"
-	sleep 60
+	sleep 20
 	echo "Checking for bad videos"
 
 	# Read the array values with space
