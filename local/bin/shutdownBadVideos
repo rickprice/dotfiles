@@ -251,7 +251,7 @@ while true; do
 	# Read the array values with space
 	for val in "${StringArray[@]}"; do
 		echo Checking $val
-		xdotool search --class $CLASS search --name $val windowkill
+		xdotool search --class "$CLASS" search --name "$val" windowkill
 	done
 
 	echo "Checked for bad videos"
