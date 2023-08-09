@@ -18,6 +18,7 @@ declare -a StringArray=(
 	"baby"
 	"badguy"
 	"baldur"
+	"bart"
 	"bee movie"
 	"beneath the deep"
 	"beneath"
@@ -104,6 +105,7 @@ declare -a StringArray=(
 	"hi-fi"
 	"hitler"
 	"hitman"
+	"homer"
 	"homesick"
 	"honor"
 	"horror"
@@ -148,6 +150,7 @@ declare -a StringArray=(
 	"mystic"
 	"mythic"
 	"navy seals"
+	"never again"
 	"never back down"
 	"nightmare"
 	"observation duty"
@@ -247,7 +250,6 @@ declare -a StringArray=(
 	"yieun"
 	"zeta"
 	"zombie"
-	"never again"
 	# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
 )
 
