@@ -247,6 +247,7 @@ declare -a StringArray=(
 	"yieun"
 	"zeta"
 	"zombie"
+	"never again"
 	# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
 )
 
@@ -259,6 +260,9 @@ while true; do
 	for val in "${StringArray[@]}"; do
 		echo Checking $val
 		xdotool search --class "$CLASS" search --name "$val" windowkill
+		if [ $? -eq 0 ]; then
+			echo $(date) "|Closing bad window|" $val >>~/BadVideoLog.txt
+		fi
 	done
 
 	echo "Checked for bad videos"
