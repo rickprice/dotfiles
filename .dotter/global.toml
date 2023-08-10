@@ -68,6 +68,7 @@
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
 "local/bin/shutdownBadVideos"="~/.local/bin/shutdownBadVideos"
+"local/bin/ericRunBrowser"="~/.local/bin/ericRunBrowser"
 
 [gitconfig.files]
 "home/gitconfig"="~/.gitconfig"

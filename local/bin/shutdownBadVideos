@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 CLASS="firefox"
+LOGFILE="~/BadVideoLog.txt"
 
 # Declare a string array with type
 declare -a StringArray=(
@@ -270,7 +271,7 @@ while true; do
 		echo Checking $val
 		xdotool search --class "$CLASS" search --name "$val" windowkill
 		if [ $? -eq 0 ]; then
-			echo $(date) "|Closing bad window|" $val >>~/BadVideoLog.txt
+			echo $(date) "|Closing bad window|" $val >>"$LOGFILE"
 		fi
 	done
 

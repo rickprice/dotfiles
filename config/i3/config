@@ -11,7 +11,8 @@ exec_always --no-startup-id xinput set-prop 12 334 0
 # For Lenovo T430S
 exec_always --no-startup-id xinput set-prop 10 304 0
 
-exec_always --no-startup-id sleep 5;firefox-developer-edition
+# exec_always --no-startup-id sleep 5;firefox-developer-edition
+exec_always --no-startup-id ~/.local/bin/ericRunBrowser
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
