@@ -19,4 +19,5 @@ else
 	echo "No bad video log file"
 	# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 	nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
+	firefox-developer-edition
 fi
