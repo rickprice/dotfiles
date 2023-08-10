@@ -276,6 +276,8 @@ while true; do
 		xdotool search --class "$CLASS" search --name "$val" windowkill
 		if [ $? -eq 0 ]; then
 			echo $(date) "|Closing bad window|" $val >>"$LOGFILE"
+			# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg
+			nitrogen --set-scaled ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg &
 		fi
 	done
 
