@@ -10,6 +10,7 @@ if [ -f "$LOGFILE" ]; then
 		nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
 		sleep 5
 		export DISPLAY=:0
+		killall firefox
 		firefox-developer-edition &
 	else
 		echo "Bad video watched within test time"
@@ -21,5 +22,6 @@ else
 	# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 	nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
 	export DISPLAY=:0
+	killall firefox
 	firefox-developer-edition &
 fi
