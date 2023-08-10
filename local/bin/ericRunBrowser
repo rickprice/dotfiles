@@ -6,14 +6,17 @@ LOGFILE=~/BadVideoLog.txt
 if [ -f "$LOGFILE" ]; then
 	if [ $(stat --format=%Y $LOGFILE) -le $(($(date +%s) - $DELAY)) ]; then
 		echo "No bad videos watched within test time"
-		feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
+		# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
+		nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
 		sleep 5
 		firefox-developer-edition
 	else
 		echo "Bad video watched within test time"
-		feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg
+		# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg
+		nitrogen --set-scaled ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg
 	fi
 else
 	echo "No bad video log file"
-	feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
+	# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
+	nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
 fi
