@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 CLASS="firefox"
-LOGFILE="~/BadVideoLog.txt"
+LOGFILE=~/BadVideoLog.txt
 
 # Declare a string array with type
 declare -a StringArray=(
