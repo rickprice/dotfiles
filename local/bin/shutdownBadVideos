@@ -57,6 +57,7 @@ declare -a StringArray=(
 	"dark"
 	"darkest"
 	"darksider"
+	"darq"
 	"daymare"
 	"dead island"
 	"dead"
@@ -91,6 +92,7 @@ declare -a StringArray=(
 	"glamrock"
 	"god of war"
 	"goddess"
+	"golem"
 	"gore"
 	"gray dawn"
 	"gta"
@@ -136,6 +138,7 @@ declare -a StringArray=(
 	"love, sam"
 	"machinarium"
 	"madness"
+	"mansion"
 	"maquette"
 	"marines"
 	"marvel"
@@ -167,6 +170,7 @@ declare -a StringArray=(
 	"partum artifex"
 	"pihrana"
 	"pikmin"
+	"plauge"
 	"playdead"
 	"poses"
 	"possessed"
@@ -195,6 +199,7 @@ declare -a StringArray=(
 	"resistance"
 	"roblox"
 	"s*xiest"
+	"sabrina"
 	"sackboy"
 	"saturday morning cartoons"
 	"say no to choking"
@@ -257,7 +262,6 @@ declare -a StringArray=(
 	"yieun"
 	"zeta"
 	"zombie"
-	"mansion"
 	# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
 )
 
