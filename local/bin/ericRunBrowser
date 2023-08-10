@@ -9,7 +9,8 @@ if [ -f "$LOGFILE" ]; then
 		# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 		nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
 		sleep 5
-		firefox-developer-edition
+		export DISPLAY=:0
+		firefox-developer-edition &
 	else
 		echo "Bad video watched within test time"
 		# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg
@@ -19,5 +20,6 @@ else
 	echo "No bad video log file"
 	# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 	nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg
-	firefox-developer-edition
+	export DISPLAY=:0
+	firefox-developer-edition &
 fi
