@@ -7,7 +7,6 @@ LOGFILE=~/BadVideoLog.txt
 declare -a StringArray=(
 	"absolution"
 	"adult"
-	"all bosses"
 	"annihilation"
 	"anthology"
 	"aphmau"
