@@ -267,7 +267,7 @@ declare -a StringArray=(
 
 while true; do
 	echo "Waiting to check for bad videos"
-	sleep 20
+	sleep 60
 	echo "Checking for bad videos"
 
 	# Read the array values with space
