@@ -6,10 +6,9 @@ LOGFILE=~/BadVideoLog.txt
 if [ -f "$LOGFILE" ]; then
 	if [ $(stat --format=%Y $LOGFILE) -le $(($(date +%s) - $DELAY)) ]; then
 		echo "No bad videos watched within test time"
+		export DISPLAY=:0
 		# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 		nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg &
-		sleep 5
-		export DISPLAY=:0
 		killall firefox
 		firefox-developer-edition &
 	else
@@ -19,9 +18,9 @@ if [ -f "$LOGFILE" ]; then
 	fi
 else
 	echo "No bad video log file"
+	export DISPLAY=:0
 	# feh --no-fehbg --bg-max ~/.dotfiles/wallpaper/wallpaper.jpg
 	nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg &
-	export DISPLAY=:0
 	killall firefox
 	firefox-developer-edition &
 fi
