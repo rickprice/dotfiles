@@ -261,6 +261,7 @@ declare -a StringArray=(
 	"yieun"
 	"zeta"
 	"zombie"
+	"destined"
 	# "ninja" \ Power Rangers has Ninja stuff, maybe not block power rangers explicitly?
 )
 
