@@ -1,3 +1,0 @@
-token = {{ pivotal.token }}
-user_id = {{ pivotal.user }}
-project_id = {{ pivotal.project_id }}

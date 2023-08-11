@@ -70,29 +70,8 @@
 "local/bin/shutdownBadVideos"="~/.local/bin/shutdownBadVideos"
 "local/bin/ericRunBrowser"="~/.local/bin/ericRunBrowser"
 
-[gitconfig.files]
-"home/gitconfig"="~/.gitconfig"
-
-[pivotal.files]
-"home/pivotaltrackerrc"="~/.pivotaltrackerrc"
-
-[aws.files]
-"home/aws/config"="~/.aws/config"
-"home/aws/credentials"="~/.aws/credentials"
-"local/bin/get-aws-profile"="~/.local/bin/get-aws-profile"
-
-[activestate.files]
-"home/camel"="~/.camel"
-
 [todoist.files]
 "config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
-
-[mutt.files]
-"home/mutt/muttrc"="~/.mutt/muttrc"
-"home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
-"home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
-"home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
-"home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
 
 [gist.files]
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"

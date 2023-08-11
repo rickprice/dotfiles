@@ -1,5 +1,0 @@
-set imap_user = "{{ gmail.imap_user }}"
-set imap_pass = "{{ gmail.imap_pass }}"
-set from = "{{ user.email }}"
-set realname = "{{ user.fullname }}"
-set smtp_url = "smtps://{{ gmail.imap_user }}@smtp.gmail.com:465/"
