@@ -39,6 +39,8 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
+myBrowserNyxt = "nyxt --no-socket"
+
 myTerminal = "wezterm"
 
 myFileManager = "pcmanfm"
@@ -67,6 +69,7 @@ myCustomKeys =
   [ ("M-f", sendMessage ToggleLayout),
     ("M-S-<Enter>", spawn myTerminal),
     ("M-a b", spawn myBrowser),
+    ("M-a n", spawn myBrowserNyxt),
     ("M-a d", spawn myDarkTable),
     ("M-a i", spawn myInkScape),
     ("M-a e", spawn myEbookViewer),
