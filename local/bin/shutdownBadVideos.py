@@ -12,6 +12,7 @@ badVideoLogFilename=os.path.expanduser("~/BadVideoLog.txt")
 whitelistFilename=os.path.expanduser("~/.config/shutdownBadVideos/WhiteList.txt")
 blacklistFilename=os.path.expanduser("~/.config/shutdownBadVideos/BlackList.txt")
 badVideoBackground=os.path.expanduser("~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg")
+browserCommand="/usr/bin/firefox-developer-edition"
 
 # Setup logging
 logging.basicConfig(filename=badVideoLogFilename,encoding='utf-8',format='%(asctime)s:%(levelname)s:%(message)s')
@@ -32,9 +33,11 @@ def does_string_match_list(list_to_check: list[str],string_to_check: str)->Optio
 
 def stop_browser()->None:
     logging.info("Stopping browser")
+    subprocess.run(["killall","-9","firefox"])
 
 def start_browser()->None:
     logging.info("Starting browser")
+    subprocess.Popen(browserCommand, close_fds=True)
 
 badVideoCount=0
 def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
@@ -50,7 +53,8 @@ def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
         start_browser()
     else:
         logging.error("Stopping browser because of too many bad videos")
-        nitrogen --set-scaled ~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg &
+        logging.info(f"Setting background to [{badVideoBackground}]")
+        subprocess.run(["nitrogen","--set-scaled",badVideoBackground])
 
 
 def check_for_bad_videos()->None:
