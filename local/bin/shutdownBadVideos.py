@@ -16,7 +16,7 @@ browserCommand="/usr/bin/firefox-developer-edition"
 
 # Setup logging
 logging.basicConfig(filename=badVideoLogFilename,encoding='utf-8',format='%(asctime)s|%(levelname)s|%(message)s')
-# logging.basicConfig(level=logging.INFO,encoding='utf-8',format='%(asctime)s:%(levelname)s:%(message)s')
+# logging.basicConfig(level=logging.INFO,encoding='utf-8',format='%(asctime)s|%(levelname)s|%(message)s')
 
 
 def does_string_match_list(list_to_check: list[str],string_to_check: str)->Optional[str]:
@@ -53,11 +53,14 @@ def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
 
     stop_browser()
 
-    if badVideoCount <= tooManyBadVideos:
+    if badVideoCount < tooManyBadVideos:
         start_browser()
     else:
         logging.error("Stopping browser because of too many bad videos")
         bad_background()
+        stop_browser()
+        logging.debug("Resetting bad video count")
+        badVideoCount=0
 
 
 def check_for_bad_videos()->None:
@@ -99,7 +102,7 @@ def check_for_bad_videos()->None:
     logging.info("Finished check for bad videos")
 
 def mainloop()->None:
-    logging.info("Starting pinforocess to check for bad videos")
+    logging.warning("Starting process to check for bad videos")
     while True:
         check_for_bad_videos()
         time.sleep( 60)
