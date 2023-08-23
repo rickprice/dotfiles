@@ -218,7 +218,7 @@ skywalker
 slashers
 slender
 slime\sgirl
-sml
+sml\smovie
 sniper
 splatterhouse
 spongebob
