@@ -10,7 +10,7 @@ badVideoLogFilename=os.path.expanduser("~/BadVideoLog.txt")
 startBrowserLogFilename=os.path.expanduser("~/StartBrowserLog.txt")
 badVideoBackground=os.path.expanduser("~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg")
 goodBackground=os.path.expanduser("~/.dotfiles/wallpaper/wallpaper.jpg")
-browserCommand="/usr/bin/firefox-developer-edition"
+browserCommand="/usr/bin/firefox-developer-edition https://www.youtube.com/results?search_query=the+three+stooges"
 
 # Setup logging
 # logging.basicConfig(level=logging.INFO,encoding='utf-8',format='%(asctime)s|%(levelname)s|%(message)s')
