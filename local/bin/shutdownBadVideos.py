@@ -39,6 +39,10 @@ def start_browser()->None:
     logging.info("Starting browser")
     subprocess.Popen(browserCommand, close_fds=True)
 
+def bad_background()->None:
+    logging.info(f"Setting background to [{badVideoBackground}]")
+    subprocess.run(["nitrogen","--set-scaled",badVideoBackground])
+
 badVideoCount=0
 def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
     global badVideoCount
@@ -53,8 +57,7 @@ def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
         start_browser()
     else:
         logging.error("Stopping browser because of too many bad videos")
-        logging.info(f"Setting background to [{badVideoBackground}]")
-        subprocess.run(["nitrogen","--set-scaled",badVideoBackground])
+        bad_background()
 
 
 def check_for_bad_videos()->None:
