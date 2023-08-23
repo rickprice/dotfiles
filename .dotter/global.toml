@@ -67,8 +67,12 @@
 "local/bin/enableExternalMonitor"="~/.local/bin/enableExternalMonitor"
 "local/bin/ProcessRawImages"="~/.local/bin/ProcessRawImages"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
-"local/bin/shutdownBadVideos"="~/.local/bin/shutdownBadVideos"
-"local/bin/ericRunBrowser"="~/.local/bin/ericRunBrowser"
+
+[badvideos.files]
+"local/bin/shutdownBadVideos.py"="~/.local/bin/shutdownBadVideos"
+"local/bin/ericRunBrowser.py"="~/.local/bin/ericRunBrowser"
+"config/shutdownBadVideos/WhiteList.txt" = "~/.config/shutdownBadVideos/WhiteList.txt"
+"config/shutdownBadVideos/BlackList.txt" = "~/.config/shutdownBadVideos/BlackList.txt"
 
 [todoist.files]
 "config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
