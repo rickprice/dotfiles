@@ -12,7 +12,7 @@ badVideoLogFilename=os.path.expanduser("~/BadVideoLog.txt")
 whitelistFilename=os.path.expanduser("~/.config/shutdownBadVideos/WhiteList.txt")
 blacklistFilename=os.path.expanduser("~/.config/shutdownBadVideos/BlackList.txt")
 badVideoBackground=os.path.expanduser("~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg")
-browserCommand="/usr/bin/firefox-developer-edition https://www.youtube.com/results?search_query=the+three+stooges"
+browserCommand=["/usr/bin/firefox-developer-edition","https://www.youtube.com/results?search_query=the+three+stooges"]
 
 # Setup logging
 logging.basicConfig(filename=badVideoLogFilename,encoding='utf-8',format='%(asctime)s|%(levelname)s|%(message)s')
