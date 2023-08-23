@@ -64,7 +64,7 @@ def main()->None:
                         unsuccessful_start()
                         return
 
-        successful_start()
+    successful_start()
 
 if __name__ == "__main__":
     main()
