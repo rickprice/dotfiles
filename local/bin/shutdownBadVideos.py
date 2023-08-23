@@ -15,7 +15,7 @@ badVideoBackground=os.path.expanduser("~/.dotfiles/wallpaper/no-monster-allowd-s
 browserCommand="/usr/bin/firefox-developer-edition"
 
 # Setup logging
-logging.basicConfig(filename=badVideoLogFilename,encoding='utf-8',format='%(asctime)s:%(levelname)s:%(message)s')
+logging.basicConfig(filename=badVideoLogFilename,encoding='utf-8',format='%(asctime)s|%(levelname)s|%(message)s')
 # logging.basicConfig(level=logging.INFO,encoding='utf-8',format='%(asctime)s:%(levelname)s:%(message)s')
 
 
