@@ -1,12 +1,12 @@
-the three stooges
-los tres chiflados
-power rangers
+the\sthree\sstooges
+los\stres\schiflados
+power\srangers
 batman
-teenage mutant ninja
-scooby doo
+teenage\smutant\sninja
+scooby\sdoo
 halo
 hulk
-the lone ranger
-spider man
+the\slone\sranger
+spider\sman
 superman
 season

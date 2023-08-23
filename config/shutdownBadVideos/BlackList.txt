@@ -9,36 +9,36 @@ assassin
 attack
 autopsy
 baby
-backrooms path
+backrooms\spath
 badguy
 baldur
 bart
-bee movie
+bee\smovie
 beneath
-beneath the deep
-bill and mandy
+beneath\sthe\sdeep
+bill\sand\smandy
 blade
-blair witch
+blair\switch
 blood
-blood field
+blood\sfield
 bloodlines
 bloody
-blue fire
-body swap
-born into fear
-brothers in arms
+blue\sfire
+body\sswap
+born\sinto\sfear
+brothers\sin\sarms
 bully
 calithem
-call of duty
+call\sof\sduty
 carrion
 castlevania
-chopping mall
-clock tower
+chopping\small
+clock\stower
 cod
-cold house
+cold\shouse
 conarium
-containment breach
-contra bosses
+containment\sbreach
+contra\sbosses
 covenant
 creepiest
 crimson
@@ -49,61 +49,61 @@ cutscenes
 danger
 dangerous
 dark
-dark angel
+dark\sangel
 darkest
 darksider
 darq
 daymare
 dead
-dead island
+dead\sisland
 deadly
 deadpool
 death
-deluded mind
+deluded\smind
 demon
 destined
 doomguy
 dragon
 dreams
-duke nukem
+duke\snukem
 dying
-enlisted gameplay
+enlisted\sgameplay
 everspace
 evil
 fear
-feeding frenzy
-final fantasy
+feeding\sfrenzy
+final\sfantasy
 firefight
 fnaf
-forgive me
+forgive\sme
 fortnight
 freddy
 fugget
 g-force
 gashnor
 genshin
-get even
+get\seven
 ghost
 girlfriend
 glamrock
-god of war
+god\sof\swar
 goddess
 golem
 gore
-gray dawn
+gray\sdawn
 gta
 gun
 gylt
 halloween
 hardcore
 haunted
-haunted hospice
+haunted\shospice
 haunting
 heartless
 hell
 hellblade
-hello puppets
-henry stickman
+hello\spuppets
+henry\sstickman
 herobrine
 hi-fi
 hitler
@@ -113,16 +113,16 @@ homesick
 honor
 horror
 hospital
-i love being needed
+i\slove\sbeing\sneeded
 illusion
 infamous
 inquisition
 insomnis
 invasion
-it happened here
-it takes two
-jak and daxter
-johnny test
+it\shappened\shere
+it\stakes\stwo
+jak\sand\sdaxter
+johnny\stest
 joker
 kameo
 kem
@@ -130,9 +130,9 @@ killer
 killing
 kills
 killzone
-kinigra deon
+kinigra\sdeon
 lost
-love, sam
+love,\ssam
 machinarium
 madness
 mansion
@@ -141,33 +141,33 @@ marines
 marvel
 mature
 mavro
-medal of honour
+medal\sof\shonour
 medievil
 mental
 mermaid
-metal gear
+metal\sgear
 metania
 miasma
-modern warfare
-mortal kombat
+modern\swarfare
+mortal\skombat
 murder
 murdered
-my friendly neighbourhood
+my\sfriendly\sneighbourhood
 mystic
 mythic
-navy seals
-never again
-never back down
-night janitor
+navy\sseals
+never\sagain
+never\sback\sdown
+night\sjanitor
 nightmare
-observation duty
+observation\sduty
 oggy
-one who knocks
-only 24 hours
+one\swho\sknocks
+only\s24\shours
 orph
 ouija
 outlast
-partum artifex
+partum\sartifex
 pihrana
 pikmin
 plauge
@@ -177,53 +177,53 @@ possessed
 predator
 presidents
 prison
-problems at the port
+problems\sat\sthe\sport
 prognathadon
 prototype
 psychonauts
 punisher
 puppet
-radio station
+radio\sstation
 rage
 rainbow
-rainbow friends
-ready or not
-realistic body
-red alert
-red dead
+rainbow\sfriends
+ready\sor\snot
+realistic\sbody
+red\salert
+red\sdead
 reloaded
 remnant
-resident evil
+resident\sevil
 resistance
 roblox
 s*xiest
 sabrina
 sackboy
-saturday morning cartoons
-say no to choking
+saturday\smorning\scartoons
+say\sno\sto\schoking
 scarier
 scary
-secret lab
-seed of evil
-serious sam
+secret\slab
+seed\sof\sevil
+serious\ssam
 sf2
 sf6
 shadow
 shantae
 shapeshift
-silent hill
+silent\shill
 simpsons
 skibidi
 skywalker
 slashers
 slender
-slime girl
+slime\sgirl
 sml
 sniper
 splatterhouse
 spongebob
 spyhunter
-stranger within
+stranger\swithin
 stray
 subnautica
 suicide
@@ -232,30 +232,30 @@ survival
 tears
 terminator
 terrify
-the crow
-the evil within
-the kid inside my basement
-the park
-the park
-the reed field
+the\scrow
+the\sevil\swithin
+the\skid\sinside\smy\sbasement
+the\spark
+the\spark
+the\sreed\sfield
 timeshift
 toilet
 tomb
-trick or treat
-true crime
+trick\sor\streat
+true\scrime
 tunic
 turok
 uncharted
 unholy
-valiant hearts
+valiant\shearts
 vengeful
 voodoo
 warfare
 warfighter
 werewolf
 werewolve
-what kids see
-winter ultima
+what\skids\ssee
+winter\sultima
 witch
 wolf
 wolfenstein
