@@ -24,7 +24,7 @@ def does_string_match_list(list_to_check: list[str],string_to_check: str)->Optio
     for to_check in list_to_check:
         to_check = to_check.strip()
         logging.debug(f"Checking with regex [{to_check}]")
-        if re.search(to_check,string_to_check,re.IGNORECASE|re.VERBOSE):
+        if re.search(to_check,string_to_check,re.IGNORECASE):
             logging.debug(f"Found match with regex [{to_check}]")
             return to_check
 
