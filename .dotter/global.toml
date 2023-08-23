@@ -48,8 +48,7 @@
 "config/gh/hub" = "~/.config/hub"
 
 [nvim.files]
-"config/nvim/coc-settings.json" = "~/.config/nvim/coc-settings.json"
-"config/nvim/init.vim" = { target = "~/.config/nvim/init.vim", type = "symbolic" }
+"config/nvim" = { target = "~/.config/nvim", type = "symbolic" }
 
 [rclone.files]
 "config/rclone/rclone.conf" = "~/.config/rclone/rclone.conf"
