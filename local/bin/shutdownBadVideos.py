@@ -44,6 +44,13 @@ def bad_background()->None:
     subprocess.run(["nitrogen","--set-scaled",badVideoBackground])
 
 badVideoCount=0
+def reset_bad_videos()->None:
+    global badVideoCount
+
+    logging.debug("Resetting bad video count")
+    badVideoCount=0
+
+
 def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
     global badVideoCount
     global tooManyBadVideos
@@ -59,8 +66,7 @@ def deal_with_bad_video(window_name:str,regex_that_matched:str)->None:
         logging.error("Stopping browser because of too many bad videos")
         bad_background()
         stop_browser()
-        logging.debug("Resetting bad video count")
-        badVideoCount=0
+        reset_bad_videos()
 
 
 def check_for_bad_videos()->None:
@@ -69,6 +75,7 @@ def check_for_bad_videos()->None:
     window_names=subprocess.run(["xdotool search --class firefox getwindowname %@"],capture_output=True,text=True,shell=True).stdout
     logging.debug(f"Got window names[{window_names}]")
 
+    foundBadVideo=False
     with open(whitelistFilename, 'r') as file:
         whitelist = file.readlines()
         logging.info(f"Opened WhiteList File [{whitelistFilename}]")
@@ -98,8 +105,11 @@ def check_for_bad_videos()->None:
                 if regex_that_matched is not None:
                     logging.debug(f"Window [{window_name}] matched BlackList regex [{regex_that_matched}]")
                     deal_with_bad_video(window_name,regex_that_matched)
+                    foundBadVideo=True
 
     logging.info("Finished check for bad videos")
+    if not foundBadVideo:
+        reset_bad_videos()
 
 def mainloop()->None:
     logging.warning("Starting process to check for bad videos")
