@@ -1,5 +1,7 @@
+abandoned hotel
 absolution
 adult
+advanced warfare
 annihilation
 anthology
 anthology of fear
@@ -15,6 +17,7 @@ badguy
 baldur
 bart
 battle of new york
+beavis and butthead
 bee movie
 beneath
 beneath the deep
@@ -76,6 +79,7 @@ destined
 doom
 doomguy
 dragon
+dragon ball
 dreams
 duke nukem
 dying
@@ -100,12 +104,16 @@ get even
 g-force
 ghost
 girlfriend
+girls' frontline
 glamrock
 goddess
+godfather
 god of war
 golem
+gomer pyle
 gore
 gray dawn
+great infestation
 great north shelter
 gta
 gun
@@ -142,6 +150,7 @@ it takes two
 jak and daxter
 johnny test
 joker
+joyville
 kameo
 kem
 killer
@@ -149,7 +158,9 @@ killing
 kills
 killzone
 kinigra deon
+last of us
 layers of fear
+left 4 dead
 little nightmares
 lost
 lost alone
@@ -186,6 +197,7 @@ never again
 never back down
 night janitor
 nightmare
+nocturne
 observation duty
 oggy
 one who knocks
@@ -195,6 +207,7 @@ ouija
 outlast
 outlast chris walker
 partum artifex
+perry mason
 pihrana
 pikmin
 plauge
@@ -210,10 +223,12 @@ prototype
 psychonauts
 punisher
 puppet
+quake
 radio station
 rage
 rainbow
 rainbow friends
+rdr2
 ready or not
 realistic body
 red alert
@@ -224,11 +239,13 @@ resident evil
 resistance
 roblox
 robocop
+russian ambush
 sabrina
 sackboy
 saint rhodes
 saturday morning cartoons
 say no to choking
+scarface
 scarier
 scary
 secret lab
@@ -250,6 +267,7 @@ slender
 slime girl
 sml movie
 sniper
+sniper elite
 splatterhouse
 spongebob
 spyhunter
@@ -260,6 +278,7 @@ subnautica
 suicide
 summoner
 survival
+survival horror
 s*xiest
 tears
 terminator
@@ -271,6 +290,8 @@ the mansion
 the park
 the radio station
 the reed field
+the walking dead
+thief
 through the woods
 timeshift
 toilet
@@ -281,6 +302,7 @@ tunic
 turok
 twisted metal
 uncharted
+undead
 unholy
 urbex night security
 valiant hearts
@@ -296,6 +318,7 @@ winter ultima
 witch
 wolf
 wolfenstein
+world war z
 xbox
 yieun
 zeta
