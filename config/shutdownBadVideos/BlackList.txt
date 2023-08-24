@@ -2,6 +2,7 @@ absolution
 adult
 annihilation
 anthology
+anthology of fear
 aphmau
 araha
 assasin
@@ -13,10 +14,13 @@ backrooms path
 badguy
 baldur
 bart
+battle of new york
 bee movie
 beneath
 beneath the deep
+beyond the evil
 bill and mandy
+biohazard
 blade
 blair witch
 blood
@@ -36,16 +40,21 @@ chopping mall
 clock tower
 cod
 cold house
+colina
+come home late
 conarium
 containment breach
 contra bosses
+council of hanwell
 covenant
 creepiest
 crimson
+crow's eye
 crystal
 curse
 cursed
 cutscenes
+cyberpunk
 danger
 dangerous
 dark
@@ -58,20 +67,26 @@ dead
 dead island
 deadly
 deadpool
+deadstorm pirates
 death
 deluded mind
 demon
+demonologist
 destined
+doom
 doomguy
 dragon
 dreams
 duke nukem
 dying
+edengate
+endgame
 enlisted gameplay
 everspace
 evil
 fear
 feeding frenzy
+file destined
 final fantasy
 firefight
 fnaf
@@ -79,22 +94,24 @@ forgive me
 fortnight
 freddy
 fugget
-g-force
 gashnor
 genshin
 get even
+g-force
 ghost
 girlfriend
 glamrock
-god of war
 goddess
+god of war
 golem
 gore
 gray dawn
+great north shelter
 gta
 gun
 gylt
 halloween
+halo
 hardcore
 haunted
 haunted hospice
@@ -113,9 +130,10 @@ homesick
 honor
 horror
 hospital
-i love being needed
 illusion
+i love being needed
 infamous
+infliction
 inquisition
 insomnis
 invasion
@@ -131,8 +149,12 @@ killing
 kills
 killzone
 kinigra deon
+layers of fear
+little nightmares
 lost
+lost alone
 love, sam
+lunacy
 machinarium
 madness
 mansion
@@ -141,18 +163,22 @@ marines
 marvel
 mature
 mavro
+medal of honor
 medal of honour
 medievil
 mental
+mental hospital
 mermaid
 metal gear
 metania
 miasma
 modern warfare
+moroccan castle
 mortal kombat
 murder
 murdered
 my friendly neighbourhood
+my parents after
 mystic
 mythic
 navy seals
@@ -167,6 +193,7 @@ only 24 hours
 orph
 ouija
 outlast
+outlast chris walker
 partum artifex
 pihrana
 pikmin
@@ -196,15 +223,17 @@ remnant
 resident evil
 resistance
 roblox
-s*xiest
+robocop
 sabrina
 sackboy
+saint rhodes
 saturday morning cartoons
 say no to choking
 scarier
 scary
 secret lab
 seed of evil
+seige of stalingrad
 serious sam
 sf2
 sf6
@@ -212,6 +241,7 @@ shadow
 shantae
 shapeshift
 silent hill
+silver chains
 simpsons
 skibidi
 skywalker
@@ -225,19 +255,23 @@ spongebob
 spyhunter
 stranger within
 stray
+subject
 subnautica
 suicide
 summoner
 survival
+s*xiest
 tears
 terminator
 terrify
 the crow
 the evil within
 the kid inside my basement
+the mansion
 the park
-the park
+the radio station
 the reed field
+through the woods
 timeshift
 toilet
 tomb
@@ -245,13 +279,16 @@ trick or treat
 true crime
 tunic
 turok
+twisted metal
 uncharted
 unholy
+urbex night security
 valiant hearts
 vengeful
 voodoo
 warfare
 warfighter
+welcome to kowloon
 werewolf
 werewolve
 what kids see
