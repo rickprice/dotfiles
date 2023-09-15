@@ -52,7 +52,7 @@ registrations = {
         'authorize_endpoint': 'https://accounts.google.com/o/oauth2/auth',
         'devicecode_endpoint': 'https://oauth2.googleapis.com/device/code',
         'token_endpoint': 'https://accounts.google.com/o/oauth2/token',
-        'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
+        'redirect_uri': 'http://localhost:1/',
         'imap_endpoint': 'imap.gmail.com',
         'pop_endpoint': 'pop.gmail.com',
         'smtp_endpoint': 'smtp.gmail.com',
