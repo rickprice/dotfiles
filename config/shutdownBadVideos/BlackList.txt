@@ -16,6 +16,7 @@ backrooms path
 badguy
 baldur
 bart
+batman
 battle of new york
 beavis and butthead
 bee movie
@@ -62,6 +63,7 @@ danger
 dangerous
 dark
 dark angel
+dark knight
 darkest
 darksider
 darq
@@ -98,17 +100,17 @@ forgive me
 fortnight
 freddy
 fugget
+g-force
 gashnor
 genshin
 get even
-g-force
 ghost
 girlfriend
 girls' frontline
 glamrock
+god of war
 goddess
 godfather
-god of war
 golem
 gomer pyle
 gore
@@ -138,8 +140,8 @@ homesick
 honor
 horror
 hospital
-illusion
 i love being needed
+illusion
 infamous
 infliction
 inquisition
@@ -240,6 +242,7 @@ resistance
 roblox
 robocop
 russian ambush
+s*xiest
 sabrina
 sackboy
 saint rhodes
@@ -279,7 +282,6 @@ suicide
 summoner
 survival
 survival horror
-s*xiest
 tears
 terminator
 terrify
