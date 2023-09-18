@@ -7,8 +7,11 @@ anthology
 anthology of fear
 aphmau
 araha
+arkham
+arkham asylum
 assasin
 assassin
+asylum
 attack
 autopsy
 baby
@@ -27,6 +30,7 @@ bill and mandy
 biohazard
 blade
 blair witch
+blasphemous
 blood
 blood field
 bloodlines
@@ -40,8 +44,10 @@ calithem
 call of duty
 carrion
 castlevania
+catwoman
 chopping mall
 clock tower
+clownxjoker
 cod
 cold house
 colina
@@ -63,15 +69,18 @@ danger
 dangerous
 dark
 dark angel
-dark knight
 darkest
+dark knight
 darksider
+darkwood
 darq
 daymare
 dead
 dead island
 deadly
+deadlystealth
 deadpool
+deadstorm
 deadstorm pirates
 death
 deluded mind
@@ -90,6 +99,7 @@ endgame
 enlisted gameplay
 everspace
 evil
+farmer's life
 fear
 feeding frenzy
 file destined
@@ -100,20 +110,22 @@ forgive me
 fortnight
 freddy
 fugget
-g-force
 gashnor
 genshin
 get even
+g-force
 ghost
+ghost hunting
 girlfriend
 girls' frontline
 glamrock
-god of war
 goddess
 godfather
+god of war
 golem
 gomer pyle
 gore
+gotham
 gotham knight
 gray dawn
 great infestation
@@ -124,9 +136,11 @@ gylt
 halloween
 halo
 hardcore
+harry potter
 haunted
 haunted hospice
 haunting
+heart condition
 heartless
 hell
 hellblade
@@ -141,8 +155,8 @@ homesick
 honor
 horror
 hospital
-i love being needed
 illusion
+i love being needed
 infamous
 infliction
 inquisition
@@ -156,6 +170,7 @@ joker
 joyville
 kameo
 kem
+kidnapping
 killer
 killing
 kills
@@ -170,6 +185,7 @@ lost alone
 love, sam
 lunacy
 machinarium
+mad hatters
 madness
 mansion
 maquette
@@ -189,6 +205,7 @@ miasma
 modern warfare
 moroccan castle
 mortal kombat
+mugen souls
 murder
 murdered
 my friendly neighbourhood
@@ -243,7 +260,6 @@ resistance
 roblox
 robocop
 russian ambush
-s*xiest
 sabrina
 sackboy
 saint rhodes
@@ -272,9 +288,11 @@ slime girl
 sml movie
 sniper
 sniper elite
+soloman grundy
 splatterhouse
 spongebob
 spyhunter
+stalingrad
 stranger within
 stray
 subject
@@ -283,6 +301,7 @@ suicide
 summoner
 survival
 survival horror
+s*xiest
 tears
 terminator
 terrify
