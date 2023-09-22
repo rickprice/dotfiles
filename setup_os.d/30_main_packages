@@ -56,7 +56,6 @@ paru --noconfirm -S jpegoptim # Lets you reduce size of JPEGs to fit
 paru --noconfirm -S inetutils
 paru --noconfirm -S trash-cli
 paru --noconfirm -S broot
-n
 
 # Stuff to read X Window information
 paru --noconfirm -S xdotool
