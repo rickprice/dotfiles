@@ -19,7 +19,7 @@ rustup default stable
 rustup component add rustfmt
 rustup component add rls
 
-paru --noconfirm -S rust-analyzer-git
+# paru --noconfirm -S rust-analyzer-git
 
 # For some reason, Wezterm-git is causing rustup to be removed in favour of rust when I install it, so just use rust for now...
 # sudo pacman --noconfirm -S rust
