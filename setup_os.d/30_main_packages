@@ -29,7 +29,7 @@ sudo pacman --noconfirm -S xorg-xev
 
 ## Install AUR packages I want
 paru --noconfirm -S poppler
-paru --noconfirm -S pdfjam
+# paru --noconfirm -S pdfjam
 paru --noconfirm -S pass
 paru --noconfirm -S udiskie
 paru --noconfirm -S go
