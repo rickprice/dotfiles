@@ -24,7 +24,8 @@ sudo pacman --noconfirm -S enscript
 sudo pacman --noconfirm -S psutils
 sudo pacman --noconfirm -S dos2unix
 sudo pacman --noconfirm -S xorg-xev
-sudo pacman --noconfirm -S paru
+# This should already have been installed as one of the first things
+# sudo pacman --noconfirm -S paru
 
 ## Install AUR packages I want
 paru --noconfirm -S poppler
