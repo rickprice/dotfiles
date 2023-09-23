@@ -20,5 +20,5 @@ sudo pacman --noconfirm -S alsa-utils
 # paru --noconfirm -S alsa-plugins
 
 # Switching to Pipewire
-sudo pacman -S pipewire-pulse pipewire-jack pipewire-alsa wireplumber qpwgraph
+sudo pacman --noconfirm -S pipewire-pulse pipewire-jack pipewire-alsa wireplumber qpwgraph
 
