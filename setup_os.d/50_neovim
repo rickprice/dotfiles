@@ -12,7 +12,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 paru --noconfirm -S neovim-nightly-bin
 
 ## Required for Neovim
-sudo pip install neovim
+# sudo pip install neovim # Says something about externally managed
 sudo pacman --noconfirm -S nodejs
 sudo pacman --noconfirm -S npm
 sudo npm install -g neovim
