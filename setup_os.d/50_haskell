@@ -11,3 +11,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Stack for Haskell
 paru --noconfirm -S ghcup-hs-bin
 
+ghcup install ghc
+ghcup install stack
+ghcup install cabal
+ghcup install ghcup
