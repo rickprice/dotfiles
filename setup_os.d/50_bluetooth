@@ -12,7 +12,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 sudo groupadd --force lp  # Force to avoid errors when group exists already
 sudo usermod -aG lp $USER
 
-sudo pacman --noconfirm -S bluez bluez-utils bluez-hid2hci pulseaudio-bluetooth blueman
+sudo pacman --noconfirm -S bluez bluez-utils bluez-hid2hci blueman
 sudo systemctl enable bluetooth
 
 sudo systemctl enable bluetooth
