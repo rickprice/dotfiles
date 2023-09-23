@@ -31,7 +31,6 @@
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Git.fish" = "~/.config/fish/conf.d/Git.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
-"config/fish/conf.d/GHC.fish" = "~/.config/fish/conf.d/GHC.fish"
 "config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
 "config/fish/functions/ghreviews.fish" = "~/.config/fish/functions/ghreviews.fish"
 "config/fish/functions/test-microphone.fish" = "~/.config/fish/functions/test-microphone.fish"
