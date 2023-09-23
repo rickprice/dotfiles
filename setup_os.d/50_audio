@@ -8,7 +8,6 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 ## echo an error message before exiting
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
-sudo pacman --noconfirm -S pulseaudio-bluetooth
 paru --noconfirm -S pa-applet-git pavucontrol
 
 # Needed for Lenovo Thinkpad X1 to have onboard and HDMI sound to work
