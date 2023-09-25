@@ -168,7 +168,7 @@ myManageHook =
       isDialog --> doFloat
     ]
 
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (magnifier mainGrid ||| mainGrid ))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier mainGrid ))
   where
     magnifier = magnifiercz' 1.4
 
