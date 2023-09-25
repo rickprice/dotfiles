@@ -26,8 +26,9 @@ import XMonad.Layout.MultiColumns
 -- import XMonad.Layout.Named
 -- import XMonad.Layout.NoBorders
 import XMonad.Layout.NoBorders (noBorders, smartBorders)
+import XMonad.Layout.GridVariants
 import XMonad.Layout.ThreeColumns
-import XMonad.Layout.Grid
+-- import XMonad.Layout.Grid
 -- import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
 import XMonad.Layout.ToggleLayouts
 import XMonad.StackSet qualified as W
@@ -167,15 +168,18 @@ myManageHook =
       isDialog --> doFloat
     ]
 
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (grid ||| threeCol ||| tiled ||| Mirror tiled ||| multicolumn ||| Full))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (magnifier mainGrid ||| mainGrid ))
   where
-    threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
-    tiled = Tall nmaster delta ratio
-    nmaster = 1 -- Default number of windows in the master pane
-    ratio = 1 / 2 -- Default proportion of screen occupied by master pane
-    delta = 3 / 100 -- Percent of screen to increment by when resizing panes
-    multicolumn = multiCol [1] 1 0.01 (-0.5)
-    grid = Grid
+    magnifier = magnifiercz' 1.4
+
+    orientation = XMonad.Layout.GridVariants.L
+    masterRows = 2
+    masterColumns = 2
+    masterPortion = (2/3)
+    slaveAspectRatio = (16/10)
+    resizeIncrement = (5/100)
+
+    mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
 
 myXmobarPP :: PP
 myXmobarPP =
