@@ -36,6 +36,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Ungrab
+-- import XMonad.Util.Run
 
 myModMask = mod4Mask
 
@@ -80,6 +81,7 @@ myCustomKeys =
     ("M-a s", spawn myScanner),
     ("M-a c", spawn myCalculator),
     ("M-a r", spawn myRDPClient),
+    ("M-a w", setupWorkWindow),
     ("M-1", showDesktop "W11"),
     ("M-S-1", moveFocusedWindowToDesktop "W11"),
     ("M-2", showDesktop "IM"),
@@ -105,6 +107,12 @@ myCustomKeys =
     -- , ("M-p", spawn myDMenu)
   ]
 
+setupWorkWindow = do
+    spawnHere myTerminal
+    spawnHere myTerminal
+    spawnHere myBrowser
+    spawnHere myBrowser
+
 -- ++ [("m-d 9 8", showDesktop "W13")]
 -- ++ [("m-d 9 9", spawn "firefox"       )]
 
@@ -125,12 +133,14 @@ myStartupHook = do
   spawnOnce "pamac-tray"
   spawnOnce "blueman-applet"
   spawn "killall volumeicon; sleep 15; volumeicon"
-  -- spawnOnce "meteo"
   spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
   spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds)
+  -- Setup IM programs
   spawnOn "IM" "slack"
   spawnOn "IM" "discord"
+  -- Setup initial work window
+  -- spawnOn "ADM" myBrowser
 
 -- spawn "autorandr mobile; autorandr docked"
 
