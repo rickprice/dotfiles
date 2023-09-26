@@ -112,7 +112,7 @@ myCustomKeys =
 setupWorkWindow = do
     spawnHere myBrowser
     spawnHere myBrowser
-    liftIO (threadDelay 10000000)
+    liftIO (threadDelay 5000000)
     spawnHere myTerminal
     spawnHere myTerminal
 
