@@ -3,6 +3,8 @@
 import Data.Ratio
 -- import XMonad.Config.Desktop
 
+import Control.Concurrent
+
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Actions.SpawnOn
@@ -108,10 +110,11 @@ myCustomKeys =
   ]
 
 setupWorkWindow = do
-    spawnHere myTerminal
-    spawnHere myTerminal
     spawnHere myBrowser
     spawnHere myBrowser
+    liftIO (threadDelay 10000000)
+    spawnHere myTerminal
+    spawnHere myTerminal
 
 -- ++ [("m-d 9 8", showDesktop "W13")]
 -- ++ [("m-d 9 9", spawn "firefox"       )]
