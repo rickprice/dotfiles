@@ -123,11 +123,8 @@ setupWorkWindow = do
 
 fixScreens = do
     spawn myFixScreens
-    liftIO (threadDelay 5000000)
-    spawn myBackgrounds
-
--- ++ [("m-d 9 8", showDesktop "W13")]
--- ++ [("m-d 9 9", spawn "firefox"       )]
+    liftIO (threadDelay 7000000)
+    spawn myRunBackgrounds
 
 warpMouseKeys =
   [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2)),
@@ -148,16 +145,14 @@ myStartupHook = do
   spawn "killall volumeicon; sleep 15; volumeicon"
   spawnOnce "meteo-qt"
   spawnOnce "killall udiskie; udiskie --tray"
-  spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds)
+  fixScreens
+  -- Setup initial work window
+  spawnOn "ADM" myBrowser
+  liftIO (threadDelay 7000000)
   -- Setup IM programs
   spawnOn "IM" "slack"
-  liftIO (threadDelay 5000000)
+  liftIO (threadDelay 7000000)
   spawnOn "IM" "discord"
-  -- Setup initial work window
-  liftIO (threadDelay 5000000)
-  spawnOn "ADM" myBrowser
-
--- spawn "autorandr mobile; autorandr docked"
 
 main :: IO ()
 main =
@@ -193,9 +188,9 @@ myManageHook =
       isDialog --> doFloat
     ]
 
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier mainGrid ))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier mainGrid ||| mirrorTall))
   where
-    magnifier = magnifiercz' 1.4
+    magnifier = magnifiercz 1.4
 
     orientation = XMonad.Layout.GridVariants.L
     masterRows = 2
@@ -205,6 +200,7 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier
     resizeIncrement = (5/100)
 
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
+    mirrorTall = myLayout = Mirror (Tall 1 (3/100) (3/5))
 
 myXmobarPP :: PP
 myXmobarPP =
