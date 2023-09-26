@@ -70,6 +70,10 @@ myRDPClient = "remmina"
 
 myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
+myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
+
+myFixScreens = "autorandr --change"
+
 myCustomKeys =
   [ ("M-f", sendMessage ToggleLayout),
     ("M-S-<Enter>", spawn myTerminal),
@@ -84,6 +88,7 @@ myCustomKeys =
     ("M-a c", spawn myCalculator),
     ("M-a r", spawn myRDPClient),
     ("M-a w", setupWorkWindow),
+    ("M-a z", fixScreens),
     ("M-1", showDesktop "W11"),
     ("M-S-1", moveFocusedWindowToDesktop "W11"),
     ("M-2", showDesktop "IM"),
@@ -116,6 +121,11 @@ setupWorkWindow = do
     spawnHere myTerminal
     spawnHere myTerminal
 
+fixScreens = do
+    spawn myFixScreens
+    liftIO (threadDelay 5000000)
+    spawn myBackgrounds
+
 -- ++ [("m-d 9 8", showDesktop "W13")]
 -- ++ [("m-d 9 9", spawn "firefox"       )]
 
@@ -141,9 +151,11 @@ myStartupHook = do
   spawn ("feh --no-fehbg --bg-max --random " ++ myBackgrounds)
   -- Setup IM programs
   spawnOn "IM" "slack"
+  liftIO (threadDelay 5000000)
   spawnOn "IM" "discord"
   -- Setup initial work window
-  -- spawnOn "ADM" myBrowser
+  liftIO (threadDelay 5000000)
+  spawnOn "ADM" myBrowser
 
 -- spawn "autorandr mobile; autorandr docked"
 
