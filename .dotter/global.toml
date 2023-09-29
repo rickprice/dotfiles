@@ -27,6 +27,8 @@
 "config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
 "config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
 "config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
+"config/autorandr/SecondaryMachine/config" = "~/.config/autorandr/SecondaryMachine/config"
+"config/autorandr/SecondaryMachine/setup" = "~/.config/autorandr/SecondaryMachine/setup"
 
 [fish.files]
 # Fish config (probably unused)
