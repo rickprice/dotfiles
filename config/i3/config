@@ -42,7 +42,7 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec terminal
 # bindsym $mod+Return exec alacritty
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,7 +59,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
+bindsym $mod+Ctrl+m exec alacritty start -- 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -71,7 +71,7 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-# bindsym $mod+Ctrl+b exec wezterm start -- 'bmenu'
+# bindsym $mod+Ctrl+b exec alacritty start -- 'bmenu'
 # bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
