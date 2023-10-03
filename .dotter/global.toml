@@ -84,3 +84,7 @@
 # "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh"
 
 [user.files]
+
+[bash.files]
+"config/bashrc" = "~/.bashrc"
+
