@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export $PATH=$PATH:/home/{{ user.username }}/.local/bin
+export PATH=$PATH:/home/{{ user.username }}/.local/bin
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
