@@ -99,7 +99,9 @@ myCustomKeys =
     , (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2")
     , (workspaceFocusKey ++ "f 3", showDesktop "FP3")
     , (workspaceMoveKey ++ "f 3", moveFocusedWindowToDesktop "FP3")
+    -- M-p is the default AFAIK
     -- , ("M-p", spawn myDMenu)
+    , ("M-r", spawn myDMenu)
     ]
 
 fixScreens = do
