@@ -129,7 +129,7 @@ myStartupHook = do
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
     spawnOn "IM" "discord"
-    liftIO (threadDelay 5000000)
+    liftIO (threadDelay 7000000)
     spawnOn "W11" myBrowser
 
 main :: IO ()
