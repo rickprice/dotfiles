@@ -49,8 +49,6 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
-myEricBrowser = "~/.local/bin/ericRunBrowser"
-
 myBrowserNyxt = "nyxt --no-socket"
 
 myTerminal = "alacritty"
@@ -85,7 +83,7 @@ myCustomKeys =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
     , ("M-a b", spawn myBrowser)
-    , ("M-<F2>", spawn myEricBrowser)
+    , ("M-<F2>", spawn myBrowser)
     , ("M-<F3>", spawn myFileManager)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
@@ -136,17 +134,17 @@ warpMouseKeys =
 
 myStartupHook = do
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    -- spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
+    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
-    -- spawnOnce "xfce4-power-manager"
-    -- spawnOnce "dropbox"
-    -- spawnOnce "nm-applet"
-    -- spawnOnce "pamac-tray"
-    -- spawnOnce "blueman-applet"
-    -- spawn "killall volumeicon; sleep 15; volumeicon"
-    -- spawnOnce "meteo-qt"
-    -- spawnOnce "killall udiskie; udiskie --tray"
+    spawnOnce "xfce4-power-manager"
+    spawnOnce "dropbox"
+    spawnOnce "nm-applet"
+    spawnOnce "pamac-tray"
+    spawnOnce "blueman-applet"
+    spawn "killall volumeicon; sleep 15; volumeicon"
+    spawnOnce "meteo-qt"
+    spawnOnce "killall udiskie; udiskie --tray"
     -- fixScreens
     -- Setup initial work window
     -- spawnOn "ADM" myBrowser
@@ -155,9 +153,7 @@ myStartupHook = do
     -- spawnOn "IM" "slack"
     -- liftIO (threadDelay 7000000)
     -- spawnOn "IM" "discord"
-    spawnOnce "nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg"
-    spawnOnce "~/.local/bin/shutdownBadVideos"
-    spawnOnce myEricBrowser
+    spawnOnce myBrowser
 
 main :: IO ()
 main =
@@ -165,7 +161,7 @@ main =
         . ewmh
         . ewmhFullscreen
         . withUrgencyHook NoUrgencyHook -- no popups only bar
-        -- . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+        . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
         $ myConfig
 
 myConfig =
