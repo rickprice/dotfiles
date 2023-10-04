@@ -44,7 +44,7 @@ myTerminal = "alacritty"
 
 myFileManager = "pcmanfm"
 
-myScaner = "simple-scan"
+myScanner = "simple-scan"
 
 myEbookViewer = "ebook-viewer"
 
