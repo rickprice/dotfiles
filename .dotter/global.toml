@@ -88,3 +88,7 @@
 [bash.files]
 "config/bashrc" = "~/.bashrc"
 
+[xmonad.files]
+"config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
+# "home/xmobarrc" = "~/.xmobarrc"
+# "home/stalonetrayrc" = "~/.stalonetrayrc"
