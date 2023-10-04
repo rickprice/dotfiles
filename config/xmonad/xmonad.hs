@@ -2,8 +2,6 @@
 
 import Data.Ratio
 
--- import XMonad.Config.Desktop
-
 import Control.Concurrent
 
 import Graphics.X11.ExtraTypes.XF86
@@ -27,15 +25,10 @@ import XMonad.Hooks.UrgencyHook (
 import XMonad.Layout.Magnifier
 import XMonad.Layout.MultiColumns
 
--- import XMonad.Layout.Named
--- import XMonad.Layout.NoBorders
-
 import XMonad.Layout.GridVariants
 import XMonad.Layout.NoBorders (noBorders, smartBorders)
 import XMonad.Layout.ThreeColumns
 
--- import XMonad.Layout.Grid
--- import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
 import XMonad.Layout.ToggleLayouts
 import XMonad.StackSet qualified as W
 import XMonad.Util.EZConfig
@@ -43,23 +36,19 @@ import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Ungrab
 
--- import XMonad.Util.Run
-
 myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
-myBrowserNyxt = "nyxt --no-socket"
-
-myTerminal = "alacritty"
+myTermial = "alacritty"
 
 myFileManager = "pcmanfm"
 
-myScanner = "simple-scan"
+myScaner = "simple-scan"
 
 myEbookViewer = "ebook-viewer"
 
-myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
+myBackgrounds = "~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds/"
 
 mySystemMonitor = "gnome-system-monitor"
 
@@ -73,7 +62,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "TP1", "TP2", "FP1", "FP2", "FP3"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "SCRATCH", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -95,8 +84,6 @@ myCustomKeys =
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
     , ("M-3", showDesktop "ZM")
     , ("M-S-3", moveFocusedWindowToDesktop "ZM")
-    , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
-    , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
     , ("M-5", showDesktop "SCRATCH")
@@ -113,13 +100,6 @@ myCustomKeys =
     , (workspaceMoveKey ++ "f 3", moveFocusedWindowToDesktop "FP3")
     -- , ("M-p", spawn myDMenu)
     ]
-
-setupWorkWindow = do
-    spawnHere myBrowser
-    spawnHere myBrowser
-    liftIO (threadDelay 5000000)
-    spawnHere myTerminal
-    spawnHere myTerminal
 
 fixScreens = do
     spawn myFixScreens
@@ -145,15 +125,9 @@ myStartupHook = do
     spawn "killall volumeicon; sleep 15; volumeicon"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
-    -- fixScreens
-    -- Setup initial work window
-    -- spawnOn "ADM" myBrowser
-    -- liftIO (threadDelay 7000000)
-    -- -- Setup IM programs
-    -- spawnOn "IM" "slack"
-    -- liftIO (threadDelay 7000000)
-    -- spawnOn "IM" "discord"
-    spawnOnce myBrowser
+    spawnOn "IM" "discord"
+    liftIO (threadDelay 5000000)
+    spawnOn "W11" myBrowser
 
 main :: IO ()
 main =
@@ -237,9 +211,9 @@ myNormalBorderColor = "#dddddd"
 
 myFocusedBorderColor = "#FFB53A"
 
-desktops = 3
+desktops = 2
 
-desktop_panes = 3
+desktop_panes = 1
 
 workspacePrefix = "W"
 
