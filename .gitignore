@@ -2,3 +2,6 @@
 config.new/fish
 config.new/nvim/undo
 config/nvim/plugin/packer_compiled.lua
+config/xmonad/.stack-work
+config/xmonad/xmonad-contrib
+config/xmonad/xmonad

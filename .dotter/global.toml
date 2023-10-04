@@ -74,8 +74,6 @@
 
 [i3-scrot.files]
 "config/i3-scrot.conf" = "~/.config/i3-scrot.conf"
-[bash.files]
-"config/bashrc" = "~/.bashrc"
 
 [wired.files]
 "config/wired/wired.ron" = "~/.config/wired/wired.ron"
