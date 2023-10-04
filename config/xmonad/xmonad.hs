@@ -85,8 +85,8 @@ myCustomKeys =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
     , ("M-a b", spawn myBrowser)
-    , ("M-<KP_F2>", spawn myEricBrowser)
-    , ("M-<KP_F3>", spawn myFileManager)
+    , ("M-<F2>", spawn myEricBrowser)
+    , ("M-<F3>", spawn myFileManager)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
     , ("M-a c", spawn myCalculator)
