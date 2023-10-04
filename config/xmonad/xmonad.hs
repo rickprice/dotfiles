@@ -49,6 +49,8 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
+myEricBrowser = "~/.local/bin/ericRunBrowser"
+
 myBrowserNyxt = "nyxt --no-socket"
 
 myTerminal = "alacritty"
@@ -83,16 +85,11 @@ myCustomKeys =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
     , ("M-a b", spawn myBrowser)
-    , ("M-a n", spawn myBrowserNyxt)
-    , ("M-a d", spawn myDarkTable)
-    , ("M-a i", spawn myInkScape)
-    , ("M-a e", spawn myEbookViewer)
+    , ("M-F2", spawn myEricBrowser)
+    , ("M-F3", spawn myFileManager)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
-    , ("M-a s", spawn myScanner)
     , ("M-a c", spawn myCalculator)
-    , ("M-a r", spawn myRDPClient)
-    , ("M-a w", setupWorkWindow)
     , ("M-a z", fixScreens)
     , ("M-1", showDesktop "W11")
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
@@ -160,7 +157,7 @@ myStartupHook = do
     -- spawnOn "IM" "discord"
     spawnOnce "nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg"
     spawnOnce "~/.local/bin/shutdownBadVideos"
-    spawnOnce "~/.local/bin/ericRunBrowser"
+    spawnOnce myEricBrowser
 
 main :: IO ()
 main =
