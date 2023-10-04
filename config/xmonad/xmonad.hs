@@ -40,7 +40,7 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
-myTermial = "alacritty"
+myTerminal = "alacritty"
 
 myFileManager = "pcmanfm"
 
