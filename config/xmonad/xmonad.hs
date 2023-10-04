@@ -76,6 +76,7 @@ myCustomKeys =
     , ("M-<F3>", spawn myFileManager)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
+    , ("M-a s", spawn myScanner)
     , ("M-a c", spawn myCalculator)
     , ("M-a z", fixScreens)
     , ("M-1", showDesktop "W11")
