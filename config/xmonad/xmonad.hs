@@ -158,7 +158,7 @@ myStartupHook = do
     -- spawnOn "IM" "slack"
     -- liftIO (threadDelay 7000000)
     -- spawnOn "IM" "discord"
-    spawnOnce "nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg""
+    spawnOnce "nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg"
     spawnOnce "~/.local/bin/shutdownBadVideos"
     spawnOnce "~/.local/bin/ericRunBrowser"
 
