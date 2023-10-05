@@ -43,6 +43,9 @@ import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Ungrab
 
+-- ScratchPads
+import XMonad.Util.NamedScratchpad
+
 -- import XMonad.Util.Run
 
 myModMask = mod4Mask
@@ -73,7 +76,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "TP1", "TP2", "FP1", "FP2", "FP3"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP", "TP1", "TP2", "FP1", "FP2", "FP3"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -104,8 +107,8 @@ myCustomKeys =
     , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
-    , ("M-5", showDesktop "SCRATCH")
-    , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
+    , ("M-5", showDesktop "NSP")
+    , ("M-S-5", moveFocusedWindowToDesktop "NSP")
     , (workspaceFocusKey ++ "t 1", showDesktop "TP1")
     , (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1")
     , (workspaceFocusKey ++ "t 2", showDesktop "TP2")
@@ -117,6 +120,11 @@ myCustomKeys =
     , (workspaceFocusKey ++ "f 3", showDesktop "FP3")
     , (workspaceMoveKey ++ "f 3", moveFocusedWindowToDesktop "FP3")
     -- , ("M-p", spawn myDMenu)
+    -- Dynamic ScratchPads
+    , ("M-s-a", withFocused $ toggleDynamicNSP "dyn1")
+    , ("M-s-b", withFocused $ toggleDynamicNSP "dyn2")
+    , ("M-a"  , dynamicNSPAction "dyn1")
+    , ("M-b"  , dynamicNSPAction "dyn2")
     ]
 
 setupWorkWindow = do
