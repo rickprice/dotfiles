@@ -69,6 +69,8 @@ mySystemMonitor = "gnome-system-monitor"
 myDMenu = "dmenu-frecency"
 
 myDarkTable = "darktable"
+myDarkTablePersonalLibrary = "~/Documents/Personal/DarktablePersonal/library.db"
+myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library.db"
 
 myInkScape = "inkscape"
 
@@ -87,7 +89,8 @@ myCustomKeys =
     , ("M-S-<Enter>", spawn myTerminal)
     , ("M-a b", spawn myBrowser)
     , ("M-a n", spawn myBrowserNyxt)
-    , ("M-a d", spawn myDarkTable)
+    , ("M-a d", spawn (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary))
+    , ("M-a S-d", spawn (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary))
     , ("M-a i", spawn myInkScape)
     , ("M-a e", spawn myEbookViewer)
     , ("M-a f", spawn myFileManager)
