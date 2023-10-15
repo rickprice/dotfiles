@@ -154,7 +154,7 @@ myStartupHook = do
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     spawnOnce "xfce4-power-manager"
-    spawnOnce "dropbox"
+    -- spawnOnce "dropbox"
     spawnOnce "nm-applet"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
