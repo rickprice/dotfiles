@@ -1,5 +1,5 @@
 #!/bin/sh
-USER=''{{ user.username }}''
+USER=''{{ user.machine_username }}''
 status=$2
 
 case $status in
