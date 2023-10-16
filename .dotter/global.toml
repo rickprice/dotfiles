@@ -19,16 +19,17 @@
 "config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 
 [autorandr.files]
-"config/autorandr/livingroom/config" = "~/.config/autorandr/livingroom/config"
-"config/autorandr/livingroom/setup" = "~/.config/autorandr/livingroom/setup"
-"config/autorandr/docked2/config" = "~/.config/autorandr/docked2/config"
-"config/autorandr/docked2/setup" = "~/.config/autorandr/docked2/setup"
-"config/autorandr/docked/config" = "~/.config/autorandr/docked/config"
-"config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
-"config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
-"config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
-"config/autorandr/SecondaryMachine/config" = "~/.config/autorandr/SecondaryMachine/config"
-"config/autorandr/SecondaryMachine/setup" = "~/.config/autorandr/SecondaryMachine/setup"
+"config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
+# "config/autorandr/livingroom/config" = "~/.config/autorandr/livingroom/config"
+# "config/autorandr/livingroom/setup" = "~/.config/autorandr/livingroom/setup"
+# "config/autorandr/docked2/config" = "~/.config/autorandr/docked2/config"
+# "config/autorandr/docked2/setup" = "~/.config/autorandr/docked2/setup"
+# "config/autorandr/docked/config" = "~/.config/autorandr/docked/config"
+# "config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
+# "config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
+# "config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
+# "config/autorandr/SecondaryMachine/config" = "~/.config/autorandr/SecondaryMachine/config"
+# "config/autorandr/SecondaryMachine/setup" = "~/.config/autorandr/SecondaryMachine/setup"
 
 [fish.files]
 # Fish config (probably unused)
