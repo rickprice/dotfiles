@@ -59,3 +59,4 @@
 # `git dft` is less to type than `git difftool`.
 [alias]
     dft = difftool
+	make-patch = "!bash -c \"cd ${GIT_PREFIX:-.};git add .;git commit -m uncommited; git format-patch HEAD~1; git reset HEAD~1\""
