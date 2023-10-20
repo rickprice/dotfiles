@@ -65,3 +65,4 @@ vim.g.vimwiki_global_ext = 0
 vim.g.history = 10000
 -- Ensure that all characters are shown when list is enabled
 opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
+vim.g.autoformat = false
