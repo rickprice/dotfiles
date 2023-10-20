@@ -3,6 +3,8 @@ if status is-interactive
     fish_vi_key_bindings
     fzf_configure_bindings --variables=\e\cV
     starship init fish | source
+    #
+    # pyenv virtualenv-init - | source
 end
 # Haskell Cabal Setup
 set -xg PATH "/home/fprice/.cabal/bin:$PATH"
@@ -16,3 +18,6 @@ set -xg PATH "/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
 # -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+
+# # Setup Python pyenv automatically
+# pyenv init - | source
