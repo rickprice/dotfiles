@@ -192,5 +192,5 @@
 "config/nyxt/auto-config.lisp" = "~/.config/nyxt/auto-config.lisp"
 "config/nyxt/config.lisp" = "~/.config/nyxt/config.lisp"
 
-
-
+[reflector.files]
+"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
