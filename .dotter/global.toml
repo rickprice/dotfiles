@@ -83,3 +83,6 @@
 
 [meteo-qt.files]
 "config/meteo-qt/meteo-qt.conf" = "~/.config/meteo-qt/meteo-qt.conf"
+
+[reflector.files]
+"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
