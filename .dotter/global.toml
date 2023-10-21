@@ -92,3 +92,6 @@
 "config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
 # "home/xmobarrc" = "~/.xmobarrc"
 # "home/stalonetrayrc" = "~/.stalonetrayrc"
+
+[reflector.files]
+"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
