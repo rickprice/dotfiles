@@ -5,7 +5,7 @@ import logging
 import os
 from datetime import datetime, timedelta
 
-waitTimeMinutes=30
+waitTimeMinutes=20
 badVideoLogFilename=os.path.expanduser("~/BadVideoLog.txt")
 startBrowserLogFilename=os.path.expanduser("~/StartBrowserLog.txt")
 badVideoBackground=os.path.expanduser("~/.dotfiles/wallpaper/no-monster-allowd-sign.jpg")
