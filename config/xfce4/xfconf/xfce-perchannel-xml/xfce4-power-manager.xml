@@ -14,5 +14,9 @@
     <property name="lid-action-on-battery" type="uint" value="1"/>
     <property name="logind-handle-lid-switch" type="bool" value="false"/>
     <property name="critical-power-action" type="uint" value="4"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="false"/>
+    <property name="dpms-on-ac-off" type="uint" value="60"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="59"/>
+    <property name="blank-on-ac" type="int" value="58"/>
   </property>
 </channel>
