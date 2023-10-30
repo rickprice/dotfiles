@@ -136,7 +136,7 @@ warpMouseKeys =
 
 myStartupHook = do
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    -- spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
+    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 5"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     -- spawnOnce "xfce4-power-manager"
@@ -144,7 +144,7 @@ myStartupHook = do
     -- spawnOnce "nm-applet"
     -- spawnOnce "pamac-tray"
     -- spawnOnce "blueman-applet"
-    -- spawn "killall volumeicon; sleep 15; volumeicon"
+    spawn "killall volumeicon; sleep 15; volumeicon"
     -- spawnOnce "meteo-qt"
     -- spawnOnce "killall udiskie; udiskie --tray"
     -- fixScreens
