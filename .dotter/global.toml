@@ -106,6 +106,7 @@
 "local/bin/Export_Secrets_And_Config.sh"="~/.local/bin/Export_Secrets_And_Config"
 "local/bin/altlog.sh"="~/.local/bin/altlog"
 "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
+"local/bin/current_BE_sprint.py"="~/.local/bin/current_BE_sprint"
 
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
