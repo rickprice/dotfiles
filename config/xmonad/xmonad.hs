@@ -198,7 +198,8 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
         [ manageSpawn
-        , manageZoomHook
+        -- , manageZoomHook
+        , className =? "zoom" --> doSink
         , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
         , isDialog --> doFloat
@@ -294,21 +295,21 @@ myNewStyleKeys =
         ++ myCustomKeys
         ++ warpMouseKeys
 
-manageZoomHook =
-    composeAll $
-        [ (className =? zoomClassName) <&&> shouldFloat <$> title --> doFloat
-        , (className =? zoomClassName) <&&> shouldSink <$> title --> doSink
-        ]
-  where
-    zoomClassName = "zoom"
-    tileTitles =
-        [ "Zoom - Free Account" -- main window
-        , "Zoom - Licensed Account" -- main window
-        , "Zoom" -- meeting window on creation
-        , "Zoom Meeting" -- meeting window shortly after creation
-        , "Zoom Cloud Meetings" -- The window they create after the Zoom meeting closes
-        , "Meeting Chat" -- Meeting chat window
-        ]
-    shouldFloat title = title `notElem` tileTitles
-    shouldSink title = title `elem` tileTitles
-    doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
+-- manageZoomHook =
+--     composeAll $
+--         [ (className =? zoomClassName) <&&> shouldFloat <$> title --> doFloat
+--         , (className =? zoomClassName) <&&> shouldSink <$> title --> doSink
+--         ]
+--   where
+--     zoomClassName = "zoom"
+--     tileTitles =
+--         [ "Zoom - Free Account" -- main window
+--         , "Zoom - Licensed Account" -- main window
+--         , "Zoom" -- meeting window on creation
+--         , "Zoom Meeting" -- meeting window shortly after creation
+--         , "Zoom Cloud Meetings" -- The window they create after the Zoom meeting closes
+--         , "Meeting Chat" -- Meeting chat window
+--         ]
+--     shouldFloat title = title `notElem` tileTitles
+--     shouldSink title = title `elem` tileTitles
+--     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
