@@ -15,9 +15,9 @@ set -xg PATH "/home/fprice/.ghcup/bin:$PATH"
 # -- START ACTIVESTATE INSTALLATION
 set -xg PATH "/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
-# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
-# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 
 # # Setup Python pyenv automatically
 # pyenv init - | source
+# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
+# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
