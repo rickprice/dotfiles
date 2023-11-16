@@ -12,12 +12,12 @@ set -xg PATH "/home/fprice/.cabal/bin:$PATH"
 # Haskell CHCUP Setup
 set -xg PATH "/home/fprice/.ghcup/bin:$PATH"
 # Haskell CHCUP Setup
-# -- START ACTIVESTATE INSTALLATION
-set -xg PATH "/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
-# -- STOP ACTIVESTATE INSTALLATION
 
 # # Setup Python pyenv automatically
 # pyenv init - | source
+# -- START ACTIVESTATE INSTALLATION
+set -xg PATH "/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
+# -- STOP ACTIVESTATE INSTALLATION
 # -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
 set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
 # -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
