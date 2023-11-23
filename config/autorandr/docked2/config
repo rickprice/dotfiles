@@ -7,7 +7,7 @@ off
 output DP-2-3
 off
 output HDMI-1
-crtc 2
+crtc 1
 mode 1920x1080
 pos 320x0
 rate 60.00
@@ -18,7 +18,7 @@ x-prop-colorspace Default
 x-prop-max_bpc 12
 x-prop-non_desktop 0
 output DP-2-1
-crtc 1
+crtc 2
 mode 2560x1080
 pos 0x1080
 rate 59.98
@@ -29,7 +29,7 @@ x-prop-non_desktop 0
 output eDP-1
 crtc 0
 mode 1920x1080
-pos 360x2160
+pos 320x2160
 primary
 rate 60.00
 x-prop-broadcast_rgb Automatic
