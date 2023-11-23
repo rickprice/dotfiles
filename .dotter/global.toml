@@ -196,3 +196,6 @@
 
 [reflector.files]
 "etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
+
+[makepkg.files]
+"home/makepkg.conf" = "~/.makepkg.conf"
