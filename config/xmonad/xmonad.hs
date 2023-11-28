@@ -50,7 +50,7 @@ import XMonad.Util.NamedScratchpad
 
 myModMask = mod4Mask
 
-myBrowser = "firefox-developer-edition"
+myBrowser = "firefox-aurora"
 
 myBrowserNyxt = "nyxt --no-socket"
 
@@ -111,7 +111,7 @@ myCustomKeys =
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
     , ("M-5", showDesktop "NSP")
-    , ("M-S-5", moveFocusedWindowToDesktop "NSP")
+    , ("M-S-5", moveFocusedWendowToDesktop "NSP")
     , (workspaceFocusKey ++ "t 1", showDesktop "TP1")
     , (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1")
     , (workspaceFocusKey ++ "t 2", showDesktop "TP2")
