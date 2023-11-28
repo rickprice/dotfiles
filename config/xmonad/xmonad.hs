@@ -111,7 +111,7 @@ myCustomKeys =
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
     , ("M-5", showDesktop "NSP")
-    , ("M-S-5", moveFocusedWendowToDesktop "NSP")
+    , ("M-S-5", moveFocusedWindowToDesktop "NSP")
     , (workspaceFocusKey ++ "t 1", showDesktop "TP1")
     , (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1")
     , (workspaceFocusKey ++ "t 2", showDesktop "TP2")
