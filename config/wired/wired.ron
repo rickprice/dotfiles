@@ -14,8 +14,8 @@
 		(
 			name: "root",
 			parent: "",
-			hook: (parent_anchor: TR, self_anchor: TR),
-			offset: (x: -48, y: 48),
+			hook: (parent_anchor: TL, self_anchor: TL),
+			offset: (x: 0, y: 48),
 			params: NotificationBlock((
 				monitor: 0,
 				border_width: 3.0,
