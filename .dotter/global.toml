@@ -56,6 +56,9 @@
 [ssh.files]
 "etc/ssh/sshd_config" = { target = "/etc/ssh/sshd_config", type = "template", owner = "root" }
 
+[X11.files]
+"etc/X11/xorg.conf.d/30-touchpad.conf" = { target = "/etc/X11/xorg.conf.d/30-touchpad.conf", type = "symbolic", owner = "root" }
+
 [local.files]
 "local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
