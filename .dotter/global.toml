@@ -200,3 +200,7 @@
 
 [makepkg.files]
 "home/makepkg.conf" = "~/.makepkg.conf"
+
+[wireguard.files]
+"etc/wireguard/wg0_rickp.conf" = { target = "/etc/wireguard/wg0_rickp.conf", type = "template", owner = "root" }
+
