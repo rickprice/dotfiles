@@ -152,12 +152,12 @@ myStartupHook = do
     spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
-    spawnOnce "xfce4-power-manager"
     -- spawnOnce "dropbox"
     spawnOnce "nm-applet"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
+    spawnOnce "cbatticon"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
     fixScreens
