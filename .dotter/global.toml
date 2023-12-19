@@ -107,7 +107,7 @@
 "local/bin/klogglog.sh"="~/.local/bin/klogglog"
 "local/bin/BackupComputer.sh"="~/.local/bin/BackupComputer"
 "local/bin/altlog.sh"="~/.local/bin/altlog"
-"local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
+# "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
@@ -137,6 +137,8 @@
 "home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
 "home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
 "home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
+"home/mutt/mutt_tokenfile"={target="~/.mutt/mutt_tokenfile",type="symbolic"}
+"local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 
 [gist.files]
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"

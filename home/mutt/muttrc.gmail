@@ -1,5 +1,20 @@
 set imap_user = "{{ gmail.imap_user }}"
-set imap_pass = "{{ gmail.imap_pass }}"
+# set imap_pass = "{{ gmail.imap_pass }}"
 set from = "{{ user.email }}"
 set realname = "{{ user.fullname }}"
 set smtp_url = "smtps://{{ gmail.imap_user }}@smtp.gmail.com:465/"
+
+bind index G imap-fetch-mail
+set editor = "vim"
+set charset = "utf-8"
+set record = ''
+set imap_authenticators="oauthbearer:xoauth2"
+set imap_oauth_refresh_command="mutt_oauth2 {{ gmail.mutt_token_file }}"
+set smtp_authenticators=${imap_authenticators}
+set smtp_oauth_refresh_command=${imap_oauth_refresh_command}
+
+
+bind index G imap-fetch-mail
+set editor = "vim"
+set charset = "utf-8"
+set record = ''
