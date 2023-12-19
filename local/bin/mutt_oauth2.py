@@ -48,7 +48,7 @@ import readline
 # encryption and decryption pipes you prefer. They should read from standard
 # input and write to standard output. The example values here invoke GPG,
 # although won't work until an appropriate identity appears in the first line.
-ENCRYPTION_PIPE = ['gpg', '--encrypt', '--recipient', '{{ mail.mutt_oauth2_gpg_identity }}']
+ENCRYPTION_PIPE = ['gpg', '--encrypt', '--recipient', '{{ gmail.mutt_oauth2_gpg_identity }}']
 DECRYPTION_PIPE = ['gpg', '--decrypt']
 
 registrations = {
