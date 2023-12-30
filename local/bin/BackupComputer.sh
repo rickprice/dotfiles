@@ -17,7 +17,7 @@ echo "Exporting to:" $EXPORT_DIRECTORY
 mkdir -p $EXPORT_DIRECTORY
 
 # Home
-DIR_TO_COPY=/export/home
+DIR_TO_COPY=/home
 sudo rsync --archive $DIR_TO_COPY $EXPORT_DIRECTORY
 
 # etc
