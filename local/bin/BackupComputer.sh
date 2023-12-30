@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Keep DropBox out of our hair
+killall -q dropbox
+
 # Fail script if any command fails
 set -e
 set -x
@@ -11,9 +14,6 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Get out of the way
 cd /
-
-# Keep DropBox out of our hair
-killall dropbox
 
 # EXPORT_DIRECTORY=/run/media/fprice/KINGSTON/FPRICE_Secrets_And_Config
 EXPORT_DIRECTORY=/run/media/fprice/Backup
