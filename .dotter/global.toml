@@ -199,7 +199,7 @@
 "config/nyxt/config.lisp" = "~/.config/nyxt/config.lisp"
 
 [reflector.files]
-"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
+"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "template", owner = "root" }
 
 [makepkg.files]
 "home/makepkg.conf" = "~/.makepkg.conf"
