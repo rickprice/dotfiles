@@ -40,6 +40,7 @@
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
 "config/fish/conf.d/Kubectl.fish" = "~/.config/fish/conf.d/Kubectl.fish"
 "config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
+"config/fish/conf.d/AWS_SSO.fish" = "~/.config/fish/conf.d/AWS_SSO.fish"
 # "config/fish/functions/ghreviews.fish" = "~/.config/fish/functions/ghreviews.fish"
 "config/fish/functions/test-microphone.fish" = "~/.config/fish/functions/test-microphone.fish"
 "config/fish/functions/br.fish" = "~/.config/fish/functions/br.fish"
