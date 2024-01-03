@@ -41,6 +41,9 @@ return {
   -- disable trouble
   -- { "folke/trouble.nvim", enabled = false },
 
+  -- Open Files more intelligently
+  { "wsdjeg/vim-fetch"},
+
   -- add symbols-outline
   {
     "simrat39/symbols-outline.nvim",
