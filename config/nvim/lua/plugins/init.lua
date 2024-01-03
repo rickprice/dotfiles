@@ -389,7 +389,7 @@ return {
 		version = "*",
 		config = true,
 		keys = {
-			{ "<leader>t", "<cmd>ToggleTerm<cr>", mode = "n", desc = "ToggleTerm" },
+			{ "<leader>T", "<cmd>ToggleTerm<cr>", mode = "n", desc = "ToggleTerm" },
 			open_mapping = true,
 		},
 	},
@@ -436,7 +436,7 @@ return {
 						-- https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
 						config = {
 							default_keybinds = true,
-							neorg_leader = "<Leader><Leader>",
+							neorg_leader = "<leader>",
 						},
 					},
 					["core.integrations.treesitter"] = {},
