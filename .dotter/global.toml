@@ -110,6 +110,9 @@
 "local/bin/altlog.sh"="~/.local/bin/altlog"
 # "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 
+[medium.files]
+"local/bin/PublishToMedium.py"="~/.local/bin/PublishToMedium"
+
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
 "local/bin/ManageTouchpad.sh"="/usr/local/bin/ManageTouchpad"
