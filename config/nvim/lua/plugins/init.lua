@@ -246,7 +246,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			sections = {
-				lualine_a = { path = 4 },
+				lualine_a = { { path = 4 } },
 			},
 		},
 	},
