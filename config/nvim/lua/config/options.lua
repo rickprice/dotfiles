@@ -1,7 +1,12 @@
 local opt = vim.opt -- to set options
 
+-- disable netrw at the very start of your init.lua (strongly advised) - From nvim-tree
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 opt.backspace = { "indent", "eol", "start" }
 -- opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed"
 opt.colorcolumn = "100"
 opt.completeopt = "menu,menuone,noselect"
 opt.cursorcolumn = false
@@ -36,7 +41,8 @@ opt.shiftwidth = 4 -- Size of an indent
 opt.showmode = false -- Don't display mode
 opt.sidescrolloff = 8 -- Columns of context
 -- opt.signcolumn = "yes:1" -- always show signcolumns
-opt.signcolumn = "auto"
+-- Auto show sign column up to 9 sign columns
+opt.signcolumn = "auto:9"
 opt.smartcase = true -- Do not ignore case with capitals
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { "en_gb" }
@@ -51,5 +57,12 @@ opt.wrap = true
 vim.cmd("au TextYankPost * lua vim.highlight.on_yank {on_visual = true}") -- disabled in visual mode
 vim.g.markdown_fenced_languages = { "html", "javascript", "typescript", "css", "scss", "lua", "vim" }
 vim.g.suda_smart_edit = 1 -- Suda plugin
-vim.o.lazyredraw = true
+-- vim.o.lazyredraw = true
 vim.o.whichwrap = vim.o.whichwrap .. "<,>" -- Wrap movement between lines in edit mode with arrows
+-- This disables vimwiki thinking that every .md file is also a .wiki file
+vim.g.vimwiki_global_ext = 0
+-- Set history much higher
+vim.g.history = 10000
+-- Ensure that all characters are shown when list is enabled
+opt.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
+vim.g.autoformat = false
