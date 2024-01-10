@@ -16,7 +16,7 @@ DOWNLOADS_DIR=~/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads
 GOOGLE_TAKEOUT_DIR=./Takeout
 LOCATION_HISTORY_FILE_GPX="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Location History.gpx"
 LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Records.json"
-LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Location History.kml"
+LOCATION_HISTORY_FILE_KML="$DOWNLOADS_DIR/GoogleTakeoutLocations.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 
 # ARTIST="Tamara Price"
@@ -62,10 +62,14 @@ function process_photo_directory() {
 echo Setup Google Takeout data
 trash -f "$GOOGLE_TAKEOUT_DIR"
 if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
-    tar -xzf $DOWNLOADS_DIR/takeout-*
-    location-history-json-converter -f kml -s 2022-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
+    # tar -xzf $DOWNLOADS_DIR/takeout-*
+    # location-history-json-converter -f kml -s 2022-01-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
     # location-history-json-converter -f kml "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_KML"
     # location-history-json-converter -f gpxtracks -s 2021-11-01 "$LOCATION_HISTORY_FILE_JSON" "$LOCATION_HISTORY_FILE_GPX"
+    echo "...Starting Processing."
+    google-location-history-converter-exe --inputFile $DOWNLOADS_DIR/takeout-* --outputFile $DOWNLOADS_DIR/GoogleTakeoutLocations.kml --filterMoreThanDays 60 
+    echo "...Finished Processing."
+
 else
     figlet Too many or too few takeout location zip files
     exit -1
