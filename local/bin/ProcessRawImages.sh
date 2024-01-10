@@ -14,9 +14,9 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # Setup where everything goes
 DOWNLOADS_DIR=~/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads
 GOOGLE_TAKEOUT_DIR=./Takeout
-LOCATION_HISTORY_FILE_GPX="$GOOGLE_TAKEOUT_DIR/Location History/Location History.gpx"
-LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History/Records.json"
-LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History/Location History.kml"
+LOCATION_HISTORY_FILE_GPX="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Location History.gpx"
+LOCATION_HISTORY_FILE_JSON="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Records.json"
+LOCATION_HISTORY_FILE_KML="$GOOGLE_TAKEOUT_DIR/Location History (Timeline)/Location History.kml"
 WORKING_DIR=~/Documents/Personal/PhotosFromCamera
 
 # ARTIST="Tamara Price"
