@@ -208,8 +208,8 @@
 [reflector.files]
 "etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "template", owner = "root" }
 
-[makepkg.files]
-"home/makepkg.conf" = "~/.makepkg.conf"
+# [makepkg.files]
+# "home/makepkg.conf" = "~/.makepkg.conf"
 
 [wireguard.files]
 "etc/wireguard/wg0_rickp.conf" = { target = "/etc/wireguard/wg0_rickp.conf", type = "template", owner = "root" }
