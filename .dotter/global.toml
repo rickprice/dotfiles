@@ -152,6 +152,9 @@
 "config/systemd/user/dropbox.service.d/override.conf" = {target = "/etc/systemd/system/dropbox@fprice.service.d/override.conf", type = "template", owner = "root"}
 "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = {target = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh", type = "template", owner = "root"}
 
+[makepkg.files]
+"etc/makepkg.conf" = {target = "/etc/makepkg.conf", type = "symbolic", owner = "root"}
+
 [user.files]
 
 # [leftwm.files]
