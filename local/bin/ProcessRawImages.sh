@@ -25,41 +25,40 @@ COMPANY="PricePixel Photography"
 cd "$WORKING_DIR"
 
 function setup_google_location_data() {
-	echo Setup Google Takeout data
-	trash -f "$LOCATION_HISTORY_FILE_KML"
-	# Check if there is more than one takeout-* file, if so, then user needs to delete the old ones
-	if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
-		echo "...Starting Processing Location Data."
-		google-location-history-converter-exe --inputFile $LOCATION_HISTORY_FILE_TGZ --outputFile $LOCATION_HISTORY_FILE_KML --filterMoreThanDays=$DAYS_LOCATION_RECORDS_TO_USE
-		echo "...Finished Processing Location Data."
+    echo Setup Google Takeout data
+    trash -f "$LOCATION_HISTORY_FILE_KML"
+    # Check if there is more than one takeout-* file, if so, then user needs to delete the old ones
+    if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
+        echo "...Starting Processing Location Data."
+        google-location-history-converter-exe --inputFile $LOCATION_HISTORY_FILE_TGZ --outputFile $LOCATION_HISTORY_FILE_KML --filterMoreThanDays=$DAYS_LOCATION_RECORDS_TO_USE
+        echo "...Finished Processing Location Data."
 
-	else
-		figlet Too many or too few takeout location zip files
+    else
+        figlet Too many or too few takeout location zip files
         echo "Location Checked: [" $LOCATION_HISTORY_FILE_TGZ "]"
-		exit -1
-	fi
+        exit -1
+    fi
 }
 
 function process_photo_directory() {
-	local directory="$1"
-	local dropbox_location="$2"
-	local directory_location_data="${directory}_loc_data"
-	local directory_dropbox="${directory}_dropbox"
+    local directory="$1"
+    local dropbox_location="$2"
+    local directory_location_data="${directory}_loc_data"
+    local directory_dropbox="${directory}_dropbox"
 
-	echo "Clear out directories if we can ${directory}"
-	trash -f "$directory_location_data"
-	[ -d $directory_dropbox ] && trash -f "$directory_dropbox"
+    echo "Clear out directories if we can ${directory}"
+    trash -f "$directory_location_data"
+    [ -d $directory_dropbox ] && trash -f "$directory_dropbox"
 
-	echo "Copy pictures to be geolocated ${directory}"
-	mkdir -p "$directory_location_data"
-	cp -r $directory/* "$directory_location_data"
+    echo "Copy pictures to be geolocated ${directory}"
+    mkdir -p "$directory_location_data"
+    cp -r $directory/* "$directory_location_data"
 
-	echo "Add location data $directory"
-	exiftool -v5 -Copyright="All rights reserved. $COMPANY" -CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data
-	echo "Organize Images $directory_location_data"
-	exiftool '-Directory<DateTimeOriginal' -d "$directory_location_data/%Y-%m-%d" $directory_location_data
+    echo "Add location data $directory"
+    exiftool -v5 -Copyright="All rights reserved. $COMPANY" -CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data
+    echo "Organize Images $directory_location_data"
+    exiftool '-Directory<DateTimeOriginal' -d "$directory_location_data/%Y-%m-%d" $directory_location_data
 }
-
 
 setup_google_location_data
 process_photo_directory "$WORKING_DIR/CanonT7i" "Pictures/CanonRawPhotos"
