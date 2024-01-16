@@ -157,7 +157,8 @@ myStartupHook = do
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
-    spawnOnce "cbatticon"
+    -- spawnOnce "cbatticon"
+    spawnOnce "xfce4-power-manager"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
     fixScreens
