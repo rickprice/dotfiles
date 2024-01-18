@@ -30,7 +30,7 @@ function setup_google_location_data() {
     # Check if there is more than one takeout-* file, if so, then user needs to delete the old ones
     if [[ $(find $DOWNLOADS_DIR -maxdepth 1 -name 'takeout-*' -printf c | wc -c) == "1" ]]; then
         echo "...Starting Processing Location Data."
-        google-location-history-converter-exe --inputFile $LOCATION_HISTORY_FILE_TGZ --outputFile $LOCATION_HISTORY_FILE_KML --filterMoreThanDays=$DAYS_LOCATION_RECORDS_TO_USE
+        glconverter --inputFile $LOCATION_HISTORY_FILE_TGZ --outputFile $LOCATION_HISTORY_FILE_KML --filterMoreThanDays=$DAYS_LOCATION_RECORDS_TO_USE
         echo "...Finished Processing Location Data."
 
     else
