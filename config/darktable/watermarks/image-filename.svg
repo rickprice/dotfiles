@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   x="0"
+   y="0"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="image-filename.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.6233333"
+     inkscape:cx="157.62389"
+     inkscape:cy="75.095299"
+     inkscape:window-width="1278"
+     inkscape:window-height="1078"
+     inkscape:window-x="0"
+     inkscape:window-y="1080"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <text
+     x="0"
+     y="5"
+     text-anchor="start"
+     xml:space="preserve"
+     fill="$(WATERMARK_COLOR)"
+     font-family="'$(WATERMARK_FONT_FAMILY)'"
+     font-style="$(WATERMARK_FONT_STYLE)"
+     font-weight="$(WATERMARK_FONT_WEIGHT)"
+     font-size="10px"
+     id="text1"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="0"
+       y="5">$(CATEGORY0(Shot))/$(CATEGORY1(Shot))/$(CATEGORY2(Shot))</tspan><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="0"
+       y="17.5">$(VERSION)_$(FILE_NAME)</tspan><tspan
+       sodipodi:role="line"
+       x="0"
+       y="30"
+       id="tspan7">$(RATING.ICONS)</tspan><tspan
+       sodipodi:role="line"
+       x="0"
+       y="42.5"
+       id="tspan6" /><tspan
+       sodipodi:role="line"
+       x="0"
+       y="55"
+       id="tspan5" /><tspan
+       sodipodi:role="line"
+       x="0"
+       y="67.5"
+       id="tspan3" /><tspan
+       sodipodi:role="line"
+       x="0"
+       y="80"
+       id="tspan4" /></text>
+</svg>
