@@ -215,3 +215,8 @@
 [wireguard.files]
 "etc/wireguard/wg0_rickp.conf" = { target = "/etc/wireguard/wg0_rickp.conf", type = "template", owner = "root" }
 
+[darktable.files]
+"config/darktable/darktablerc" = { target = "~/.config/darktable/darktablerc", type = "symbolic" }
+"config/darktable/shortcutsrc" = { target = "~/.config/darktable/shortcutsrc", type = "symbolic" }
+"config/darktable/watermarks" = { target = "~/.config/darktable/watermarks", type = "symbolic" }
+
