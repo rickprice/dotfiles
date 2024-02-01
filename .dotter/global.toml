@@ -219,4 +219,5 @@
 "config/darktable/darktablerc" = { target = "~/.config/darktable/darktablerc", type = "symbolic" }
 "config/darktable/shortcutsrc" = { target = "~/.config/darktable/shortcutsrc", type = "symbolic" }
 "config/darktable/watermarks" = { target = "~/.config/darktable/watermarks", type = "symbolic" }
+"config/darktable/Styles" = { target = "~/.config/darktable/Styles", type = "symbolic" }
 
