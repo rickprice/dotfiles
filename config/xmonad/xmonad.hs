@@ -9,6 +9,7 @@ import Control.Concurrent
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Actions.SpawnOn
+import XMonad.Actions.UpdatePointer
 import XMonad.Actions.Warp
 import XMonad.Config.Desktop (
     desktopConfig,
@@ -53,6 +54,8 @@ myBrowser = "firefox-developer-edition"
 
 myBrowserNyxt = "nyxt --no-socket"
 
+myAudioManager = "pavucontrol"
+
 myTerminal = "wezterm"
 
 myFileManager = "pcmanfm"
@@ -91,6 +94,7 @@ myCustomKeys =
     , ("M-a d", spawn (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary))
     , ("M-a S-d", spawn (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary))
     , ("M-a i", spawn myInkScape)
+    , ("M-a s", spawn myAudioManager)
     , ("M-a e", spawn myEbookViewer)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
@@ -189,6 +193,7 @@ myConfig =
         , normalBorderColor = myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
+        , logHook = updatePointer(0.5,0.5) (0,0)
         }
         `additionalKeysP` myNewStyleKeys
 
