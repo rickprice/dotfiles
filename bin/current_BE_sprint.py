@@ -73,7 +73,7 @@ def current_sprint(
 
     jira_api = get_jira_api(jira_configuration_file)
 
-    active_sprints = jira_api.get_all_sprint(be_board_id,state="active")
+    active_sprints = jira_api.get_all_sprints_from_board(be_board_id,state="active")
     active_sprint_names = [ x["name"].split(" ")[2] for x in active_sprints["values"]]
 
     print(";".join(active_sprint_names))
