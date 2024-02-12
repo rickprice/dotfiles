@@ -94,7 +94,6 @@ myCustomKeys =
     , ("M-a d", spawn (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary))
     , ("M-a S-d", spawn (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary))
     , ("M-a i", spawn myInkScape)
-    , ("M-a s", spawn myAudioManager)
     , ("M-a e", spawn myEbookViewer)
     , ("M-a f", spawn myFileManager)
     , ("M-a m", spawn mySystemMonitor) -- performance monitor
