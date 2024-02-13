@@ -15,8 +15,8 @@ arkham asylum
 assasin
 assassin
 asylum
-ate him
 at night
+ate him
 attack
 autopsy
 baby
@@ -90,8 +90,8 @@ danger
 dangerous
 dark
 dark angel
-darkest
 dark knight
+darkest
 darksider
 darkwood
 darq
@@ -142,23 +142,23 @@ forgive me
 fortnight
 freddy
 fugget
+g-force
 garten
 gashnor
 genshin
 get even
-g-force
 ghast
 ghastly
 ghost
-ghostface
 ghost hunting
+ghostface
 giga chad
 girlfriend
 girls' frontline
 glamrock
+god of war
 goddess
 godfather
-god of war
 godzilla
 golem
 gomer pyle
@@ -197,14 +197,14 @@ honor
 horrific
 horror
 hospital
+i love being needed
 ice cream boss
 illusion
-i love being needed
+in the mirror
 infamous
 infliction
 inquisition
 insomnis
-in the mirror
 invasion
 it happened here
 it takes two
@@ -274,8 +274,8 @@ need more
 never again
 never back down
 night janitor
-nightmare
 night security
+nightmare
 nocturne
 observation duty
 oggy
@@ -294,6 +294,7 @@ playdead
 police
 pomni
 poop
+poppy doll
 poses
 possessed
 pranks
@@ -324,6 +325,7 @@ resistance
 roblox
 robocop
 russian ambush
+s*xiest
 sabrina
 sackboy
 sad jj
@@ -373,14 +375,13 @@ stalker
 statue house
 stranger within
 stray
+sub urban
 subject
 subnautica
-sub urban
 suicide
 summoner
 survival
 survival horror
-s*xiest
 tears
 terminator
 terrify
