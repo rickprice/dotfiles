@@ -18,6 +18,9 @@
 [alacritty.files]
 "config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 
+[sudo.files]
+"etc/sudoers.d/90_configure_timeouts_normal" = { target = "/etc/sudoers.d/90_configure_timeouts_normal", type = "symbolic", owner = "root" }
+
 [autorandr.files]
 "config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
 # "config/autorandr/livingroom/config" = "~/.config/autorandr/livingroom/config"

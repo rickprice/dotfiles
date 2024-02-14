@@ -1,0 +1,5 @@
+# Change default timeout so sudo can go longer before requesting a password
+Defaults timestamp_timeout=20
+
+# Don't quit while waiting for a password anymore
+Defaults passwd_timeout=0
