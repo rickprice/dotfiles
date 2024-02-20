@@ -13,7 +13,7 @@ eval "$(starship init bash)"
 
 [[ -s "/home/fprice/.gvm/scripts/gvm" ]] && source "/home/fprice/.gvm/scripts/gvm"
 
-source /home/fprice/.config/broot/launcher/bash/br
+# source /home/fprice/.config/broot/launcher/bash/br
 # -- START ACTIVESTATE INSTALLATION
 export PATH="/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
