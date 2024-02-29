@@ -258,11 +258,11 @@ workspace_panel_tuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
 workspace_panel_tuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
 workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
-workspaceKeys workspacePrefix desktops desktop_panes = workspaceShowDesktopKeys workspacePrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes
+workspaceKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes
 
-workspaceShowDesktopKeys workspacePrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspace_panel_tuples desktops desktop_panes)
 
-workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes = map (desktopMoveFocusedKeyFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspace_panel_tuples desktops desktop_panes)
 
 desktopNameFromTuple :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple workspacePrefix = desktopNameFromTuple' workspacePrefix
@@ -281,9 +281,9 @@ showDesktop d = windows $ W.greedyView d
 moveFocusedWindowToDesktop :: String -> X ()
 moveFocusedWindowToDesktop d = windows $ W.shift d
 
-desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceFocusKey++workspacePrefix++" ") t, showDesktop ((desktopNameFromTuple workspacePrefix) t))
+desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (desktopKeyMapFromTuple (workspaceFocusKey++workspaceKeyPrefix++" ") t, showDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
 
-desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceMoveKey++workspacePrefix++" ") t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
+desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (desktopKeyMapFromTuple (workspaceMoveKey++workspaceKeyPrefix++" ") t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
 
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
@@ -291,7 +291,7 @@ asWorkspaceKeyPrefix = "d"
 asDesktops = 2
 asDesktop_panes = 3
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktop_panes
-asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asDesktops asDesktop_panes
+asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktop_panes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
@@ -299,7 +299,7 @@ tWorkspaceKeyPrefix = "t"
 tDesktops = 2
 tDesktop_panes = 1
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktop_panes
-tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tDesktops tDesktop_panes
+tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktop_panes
 
 -- Tamara workspaces
 fWorkspaceDisplayPrefix = "FP"
@@ -307,7 +307,7 @@ fWorkspaceKeyPrefix = "f"
 fDesktops = 5
 fDesktop_panes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktop_panes
-fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fDesktops fDesktop_panes
+fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktop_panes
 
 myNewStyleKeys =
     asWorkspaceKeys
