@@ -164,7 +164,8 @@ myStartupHook = do
     spawnOnce "xfce4-power-manager"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
-    fixScreens
+    -- This is now handled by a script in autorandr
+    -- fixScreens
     -- Setup initial work window
     spawnOn "ADM" myBrowser
     liftIO (threadDelay 7000000)
