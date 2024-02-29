@@ -286,25 +286,28 @@ desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple wo
 desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
 
 -- ActiveState workspaces
-asWorkspacePrefix = "W"
+asWorkspaceDisplayPrefix = "W"
+asWorkspaceKeyPrefix = "d"
 asDesktops = 2
 asDesktop_panes = 3
-asWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
-asWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktop_panes
+asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asDesktops asDesktop_panes
 
 -- Tamara workspaces
-tWorkspacePrefix = "TP"
+tWorkspaceDisplayPrefix = "TP"
+tWorkspaceKeyPrefix = "t"
 tDesktops = 2
 tDesktop_panes = 1
-tWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
-tWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktop_panes
+tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tDesktops tDesktop_panes
 
 -- Tamara workspaces
-fWorkspacePrefix = "FP"
+fWorkspaceDisplayPrefix = "FP"
+fWorkspaceKeyPrefix = "f"
 fDesktops = 5
 fDesktop_panes = 1
-fWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
-fWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktop_panes
+fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fDesktops fDesktop_panes
 
 myNewStyleKeys =
     asWorkspaceKeys
