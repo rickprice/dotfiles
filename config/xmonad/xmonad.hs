@@ -80,7 +80,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP", "TP1", "TP2", "FP1", "FP2", "FP3", "FP4", "FP5"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -114,20 +114,6 @@ myCustomKeys =
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
     , ("M-5", showDesktop "NSP")
     , ("M-S-5", moveFocusedWindowToDesktop "NSP")
-    , (workspaceFocusKey ++ "t 1", showDesktop "TP1")
-    , (workspaceMoveKey ++ "t 1", moveFocusedWindowToDesktop "TP1")
-    , (workspaceFocusKey ++ "t 2", showDesktop "TP2")
-    , (workspaceMoveKey ++ "t 2", moveFocusedWindowToDesktop "TP2")
-    , (workspaceFocusKey ++ "f 1", showDesktop "FP1")
-    , (workspaceMoveKey ++ "f 1", moveFocusedWindowToDesktop "FP1")
-    , (workspaceFocusKey ++ "f 2", showDesktop "FP2")
-    , (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2")
-    , (workspaceFocusKey ++ "f 3", showDesktop "FP3")
-    , (workspaceMoveKey ++ "f 4", moveFocusedWindowToDesktop "FP4")
-    , (workspaceFocusKey ++ "f 4", showDesktop "FP4")
-    , (workspaceMoveKey ++ "f 4", moveFocusedWindowToDesktop "FP4")
-    , (workspaceFocusKey ++ "f 5", showDesktop "FP5")
-    , (workspaceMoveKey ++ "f 5", moveFocusedWindowToDesktop "FP5")
     -- , ("M-p", spawn myDMenu)
     -- Dynamic ScratchPads
     , ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
@@ -201,7 +187,7 @@ myConfig =
         }
         `additionalKeysP` myNewStyleKeys
 
-myWorkspaces = workspaceNames ++ myExtraWorkspaces
+myWorkspaces = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
 
 myManageHook :: ManageHook
 myManageHook =
@@ -262,32 +248,29 @@ myNormalBorderColor = "#dddddd"
 
 myFocusedBorderColor = "#FFB53A"
 
-desktops = 2
-
-desktop_panes = 3
-
-workspacePrefix = "W"
-
 workspaceFocusKey = "M-d "
-
 workspaceMoveKey = "M-S-d "
 
-workspace_panel_tuples = [(x, y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
+workspace_panel_tuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
+workspace_panel_tuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
-workspaceNames = map (desktopNameFromTuple workspacePrefix) workspace_panel_tuples
+workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceKeys workspacePrefix desktops desktop_panes= workspaceShowDesktopKeys workspacePrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes
 
-workspaceShowDesktopKeys = map (desktopShowDesktopKeymapFromTuple workspacePrefix) workspace_panel_tuples
+workspaceShowDesktopKeys workspacePrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
 
-workspaceMoveFocusedWindowKeys = map (desktopMoveFocusedKeyFromTuple workspacePrefix) workspace_panel_tuples
+workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes = map (desktopMoveFocusedKeyFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
 
-desktopNameFromTuple :: Show a => String -> (a, a) -> String
+desktopNameFromTuple :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple workspacePrefix = desktopNameFromTuple' workspacePrefix
 
-desktopNameFromTuple' :: Show a => String -> (a, a) -> String
-desktopNameFromTuple' p t = p ++ show (fst t) ++ show (snd t)
+desktopNameFromTuple' :: Show a => String -> (a, Maybe a) -> String
+desktopNameFromTuple' p (x,Nothing) = p ++ show x
+desktopNameFromTuple' p (x,Just y) = p ++ show x ++ show y
 
-desktopKeyMapFromTuple :: Show a => String -> (a, a) -> String
-desktopKeyMapFromTuple p t = p ++ " " ++ show (fst t) ++ " " ++ show (snd t)
+desktopKeyMapFromTuple :: Show a => String -> (a, Maybe a) -> String
+desktopKeyMapFromTuple p (x,Nothing) = p ++ " " ++ show x
+desktopKeyMapFromTuple p (x, Just y) = p ++ " " ++ show x ++ " " ++ show y
 
 showDesktop :: String -> X ()
 showDesktop d = windows $ W.greedyView d
@@ -299,9 +282,31 @@ desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple wo
 
 desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
 
+-- ActiveState workspaces
+asWorkspacePrefix = "W"
+asDesktops = 2
+asDesktop_panes = 3
+asWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
+asWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+
+-- Tamara workspaces
+tWorkspacePrefix = "TP"
+tDesktops = 2
+tDesktop_panes = 1
+tWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
+tWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+
+-- Tamara workspaces
+fWorkspacePrefix = "FP"
+fDesktops = 5
+fDesktop_panes = 1
+fWorkspaces = workspaceNames asWorkspacePrefix asDesktops asDesktop_panes
+fWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
+
 myNewStyleKeys =
-    workspaceShowDesktopKeys
-        ++ workspaceMoveFocusedWindowKeys
+    asWorkspaceKeys
+    ++ tWorkspaceKeys
+    ++ fWorkspaceKeys
         ++ myCustomKeys
         ++ warpMouseKeys
 
