@@ -114,12 +114,12 @@ myCustomKeys =
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
     , ("M-5", showDesktop "NSP")
     , ("M-S-5", moveFocusedWindowToDesktop "NSP")
-    -- , ("M-p", spawn myDMenu)
-    -- Dynamic ScratchPads
-    , ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
+    , -- , ("M-p", spawn myDMenu)
+      -- Dynamic ScratchPads
+      ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
     , ("M-S-]", withFocused $ toggleDynamicNSP "dyn2")
-    , ("M-["  , dynamicNSPAction "dyn1")
-    , ("M-]"  , dynamicNSPAction "dyn2")
+    , ("M-[", dynamicNSPAction "dyn1")
+    , ("M-]", dynamicNSPAction "dyn2")
     ]
 
 setupWorkWindow = do
@@ -131,9 +131,10 @@ setupWorkWindow = do
 
 fixScreens = do
     spawn myFixScreens
-    -- liftIO (threadDelay 7000000)
-    -- This is now handled by a script in autorandr
-    -- spawn myRunBackgrounds
+
+-- liftIO (threadDelay 7000000)
+-- This is now handled by a script in autorandr
+-- spawn myRunBackgrounds
 
 warpMouseKeys =
     [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2))
@@ -183,7 +184,7 @@ myConfig =
         , normalBorderColor = myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
-        , logHook = updatePointer(0.5,0.5) (0,0)
+        , logHook = updatePointer (0.5, 0.5) (0, 0)
         }
         `additionalKeysP` myNewStyleKeys
 
@@ -193,8 +194,8 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
         [ manageSpawn
-        -- , manageZoomHook
-        , className =? "zoom" --> doSink
+        , -- , manageZoomHook
+          className =? "zoom" --> doSink
         , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
         , isDialog --> doFloat
@@ -255,7 +256,7 @@ workspace_panel_tuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
 workspace_panel_tuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
 workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
-workspaceKeys workspacePrefix desktops desktop_panes= workspaceShowDesktopKeys workspacePrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes
+workspaceKeys workspacePrefix desktops desktop_panes = workspaceShowDesktopKeys workspacePrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspacePrefix desktops desktop_panes
 
 workspaceShowDesktopKeys workspacePrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
 
@@ -265,11 +266,11 @@ desktopNameFromTuple :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple workspacePrefix = desktopNameFromTuple' workspacePrefix
 
 desktopNameFromTuple' :: Show a => String -> (a, Maybe a) -> String
-desktopNameFromTuple' p (x,Nothing) = p ++ show x
-desktopNameFromTuple' p (x,Just y) = p ++ show x ++ show y
+desktopNameFromTuple' p (x, Nothing) = p ++ show x
+desktopNameFromTuple' p (x, Just y) = p ++ show x ++ show y
 
 desktopKeyMapFromTuple :: Show a => String -> (a, Maybe a) -> String
-desktopKeyMapFromTuple p (x,Nothing) = p ++ " " ++ show x
+desktopKeyMapFromTuple p (x, Nothing) = p ++ " " ++ show x
 desktopKeyMapFromTuple p (x, Just y) = p ++ " " ++ show x ++ " " ++ show y
 
 showDesktop :: String -> X ()
@@ -305,8 +306,8 @@ fWorkspaceKeys = workspaceKeys asWorkspacePrefix asDesktops asDesktop_panes
 
 myNewStyleKeys =
     asWorkspaceKeys
-    ++ tWorkspaceKeys
-    ++ fWorkspaceKeys
+        ++ tWorkspaceKeys
+        ++ fWorkspaceKeys
         ++ myCustomKeys
         ++ warpMouseKeys
 
