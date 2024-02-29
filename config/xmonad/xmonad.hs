@@ -80,7 +80,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP", "TP1", "TP2", "FP1", "FP2", "FP3"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP", "TP1", "TP2", "FP1", "FP2", "FP3", "FP4", "FP5"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -123,7 +123,11 @@ myCustomKeys =
     , (workspaceFocusKey ++ "f 2", showDesktop "FP2")
     , (workspaceMoveKey ++ "f 2", moveFocusedWindowToDesktop "FP2")
     , (workspaceFocusKey ++ "f 3", showDesktop "FP3")
-    , (workspaceMoveKey ++ "f 3", moveFocusedWindowToDesktop "FP3")
+    , (workspaceMoveKey ++ "f 4", moveFocusedWindowToDesktop "FP4")
+    , (workspaceFocusKey ++ "f 4", showDesktop "FP4")
+    , (workspaceMoveKey ++ "f 4", moveFocusedWindowToDesktop "FP4")
+    , (workspaceFocusKey ++ "f 5", showDesktop "FP5")
+    , (workspaceMoveKey ++ "f 5", moveFocusedWindowToDesktop "FP5")
     -- , ("M-p", spawn myDMenu)
     -- Dynamic ScratchPads
     , ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
@@ -141,8 +145,9 @@ setupWorkWindow = do
 
 fixScreens = do
     spawn myFixScreens
-    liftIO (threadDelay 7000000)
-    spawn myRunBackgrounds
+    -- liftIO (threadDelay 7000000)
+    -- This is now handled by a script in autorandr
+    -- spawn myRunBackgrounds
 
 warpMouseKeys =
     [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2))
@@ -164,8 +169,7 @@ myStartupHook = do
     spawnOnce "xfce4-power-manager"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
-    -- This is now handled by a script in autorandr
-    -- fixScreens
+    fixScreens
     -- Setup initial work window
     spawnOn "ADM" myBrowser
     liftIO (threadDelay 7000000)
@@ -258,7 +262,7 @@ myNormalBorderColor = "#dddddd"
 
 myFocusedBorderColor = "#FFB53A"
 
-desktops = 3
+desktops = 2
 
 desktop_panes = 3
 
