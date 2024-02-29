@@ -271,9 +271,11 @@ desktopNameFromTuple' :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple' p (x, Nothing) = p ++ show x
 desktopNameFromTuple' p (x, Just y) = p ++ show x ++ show y
 
-desktopKeyMapFromTuple :: Show a => String -> (a, Maybe a) -> String
-desktopKeyMapFromTuple p (x, Nothing) = p ++ " " ++ show x
-desktopKeyMapFromTuple p (x, Just y) = p ++ " " ++ show x ++ " " ++ show y
+-- desktopKeyMapFromTuple :: Show a => String -> (Maybe a, Maybe a) -> String
+desktopKeyMapFromTuple Nothing (x, Nothing) = show x
+desktopKeyMapFromTuple Nothing (x, Just y) = show x ++ " " ++ show y
+desktopKeyMapFromTuple (Just p) (x, Nothing) = p ++ " " ++ show x
+desktopKeyMapFromTuple (Just p) (x, Just y) = p ++ " " ++ show x ++ " " ++ show y
 
 showDesktop :: String -> X ()
 showDesktop d = windows $ W.greedyView d
@@ -281,13 +283,13 @@ showDesktop d = windows $ W.greedyView d
 moveFocusedWindowToDesktop :: String -> X ()
 moveFocusedWindowToDesktop d = windows $ W.shift d
 
-desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (desktopKeyMapFromTuple (workspaceFocusKey ++ workspaceKeyPrefix) t, showDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
+desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, showDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
 
-desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (desktopKeyMapFromTuple (workspaceMoveKey ++ workspaceKeyPrefix) t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
+desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
 
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
-asWorkspaceKeyPrefix = ""
+asWorkspaceKeyPrefix = Nothing
 asDesktops = 4
 asDesktop_panes = 2
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktop_panes
@@ -295,7 +297,7 @@ asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix as
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
-tWorkspaceKeyPrefix = "t"
+tWorkspaceKeyPrefix = Just "t"
 tDesktops = 2
 tDesktop_panes = 1
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktop_panes
@@ -303,7 +305,7 @@ tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesk
 
 -- Tamara workspaces
 fWorkspaceDisplayPrefix = "FP"
-fWorkspaceKeyPrefix = "f"
+fWorkspaceKeyPrefix = Just "f"
 fDesktops = 5
 fDesktop_panes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktop_panes
