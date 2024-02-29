@@ -271,11 +271,12 @@ desktopNameFromTuple' :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple' p (x, Nothing) = p ++ show x
 desktopNameFromTuple' p (x, Just y) = p ++ show x ++ show y
 
+fixPrefix Nothing = ""
+fixPrefix (Just p) = p ++ ""
+
 -- desktopKeyMapFromTuple :: Show a => String -> (Maybe a, Maybe a) -> String
-desktopKeyMapFromTuple Nothing (x, Nothing) = show x
-desktopKeyMapFromTuple Nothing (x, Just y) = show x ++ " " ++ show y
-desktopKeyMapFromTuple (Just p) (x, Nothing) = p ++ " " ++ show x
-desktopKeyMapFromTuple (Just p) (x, Just y) = p ++ " " ++ show x ++ " " ++ show y
+desktopKeyMapFromTuple p (x, Nothing) = fixPrefix p ++ show x
+desktopKeyMapFromTuple p (x, Just y) = fixPrefix p ++ show x ++ " " ++ show y
 
 showDesktop :: String -> X ()
 showDesktop d = windows $ W.greedyView d
