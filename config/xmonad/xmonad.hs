@@ -281,9 +281,9 @@ showDesktop d = windows $ W.greedyView d
 moveFocusedWindowToDesktop :: String -> X ()
 moveFocusedWindowToDesktop d = windows $ W.shift d
 
-desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceFocusKey++workspacePrefix) t, showDesktop ((desktopNameFromTuple workspacePrefix) t))
+desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceFocusKey++workspacePrefix++" ") t, showDesktop ((desktopNameFromTuple workspacePrefix) t))
 
-desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceMoveKey++workspacePrefix) t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
+desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple (workspaceMoveKey++workspacePrefix++" ") t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
 
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
