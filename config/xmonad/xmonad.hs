@@ -272,15 +272,16 @@ workspaceFocusKey = "M-d "
 
 workspaceMoveKey = "M-S-d "
 
-workspaceNames = map desktopNameFromTuple workspace_panel_tuples
-
-workspaceShowDesktopKeys = map desktopShowDesktopKeymapFromTuple workspace_panel_tuples
-
-workspaceMoveFocusedWindowKeys = map desktopMoveFocusedKeyFromTuple workspace_panel_tuples
-
 workspace_panel_tuples = [(x, y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
-desktopNameFromTuple = desktopNameFromTuple' workspacePrefix
+workspaceNames = map (desktopNameFromTuple workspacePrefix) workspace_panel_tuples
+
+workspaceShowDesktopKeys = map (desktopShowDesktopKeymapFromTuple workspacePrefix) workspace_panel_tuples
+
+workspaceMoveFocusedWindowKeys = map (desktopMoveFocusedKeyFromTuple workspacePrefix) workspace_panel_tuples
+
+desktopNameFromTuple :: Show a => String -> (a, a) -> String
+desktopNameFromTuple workspacePrefix = desktopNameFromTuple' workspacePrefix
 
 desktopNameFromTuple' :: Show a => String -> (a, a) -> String
 desktopNameFromTuple' p t = p ++ show (fst t) ++ show (snd t)
@@ -294,9 +295,9 @@ showDesktop d = windows $ W.greedyView d
 moveFocusedWindowToDesktop :: String -> X ()
 moveFocusedWindowToDesktop d = windows $ W.shift d
 
-desktopShowDesktopKeymapFromTuple t = (desktopKeyMapFromTuple workspaceFocusKey t, showDesktop (desktopNameFromTuple t))
+desktopShowDesktopKeymapFromTuple workspacePrefix t = (desktopKeyMapFromTuple workspaceFocusKey t, showDesktop ((desktopNameFromTuple workspacePrefix) t))
 
-desktopMoveFocusedKeyFromTuple t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop (desktopNameFromTuple t))
+desktopMoveFocusedKeyFromTuple workspacePrefix t = (desktopKeyMapFromTuple workspaceMoveKey t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspacePrefix) t))
 
 myNewStyleKeys =
     workspaceShowDesktopKeys
