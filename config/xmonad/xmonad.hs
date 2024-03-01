@@ -178,7 +178,7 @@ myConfig =
     def
         { terminal = myTerminal
         , modMask = myModMask
-        , layoutHook = smartBorders $ desktopLayoutModifiers $ myLayouts
+        , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
         , manageHook = myManageHook
         , startupHook = myStartupHook
         , normalBorderColor = myNormalBorderColor
@@ -208,9 +208,9 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier
     orientation = XMonad.Layout.GridVariants.L
     masterRows = 2
     masterColumns = 2
-    masterPortion = (2 / 3)
-    slaveAspectRatio = (16 / 10)
-    resizeIncrement = (5 / 100)
+    masterPortion = 2 / 3
+    slaveAspectRatio = 16 / 10
+    resizeIncrement = 5 / 100
 
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
     -- mirrorTall = Mirror (Tall 1 (3 / 100) (3 / 5))
@@ -254,22 +254,19 @@ workspaceMoveKey = "M-S-d "
 
 appRunKey = "M-a "
 
-workspace_panel_tuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
-workspace_panel_tuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
+workspacePanelTuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
+workspacePanelTuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
-workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspacePanelTuples desktops desktop_panes)
 workspaceKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes
 
-workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspacePanelTuples desktops desktop_panes)
 
-workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspace_panel_tuples desktops desktop_panes)
+workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspacePanelTuples desktops desktop_panes)
 
 desktopNameFromTuple :: Show a => String -> (a, Maybe a) -> String
-desktopNameFromTuple workspacePrefix = desktopNameFromTuple' workspacePrefix
-
-desktopNameFromTuple' :: Show a => String -> (a, Maybe a) -> String
-desktopNameFromTuple' p (x, Nothing) = p ++ show x
-desktopNameFromTuple' p (x, Just y) = p ++ show x ++ show y
+desktopNameFromTuple p (x, Nothing) = p ++ show x
+desktopNameFromTuple p (x, Just y) = p ++ show x ++ show y
 
 fixPrefix Nothing = ""
 fixPrefix (Just p) = p ++ " "
@@ -286,33 +283,33 @@ moveFocusedWindowToDesktop d = windows $ W.shift d
 
 -- calculateKeymap workspaceKeyPrefix workspaceWindowPrefix metaPrefix function = (metaPrefix ++ desktopKeyMapFromTuple workspaceKeyPrefix t, function ((desktopNameFromTuple workspaceWindowPrefix) t))
 
-desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, showDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
+desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, showDesktop (desktopNameFromTuple workspaceWindowPrefix t))
 
-desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop ((desktopNameFromTuple workspaceWindowPrefix) t))
+desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop (desktopNameFromTuple workspaceWindowPrefix t))
 
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
 asDesktops = 2
-asDesktop_panes = 2
-asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktop_panes
-asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktop_panes
+asDesktopPanes = 2
+asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
+asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
 tWorkspaceKeyPrefix = Just "t"
 tDesktops = 2
-tDesktop_panes = 1
-tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktop_panes
-tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktop_panes
+tDesktopPanes = 1
+tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
+tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
 -- Tamara workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
 fDesktops = 5
-fDesktop_panes = 1
-fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktop_panes
-fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktop_panes
+fDesktopPanes = 1
+fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
+fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
 myNewStyleKeys =
     asWorkspaceKeys
