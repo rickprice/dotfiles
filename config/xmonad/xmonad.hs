@@ -293,7 +293,7 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
-asDesktops = 4
+asDesktops = 2
 asDesktop_panes = 2
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktop_panes
 asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktop_panes
