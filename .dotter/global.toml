@@ -16,7 +16,7 @@
 # On Windows, '~' is expanded to 'C:\Users\<USERNAME>\'
 
 [alacritty.files]
-"config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+"config/alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
 [sudo.files]
 "etc/sudoers.d/90_configure_timeouts_normal" = { target = "/etc/sudoers.d/90_configure_timeouts_normal", type = "template", owner = "root" }
