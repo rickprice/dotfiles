@@ -17,3 +17,6 @@ cradle:
 
     - path: "xmonad-contrib/."
       component: "xmonad-contrib:test:tests"
+
+    - path: "xmonad.hs"
+      component: "xmonad:exe:xmonad"
