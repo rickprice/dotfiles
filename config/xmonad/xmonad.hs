@@ -272,7 +272,7 @@ desktopNameFromTuple' p (x, Nothing) = p ++ show x
 desktopNameFromTuple' p (x, Just y) = p ++ show x ++ show y
 
 fixPrefix Nothing = ""
-fixPrefix (Just p) = p ++ ""
+fixPrefix (Just p) = p ++ " "
 
 -- desktopKeyMapFromTuple :: Show a => String -> (Maybe a, Maybe a) -> String
 desktopKeyMapFromTuple p (x, Nothing) = fixPrefix p ++ show x
