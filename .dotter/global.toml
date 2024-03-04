@@ -224,3 +224,6 @@
 "config/darktable/watermarks" = { target = "~/.config/darktable/watermarks", type = "symbolic" }
 "config/darktable/Styles" = { target = "~/.config/darktable/Styles", type = "symbolic" }
 
+[lightdm.files]
+"etc/lightdm/lightdm.conf" = { target = "/etc/lightdm/lightdm.conf", type = "symbolic", owner = "root" }
+"etc/lightdm/lightdm-gtk-greeter.conf" = { target = "/etc/lightdm/lightdm-gtk-greeter.conf", type = "symbolic", owner = "root" }
