@@ -80,7 +80,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "NSP"]
+myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "NSP"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -112,6 +112,8 @@ myCustomKeys =
     , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
+    , ("M-5", showDesktop "SCATCH")
+    , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
     , ("M-5", showDesktop "NSP")
     , ("M-S-5", moveFocusedWindowToDesktop "NSP")
     , -- , ("M-p", spawn myDMenu)
