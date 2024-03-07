@@ -112,10 +112,10 @@ myCustomKeys =
     , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
-    , ("M-5", showDesktop "SCATCH")
+    , ("M-5", showDesktop "SCRATCH")
     , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
-    , ("M-5", showDesktop "NSP")
-    , ("M-S-5", moveFocusedWindowToDesktop "NSP")
+    , ("M-6", showDesktop "NSP")
+    , ("M-S-6", moveFocusedWindowToDesktop "NSP")
     , -- , ("M-p", spawn myDMenu)
       -- Dynamic ScratchPads
       ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
