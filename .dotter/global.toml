@@ -227,3 +227,7 @@
 [lightdm.files]
 "etc/lightdm/lightdm.conf" = { target = "/etc/lightdm/lightdm.conf", type = "symbolic", owner = "root" }
 "etc/lightdm/lightdm-gtk-greeter.conf" = { target = "/etc/lightdm/lightdm-gtk-greeter.conf", type = "symbolic", owner = "root" }
+
+[fonts.files]
+"etc/fonts/conf.d/09-calibre-fonts.conf" = { target = "/etc/fonts/conf.d/09-calibre-fonts.conf", type = "symbolic", owner = "root" }
+"etc/fonts/conf.d/09-ghostpdl-fonts.conf" = { target = "/etc/fonts/conf.d/09-ghostpdl-fonts.conf", type = "symbolic", owner = "root" }
