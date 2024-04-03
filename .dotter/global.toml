@@ -16,7 +16,10 @@
 # On Windows, '~' is expanded to 'C:\Users\<USERNAME>\'
 
 [alacritty.files]
-"config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+"config/alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
+
+[sudo.files]
+"etc/sudoers.d/90_configure_timeouts_normal" = { target = "/etc/sudoers.d/90_configure_timeouts_normal", type = "template", owner = "root" }
 
 [autorandr.files]
 "config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
@@ -40,6 +43,7 @@
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
 "config/fish/conf.d/Kubectl.fish" = "~/.config/fish/conf.d/Kubectl.fish"
 "config/fish/functions/onvim.fish" = "~/.config/fish/functions/onvim.fish"
+"config/fish/conf.d/AWS_SSO.fish" = "~/.config/fish/conf.d/AWS_SSO.fish"
 # "config/fish/functions/ghreviews.fish" = "~/.config/fish/functions/ghreviews.fish"
 "config/fish/functions/test-microphone.fish" = "~/.config/fish/functions/test-microphone.fish"
 "config/fish/functions/br.fish" = "~/.config/fish/functions/br.fish"
@@ -49,7 +53,7 @@
 "config/bashrc" = "~/.bashrc"
 
 [xmonad.files]
-"config/xmonad/xmonad.hs" = "~/.xmonad/xmonad.hs"
+"config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
 "home/xmobarrc" = "~/.xmobarrc"
 "home/stalonetrayrc" = "~/.stalonetrayrc"
 
@@ -92,6 +96,7 @@
 [X11.files]
 "etc/X11/xorg.conf.d/00-keyboard.conf" = { target = "/etc/X11/xorg.conf.d/00-keyboard.conf", type = "symbolic", owner = "root" }
 "etc/X11/xorg.conf.d/00-kensingtonexperttrackball.conf" = { target = "/etc/X11/xorg.conf.d/00-kensingtonexperttrackball.conf", type = "symbolic", owner = "root" }
+"etc/X11/xorg.conf.d/30-touchpad.conf" = { target = "/etc/X11/xorg.conf.d/30-touchpad.conf", type = "symbolic", owner = "root" }
 
 [local.files]
 "local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
@@ -106,7 +111,12 @@
 "local/bin/klogglog.sh"="~/.local/bin/klogglog"
 "local/bin/BackupComputer.sh"="~/.local/bin/BackupComputer"
 "local/bin/altlog.sh"="~/.local/bin/altlog"
-"local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
+# "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
+"local/bin/remindme.sh"="~/.local/bin/remindme"
+"local/bin/script-declutter.pl"="~/.local/bin/script-declutter"
+
+[medium.files]
+"local/bin/PublishToMedium.py"="~/.local/bin/PublishToMedium"
 
 [touchpad.files]
 "etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
@@ -136,6 +146,8 @@
 "home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
 "home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
 "home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
+"home/mutt/mutt_tokenfile"={target="~/.mutt/mutt_tokenfile",type="symbolic"}
+"local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 
 [gist.files]
 "config/fish/conf.d/Gist.fish" = "~/.config/fish/conf.d/Gist.fish"
@@ -143,6 +155,9 @@
 [dropbox.files]
 "config/systemd/user/dropbox.service.d/override.conf" = {target = "/etc/systemd/system/dropbox@fprice.service.d/override.conf", type = "template", owner = "root"}
 "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = {target = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh", type = "template", owner = "root"}
+
+[makepkg.files]
+"etc/makepkg.conf" = {target = "/etc/makepkg.conf", type = "template", owner = "root"}
 
 [user.files]
 
@@ -195,7 +210,24 @@
 "config/nyxt/config.lisp" = "~/.config/nyxt/config.lisp"
 
 [reflector.files]
-"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "symbolic", owner = "root" }
+"etc/xdg/reflector/reflector.conf" = { target = "/etc/xdg/reflector/reflector.conf", type = "template", owner = "root" }
 
-[makepkg.files]
-"home/makepkg.conf" = "~/.makepkg.conf"
+# [makepkg.files]
+# "home/makepkg.conf" = "~/.makepkg.conf"
+
+[wireguard.files]
+"etc/wireguard/wg0_rickp.conf" = { target = "/etc/wireguard/wg0_rickp.conf", type = "template", owner = "root" }
+
+[darktable.files]
+"config/darktable/darktablerc" = { target = "~/.config/darktable/darktablerc", type = "symbolic" }
+"config/darktable/shortcutsrc" = { target = "~/.config/darktable/shortcutsrc", type = "symbolic" }
+"config/darktable/watermarks" = { target = "~/.config/darktable/watermarks", type = "symbolic" }
+"config/darktable/Styles" = { target = "~/.config/darktable/Styles", type = "symbolic" }
+
+[lightdm.files]
+"etc/lightdm/lightdm.conf" = { target = "/etc/lightdm/lightdm.conf", type = "template", owner = "root" }
+"etc/lightdm/lightdm-gtk-greeter.conf" = { target = "/etc/lightdm/lightdm-gtk-greeter.conf", type = "template", owner = "root" }
+
+[fonts.files]
+"etc/fonts/conf.d/09-calibre-fonts.conf" = { target = "/etc/fonts/conf.d/09-calibre-fonts.conf", type = "symbolic", owner = "root" }
+"etc/fonts/conf.d/09-ghostpdl-fonts.conf" = { target = "/etc/fonts/conf.d/09-ghostpdl-fonts.conf", type = "symbolic", owner = "root" }
