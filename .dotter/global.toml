@@ -157,7 +157,7 @@
 "etc/NetworkManager/dispatcher.d/10-dropbox.sh" = {target = "/etc/NetworkManager/dispatcher.d/10-dropbox.sh", type = "template", owner = "root"}
 
 [makepkg.files]
-"etc/makepkg.conf" = {target = "/etc/makepkg.conf", type = "symbolic", owner = "root"}
+"etc/makepkg.conf" = {target = "/etc/makepkg.conf", type = "template", owner = "root"}
 
 [user.files]
 
@@ -225,8 +225,8 @@
 "config/darktable/Styles" = { target = "~/.config/darktable/Styles", type = "symbolic" }
 
 [lightdm.files]
-"etc/lightdm/lightdm.conf" = { target = "/etc/lightdm/lightdm.conf", type = "symbolic", owner = "root" }
-"etc/lightdm/lightdm-gtk-greeter.conf" = { target = "/etc/lightdm/lightdm-gtk-greeter.conf", type = "symbolic", owner = "root" }
+"etc/lightdm/lightdm.conf" = { target = "/etc/lightdm/lightdm.conf", type = "template", owner = "root" }
+"etc/lightdm/lightdm-gtk-greeter.conf" = { target = "/etc/lightdm/lightdm-gtk-greeter.conf", type = "template", owner = "root" }
 
 [fonts.files]
 "etc/fonts/conf.d/09-calibre-fonts.conf" = { target = "/etc/fonts/conf.d/09-calibre-fonts.conf", type = "symbolic", owner = "root" }

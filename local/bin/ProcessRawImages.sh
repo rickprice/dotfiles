@@ -61,5 +61,5 @@ function process_photo_directory() {
 }
 
 setup_google_location_data
-process_photo_directory "$WORKING_DIR/CanonT7i" "Pictures/CanonRawPhotos"
+process_photo_directory "$WORKING_DIR/Incoming" "Pictures/CanonRawPhotos"
 # process_photo_directory "$WORKING_DIR/CanonSX540HS"  "Pictures/CanonSX540HS"
