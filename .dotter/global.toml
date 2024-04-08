@@ -19,10 +19,7 @@
 "config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 
 [autorandr.files]
-"config/autorandr/docked/config" = "~/.config/autorandr/docked/config"
-"config/autorandr/docked/setup" = "~/.config/autorandr/docked/setup"
-"config/autorandr/mobile/config" = "~/.config/autorandr/mobile/config"
-"config/autorandr/mobile/setup" = "~/.config/autorandr/mobile/setup"
+"config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
 
 [bash.files]
 "home/bashrc" = "~/.bashrc"
