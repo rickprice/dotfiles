@@ -12,6 +12,6 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
-BACKGROUND_DIR=~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/
+BACKGROUND_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds/
 
  feh --no-fehbg --bg-max --random $BACKGROUND_DIR
