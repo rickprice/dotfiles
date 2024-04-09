@@ -3,6 +3,7 @@ absolution
 adult
 advanced warfare
 agatha
+alien isolation
 all alone
 annihilation
 anthology
@@ -15,9 +16,10 @@ arkham asylum
 assasin
 assassin
 asylum
-at night
 ate him
+at night
 attack
+atypical
 autopsy
 baby
 backrooms
@@ -37,6 +39,7 @@ beneath the deep
 beyond the evil
 bill and mandy
 biohazard
+bite
 blade
 blair witch
 blasphemous
@@ -90,9 +93,10 @@ danger
 dangerous
 dark
 dark angel
-dark knight
 darkest
+dark knight
 darksider
+dark souls
 darkwood
 darq
 daymare
@@ -142,23 +146,23 @@ forgive me
 fortnight
 freddy
 fugget
-g-force
 garten
 gashnor
 genshin
 get even
+g-force
 ghast
 ghastly
 ghost
-ghost hunting
 ghostface
+ghost hunting
 giga chad
 girlfriend
 girls' frontline
 glamrock
-god of war
 goddess
 godfather
+god of war
 godzilla
 golem
 gomer pyle
@@ -197,14 +201,14 @@ honor
 horrific
 horror
 hospital
-i love being needed
 ice cream boss
 illusion
-in the mirror
+i love being needed
 infamous
 infliction
 inquisition
 insomnis
+in the mirror
 invasion
 it happened here
 it takes two
@@ -224,6 +228,7 @@ killing
 kills
 killzone
 kinigra deon
+kiss
 krampus
 last of us
 layers of fear
@@ -274,8 +279,8 @@ need more
 never again
 never back down
 night janitor
-night security
 nightmare
+night security
 nocturne
 observation duty
 oggy
@@ -325,7 +330,6 @@ resistance
 roblox
 robocop
 russian ambush
-s*xiest
 sabrina
 sackboy
 sad jj
@@ -351,6 +355,7 @@ shadow
 shantae
 shapeshift
 she watches
+sifu mod
 silent hill
 silver chains
 simpsons
@@ -363,6 +368,7 @@ sleepover
 slender
 slime girl
 sml movie
+sml parody
 sniper
 sniper elite
 soloman grundy
@@ -373,15 +379,17 @@ squid game
 stalingrad
 stalker
 statue house
+stranger
 stranger within
 stray
-sub urban
 subject
 subnautica
+sub urban
 suicide
 summoner
 survival
 survival horror
+s*xiest
 tears
 terminator
 terrify
@@ -414,6 +422,7 @@ undead
 unholy
 urbex night security
 valiant hearts
+vampire
 vengeful
 voodoo
 warfare
@@ -431,6 +440,7 @@ witch
 wolf
 wolfenstein
 woman
+women
 world war z
 xbox
 yandere
