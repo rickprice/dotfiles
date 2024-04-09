@@ -22,7 +22,7 @@ return {
 	-- font = wezterm.font_with_fallback({ "Iosevka", "Source Code Pro", "Source Code Variable", "PowerlineSymbols" }),
 	-- font = wezterm.font_with_fallback({ "Fira Code","Symbols Nerd Font Mono"}),
 	font = wezterm.font_with_fallback({ "Source Code Pro","Symbols Nerd Font Mono"}),
-	font_size = 9.0,
+	font_size = 10.0,
 	-- dpi = 96.0,
 	bold_brightens_ansi_colors = true,
 	-- font_dirs = {"/usr/share/fonts/TTF"},
