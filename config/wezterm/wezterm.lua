@@ -19,7 +19,8 @@ return {
 		brights = { "#bdbdbd", "#ffa1a1", "#bddeab", "#ffdca0", "#b1d8f6", "#fbdaff", "#1ab2a8", "#ffffff" },
 	},
 
-	font = wezterm.font_with_fallback({ "Iosevka", "Source Code Pro", "Source Code Variable", "PowerlineSymbols" }),
+	-- font = wezterm.font_with_fallback({ "Iosevka", "Source Code Pro", "Source Code Variable", "PowerlineSymbols" }),
+	font = wezterm.font_with_fallback({ "Iosevka","Symbols Nerd Font Mono"}),
 	font_size = 10.0,
 	-- dpi = 96.0,
 	bold_brightens_ansi_colors = true,
