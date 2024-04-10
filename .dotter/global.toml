@@ -34,6 +34,9 @@
 # "config/autorandr/SecondaryMachine/config" = "~/.config/autorandr/SecondaryMachine/config"
 # "config/autorandr/SecondaryMachine/setup" = "~/.config/autorandr/SecondaryMachine/setup"
 
+[midi.files]
+"config/rncbc.org" = { target = "~/.config/rncbc.org", type = "symbolic" }
+
 [fish.files]
 # Fish config (probably unused)
 "config/fish/config.fish" = "~/.config/fish/config.fish"
