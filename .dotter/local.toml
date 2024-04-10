@@ -26,4 +26,3 @@ packages = ["alacritty","autorandr","fish","flake8","i3","mypy","hub","nvim","us
 # font_size = 18
 
 leftwm_theme="FrederickPrice"
-

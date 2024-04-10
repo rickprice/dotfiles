@@ -185,7 +185,6 @@
 [awesome.files]
 "config/awesome/rc.lua" = {target = "~/.config/awesome/rc.lua", type = "symbolic"}
 "config/awesome/themes/FrederickPrice" = {target = "~/.config/awesome/themes/FrederickPrice", type = "symbolic"}
-
 [picom.files]
 "config/picom/picom.conf" = {target = "~/.config/picom/picom.conf", type = "symbolic"}
 
