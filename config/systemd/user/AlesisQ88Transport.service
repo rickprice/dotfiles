@@ -1,0 +1,8 @@
+[Unit]
+Description=Alesis Q88 Transport to Mackie
+
+[Service]
+ExecStart=/usr/bin/AlesisQ88_transport
+
+[Install]
+WantedBy=default.target

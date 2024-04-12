@@ -36,6 +36,7 @@
 
 [midi.files]
 "config/rncbc.org" = { target = "~/.config/rncbc.org", type = "symbolic" }
+"config/systemd/user/AlesisQ88Transport.service" = {target = "~/.config/systemd/user/AlesisQ88Transport.service", type = "symbolic"}
 
 [fish.files]
 # Fish config (probably unused)
@@ -185,6 +186,7 @@
 [awesome.files]
 "config/awesome/rc.lua" = {target = "~/.config/awesome/rc.lua", type = "symbolic"}
 "config/awesome/themes/FrederickPrice" = {target = "~/.config/awesome/themes/FrederickPrice", type = "symbolic"}
+
 [picom.files]
 "config/picom/picom.conf" = {target = "~/.config/picom/picom.conf", type = "symbolic"}
 
