@@ -242,7 +242,7 @@ return {
 				"html",
 				-- "javascript",
 				"json",
-				-- "lua",
+				"lua",
 				"markdown",
 				"markdown_inline",
 				"python",
