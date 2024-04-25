@@ -52,6 +52,8 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
+myEmailer = "thunderbird"
+
 myBrowserNyxt = "nyxt --no-socket"
 
 myAudioManager = "pavucontrol"
@@ -80,7 +82,7 @@ myCalculator = "gnome-calculator"
 
 myRDPClient = "remmina"
 
-myExtraWorkspaces = ["IM", "ZM", "ADM", "DOC", "SCRATCH", "NSP"]
+myExtraWorkspaces = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
 
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
@@ -102,20 +104,31 @@ myCustomKeys =
     , (appRunKey ++ "r", spawn myRDPClient)
     , (appRunKey ++ "w", setupWorkWindow)
     , (appRunKey ++ "z", fixScreens)
+
     , ("M-1", showDesktop "W11")
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
+
     , ("M-2", showDesktop "IM")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
-    , ("M-3", showDesktop "ZM")
-    , ("M-S-3", moveFocusedWindowToDesktop "ZM")
-    , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
-    , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
+
+    , ("M-3", showDesktop "MAIL")
+    , ("M-S-3", moveFocusedWindowToDesktop "MAIL")
+
     , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
+
     , ("M-5", showDesktop "SCRATCH")
     , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
-    , ("M-6", showDesktop "NSP")
-    , ("M-S-6", moveFocusedWindowToDesktop "NSP")
+
+    , ("M-6", showDesktop "ZM")
+    , ("M-S-6", moveFocusedWindowToDesktop "ZM")
+
+    , ("M-7", showDesktop "NSP")
+    , ("M-S-7", moveFocusedWindowToDesktop "NSP")
+
+    , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
+    , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
+
     , -- , ("M-p", spawn myDMenu)
       -- Dynamic ScratchPads
       ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
@@ -160,12 +173,15 @@ myStartupHook = do
     spawnOnce "killall udiskie; udiskie --tray"
     fixScreens
     -- Setup initial work window
-    spawnOn "ADM" myBrowser
-    liftIO (threadDelay 7000000)
+    spawnOn "MAIL" myEmailer
+    -- liftIO (threadDelay 7000000)
     -- Setup IM programs
     spawnOn "IM" "slack"
-    liftIO (threadDelay 7000000)
+    -- liftIO (threadDelay 7000000)
     spawnOn "IM" "discord"
+    -- Browser
+    -- liftIO (threadDelay 7000000)
+    spawnOn "ADM" myBrowser
 
 main :: IO ()
 main =
@@ -197,9 +213,13 @@ myManageHook =
     composeAll
         [ manageSpawn
         , -- , manageZoomHook
-          className =? "zoom" --> doSink
+          -- className =? "zoom" --> doSink
+          className =? "zoom" --> doShift "ZM"
         , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
+        , className =? "discord" --> doShift "IM"
+        , className =? "Slack" --> doShift "IM"
+        , className =? "thunderbird" --> doShift "MAIL"
         , isDialog --> doFloat
         ]
 
