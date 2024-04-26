@@ -376,7 +376,7 @@ return {
 	{ "chentoast/marks.nvim" },
 
 	{
-		"phaazon/hop.nvim",
+		"smoka7/hop.nvim",
 		-- branch = "v2",
 		config = function()
 			vim.cmd("hi HopNextKey guifg=#ff9900")
