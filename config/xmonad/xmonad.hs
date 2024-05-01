@@ -48,6 +48,7 @@ import XMonad.Util.NamedScratchpad
 
 -- Workspace Groups
 import XMonad.Actions.DynamicWorkspaceGroups as ADWG
+import qualified XMonad.Layout.IndependentScreens as LIS
 
 -- import XMonad.Util.Run
 
@@ -108,25 +109,21 @@ myCustomKeys =
     , (appRunKey ++ "w", setupWorkWindow)
     , (appRunKey ++ "z", fixScreens)
 
-    -- , ("M-1", showDesktop "W11")
+    -- Handle powerkeoys
+    , ("M-1", powerkeys 1)
+    , ("M-2", powerkeys 2)
+    , ("M-3", powerkeys 3)
+    , ("M-4", powerkeys 4)
+    , ("M-5", powerkeys 5)
+    , ("M-6", powerkeys 6)
+    , ("M-7", powerkeys 7)
+
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
-
-    , ("M-2", showDesktop "IM")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
-
-    , ("M-3", showDesktop "MAIL")
     , ("M-S-3", moveFocusedWindowToDesktop "MAIL")
-
-    , ("M-4", showDesktop "ADM")
     , ("M-S-4", moveFocusedWindowToDesktop "ADM")
-
-    , ("M-5", showDesktop "SCRATCH")
     , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
-
-    , ("M-6", showDesktop "ZM")
     , ("M-S-6", moveFocusedWindowToDesktop "ZM")
-
-    , ("M-7", showDesktop "NSP")
     , ("M-S-7", moveFocusedWindowToDesktop "NSP")
 
     , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
@@ -147,15 +144,18 @@ myCustomKeys =
     -- , ("M-/"  , ADWG.viewWSGroup "modslash")
     -- , ("M-S-?", ADWG.addCurrentWSGroup "modslash")
 
-    , ("M-1"    , ADWG.viewWSGroup "StandardWork")
-    , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
-    , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
-    , ("M-s 3"  , ADWG.viewWSGroup "Frederick1")
-    , ("M-s 4"  , ADWG.viewWSGroup "Tamara1")
+    -- , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
+    -- , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
+    -- , ("M-s 3"  , ADWG.viewWSGroup "Frederick1")
+    -- , ("M-s 4"  , ADWG.viewWSGroup "Tamara1")
     , ("M-s w 1"  , ADWG.viewWSGroup "Work1")
     , ("M-s w 2"  , ADWG.viewWSGroup "Work2")
     , ("M-s f 1"  , ADWG.viewWSGroup "Frederick1")
+    , ("M-s f 2"  , ADWG.viewWSGroup "Frederick2")
+    , ("M-s f 3"  , ADWG.viewWSGroup "Frederick3")
+    , ("M-s f 4"  , ADWG.viewWSGroup "Frederick4")
     , ("M-s t 1"  , ADWG.viewWSGroup "Tamara1")
+    , ("M-s t 2"  , ADWG.viewWSGroup "Tamara2")
     , ("M-s m"  , ADWG.viewWSGroup "Messaging")
     , ("M-s z"  , ADWG.viewWSGroup "Zoom")
     ]
@@ -248,7 +248,7 @@ myManageHook =
         , isDialog --> doFloat
         ]
 
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (mainGrid ||| magnifier mainGrid ||| multiColumn))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifier mainGrid ))
   where
     magnifier = magnifiercz 1.4
 
@@ -337,8 +337,8 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
-asDesktops = 2
-asDesktopPanes = 3
+asDesktops = 4
+asDesktopPanes = 2
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 
@@ -346,15 +346,15 @@ asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix as
 tWorkspaceDisplayPrefix = "TP"
 tWorkspaceKeyPrefix = Just "t"
 tDesktops = 2
-tDesktopPanes = 1
+tDesktopPanes = 2
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
 -- Tamara workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 5
-fDesktopPanes = 1
+fDesktops = 4
+fDesktopPanes = 2
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
@@ -387,8 +387,36 @@ myNewStyleKeys =
 setupWorkspaceGroups = do
     ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
     ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
-    ADWG.addRawWSGroup "Frederick1" [(2, "FP1"),(1, "FP2")]
-    ADWG.addRawWSGroup "Tamara1"    [(2, "TP1"),(1, "TP2")]
+
+    ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
+    ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
+
+    ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
+    ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
+
     ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
     ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
     ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+
+powerkeys key = do
+    -- case (screenCount, key) of
+    screenCount <- LIS.countScreens
+    case (screenCount, key) of
+        -- 3 Screen Setup
+        (3,1) -> ADWG.viewWSGroup "StandardWork"
+        (3,2) -> ADWG.viewWSGroup "Messaging"
+        (3,3) -> ADWG.viewWSGroup "Frederick1"
+        (3,4) -> ADWG.viewWSGroup "Tamara1"
+        (3,5) -> moveFocusedWindowToDesktop "SCRATCH"
+        (3,6) -> ADWG.viewWSGroup "Zoom"
+        (3,7) -> moveFocusedWindowToDesktop "NSP"
+
+        -- Single Screen Setup
+        (1,1) -> moveFocusedWindowToDesktop "W11"
+        (1,2) -> moveFocusedWindowToDesktop "IM"
+        (1,3) -> moveFocusedWindowToDesktop "MAIL"
+        (1,4) -> moveFocusedWindowToDesktop "ADM"
+        (1,5) -> moveFocusedWindowToDesktop "SCRATCH"
+        (1,6) -> moveFocusedWindowToDesktop "ZM"
+        (1,7) -> moveFocusedWindowToDesktop "NSP"
+
