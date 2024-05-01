@@ -150,10 +150,10 @@ myCustomKeys =
     -- , ("M-s 4"  , ADWG.viewWSGroup "Tamara1")
     , ("M-s w 1"  , ADWG.viewWSGroup "Work1")
     , ("M-s w 2"  , ADWG.viewWSGroup "Work2")
+    , ("M-s w 3"  , ADWG.viewWSGroup "Work3")
     , ("M-s f 1"  , ADWG.viewWSGroup "Frederick1")
     , ("M-s f 2"  , ADWG.viewWSGroup "Frederick2")
     , ("M-s f 3"  , ADWG.viewWSGroup "Frederick3")
-    , ("M-s f 4"  , ADWG.viewWSGroup "Frederick4")
     , ("M-s t 1"  , ADWG.viewWSGroup "Tamara1")
     , ("M-s t 2"  , ADWG.viewWSGroup "Tamara2")
     , ("M-s m"  , ADWG.viewWSGroup "Messaging")
@@ -183,7 +183,7 @@ warpMouseKeys =
 myStartupHook = do
     setupWorkspaceGroups
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
+    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     -- spawnOnce "dropbox"
@@ -337,7 +337,7 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
-asDesktops = 4
+asDesktops = 3
 asDesktopPanes = 2
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
@@ -350,10 +350,10 @@ tDesktopPanes = 2
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
--- Tamara workspaces
+-- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 4
+fDesktops = 3
 fDesktopPanes = 2
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
@@ -387,9 +387,11 @@ myNewStyleKeys =
 setupWorkspaceGroups = do
     ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
     ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
+    ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
 
     ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
     ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
+    ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
 
     ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
     ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
