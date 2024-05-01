@@ -46,6 +46,9 @@ import XMonad.Util.SpawnOnce
 -- ScratchPads
 import XMonad.Util.NamedScratchpad
 
+-- Workspace Groups
+import XMonad.Actions.DynamicWorkspaceGroups as ADWG
+
 -- import XMonad.Util.Run
 
 myModMask = mod4Mask
@@ -105,7 +108,7 @@ myCustomKeys =
     , (appRunKey ++ "w", setupWorkWindow)
     , (appRunKey ++ "z", fixScreens)
 
-    , ("M-1", showDesktop "W11")
+    -- , ("M-1", showDesktop "W11")
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
 
     , ("M-2", showDesktop "IM")
@@ -135,6 +138,26 @@ myCustomKeys =
     , ("M-S-]", withFocused $ toggleDynamicNSP "dyn2")
     , ("M-[", dynamicNSPAction "dyn1")
     , ("M-]", dynamicNSPAction "dyn2")
+
+    -- Dynamic Workspace Groups
+    -- , ("M-y n", ADWG.promptWSGroupAdd myXPConfig "Name this group: ")
+    -- , ("M-y g", ADWG.promptWSGroupView myXPConfig "Go to group: ")
+    -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
+    -- mod-/ and mod-? %! Jump to or memorize a workspace group
+    -- , ("M-/"  , ADWG.viewWSGroup "modslash")
+    -- , ("M-S-?", ADWG.addCurrentWSGroup "modslash")
+
+    , ("M-1"    , ADWG.viewWSGroup "StandardWork")
+    , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
+    , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
+    , ("M-s 3"  , ADWG.viewWSGroup "Frederick1")
+    , ("M-s 4"  , ADWG.viewWSGroup "Tamara1")
+    , ("M-s w 1"  , ADWG.viewWSGroup "Work1")
+    , ("M-s w 2"  , ADWG.viewWSGroup "Work2")
+    , ("M-s f 1"  , ADWG.viewWSGroup "Frederick1")
+    , ("M-s t 1"  , ADWG.viewWSGroup "Tamara1")
+    , ("M-s m"  , ADWG.viewWSGroup "Messaging")
+    , ("M-s z"  , ADWG.viewWSGroup "Zoom")
     ]
 
 setupWorkWindow = do
@@ -158,6 +181,7 @@ warpMouseKeys =
     ]
 
 myStartupHook = do
+    setupWorkspaceGroups
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 15"
     spawnOnce "wired --run"
@@ -214,7 +238,8 @@ myManageHook =
         [ manageSpawn
         , -- , manageZoomHook
           -- className =? "zoom" --> doSink
-          className =? "zoom" --> doShift "ZM"
+          className =? "simple-scan" --> doSink
+        , className =? "zoom" --> doShift "ZM"
         , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
         , className =? "discord" --> doShift "IM"
@@ -358,3 +383,12 @@ myNewStyleKeys =
 --     shouldFloat title = title `notElem` tileTitles
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
+
+setupWorkspaceGroups = do
+    ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
+    ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
+    ADWG.addRawWSGroup "Frederick1" [(2, "FP1"),(1, "FP2")]
+    ADWG.addRawWSGroup "Tamara1"    [(2, "TP1"),(1, "TP2")]
+    ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
+    ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
+    ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
