@@ -117,6 +117,7 @@ myCustomKeys =
     , ("M-5", powerkeys 5)
     , ("M-6", powerkeys 6)
     , ("M-7", powerkeys 7)
+    , ("M-8", powerkeys 8)
 
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
@@ -176,7 +177,8 @@ myCustomKeys =
     , ("M-s t 1"  , ADWG.viewWSGroup "Tamara1")
     , ("M-s t 2"  , ADWG.viewWSGroup "Tamara2")
     , ("M-s m"  , ADWG.viewWSGroup "Messaging")
-    , ("M-s z"  , ADWG.viewWSGroup "Zoom")
+    , ("M-s z 1"  , ADWG.viewWSGroup "Zoom")
+    , ("M-s z 2"  , ADWG.viewWSGroup "Zoom2")
     ]
 
 setupWorkWindow = do
@@ -417,6 +419,7 @@ setupWorkspaceGroups = do
 
     ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
     ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
     ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
 
 powerkeys key = do
@@ -430,7 +433,8 @@ powerkeys key = do
         (3,4) -> ADWG.viewWSGroup "Tamara1"
         (3,5) -> showDesktop "SCRATCH"
         (3,6) -> ADWG.viewWSGroup "Zoom"
-        (3,7) -> showDesktop "NSP"
+        (3,7) -> ADWG.viewWSGroup "Zoom2"
+        (3,8) -> showDesktop "NSP"
 
         -- Single Screen Setup
         (1,1) -> showDesktop "W11"
