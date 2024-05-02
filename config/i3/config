@@ -364,8 +364,8 @@ exec --no-startup-id sleep 20;volumeicon
 # exec_always --no-startup-id fix_xcursor
 # Run Browser for user
 exec --no-startup-id firefox-developer-edition
-exec --no-startup-id i3-msg 'workspace 10; exec firefox-developer-edition; workspace 1'
-exec --no-startup-id i3-msg 'workspace 2; exec discord; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 10; exec firefox-developer-edition; workspace 1'
+# exec --no-startup-id i3-msg 'workspace 2; exec discord; workspace 1'
 
 # Change keyboard layout
 # +++ Noah +++ , I think you need this version of the command
