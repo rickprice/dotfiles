@@ -126,8 +126,27 @@ myCustomKeys =
     , ("M-S-6", moveFocusedWindowToDesktop "ZM")
     , ("M-S-7", moveFocusedWindowToDesktop "NSP")
 
-    , (workspaceFocusKey ++ "d 1", showDesktop "DOC")
-    , (workspaceMoveKey ++ "d 1", moveFocusedWindowToDesktop "DOC")
+    , (workspaceFocusKey ++ "i", showDesktop "IM")
+    , (workspaceMoveKey ++ "i", moveFocusedWindowToDesktop "IM")
+
+    , (workspaceFocusKey ++ "m", showDesktop "MAIL")
+    , (workspaceMoveKey ++ "m", moveFocusedWindowToDesktop "MAIL")
+    
+    , (workspaceFocusKey ++ "d", showDesktop "DOC")
+    , (workspaceMoveKey ++ "d", moveFocusedWindowToDesktop "DOC")
+
+    , (workspaceFocusKey ++ "a", showDesktop "ADM")
+    , (workspaceMoveKey ++ "a", moveFocusedWindowToDesktop "ADM")
+    
+    , (workspaceFocusKey ++ "s", showDesktop "SCRATCH")
+    , (workspaceMoveKey ++ "s", moveFocusedWindowToDesktop "SCRATCH")
+
+    , (workspaceFocusKey ++ "z", showDesktop "ZM")
+    , (workspaceMoveKey ++ "z", moveFocusedWindowToDesktop "ZM")
+
+    , (workspaceFocusKey ++ "n", showDesktop "NSP")
+    , (workspaceMoveKey ++ "n", moveFocusedWindowToDesktop "NSP")
+
 
     , -- , ("M-p", spawn myDMenu)
       -- Dynamic ScratchPads
