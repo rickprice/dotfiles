@@ -21,10 +21,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
-import XMonad.Hooks.UrgencyHook (
-    NoUrgencyHook (NoUrgencyHook),
-    withUrgencyHook,
- )
+import XMonad.Hooks.UrgencyHook
 import XMonad.Layout.Magnifier
 import XMonad.Layout.MultiColumns
 
@@ -230,10 +227,10 @@ myStartupHook = do
 
 main :: IO ()
 main =
-    xmonad
+    xmonad $ withUrgencyHook NoUrgencyHook
+        $ setEwmhActivateHook doAskUrgent
         . ewmh
         . ewmhFullscreen
-        . withUrgencyHook NoUrgencyHook -- no popups only bar
         . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
         $ myConfig
 
@@ -257,6 +254,7 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
         [ manageSpawn
+        , ewmhDesktopsManageHook
         , -- , manageZoomHook
           -- className =? "zoom" --> doSink
           className =? "simple-scan" --> doSink
@@ -290,7 +288,7 @@ myXmobarPP =
         { ppSep = magenta " • "
         , ppTitleSanitize = xmobarStrip
         , ppCurrent = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
-        , ppHidden = white . wrap " " ""
+        -- , ppHidden = white . wrap " " ""
         , ppHiddenNoWindows = lowWhite . wrap " " ""
         , ppUrgent = red . wrap (yellow "!") (yellow "!")
         , ppOrder = \[ws, l, _, _] -> [ws, l]
