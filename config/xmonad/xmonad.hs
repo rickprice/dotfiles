@@ -159,7 +159,7 @@ myCustomKeys =
     -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
     -- mod-/ and mod-? %! Jump to or memorize a workspace group
     , ("M-/"  , ADWG.viewWSGroup "modslash")
-    , ("M-S-?", ADWG.addCurrentWSGroup "modslash")
+    , ("M-S-/", ADWG.addCurrentWSGroup "modslash")
 
     -- , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
     -- , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
@@ -255,10 +255,10 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
         [ manageSpawn
-        , ewmhDesktopsManageHook
-        , -- , manageZoomHook
-          -- className =? "zoom" --> doSink
-          className =? "simple-scan" --> doSink
+        -- , ewmhDesktopsManageHook
+        -- , manageZoomHook
+        -- , className =? "zoom" --> doSink
+        , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
         , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
