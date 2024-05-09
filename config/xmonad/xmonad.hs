@@ -158,8 +158,8 @@ myCustomKeys =
     -- , ("M-y g", ADWG.promptWSGroupView myXPConfig "Go to group: ")
     -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
     -- mod-/ and mod-? %! Jump to or memorize a workspace group
-    -- , ("M-/"  , ADWG.viewWSGroup "modslash")
-    -- , ("M-S-?", ADWG.addCurrentWSGroup "modslash")
+    , ("M-/"  , ADWG.viewWSGroup "modslash")
+    , ("M-S-?", ADWG.addCurrentWSGroup "modslash")
 
     -- , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
     -- , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
@@ -213,6 +213,7 @@ myStartupHook = do
     spawnOnce "xfce4-power-manager"
     spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
+    -- spawnOnce "qmidinet -n 6"
     fixScreens
     -- Setup initial work window
     spawnOn "MAIL" myEmailer
