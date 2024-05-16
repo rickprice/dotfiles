@@ -3,6 +3,7 @@
 # exec_always --no-startup-id xrandr --output DP1-1-1 --auto --above eDP1
 exec_always --no-startup-id xrandr --output eDP-1 --primary
 exec_always --no-startup-id xrandr --output HDMI-1 --auto --same-as eDP-1
+exec_always --no-startup-id feh --no-fehbg --bg-max --random ~/Documents/Dropbox/TamaraDocuments/Backgrounds
 exec_always --no-startup-id autorandr --change
 exec_always --no-startup-id ~/.local/bin/ManageTouchpad off
 # exec_always firefox-developer-edition workspace 10
