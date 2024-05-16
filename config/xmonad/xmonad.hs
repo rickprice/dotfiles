@@ -6,6 +6,8 @@ import Data.Ratio
 
 import Control.Concurrent
 
+import Network.HostName (getHostName)
+
 import Graphics.X11.ExtraTypes.XF86
 import XMonad
 import XMonad.Actions.SpawnOn
@@ -198,7 +200,7 @@ warpMouseKeys =
     , ("M-C-r", warpToScreen 2 (1 % 2) (1 % 2))
     ]
 
-myStartupHook = do
+myStartupHookFWork = do
     setupWorkspaceGroups
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
@@ -226,28 +228,59 @@ myStartupHook = do
     -- liftIO (threadDelay 7000000)
     spawnOn "ADM" myBrowser
 
+myStartupHookOther = do
+    setupWorkspaceGroups
+    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
+    spawnOnce "wired --run"
+    spawnOnce "picom -b"
+    spawnOnce "nm-applet"
+    spawnOnce "pamac-tray"
+    spawnOnce "blueman-applet"
+    spawn "killall volumeicon; sleep 15; volumeicon"
+    spawnOnce "xfce4-power-manager"
+    spawnOnce "killall udiskie; udiskie --tray"
+    -- spawnOnce "qmidinet -n 6"
+    fixScreens
+
 main :: IO ()
-main =
+main = do
+    hostname <- getHostName
     xmonad $ withUrgencyHook NoUrgencyHook
         $ setEwmhActivateHook doAskUrgent
         . ewmh
         . ewmhFullscreen
         . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
-        $ myConfig
+        $ createMyConfig hostname
 
-myConfig =
-    def
-        { terminal = myTerminal
-        , modMask = myModMask
-        , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
-        , manageHook = myManageHook
-        , startupHook = myStartupHook
-        , normalBorderColor = myNormalBorderColor
-        , focusedBorderColor = myFocusedBorderColor
-        , workspaces = myWorkspaces
-        , logHook = updatePointer (0.5, 0.5) (0, 0)
-        }
-        `additionalKeysP` myNewStyleKeys
+createMyConfig hostname =
+    if hostname == "fwork"
+        then
+            def
+                { terminal = myTerminal
+                , modMask = myModMask
+                , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
+                , manageHook = myManageHook
+                , startupHook = myStartupHookFWork
+                , normalBorderColor = myNormalBorderColor
+                , focusedBorderColor = myFocusedBorderColor
+                , workspaces = myWorkspaces
+                , logHook = updatePointer (0.5, 0.5) (0, 0)
+                }
+                `additionalKeysP` myNewStyleKeys
+        else
+            def
+                { terminal = myTerminal
+                , modMask = myModMask
+                , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
+                , manageHook = myManageHook
+                , startupHook = myStartupHookOther
+                , normalBorderColor = myNormalBorderColor
+                , focusedBorderColor = myFocusedBorderColor
+                , workspaces = myWorkspaces
+                , logHook = updatePointer (0.5, 0.5) (0, 0)
+                }
+                `additionalKeysP` myNewStyleKeys
 
 myWorkspaces = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
 
