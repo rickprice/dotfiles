@@ -9,5 +9,6 @@ COOKED_INCOMING_S3="${RAW_INCOMING_S3%/*}/logs.jsonl"
 
 aws s3 cp $COOKED_INCOMING_S3 $RAWLOG
 jq -r .body.msg $RAWLOG > $LOG
-klogg $LOG
-rm -f $RAWLOG $LOG
+klogg $LOG &
+# NOTE: Shouldn't have to delete these, they should go away on boot
+# rm -f $RAWLOG $LOG
