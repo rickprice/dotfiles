@@ -91,6 +91,8 @@ myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 
 myFixScreens = "autorandr --change"
 
+myArdour = "ardour8"
+
 myCustomKeys =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
@@ -242,6 +244,7 @@ myStartupHookOther = do
     spawnOnce "killall udiskie; udiskie --tray"
     -- spawnOnce "qmidinet -n 6"
     fixScreens
+    spawnOn "F11" myArdour
 
 main :: IO ()
 main = do
