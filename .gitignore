@@ -3,3 +3,4 @@ config.new/fish
 config.new/nvim/undo
 config/nvim/plugin/packer_compiled.lua
 config/xmonad/.stack-work
+config/xmonad/hostname-1.0/.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.10.1.0
