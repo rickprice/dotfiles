@@ -414,21 +414,25 @@ setupWorkspaceGroups hostname |  hostname == hostnameWork = do
     ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
 
 setupWorkspaceGroups _ = do
-    ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
-    ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
-    ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
+    screenCount <- LIS.countScreens
+    let topMainScreen = screenCount - 2
+    let bottomMainScreen = screenCount - 1
 
-    ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
+    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W11"),(topMainScreen, "W12")]
+    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W21"),(topMainScreen, "W22")]
+    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W31"),(topMainScreen, "W32")]
 
-    ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
-    ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
+    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "FP11"),(topMainScreen, "FP12")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "FP21"),(topMainScreen, "FP22")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "FP31"),(topMainScreen, "FP32")]
 
-    ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
-    ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+    ADWG.addRawWSGroup "Tamara1"    [(bottomMainScreen, "TP11"),(topMainScreen, "TP12")]
+    ADWG.addRawWSGroup "Tamara2"    [(bottomMainScreen, "TP21"),(topMainScreen, "TP22")]
+
+    ADWG.addRawWSGroup "Messaging"  [(bottomMainScreen, "IM"), (1, "MAIL")]
+    ADWG.addRawWSGroup "Zoom"  [(bottomMainScreen, "MAIL"), (1, "IM"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom2"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ZM")]
+    ADWG.addRawWSGroup "StandardWork"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ADM")]
 
 powerkeys key hostname = do
     -- case (screenCount, key) of
