@@ -234,7 +234,7 @@ myStartupHook  hostname= do
                 spawnOn "ADM" myBrowser
         else
             do
-                spawnOn "F11" myArdour
+                spawnOn "FP11" myArdour
 
 
 main :: IO ()
