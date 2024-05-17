@@ -89,20 +89,18 @@ spawnKey key program = (appRunKey ++ key, spawn program)
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
-    , (appRunKey ++ "b", spawn myBrowser)
-    , (appRunKey ++ "n", spawn myBrowserNyxt)
-    , (appRunKey ++ "d", spawn (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary))
-    , (appRunKey ++ "S-d", spawn (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary))
-    , (appRunKey ++ "i", spawn myInkScape)
-    , (appRunKey ++ "e", spawn myEbookViewer)
-    , (appRunKey ++ "f", spawn myFileManager)
-    , (appRunKey ++ "m", spawn mySystemMonitor) -- performance monitor
-    , (appRunKey ++ "s", spawn myScanner)
-    , (appRunKey ++ "c", spawn myCalculator)
-    , (appRunKey ++ "r", spawn myRDPClient)
-    , (appRunKey ++ "w", setupWorkWindow)
+    , spawnKey "b" myBrowser
+    , spawnKey "d" (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary)
+    , spawnKey "S-d" (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary)
+    , spawnKey "i" myInkScape
+    , spawnKey "e" myEbookViewer
+    , spawnKey "f" myFileManager
+    , spawnKey "m" mySystemMonitor -- performance monitor
+    , spawnKey "s" myScanner
+    , spawnKey "c" myCalculator
+    , spawnKey "r" myRDPClient
+    , spawnKey "a" myArdour
     , (appRunKey ++ "z", fixScreens)
-    , (appRunKey ++ "a", spawn myArdour)
 
     -- Handle powerkeoys
     , ("M-1", powerkeys 1 hostname)
@@ -255,8 +253,8 @@ createMyConfig hostname =
                 }
                 `additionalKeysP` myNewStyleKeys hostname
 
-myWorkspaces hostname | hostname == hostnameWork = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
-myWorkspaces _ = fWorkspaces ++ myExtraWorkspaces 
+myWorkspaces hostname | hostname == hostnameWork = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
 
 
