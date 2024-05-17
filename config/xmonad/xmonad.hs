@@ -266,7 +266,7 @@ createMyConfig hostname =
                 `additionalKeysP` myNewStyleKeys hostname
 
 myWorkspaces hostname | hostname == hostnameWork = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
-myWorkspaces _ = myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
+myWorkspaces _ = fWorkspaces ++ myExtraWorkspaces 
 
 
 
