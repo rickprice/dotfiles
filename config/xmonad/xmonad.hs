@@ -93,7 +93,7 @@ myFixScreens = "autorandr --change"
 
 myArdour = "ardour8"
 
-myCustomKeys =
+myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
     , (appRunKey ++ "b", spawn myBrowser)
@@ -109,16 +109,17 @@ myCustomKeys =
     , (appRunKey ++ "r", spawn myRDPClient)
     , (appRunKey ++ "w", setupWorkWindow)
     , (appRunKey ++ "z", fixScreens)
+    , (appRunKey ++ "a", spawn myArdour)
 
     -- Handle powerkeoys
-    , ("M-1", powerkeys 1)
-    , ("M-2", powerkeys 2)
-    , ("M-3", powerkeys 3)
-    , ("M-4", powerkeys 4)
-    , ("M-5", powerkeys 5)
-    , ("M-6", powerkeys 6)
-    , ("M-7", powerkeys 7)
-    , ("M-8", powerkeys 8)
+    , ("M-1", powerkeys 1 hostname)
+    , ("M-2", powerkeys 2 hostname)
+    , ("M-3", powerkeys 3 hostname)
+    , ("M-4", powerkeys 4 hostname)
+    , ("M-5", powerkeys 5 hostname)
+    , ("M-6", powerkeys 6 hostname)
+    , ("M-7", powerkeys 7 hostname)
+    , ("M-8", powerkeys 8 hostname)
 
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
@@ -202,49 +203,39 @@ warpMouseKeys =
     , ("M-C-r", warpToScreen 2 (1 % 2) (1 % 2))
     ]
 
-myStartupHookFWork = do
-    setupWorkspaceGroups
+myStartupHook  hostname= do
+    setupWorkspaceGroups hostname
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
-    -- spawnOnce "dropbox"
     spawnOnce "nm-applet"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
     -- spawnOnce "cbatticon"
     spawnOnce "xfce4-power-manager"
-    spawnOnce "meteo-qt"
     spawnOnce "killall udiskie; udiskie --tray"
     -- spawnOnce "qmidinet -n 6"
     fixScreens
-    -- Setup initial work window
-    spawnOn "MAIL" myEmailer
-    -- liftIO (threadDelay 7000000)
-    -- Setup IM programs
-    spawnOn "IM" "slack"
-    -- liftIO (threadDelay 7000000)
-    spawnOn "IM" "discord"
-    -- Browser
-    -- liftIO (threadDelay 7000000)
-    spawnOn "ADM" myBrowser
+    if hostname == "fwork"
+        then
+            do
+                spawnOnce "meteo-qt"
+                -- Setup initial work window
+                spawnOn "MAIL" myEmailer
+                -- liftIO (threadDelay 7000000)
+                -- Setup IM programs
+                spawnOn "IM" "slack"
+                -- liftIO (threadDelay 7000000)
+                spawnOn "IM" "discord"
+                -- Browser
+                -- liftIO (threadDelay 7000000)
+                spawnOn "ADM" myBrowser
+        else
+            do
+                spawnOn "F11" myArdour
 
-myStartupHookOther = do
-    setupWorkspaceGroups
-    spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
-    spawnOnce "wired --run"
-    spawnOnce "picom -b"
-    spawnOnce "nm-applet"
-    spawnOnce "pamac-tray"
-    spawnOnce "blueman-applet"
-    spawn "killall volumeicon; sleep 15; volumeicon"
-    spawnOnce "xfce4-power-manager"
-    spawnOnce "killall udiskie; udiskie --tray"
-    -- spawnOnce "qmidinet -n 6"
-    fixScreens
-    spawnOn "F11" myArdour
 
 main :: IO ()
 main = do
@@ -264,28 +255,34 @@ createMyConfig hostname =
                 , modMask = myModMask
                 , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
                 , manageHook = myManageHook
-                , startupHook = myStartupHookFWork
+                , startupHook = myStartupHook hostname
                 , normalBorderColor = myNormalBorderColor
                 , focusedBorderColor = myFocusedBorderColor
-                , workspaces = myWorkspaces
+                , workspaces = myWorkspaces hostname
                 , logHook = updatePointer (0.5, 0.5) (0, 0)
                 }
-                `additionalKeysP` myNewStyleKeys
+                `additionalKeysP` myNewStyleKeys hostname
         else
             def
                 { terminal = myTerminal
                 , modMask = myModMask
                 , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
                 , manageHook = myManageHook
-                , startupHook = myStartupHookOther
+                , startupHook = myStartupHook hostname
                 , normalBorderColor = myNormalBorderColor
                 , focusedBorderColor = myFocusedBorderColor
-                , workspaces = myWorkspaces
+                , workspaces = myWorkspaces hostname
                 , logHook = updatePointer (0.5, 0.5) (0, 0)
                 }
-                `additionalKeysP` myNewStyleKeys
+                `additionalKeysP` myNewStyleKeys hostname
 
-myWorkspaces = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname = 
+    if hostname == "fwork"
+        then
+            asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
+        else
+            myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
+
 
 myManageHook :: ManageHook
 myManageHook =
@@ -414,11 +411,11 @@ fDesktopPanes = 2
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
-myNewStyleKeys =
+myNewStyleKeys hostname =
     asWorkspaceKeys
         ++ tWorkspaceKeys
         ++ fWorkspaceKeys
-        ++ myCustomKeys
+        ++ myCustomKeys hostname
         ++ warpMouseKeys
 
 -- manageZoomHook =
@@ -440,43 +437,83 @@ myNewStyleKeys =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
-setupWorkspaceGroups = do
-    ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
-    ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
-    ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
+setupWorkspaceGroups hostname = do
+    if hostname == "fwork"
+        then do
+            ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
+            ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
+            ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
 
-    ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
+            ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
+            ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
+            ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
 
-    ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
-    ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
+            ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
+            ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
 
-    ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
-    ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+            ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
+            ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
+            ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
+            ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+        else do
+            ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
+            ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
+            ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
 
-powerkeys key = do
+            ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
+            ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
+            ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
+
+            ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
+            ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
+
+            ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
+            ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
+            ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
+            ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+
+powerkeys key hostname = do
     -- case (screenCount, key) of
     screenCount <- LIS.countScreens
-    case (screenCount, key) of
-        -- 3 Screen Setup
-        (3,1) -> ADWG.viewWSGroup "StandardWork"
-        (3,2) -> ADWG.viewWSGroup "Messaging"
-        (3,3) -> ADWG.viewWSGroup "Frederick1"
-        (3,4) -> ADWG.viewWSGroup "Tamara1"
-        (3,5) -> showDesktop "SCRATCH"
-        (3,6) -> ADWG.viewWSGroup "Zoom"
-        (3,7) -> ADWG.viewWSGroup "Zoom2"
-        (3,8) -> showDesktop "NSP"
+    if hostname == "fwork"
+        then
+            case (screenCount, key) of
+                -- 3 Screen Setup
+                (3,1) -> ADWG.viewWSGroup "StandardWork"
+                (3,2) -> ADWG.viewWSGroup "Messaging"
+                (3,3) -> ADWG.viewWSGroup "Frederick1"
+                (3,4) -> ADWG.viewWSGroup "Tamara1"
+                (3,5) -> showDesktop "SCRATCH"
+                (3,6) -> ADWG.viewWSGroup "Zoom"
+                (3,7) -> ADWG.viewWSGroup "Zoom2"
+                (3,8) -> showDesktop "NSP"
 
-        -- Single Screen Setup
-        (1,1) -> showDesktop "W11"
-        (1,2) -> showDesktop "IM"
-        (1,3) -> showDesktop "MAIL"
-        (1,4) -> showDesktop "ADM"
-        (1,5) -> showDesktop "SCRATCH"
-        (1,6) -> showDesktop "ZM"
-        (1,7) -> showDesktop "NSP"
+                -- Default Screen Setup
+                (_,1) -> showDesktop "W11"
+                (_,2) -> showDesktop "IM"
+                (_,3) -> showDesktop "MAIL"
+                (_,4) -> showDesktop "ADM"
+                (_,5) -> showDesktop "SCRATCH"
+                (_,6) -> showDesktop "ZM"
+                (_,7) -> showDesktop "NSP"
+        else
+            case (screenCount, key) of
+                -- 3 Screen Setup
+                (3,1) -> ADWG.viewWSGroup "StandardWork"
+                (3,2) -> ADWG.viewWSGroup "Messaging"
+                (3,3) -> ADWG.viewWSGroup "Frederick1"
+                (3,4) -> ADWG.viewWSGroup "Tamara1"
+                (3,5) -> showDesktop "SCRATCH"
+                (3,6) -> ADWG.viewWSGroup "Zoom"
+                (3,7) -> ADWG.viewWSGroup "Zoom2"
+                (3,8) -> showDesktop "NSP"
+
+                -- Default Screen Setup
+                (_,1) -> showDesktop "F11"
+                (_,2) -> showDesktop "IM"
+                (_,3) -> showDesktop "MAIL"
+                (_,4) -> showDesktop "ADM"
+                (_,5) -> showDesktop "SCRATCH"
+                (_,6) -> showDesktop "ZM"
+                (_,7) -> showDesktop "NSP"
 
