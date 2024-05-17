@@ -53,48 +53,38 @@ import qualified XMonad.Layout.IndependentScreens as LIS
 
 myModMask = mod4Mask
 
+-- Hostnames
 hostnameWork = "fwork"
 hostnameDAW = "daw"
 
+-- Programs we run frequently
 myBrowser = "firefox-developer-edition"
-
 myEmailer = "thunderbird"
-
 myBrowserNyxt = "nyxt --no-socket"
-
 myAudioManager = "pavucontrol"
-
 myTerminal = "wezterm"
-
 myFileManager = "pcmanfm"
-
 myScanner = "simple-scan"
-
 myEbookViewer = "ebook-viewer"
-
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
-
 mySystemMonitor = "gnome-system-monitor"
-
 myDMenu = "dmenu-frecency"
-
 myDarkTable = "darktable"
 myDarkTablePersonalLibrary = "~/Documents/Personal/DarktablePersonal/library.db"
 myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library.db"
-
 myInkScape = "inkscape"
-
 myCalculator = "gnome-calculator"
-
 myRDPClient = "remmina"
-
-myExtraWorkspaces = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
-
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
-
 myFixScreens = "autorandr --change"
-
 myArdour = "ardour8"
+
+-- Define extra workspaces that I use all the time, by hostname
+myExtraWorkspaces hostname | hostname == hostnameWork = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
+myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
+
+spawnKey key program = (appRunKey ++ key, spawn program)
+
 
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
