@@ -85,6 +85,13 @@ myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
 
 spawnKey key program = (appRunKey ++ key, spawn program)
 
+workspaceKeys key desktop = [(workspaceFocusKey ++ key, showDesktop desktop), (workspaceMoveKey ++ key, moveFocusedWindowToDesktop desktop)]
+
+dynamicScratchPadKeys key scratchPadName = [("M-S-" ++ key, withFocused $ toggleDynamicNSP scratchPadName), ("M-" ++ key, dynamicNSPAction scratchPadName) ]
+
+dynamicWorkspaceGroupKeys key viewGroup = [("M-" ++ key, ADWG.viewWSGroup viewGroup), ("M-S-" ++ key, ADWG.addCurrentWSGroup viewGroup)]
+
+viewGroupKeys key viewGroup = [("M-s w " ++ key , ADWG.viewWSGroup viewGroup)]
 
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
@@ -100,9 +107,9 @@ myCustomKeys hostname =
     , spawnKey "c" myCalculator
     , spawnKey "r" myRDPClient
     , spawnKey "a" myArdour
-    , (appRunKey ++ "z", fixScreens)
+    , spawnKey "z" myFixScreens
 
-    -- Handle powerkeoys
+    -- Handle powerkeys
     , ("M-1", powerkeys 1 hostname)
     , ("M-2", powerkeys 2 hostname)
     , ("M-3", powerkeys 3 hostname)
@@ -119,60 +126,41 @@ myCustomKeys hostname =
     , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
     , ("M-S-6", moveFocusedWindowToDesktop "ZM")
     , ("M-S-7", moveFocusedWindowToDesktop "NSP")
+    ]
 
-    , (workspaceFocusKey ++ "i", showDesktop "IM")
-    , (workspaceMoveKey ++ "i", moveFocusedWindowToDesktop "IM")
+    ++ workspaceKeys "i" "IM"
+    ++ workspaceKeys "m" "MAIL"
+    ++ workspaceKeys "d" "DOC"
+    ++ workspaceKeys "s" "SCRATCH"
+    ++ workspaceKeys "z" "ZM"
+    ++ workspaceKeys "n" "NSP"
 
-    , (workspaceFocusKey ++ "m", showDesktop "MAIL")
-    , (workspaceMoveKey ++ "m", moveFocusedWindowToDesktop "MAIL")
-    
-    , (workspaceFocusKey ++ "d", showDesktop "DOC")
-    , (workspaceMoveKey ++ "d", moveFocusedWindowToDesktop "DOC")
+    -- Dynamic ScratchPads
+    ++ dynamicScratchPadKeys "[" "dyn1"
+    ++ dynamicScratchPadKeys "]" "dyn2"
 
-    , (workspaceFocusKey ++ "a", showDesktop "ADM")
-    , (workspaceMoveKey ++ "a", moveFocusedWindowToDesktop "ADM")
-    
-    , (workspaceFocusKey ++ "s", showDesktop "SCRATCH")
-    , (workspaceMoveKey ++ "s", moveFocusedWindowToDesktop "SCRATCH")
+    ++ dynamicWorkspaceGroupKeys "/" "modslash"
 
-    , (workspaceFocusKey ++ "z", showDesktop "ZM")
-    , (workspaceMoveKey ++ "z", moveFocusedWindowToDesktop "ZM")
+    ++ viewGroupKeys "w 1" "Work1"
+    ++ viewGroupKeys "w 2" "Work2"
+    ++ viewGroupKeys "w 3" "Work3"
 
-    , (workspaceFocusKey ++ "n", showDesktop "NSP")
-    , (workspaceMoveKey ++ "n", moveFocusedWindowToDesktop "NSP")
+    ++ viewGroupKeys "f 1" "Frederick1"
+    ++ viewGroupKeys "f 2" "Frederick2"
+    ++ viewGroupKeys "f 3" "Frederick3"
 
+    ++ viewGroupKeys "t 1" "Tamara1"
+    ++ viewGroupKeys "t 2" "Tamara2"
 
-    , -- , ("M-p", spawn myDMenu)
-      -- Dynamic ScratchPads
-      ("M-S-[", withFocused $ toggleDynamicNSP "dyn1")
-    , ("M-S-]", withFocused $ toggleDynamicNSP "dyn2")
-    , ("M-[", dynamicNSPAction "dyn1")
-    , ("M-]", dynamicNSPAction "dyn2")
+    ++ viewGroupKeys "z 1" "Zoom"
+    ++ viewGroupKeys "z 2" "Zoom2"
 
+    -- ++ [
     -- Dynamic Workspace Groups
     -- , ("M-y n", ADWG.promptWSGroupAdd myXPConfig "Name this group: ")
     -- , ("M-y g", ADWG.promptWSGroupView myXPConfig "Go to group: ")
     -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
     -- mod-/ and mod-? %! Jump to or memorize a workspace group
-    , ("M-/"  , ADWG.viewWSGroup "modslash")
-    , ("M-S-/", ADWG.addCurrentWSGroup "modslash")
-
-    -- , ("M-s 1"  , ADWG.viewWSGroup "StandardWork")
-    -- , ("M-s 2"  , ADWG.viewWSGroup "Messaging")
-    -- , ("M-s 3"  , ADWG.viewWSGroup "Frederick1")
-    -- , ("M-s 4"  , ADWG.viewWSGroup "Tamara1")
-    , ("M-s w 1"  , ADWG.viewWSGroup "Work1")
-    , ("M-s w 2"  , ADWG.viewWSGroup "Work2")
-    , ("M-s w 3"  , ADWG.viewWSGroup "Work3")
-    , ("M-s f 1"  , ADWG.viewWSGroup "Frederick1")
-    , ("M-s f 2"  , ADWG.viewWSGroup "Frederick2")
-    , ("M-s f 3"  , ADWG.viewWSGroup "Frederick3")
-    , ("M-s t 1"  , ADWG.viewWSGroup "Tamara1")
-    , ("M-s t 2"  , ADWG.viewWSGroup "Tamara2")
-    , ("M-s m"  , ADWG.viewWSGroup "Messaging")
-    , ("M-s z 1"  , ADWG.viewWSGroup "Zoom")
-    , ("M-s z 2"  , ADWG.viewWSGroup "Zoom2")
-    ]
 
 setupWorkWindow = do
     spawnHere myBrowser
@@ -180,9 +168,6 @@ setupWorkWindow = do
     liftIO (threadDelay 5000000)
     spawnHere myTerminal
     spawnHere myTerminal
-
-fixScreens = do
-    spawn myFixScreens
 
 -- liftIO (threadDelay 7000000)
 -- This is now handled by a script in autorandr
@@ -208,7 +193,7 @@ myStartupHook  hostname= do
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
     -- spawnOnce "qmidinet -n 6"
-    fixScreens
+    spawn myFixScreens
     if hostname == hostnameWork
         then
             do
@@ -332,7 +317,7 @@ workspacePanelTuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
 workspacePanelTuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
 workspaceNames workspacePrefix desktops desktop_panes = map (desktopNameFromTuple workspacePrefix) (workspacePanelTuples desktops desktop_panes)
-workspaceKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes
+wsKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes ++ workspaceMoveFocusedWindowKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes
 
 workspaceShowDesktopKeys workspaceKeyPrefix workspaceWindowPrefix desktops desktop_panes = map (desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix) (workspacePanelTuples desktops desktop_panes)
 
@@ -367,7 +352,7 @@ asWorkspaceKeyPrefix = Nothing
 asDesktops = 3
 asDesktopPanes = 2
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
-asWorkspaceKeys = workspaceKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
+asWorkspaceKeys = wsKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
@@ -375,7 +360,7 @@ tWorkspaceKeyPrefix = Just "t"
 tDesktops = 2
 tDesktopPanes = 2
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
-tWorkspaceKeys = workspaceKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
+tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
@@ -383,7 +368,7 @@ fWorkspaceKeyPrefix = Just "f"
 fDesktops = 3
 fDesktopPanes = 2
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
-fWorkspaceKeys = workspaceKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
+fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
 myNewStyleKeys hostname =
     asWorkspaceKeys
