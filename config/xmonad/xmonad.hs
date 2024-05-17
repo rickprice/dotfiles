@@ -210,7 +210,7 @@ myStartupHook  hostname= do
                 spawnOn "ADM" myBrowser
         else
             do
-                spawnOn "FP11" myArdour
+                spawnOn "FP12" myArdour
 
 
 main :: IO ()
@@ -439,10 +439,14 @@ powerkeys key hostname = do
         (3,2, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Messaging"
         (3,3, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Frederick1"
         (3,4, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Tamara1"
-        (3,5, hostname) | hostname == hostnameWork -> showDesktop "SCRATCH"
         (3,6, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom"
         (3,7, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom2"
-        (3,8, hostname) | hostname == hostnameWork -> showDesktop "NSP"
+
+
+        -- 2 Screen Setup
+        (2,1, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
+        (2,2, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
+        (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
         (_,1, hostname) | hostname == hostnameWork -> showDesktop "W11"
@@ -451,6 +455,7 @@ powerkeys key hostname = do
         (_,2, _) -> showDesktop "IM"
         (_,3, _) -> showDesktop "MAIL"
         (_,4, _) -> showDesktop "ADM"
-        (_,5, _) -> showDesktop "SCRATCH"
         (_,6, _) -> showDesktop "ZM"
-        (_,7, _) -> showDesktop "NSP"
+
+        (_,5, _) -> showDesktop "SCRATCH"
+        (_,8, _) -> showDesktop "NSP"
