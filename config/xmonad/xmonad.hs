@@ -265,7 +265,7 @@ createMyConfig hostname =
                 }
                 `additionalKeysP` myNewStyleKeys hostname
 
-myWorkspaces hostnameWork = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname | hostname == hostnameWork = asWorkspaces ++ myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
 myWorkspaces _ = myExtraWorkspaces ++ tWorkspaces ++ fWorkspaces
 
 
@@ -423,7 +423,7 @@ myNewStyleKeys hostname =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
-setupWorkspaceGroups hostnameWork = do
+setupWorkspaceGroups hostname |  hostname == hostnameWork = do
     ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
     ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
     ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
@@ -462,17 +462,17 @@ powerkeys key hostname = do
     screenCount <- LIS.countScreens
     case (screenCount, key, hostname) of
         -- 3 Screen Setup
-        (3,1, hostnameWork) -> ADWG.viewWSGroup "StandardWork"
-        (3,2, hostnameWork) -> ADWG.viewWSGroup "Messaging"
-        (3,3, hostnameWork) -> ADWG.viewWSGroup "Frederick1"
-        (3,4, hostnameWork) -> ADWG.viewWSGroup "Tamara1"
-        (3,5, hostnameWork) -> showDesktop "SCRATCH"
-        (3,6, hostnameWork) -> ADWG.viewWSGroup "Zoom"
-        (3,7, hostnameWork) -> ADWG.viewWSGroup "Zoom2"
-        (3,8, hostnameWork) -> showDesktop "NSP"
+        (3,1, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "StandardWork"
+        (3,2, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Messaging"
+        (3,3, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Frederick1"
+        (3,4, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Tamara1"
+        (3,5, hostname) | hostname == hostnameWork -> showDesktop "SCRATCH"
+        (3,6, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom"
+        (3,7, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom2"
+        (3,8, hostname) | hostname == hostnameWork -> showDesktop "NSP"
 
         -- Default Screen Setup
-        (_,1, hostnameWork) -> showDesktop "W11"
+        (_,1, hostname) | hostname == hostnameWork -> showDesktop "W11"
         (_,1,_) -> showDesktop "F11"
 
         (_,2, _) -> showDesktop "IM"
