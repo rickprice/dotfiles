@@ -115,7 +115,7 @@ return {
 
 	{
 		"NeogitOrg/neogit",
-		branch = "nightly",
+		-- branch = "nightly",
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- required
 			"sindrets/diffview.nvim", -- optional - Diff integration
