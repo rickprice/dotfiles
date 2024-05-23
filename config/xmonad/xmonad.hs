@@ -128,6 +128,7 @@ myCustomKeys hostname =
     , ("M-S-7", moveFocusedWindowToDesktop "NSP")
     ]
 
+    ++ workspaceKeys "a" "ADM"
     ++ workspaceKeys "i" "IM"
     ++ workspaceKeys "m" "MAIL"
     ++ workspaceKeys "d" "DOC"
