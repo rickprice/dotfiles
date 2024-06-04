@@ -1,0 +1,4 @@
+[pypi]
+    username = __token__
+    password = {{ pypi.pypi_token }}
+

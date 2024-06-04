@@ -235,3 +235,6 @@
 [fonts.files]
 "etc/fonts/conf.d/09-calibre-fonts.conf" = { target = "/etc/fonts/conf.d/09-calibre-fonts.conf", type = "symbolic", owner = "root" }
 "etc/fonts/conf.d/09-ghostpdl-fonts.conf" = { target = "/etc/fonts/conf.d/09-ghostpdl-fonts.conf", type = "symbolic", owner = "root" }
+
+[pypi.files]
+"home/pypirc" = { target = "~/.pypirc", type = "template"}
