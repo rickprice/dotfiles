@@ -350,6 +350,7 @@ exec --no-startup-id meteo-qt
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id udiskie --tray&
+exec --no-startup-id system-config-printer-applet
 exec --no-startup-id i3-msg workspace 1
 exec --no-startup-id pamac-tray
 # Delay because it seems to drop dead otherwise
