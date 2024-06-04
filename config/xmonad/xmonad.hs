@@ -78,6 +78,7 @@ myRDPClient = "remmina"
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
 myArdour = "ardour8"
+myPrinterConfig = "system-config-printer"
 
 -- Define extra workspaces that I use all the time, by hostname
 myExtraWorkspaces hostname | hostname == hostnameWork = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
