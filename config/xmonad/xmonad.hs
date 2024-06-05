@@ -184,7 +184,7 @@ warpMouseKeys =
 myStartupHook  hostname= do
     setupWorkspaceGroups hostname
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 10"
+    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 12"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     spawnOnce "nm-applet"
@@ -199,6 +199,7 @@ myStartupHook  hostname= do
     if hostname == hostnameWork
         then
             do
+                spawnOnce "system-config-printer-applet"
                 spawnOnce "meteo-qt"
                 -- Setup initial work window
                 spawnOn "MAIL" myEmailer
