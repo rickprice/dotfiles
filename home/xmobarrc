@@ -13,7 +13,7 @@ Config { overrideRedirect = False
 --                    , Run Memory ["--template", "Mem: <usedratio>%"] 10
                     , Run Date "<fc=#FFB53A>%A %B</fc> %Y-%m-%d <fc=#FFB53A>%H:%M</fc>" "date" 10
                     , Run XMonadLog
-                    , Run Com "current_BE_sprint" [] "sprint" 36000
+                    , Run Com "sprint" [] "sprint" 36000
                     ]
        , sepChar  = "%"
        , alignSep = "}{"

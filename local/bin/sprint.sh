@@ -3,8 +3,11 @@
 # Prints out the current quarter, and the week in the quarter
 #
 
-QUARTER=$(date +'%q')
-WEEK=$(date +"%W%%%q+1" | bc)
-SPRINT=$(date +"(%W%%%q+1)/2+1" | bc)
+#!/bin/bash
 
-echo "Q"$QUARTER"-S"$SPRINT
+set -e -o pipefail
+
+export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_PIPFILE=~/.dotfiles/bin/BE_Sprint_VENV/Pipfile
+export SPRINTPROGRAM=~/.dotfiles/bin/BE_Sprint_VENV/current_BE_sprint.py
+exec pipenv run python $SPRINTPROGRAM

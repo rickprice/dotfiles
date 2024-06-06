@@ -184,7 +184,6 @@ warpMouseKeys =
 myStartupHook  hostname= do
     setupWorkspaceGroups hostname
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawn "killall trayer; sleep 10; trayer --monitor primary --edge top --align right --width 12"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     spawnOnce "nm-applet"
@@ -214,6 +213,7 @@ myStartupHook  hostname= do
         else
             do
                 spawnOn "FP12" myArdour
+    spawn "trayer --monitor primary --edge top --align right --width 10"
 
 
 main :: IO ()
