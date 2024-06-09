@@ -67,7 +67,7 @@
 [i3.files]
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
-"config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
+"config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = {target = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml", type = "symbolic"}
 
 [i3status-rust.files]
 "config/i3status-rust/config.toml" = "~/.config/i3status-rust/config.toml"
@@ -139,7 +139,7 @@
 
 [activestate.files]
 "home/camel"="~/.camel"
-"bin/current_BE_sprint.py" = {target = "/usr/local/bin/current_BE_sprint", type = "symbolic", owner = "root"}
+# "bin/current_BE_sprint.py" = {target = "/usr/local/bin/current_BE_sprint", type = "symbolic", owner = "root"}
 
 [todoist.files]
 "config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"

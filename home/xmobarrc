@@ -3,7 +3,8 @@ Config { overrideRedirect = False
        , bgColor  = "#5f5f5f"
        , fgColor  = "#f8f8f2"
 --       , position = TopSize L 85 26
-       , position = TopSize L 90 26
+--       , position = TopSize L 90 26
+       , position = TopSize L 88 26
        , commands = [ Run Cpu
                         [ "-L", "3"
                         , "-H", "50"

@@ -213,7 +213,7 @@ myStartupHook  hostname= do
         else
             do
                 spawnOn "FP12" myArdour
-    spawn "trayer --monitor primary --edge top --align right --width 10"
+    spawn "trayer --monitor primary --edge top --align right --width 11"
 
 
 main :: IO ()
