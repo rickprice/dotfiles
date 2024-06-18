@@ -25,10 +25,10 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.56818182"
-     inkscape:cx="176"
+     inkscape:cx="176.88"
      inkscape:cy="47.52"
-     inkscape:window-width="2560"
-     inkscape:window-height="1080"
+     inkscape:window-width="2558"
+     inkscape:window-height="1078"
      inkscape:window-x="1920"
      inkscape:window-y="1080"
      inkscape:window-maximized="1"
@@ -57,6 +57,10 @@
          sodipodi:role="line"
          id="tspan1"
          x="245.30171"
-         y="76.064789">Calvary Baptist</tspan></text>
+         y="76.064789">Calvary Baptist </tspan><tspan
+         sodipodi:role="line"
+         x="245.30171"
+         y="176.06479"
+         id="tspan2">Church</tspan></text>
   </g>
 </svg>
