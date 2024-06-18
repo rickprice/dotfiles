@@ -368,7 +368,7 @@ tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tD
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 3
+fDesktops = 2
 fDesktopPanes = 2
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
