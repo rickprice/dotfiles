@@ -16,7 +16,7 @@ while ((i<=END)); do
     TICKET_NUMBER=$(printf $FORMAT_STRING $i)
     # echo $TICKET_NUMBER
 
-    sed "s/#TicKet#/$TICKET_NUMBER/" EditedTicket.svg | inkscape --pipe --export-type=pdf --export-filename=$TEMPORARY_DIRECTORY/Ticket-$TICKET_NUMBER.pdf
+    sed "s/#TicKet#/$TICKET_NUMBER/g" EditedTicket.svg | inkscape --pipe --export-type=pdf --export-filename=$TEMPORARY_DIRECTORY/Ticket-$TICKET_NUMBER.pdf
 
     let i++
 done
