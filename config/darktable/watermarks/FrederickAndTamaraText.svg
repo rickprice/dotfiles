@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.5in"
+   height="0.5in"
+   viewBox="0 0 3.5 0.5"
+   id="SVGRoot"
+   version="1.1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="FrederickAndTamaraText.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     inkscape:document-units="in"
+     inkscape:zoom="0.88"
+     inkscape:cx="10.227273"
+     inkscape:cy="-82.954545"
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:window-width="1918"
+     inkscape:window-height="1078"
+     inkscape:window-x="2240"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.33333333px;font-family:'Instrument Sans';-inkscape-font-specification:'Instrument Sans';text-align:center;letter-spacing:0.00697917px;text-anchor:middle;fill:#000000;stroke-width:0.021811;stroke-linecap:round"
+       x="1.7447761"
+       y="0.36389843"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Instrument Sans';-inkscape-font-specification:'Instrument Sans';fill:#000000;stroke-width:0.021811;font-size:0.33333333px"
+         x="1.7482657"
+         y="0.36389843">Frederick &amp; Tamara</tspan></text>
+  </g>
+</svg>
