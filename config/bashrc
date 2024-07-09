@@ -15,7 +15,6 @@ eval "$(starship init bash)"
 
 # source /home/fprice/.config/broot/launcher/bash/br
 
-export PIPENV_VENV_IN_PROJECT=1
 # -- START ACTIVESTATE INSTALLATION
 export PATH="/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
