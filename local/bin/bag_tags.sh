@@ -2,7 +2,7 @@
 
 typeset -i i END START
 
-let NUMBER_TAGS=8
+let NUMBER_TAGS=10
 
 TEMPORARY_DIRECTORY=$(mktemp -d)
 
@@ -18,4 +18,5 @@ while ((i<NUMBER_TAGS)); do
     let i++
 done
 
-pdfjam -o bag_tags.pdf --nup 2x4 --landscape $TEMPORARY_DIRECTORY/*.pdf
+# pdfjam -o bag_tags.pdf --scale 0.80 --nup 2x4 --landscape $TEMPORARY_DIRECTORY/*.pdf
+pdfjam -o bag_tags.pdf --scale 0.94 --nup 2x5 --landscape $TEMPORARY_DIRECTORY/*.pdf
