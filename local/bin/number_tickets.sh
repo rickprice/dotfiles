@@ -15,8 +15,6 @@ TEMPORARY_DIRECTORY=$(mktemp -d)
 # echo "Number Array is:" $NUMBER_ARRAY
 echo "Temporary Directory is:" $TEMPORARY_DIRECTORY
 
-let i=$START
-
 for i in ${NUMBER_ARRAY[@]}; do
     TICKET_NUMBER=$(printf $FORMAT_STRING $i)
     # echo $TICKET_NUMBER
