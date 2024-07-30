@@ -121,24 +121,24 @@ myCustomKeys hostname =
     -- , ("M-8", powerkeys 8 hostname)
 
     -- Handle powergroups
-    , ("M-s w w", powergroups 1)
-    , ("M-s w 1", powergroups 1)
-    , ("M-s w 2", powergroups 2)
-    , ("M-s w 3", powergroups 3)
-
-    , ("M-s c", powergroups 4)
-
-    , ("M-s z z", powergroups 5)
-    , ("M-s z 1", powergroups 5)
-    , ("M-s z 2", powergroups 6)
-
-    , ("M-s t t", powergroups 7)
-    , ("M-s t 1", powergroups 7)
-    , ("M-s t 2", powergroups 8)
-
-    , ("M-s f f", powergroups 9)
-    , ("M-s f 1", powergroups 9)
-    , ("M-s f 2", powergroups 10)
+    -- , ("M-s w w", powergroups 1)
+    -- , ("M-s w 1", powergroups 1)
+    -- , ("M-s w 2", powergroups 2)
+    -- , ("M-s w 3", powergroups 3)
+    --
+    -- , ("M-s c", powergroups 4)
+    --
+    -- , ("M-s z z", powergroups 5)
+    -- , ("M-s z 1", powergroups 5)
+    -- , ("M-s z 2", powergroups 6)
+    --
+    -- , ("M-s t t", powergroups 7)
+    -- , ("M-s t 1", powergroups 7)
+    -- , ("M-s t 2", powergroups 8)
+    --
+    -- , ("M-s f f", powergroups 9)
+    -- , ("M-s f 1", powergroups 9)
+    -- , ("M-s f 2", powergroups 10)
 
     -- Handle moves
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
@@ -164,19 +164,25 @@ myCustomKeys hostname =
 
     ++ dynamicWorkspaceGroupKeys "/" "modslash"
 
+    ++ viewGroupKeys "w w" "Work1"
     ++ viewGroupKeys "w 1" "Work1"
     ++ viewGroupKeys "w 2" "Work2"
     ++ viewGroupKeys "w 3" "Work3"
 
+    ++ viewGroupKeys "f f" "Frederick1"
     ++ viewGroupKeys "f 1" "Frederick1"
     ++ viewGroupKeys "f 2" "Frederick2"
     ++ viewGroupKeys "f 3" "Frederick3"
 
+    ++ viewGroupKeys "t t" "Tamara1"
     ++ viewGroupKeys "t 1" "Tamara1"
     ++ viewGroupKeys "t 2" "Tamara2"
 
+    ++ viewGroupKeys "z z" "Zoom"
     ++ viewGroupKeys "z 1" "Zoom"
     ++ viewGroupKeys "z 2" "Zoom2"
+
+    ++ viewGroupKeys "c" "Messaging"
 
     -- ++ [
     -- Dynamic Workspace Groups
@@ -489,16 +495,16 @@ powerkeys key hostname = do
         (_,8, _) -> showDesktop "NSP"
 
 
-powergroups key = do
-    case key of
-        1 -> ADWG.viewWSGroup "Work1"
-        2 -> ADWG.viewWSGroup "Work2"
-        3 -> ADWG.viewWSGroup "Work3"
-        4 -> ADWG.viewWSGroup "Messaging"
-        5 -> ADWG.viewWSGroup "Zoom"
-        6 -> ADWG.viewWSGroup "Zoom2"
-        7 -> ADWG.viewWSGroup "Tamara1"
-        8 -> ADWG.viewWSGroup "Tamara2"
-        9 -> ADWG.viewWSGroup "Frederick1"
-        10 -> ADWG.viewWSGroup "Frederick2"
-
+-- powergroups key = do
+--     case key of
+--         1 -> ADWG.viewWSGroup "Work1"
+--         2 -> ADWG.viewWSGroup "Work2"
+--         3 -> ADWG.viewWSGroup "Work3"
+--         4 -> ADWG.viewWSGroup "Messaging"
+--         5 -> ADWG.viewWSGroup "Zoom"
+--         6 -> ADWG.viewWSGroup "Zoom2"
+--         7 -> ADWG.viewWSGroup "Tamara1"
+--         8 -> ADWG.viewWSGroup "Tamara2"
+--         9 -> ADWG.viewWSGroup "Frederick1"
+--         10 -> ADWG.viewWSGroup "Frederick2"
+--
