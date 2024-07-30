@@ -116,9 +116,25 @@ myCustomKeys hostname =
     , ("M-3", powerkeys 3 hostname)
     , ("M-4", powerkeys 4 hostname)
     , ("M-5", powerkeys 5 hostname)
-    , ("M-6", powerkeys 6 hostname)
-    , ("M-7", powerkeys 7 hostname)
-    , ("M-8", powerkeys 8 hostname)
+    -- , ("M-6", powerkeys 6 hostname)
+    -- , ("M-7", powerkeys 7 hostname)
+    -- , ("M-8", powerkeys 8 hostname)
+
+    -- Handle powergroups
+    , ("M-s w 1", powergroups 1)
+    , ("M-s w 2", powergroups 2)
+    , ("M-s w 3", powergroups 3)
+
+    , ("M-s c", powergroups 4)
+
+    , ("M-s z 1", powergroups 5)
+    , ("M-s z 2", powergroups 6)
+
+    , ("M-s t 1", powergroups 7)
+    , ("M-s t 2", powergroups 8)
+
+    , ("M-s f 1", powergroups 9)
+    , ("M-s f 2", powergroups 10)
 
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
@@ -466,3 +482,18 @@ powerkeys key hostname = do
 
         (_,5, _) -> showDesktop "SCRATCH"
         (_,8, _) -> showDesktop "NSP"
+
+
+powergroups key = do
+    case key of
+        1 -> ADWG.viewWSGroup "Work1"
+        2 -> ADWG.viewWSGroup "Work2"
+        3 -> ADWG.viewWSGroup "Work3"
+        4 -> ADWG.viewWSGroup "Messaging"
+        5 -> ADWG.viewWSGroup "Zoom"
+        6 -> ADWG.viewWSGroup "Zoom2"
+        7 -> ADWG.viewWSGroup "Tamara1"
+        8 -> ADWG.viewWSGroup "Tamara2"
+        9 -> ADWG.viewWSGroup "Frederick1"
+        10 -> ADWG.viewWSGroup "Frederick2"
+
