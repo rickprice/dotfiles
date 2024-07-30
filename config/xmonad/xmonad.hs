@@ -121,21 +121,26 @@ myCustomKeys hostname =
     -- , ("M-8", powerkeys 8 hostname)
 
     -- Handle powergroups
+    , ("M-s w w", powergroups 1)
     , ("M-s w 1", powergroups 1)
     , ("M-s w 2", powergroups 2)
     , ("M-s w 3", powergroups 3)
 
     , ("M-s c", powergroups 4)
 
+    , ("M-s z z", powergroups 5)
     , ("M-s z 1", powergroups 5)
     , ("M-s z 2", powergroups 6)
 
+    , ("M-s t t", powergroups 7)
     , ("M-s t 1", powergroups 7)
     , ("M-s t 2", powergroups 8)
 
+    , ("M-s f f", powergroups 9)
     , ("M-s f 1", powergroups 9)
     , ("M-s f 2", powergroups 10)
 
+    -- Handle moves
     , ("M-S-1", moveFocusedWindowToDesktop "W11")
     , ("M-S-2", moveFocusedWindowToDesktop "IM")
     , ("M-S-3", moveFocusedWindowToDesktop "MAIL")
