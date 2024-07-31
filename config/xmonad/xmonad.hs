@@ -92,7 +92,7 @@ dynamicScratchPadKeys key scratchPadName = [("M-S-" ++ key, withFocused $ toggle
 
 dynamicWorkspaceGroupKeys key viewGroup = [("M-" ++ key, ADWG.viewWSGroup viewGroup), ("M-S-" ++ key, ADWG.addCurrentWSGroup viewGroup)]
 
-viewGroupKeys key viewGroup = [("M-s w " ++ key , ADWG.viewWSGroup viewGroup)]
+viewGroupKeys keys viewGroup = [("M-s " ++ keys , ADWG.viewWSGroup viewGroup)]
 
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
