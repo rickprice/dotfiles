@@ -238,3 +238,6 @@
 
 [pypi.files]
 "home/pypirc" = { target = "~/.pypirc", type = "template"}
+
+[inkscape.files]
+"config/inkscape" = { target = "~/.config/inkscape", type = "symbolic" }
