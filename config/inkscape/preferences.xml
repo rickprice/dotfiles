@@ -26,7 +26,7 @@
        state="1" />
     <group
        id="rulers"
-       state="0" />
+       state="1" />
     <group
        id="scrollbars"
        state="1" />
@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="68.6109313964844"
-         height="768.615356445312"
+         width="63.5751342773446"
+         height="2971.16956815945"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -306,7 +306,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="in"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -582,7 +582,7 @@
     <group
        id="transformation"
        applyseparately="0"
-       rotateCounterClockwise="1" />
+       rotateCounterClockwise="0" />
     <group
        id="align"
        objects-align-to="page"
@@ -604,7 +604,7 @@
     <group
        id="preferences"
        state="1"
-       page="50" />
+       page="51" />
     <group
        id="gradienteditor" />
     <group
@@ -616,7 +616,7 @@
        path="">
       <group
          id="exportarea"
-         value="page" />
+         value="drawing" />
       <group
          id="defaultxdpi" />
       <group
@@ -624,7 +624,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="24.9200000762939" />
+         value="600" />
     </group>
     <group
        id="save_as"
@@ -646,10 +646,10 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/CrownBarber/AlexisTatooArtist/"
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/FrederickPosters/2Chronicles13:14NIV/"
        ask="1"
        ask_svg="1"
-       link="embed"
+       link="link"
        scale="auto"
        import_mode_svg="include"
        forcexdpi="0" />
@@ -958,7 +958,8 @@
          spacing_x="1.0"
          spacing_y="1.0"
          empspacing="5"
-         dotted="0" />
+         dotted="0"
+         units="in" />
       <group
          id="axonom"
          units="mm"
@@ -1015,17 +1016,19 @@
      org.inkscape.generate.printing_marks.colour_bars="0"
      org.inkscape.generate.printing_marks.tab="marks"
      org.inkscape.generate.printing_marks.registration_marks="0"
-     org.inkscape.generate.printing_marks.crop_marks="0"
+     org.inkscape.generate.printing_marks.crop_marks="1"
      org.inkscape.effect.guides_creator.guides_preset="custom"
      org.inkscape.effect.guides_creator.margins_preset="custom"
      org.inkscape.effect.guides_creator.header_margin="10"
      org.inkscape.effect.guides_creator.footer_margin="10"
      org.inkscape.effect.guides_creator.left_margin="10"
      org.inkscape.effect.guides_creator.right_margin="10"
-     org.inkscape.effect.guides_creator.tab="margins" />
+     org.inkscape.effect.guides_creator.tab="margins"
+     org.inkscape.generate.printing_marks.bleed_marks="1"
+     org.inkscape.input.gdkpixbuf.tif.link="link" />
   <group
      id="desktop"
-     style="fill:#000000;-inkscape-font-specification:'Instrument Sans';font-family:'Instrument Sans';font-size:13.33333333px;stroke-linecap:round;letter-spacing:0.67px;stroke:#000000;stroke-width:0.2">
+     style="fill:#c0c1cb;-inkscape-font-specification:Aboreto;font-family:Aboreto;font-size:24px;letter-spacing:0.67px">
     <group
        width="640"
        height="480"
@@ -1164,4 +1167,7 @@
        symbolicWarningColor="4279865599"
        symbolicErrorColor="10086143" />
   </group>
+  <group
+     id="gradient-edit"
+     stoplist="1" />
 </inkscape>
