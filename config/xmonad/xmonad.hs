@@ -291,7 +291,7 @@ myManageHook =
         , isDialog --> doFloat
         ]
 
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifier mainGrid ||| churchSetup ||| churchSetup2 ))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifier mainGrid ||| churchSetup ))
   where
     magnifier = magnifiercz 1.4
 
@@ -305,8 +305,8 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGr
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
     -- mirrorTall = Mirror (Tall 1 (3 / 100) (3 / 5))
     multiColumn = multiCol [1] 1 0.01 (-0.5)
-    churchSetup = (Tall 1 (3/100) (1/2) *//* Full) 
-    churchSetup2 = ((Full ****||* Full) ****/* Full)
+    churchSetup = (Tall 1 (3/100) (1/2) *//* Tall 1 (3/100) (1/2) ) 
+    -- churchSetup = ((Tall 1 (3/100) (1/2) ****||* Tall 1 (3/100) (1/2) ) ****/* Tall 1 (3/100) (1/2))
 
 myXmobarPP :: PP
 myXmobarPP =
