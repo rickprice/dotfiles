@@ -306,7 +306,8 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGr
     -- mirrorTall = Mirror (Tall 1 (3 / 100) (3 / 5))
     multiColumn = multiCol [1] 1 0.01 (-0.5)
     -- This one actually works
-    churchSetup = ( (Tall 1 (3/100) (1/2) ****|* Tall 1 (3/100) (1/2) ) ****/* Tall 1 (3/100) (1/2) ) 
+    tall = (Tall 1 (10/100) (80/100))
+    churchSetup = ( (tall ****|* tall ) ****/* tall ) 
 
 
 myXmobarPP :: PP
