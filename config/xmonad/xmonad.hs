@@ -305,8 +305,9 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGr
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
     -- mirrorTall = Mirror (Tall 1 (3 / 100) (3 / 5))
     multiColumn = multiCol [1] 1 0.01 (-0.5)
-    churchSetup = (Tall 1 (3/100) (1/2) *//* Tall 1 (3/100) (1/2) ) 
-    -- churchSetup = ((Tall 1 (3/100) (1/2) ****||* Tall 1 (3/100) (1/2) ) ****/* Tall 1 (3/100) (1/2))
+    -- This one actually works
+    churchSetup = ( (Tall 1 (3/100) (1/2) ****|* Tall 1 (3/100) (1/2) ) ****/* Tall 1 (3/100) (1/2) ) 
+
 
 myXmobarPP :: PP
 myXmobarPP =
