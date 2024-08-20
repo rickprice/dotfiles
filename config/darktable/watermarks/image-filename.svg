@@ -44,7 +44,7 @@
        sodipodi:role="line"
        id="tspan1"
        x="0"
-       y="5">$(CATEGORY0(Shot))/$(CATEGORY1(Shot))/$(CATEGORY2(Shot))</tspan><tspan
+       y="5">PricePixel-$(CATEGORY0(PricePixel|ShotID))</tspan><tspan
        sodipodi:role="line"
        id="tspan2"
        x="0"
