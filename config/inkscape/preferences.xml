@@ -306,7 +306,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="in"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -315,7 +315,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Adamina;font-size:37.33333333px;-inkscape-font-specification:Adamina;letter-spacing:0.67px"
+       style="line-height:1.25;font-family:Poppins;font-size:18px;-inkscape-font-specification:Poppins;letter-spacing:0.67px"
        selcue="1"
        align_mode="0" />
     <eventcontext
@@ -604,7 +604,7 @@
     <group
        id="preferences"
        state="1"
-       page="51" />
+       page="26" />
     <group
        id="gradienteditor" />
     <group
@@ -624,14 +624,14 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="600" />
+         value="106.666656494141" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/FrederickAndTamaraDocuments/CalvaryBaptistChurchMidland/Logos"
+       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads/TestForTamara"
        use_current_dir="1" />
     <group
        id="save_copy"
@@ -642,7 +642,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/PricePixel/Logos" />
+       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads/TestForTamara/" />
     <group
        id="import"
        enable_preview="1"
@@ -896,10 +896,10 @@
        grouping="0" />
     <group
        id="blurquality"
-       value="0" />
+       value="-2" />
     <group
        id="filterquality"
-       value="1" />
+       value="-2" />
     <group
        id="startmode"
        outline="0" />
@@ -976,7 +976,7 @@
        partialdynamic="0" />
     <group
        id="font"
-       unitType="2"
+       unitType="1"
        scaleLineHeightFromFontSIze="1" />
     <group
        id="boot"
@@ -986,17 +986,24 @@
          ver1.3.2="1" />
     </group>
     <group
-       id="rendering" />
+       id="rendering"
+       request_opengl="1" />
     <group
        id="threading" />
     <group
        id="ruler" />
+    <group
+       id="dithering"
+       value="0" />
+    <group
+       id="savedocviewport"
+       value="1" />
   </group>
   <group
      id="extensions"
      org.inkscape.output.png.inkscape.png_bitdepth="99"
      org.inkscape.output.png.inkscape.png_compression="6"
-     org.inkscape.output.png.inkscape.png_antialias="2"
+     org.inkscape.output.png.inkscape.png_antialias="0"
      org.inkscape.template.business_card.size="3.5inx2in"
      org.inkscape.template.paper.max="11.0"
      org.inkscape.template.paper.min="8.5"
@@ -1025,10 +1032,16 @@
      org.inkscape.effect.guides_creator.right_margin="10"
      org.inkscape.effect.guides_creator.tab="margins"
      org.inkscape.generate.printing_marks.bleed_marks="1"
-     org.inkscape.input.gdkpixbuf.tif.link="link" />
+     org.inkscape.input.gdkpixbuf.tif.link="link"
+     org.inkscape.print.eps.cairo.PSlevel="PS3"
+     org.inkscape.print.eps.cairo.resolution="300"
+     org.inkscape.raster.png_output.level="0"
+     org.inkscape.raster.png_output.tab="lossy"
+     org.inkscape.raster.jpg_output.tab="about"
+     org.inkscape.output.png.inkscape.png_phys="1" />
   <group
      id="desktop"
-     style="fill:#c0c1cb;-inkscape-font-specification:Aboreto;font-family:Aboreto;font-size:24px;letter-spacing:0.67px">
+     style="fill:#1a1a1a;-inkscape-font-specification:Arial;font-family:Arial;font-size:20px;letter-spacing:0.67px;stroke:#1a1a1a">
     <group
        width="640"
        height="480"
@@ -1082,7 +1095,7 @@
      pack="1"
      selectionHold="1"
      showFrames="1"
-     selectionOnly="0">
+     selectionOnly="1">
     <group
        id="sizes">
       <group
