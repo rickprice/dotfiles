@@ -1,6 +1,7 @@
 {-# LANGUAGE ImportQualifiedPost #-}
 
 import Data.Ratio
+import Data.List
 
 -- import XMonad.Config.Desktop
 
@@ -82,7 +83,7 @@ myArdour = "ardour8"
 myPrinterConfig = "system-config-printer"
 
 -- Define extra workspaces that I use all the time, by hostname
-myExtraWorkspaces hostname | hostname == hostnameWork = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
+myExtraWorkspaces hostname | isPrefixOf hostnameWork hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
 myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
 
 spawnKey key program = (appRunKey ++ key, spawn program)
@@ -223,7 +224,7 @@ myStartupHook  hostname= do
     spawnOnce "killall udiskie; udiskie --tray"
     -- spawnOnce "qmidinet -n 6"
     spawn myFixScreens
-    if hostname == hostnameWork
+    if isPrefixOf hostnameWork hostname
         then
             do
                 spawnOnce "system-config-printer-applet"
@@ -269,7 +270,7 @@ createMyConfig hostname =
                 }
                 `additionalKeysP` myNewStyleKeys hostname
 
-myWorkspaces hostname | hostname == hostnameWork = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname | isPrefixOf hostnameWork hostname = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
 myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
 
@@ -431,7 +432,7 @@ myNewStyleKeys hostname =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
-setupWorkspaceGroups hostname |  hostname == hostnameWork = do
+setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
     ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
     ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
     ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
@@ -474,12 +475,12 @@ powerkeys key hostname = do
     screenCount <- LIS.countScreens
     case (screenCount, key, hostname) of
         -- 3 Screen Setup
-        (3,1, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "StandardWork"
-        (3,2, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Messaging"
-        (3,3, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Frederick1"
-        (3,4, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Tamara1"
-        (3,6, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom"
-        (3,7, hostname) | hostname == hostnameWork -> ADWG.viewWSGroup "Zoom2"
+        (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork"
+        (3,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
+        (3,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
+        (3,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
+        (3,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
+        (3,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
 
 
         -- 2 Screen Setup
@@ -488,7 +489,7 @@ powerkeys key hostname = do
         (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
-        (_,1, hostname) | hostname == hostnameWork -> showDesktop "W11"
+        (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W11"
         (_,1,_) -> showDesktop "F11"
 
         (_,2, _) -> showDesktop "IM"
