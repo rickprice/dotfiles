@@ -19,4 +19,5 @@ while ((i<NUMBER_TAGS)); do
 done
 
 # pdfjam -o bag_tags.pdf --scale 0.80 --nup 2x4 --landscape $TEMPORARY_DIRECTORY/*.pdf
-pdfjam -o bag_tags.pdf --scale 0.94 --nup 2x5 --landscape $TEMPORARY_DIRECTORY/*.pdf
+# pdfjam -o bag_tags.pdf --scale 0.94 --nup 2x5 --landscape $TEMPORARY_DIRECTORY/*.pdf
+pdfjam -o bag_tags.pdf --scale 1.0 --nup 2x5 --landscape $TEMPORARY_DIRECTORY/*.pdf
