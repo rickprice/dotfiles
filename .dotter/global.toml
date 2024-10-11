@@ -165,27 +165,8 @@
 
 [user.files]
 
-# [leftwm.files]
-# "config/leftwm/config.toml" = "~/.config/leftwm/config.toml"
-# "config/leftwm/themes.toml" = "~/.config/leftwm/themes.toml"
-#
-# [leftwm_Theme_FrederickPrice.files]
-# "config/leftwm/themes/FrederickPrice/background.jpg" = "~/.config/leftwm/themes/FrederickPrice/background.jpg"
-# "config/leftwm/themes/FrederickPrice/change_to_tag" = "~/.config/leftwm/themes/FrederickPrice/change_to_tag"
-# "config/leftwm/themes/FrederickPrice/down" = "~/.config/leftwm/themes/FrederickPrice/down"
-# "config/leftwm/themes/FrederickPrice/down.jpg" = "~/.config/leftwm/themes/FrederickPrice/down.jpg"
-# "config/leftwm/themes/FrederickPrice/polybar.config" = "~/.config/leftwm/themes/FrederickPrice/polybar.config"
-# "config/leftwm/themes/FrederickPrice/sizes.liquid" = {target="~/.config/leftwm/themes/FrederickPrice/sizes.liquid",type="symbolic"}
-# "config/leftwm/themes/FrederickPrice/template.liquid" = {target="~/.config/leftwm/themes/FrederickPrice/template.liquid",type="symbolic"}
-# "config/leftwm/themes/FrederickPrice/theme.toml" = "~/.config/leftwm/themes/FrederickPrice/theme.toml"
-# "config/leftwm/themes/FrederickPrice/up" = "~/.config/leftwm/themes/FrederickPrice/up"
-
 [sound.files]
 # "etc/modprobe.d/disable_dmic.conf" = "/etc/modprobe.d/disable_dmic.conf"
-
-[awesome.files]
-"config/awesome/rc.lua" = {target = "~/.config/awesome/rc.lua", type = "symbolic"}
-"config/awesome/themes/FrederickPrice" = {target = "~/.config/awesome/themes/FrederickPrice", type = "symbolic"}
 
 [picom.files]
 "config/picom/picom.conf" = {target = "~/.config/picom/picom.conf", type = "symbolic"}
