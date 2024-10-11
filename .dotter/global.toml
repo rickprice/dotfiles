@@ -222,3 +222,6 @@
 
 [inkscape.files]
 "config/inkscape" = { target = "~/.config/inkscape", type = "symbolic" }
+
+[xscreensaver.files]
+"home/xscreensaver"={ target = "~/.xscreensaver", type = "symbolic" }

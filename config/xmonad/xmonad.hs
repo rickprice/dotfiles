@@ -219,7 +219,7 @@ myStartupHook  hostname= do
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
-    spawnOnce "cbatticon"
+    -- spawnOnce "cbatticon"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
     -- spawnOnce "qmidinet -n 6"
@@ -243,6 +243,7 @@ myStartupHook  hostname= do
             do
                 spawnOn "FP12" myArdour
     spawn "trayer --monitor primary --edge top --align right --width 11"
+    spawnOnce "xscreensaver --no-splash"
 
 
 main :: IO ()

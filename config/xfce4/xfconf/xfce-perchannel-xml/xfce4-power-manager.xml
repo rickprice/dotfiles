@@ -14,9 +14,13 @@
     <property name="lid-action-on-battery" type="uint" value="1"/>
     <property name="logind-handle-lid-switch" type="bool" value="false"/>
     <property name="critical-power-action" type="uint" value="4"/>
-    <property name="lock-screen-suspend-hibernate" type="bool" value="false"/>
-    <property name="dpms-on-ac-off" type="uint" value="60"/>
-    <property name="dpms-on-ac-sleep" type="uint" value="59"/>
-    <property name="blank-on-ac" type="int" value="58"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
+    <property name="dpms-on-ac-off" type="uint" value="30"/>
+    <property name="dpms-on-ac-sleep" type="uint" value="25"/>
+    <property name="blank-on-ac" type="int" value="20"/>
+    <property name="show-presentation-indicator" type="bool" value="true"/>
+    <property name="brightness-on-battery" type="uint" value="120"/>
+    <property name="blank-on-battery" type="int" value="3"/>
+    <property name="brightness-on-ac" type="uint" value="9"/>
   </property>
 </channel>
