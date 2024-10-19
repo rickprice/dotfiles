@@ -177,7 +177,8 @@
          style="stroke-width:1px;"
          usecurrent="1"
          average_all_sketches="1"
-         pressure="0" />
+         pressure="0"
+         freehand-mode="0" />
       <eventcontext
          id="pen"
          mode="drag"
@@ -315,9 +316,12 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Poppins;font-size:18px;-inkscape-font-specification:Poppins;letter-spacing:0.67px"
+       style="line-height:1.25;font-family:Poppins;font-size:18px;-inkscape-font-specification:Poppins;letter-spacing:0.67px;text-orientation:auto"
        selcue="1"
-       align_mode="0" />
+       align_mode="0"
+       writing_mode="0"
+       orientation_mode="0"
+       direction_mode="0" />
     <eventcontext
        id="nodes"
        selcue="1"
@@ -333,10 +337,10 @@
        live_outline="1"
        live_objects="1"
        show_helperpath="0"
-       x="-20.1207988063944"
-       y="84.8405032558368"
        edit_clipping_paths="0"
-       edit_masks="0" />
+       edit_masks="0"
+       x="-20.1207988063944"
+       y="84.8405032558368" />
     <eventcontext
        id="marker"
        selcue="1"
@@ -355,7 +359,8 @@
        doh="1"
        dos="1"
        dol="1"
-       doo="1" />
+       doo="1"
+       mode="0" />
     <eventcontext
        id="spray"
        selcue="1"
@@ -370,7 +375,9 @@
        mean="0" />
     <eventcontext
        id="gradient"
-       selcue="1" />
+       selcue="1"
+       newgradient="1"
+       newfillorstroke="1" />
     <eventcontext
        id="mesh"
        selcue="1" />
@@ -388,6 +395,8 @@
        id="select"
        selcue="1"
        gradientdrag="0"
+       changelayer="1"
+       changepage="1"
        touch_box="0" />
     <eventcontext
        id="connector"
@@ -969,11 +978,22 @@
          angle_x="30.0"
          angle_z="30.0"
          empspacing="5" />
+      <group
+         id="modular"
+         units="mm"
+         origin_x="0.0"
+         origin_y="0.0"
+         spacing_x="40.0"
+         spacing_y="40.0"
+         gapx="10"
+         gapy="10"
+         marginx="0"
+         marginy="0" />
     </group>
     <group
        id="workarounds"
-       colorsontop="0"
-       partialdynamic="0" />
+       partialdynamic="0"
+       colorsontop="0" />
     <group
        id="font"
        unitType="1"
@@ -1041,7 +1061,7 @@
      org.inkscape.output.png.inkscape.png_phys="1" />
   <group
      id="desktop"
-     style="fill:#1a1a1a;-inkscape-font-specification:Arial;font-family:Arial;font-size:20px;letter-spacing:0.67px;stroke:#1a1a1a">
+     style="fill:#1a1a1a;-inkscape-font-specification:Arial;font-family:Arial;font-size:20px;letter-spacing:0.67px;stroke:#1a1a1a;text-orientation:auto">
     <group
        width="640"
        height="480"
