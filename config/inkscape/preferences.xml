@@ -633,15 +633,16 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="106.666656494141" />
+         value="460.799987792969" />
     </group>
     <group
        id="save_as"
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads/TestForTamara"
-       use_current_dir="1" />
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/CalvaryConnects"
+       use_current_dir="1"
+       enable_svgexport="0" />
     <group
        id="save_copy"
        default="org.inkscape.output.svg.inkscape"
@@ -1018,6 +1019,38 @@
     <group
        id="savedocviewport"
        value="1" />
+    <group
+       id="snapping"
+       snap-bbox="1"
+       snap-bbox-edge="1"
+       snap-bbox-corner="1"
+       snap-bbox-edge-midpoint="0"
+       snap-bbox-center="0"
+       simple-snap-bbox="1"
+       snap-node-category="1"
+       snap-path="1"
+       snap-path-intersection="0"
+       snap-node-cusp="1"
+       snap-node-smooth="1"
+       snap-line-midpoint="1"
+       snap-line-tangential="0"
+       snap-line-perpendicular="0"
+       simple-snap-nodes="1"
+       snap-alignment="0"
+       snap-alignment-self="0"
+       snap-distribution="0"
+       simple-snap-alignment="0"
+       snap-others="1"
+       snap-object-midpoint="0"
+       snap-rotation-center="0"
+       snap-text-baseline="1"
+       snap-path-mask="1"
+       snap-path-clip="1"
+       snap-page-border="1"
+       snap-page-margin="1"
+       snap-grid="1"
+       snap-grid-line="1"
+       snap-guide="1" />
   </group>
   <group
      id="extensions"
@@ -1054,11 +1087,13 @@
      org.inkscape.generate.printing_marks.bleed_marks="1"
      org.inkscape.input.gdkpixbuf.tif.link="link"
      org.inkscape.print.eps.cairo.PSlevel="PS3"
-     org.inkscape.print.eps.cairo.resolution="300"
+     org.inkscape.print.eps.cairo.resolution="600"
      org.inkscape.raster.png_output.level="0"
      org.inkscape.raster.png_output.tab="lossy"
-     org.inkscape.raster.jpg_output.tab="about"
-     org.inkscape.output.png.inkscape.png_phys="1" />
+     org.inkscape.raster.jpg_output.tab="options"
+     org.inkscape.output.png.inkscape.png_phys="1"
+     org.inkscape.raster.jpg_output.quality="100"
+     org.inkscape.raster.jpg_output.progressive="0" />
   <group
      id="desktop"
      style="fill:#1a1a1a;-inkscape-font-specification:Arial;font-family:Arial;font-size:20px;letter-spacing:0.67px;stroke:#1a1a1a;text-orientation:auto">
