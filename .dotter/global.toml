@@ -225,3 +225,6 @@
 
 [xscreensaver.files]
 "home/xscreensaver"={ target = "~/.xscreensaver", type = "symbolic" }
+
+[vanta.files]
+"etc/vanta.conf" = { target = "/etc/vanta.conf", type = "template", owner = "root" }
