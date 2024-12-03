@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="63.5751342773446"
-         height="2971.16956815945"
+         width="936.384399414062"
+         height="439.131988525391"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -155,7 +155,9 @@
          style="fill:red;"
          end="0"
          start="0"
-         usecurrent="1" />
+         usecurrent="1"
+         rx="6.84955626107826"
+         ry="6.84955625089407" />
       <eventcontext
          id="star"
          magnitude="5"
@@ -307,7 +309,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -316,7 +318,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Poppins;font-size:18px;-inkscape-font-specification:Poppins;letter-spacing:0.67px;text-orientation:auto"
+       style="line-height:1.25;font-family:Sans;font-size:18px;-inkscape-font-specification:'Sans, Bold';letter-spacing:0.67px;text-orientation:auto;font-weight:bold"
        selcue="1"
        align_mode="0"
        writing_mode="0"
@@ -530,7 +532,7 @@
   </group>
   <group
      id="colorselector"
-     page="1"
+     page="RGB"
      switcher="1">
     <group
        id="RGB"
@@ -613,7 +615,7 @@
     <group
        id="preferences"
        state="1"
-       page="26" />
+       page="50" />
     <group
        id="gradienteditor" />
     <group
@@ -625,7 +627,7 @@
        path="">
       <group
          id="exportarea"
-         value="drawing" />
+         value="selection" />
       <group
          id="defaultxdpi" />
       <group
@@ -633,7 +635,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="460.799987792969" />
+         value="300" />
     </group>
     <group
        id="save_as"
@@ -652,15 +654,15 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads/TestForTamara/" />
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/CalvaryBaptist/MissionaryMap/" />
     <group
        id="import"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/FrederickPosters/2Chronicles13:14NIV/"
+       path="/home/fprice/Documents/Personal/DarkTableExport/GooglePhotos/"
        ask="1"
        ask_svg="1"
-       link="link"
-       scale="auto"
+       link="embed"
+       scale="optimizeQuality"
        import_mode_svg="include"
        forcexdpi="0" />
     <group
@@ -716,6 +718,23 @@
     <group
        id="layerProp"
        addLayerPosition="0" />
+    <group
+       id="object-properties">
+      <group
+         id="path-panel"
+         precision="2" />
+    </group>
+    <group
+       id="object-properties-widget"
+       expand-props="0"
+       expand-interactive="0" />
+    <group
+       id="extensions-gallery">
+      <group
+         id="effects"
+         category="Document"
+         selected="org.inkscape.generate.printing-marks" />
+    </group>
   </group>
   <group
      id="printing">
@@ -1004,7 +1023,8 @@
        theme="colorful">
       <group
          id="shown"
-         ver1.3.2="1" />
+         ver1.3.2="1"
+         ver1.4="1" />
     </group>
     <group
        id="rendering"
@@ -1093,10 +1113,11 @@
      org.inkscape.raster.jpg_output.tab="options"
      org.inkscape.output.png.inkscape.png_phys="1"
      org.inkscape.raster.jpg_output.quality="100"
-     org.inkscape.raster.jpg_output.progressive="0" />
+     org.inkscape.raster.jpg_output.progressive="0"
+     org.inkscape.output.pdf.cairorenderer.resolution="300" />
   <group
      id="desktop"
-     style="fill:#1a1a1a;-inkscape-font-specification:Arial;font-family:Arial;font-size:20px;letter-spacing:0.67px;stroke:#1a1a1a;text-orientation:auto">
+     style="fill:none;-inkscape-font-specification:'Arial, Bold';font-family:Arial;font-size:34.73986816px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;font-weight:bold;stroke-width:1.92">
     <group
        width="640"
        height="480"
