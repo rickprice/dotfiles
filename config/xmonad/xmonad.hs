@@ -467,8 +467,8 @@ setupWorkspaceGroups _ = do
     ADWG.addRawWSGroup "Tamara2"    [(bottomMainScreen, "TP21"),(topMainScreen, "TP22")]
 
     ADWG.addRawWSGroup "Messaging"  [(bottomMainScreen, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(bottomMainScreen, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom2"  [(bottomMainScreen, "MAIL"), (1, "IM"),(0,"ZM")]
     ADWG.addRawWSGroup "StandardWork"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ADM")]
 
 powerkeys key hostname = do
