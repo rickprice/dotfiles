@@ -446,8 +446,8 @@ setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
     ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
 
     ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(2, "W11"), (1, "W12"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom"  [(2, "W11"), (1, "W12"),(0,"ZM")]
+    ADWG.addRawWSGroup "Zoom2"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
     ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
 
 setupWorkspaceGroups _ = do
