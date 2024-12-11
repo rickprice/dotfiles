@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="936.384399414062"
-         height="439.131988525391"
+         width="248.977646715062"
+         height="2971.16956815945"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -309,7 +309,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="in"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -318,9 +318,9 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Sans;font-size:18px;-inkscape-font-specification:'Sans, Bold';letter-spacing:0.67px;text-orientation:auto;font-weight:bold"
+       style="line-height:1.25;font-family:Sans;font-size:18px;-inkscape-font-specification:'Sans, Bold';letter-spacing:0.67px;text-orientation:auto;font-weight:bold;text-anchor:end;text-align:end"
        selcue="1"
-       align_mode="0"
+       align_mode="2"
        writing_mode="0"
        orientation_mode="0"
        direction_mode="0" />
@@ -596,12 +596,14 @@
        rotateCounterClockwise="0" />
     <group
        id="align"
-       objects-align-to="page"
-       sel-as-groups="1" />
+       sel-as-groups="1"
+       objects-align-to="page" />
     <group
        id="xml"
        h="500"
-       w="300" />
+       w="300"
+       layout="0"
+       panedpos="199" />
     <group
        id="find" />
     <group
@@ -627,7 +629,7 @@
        path="">
       <group
          id="exportarea"
-         value="selection" />
+         value="drawing" />
       <group
          id="defaultxdpi" />
       <group
@@ -635,7 +637,7 @@
          value="layer" />
       <group
          id="defaultdpi"
-         value="300" />
+         value="600" />
     </group>
     <group
        id="save_as"
@@ -654,7 +656,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/CalvaryBaptist/MissionaryMap/" />
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/FrederickPosters/GreenBarn/" />
     <group
        id="import"
        enable_preview="1"
@@ -735,6 +737,9 @@
          category="Document"
          selected="org.inkscape.generate.printing-marks" />
     </group>
+    <group
+       id="attrib"
+       precision="2" />
   </group>
   <group
      id="printing">
@@ -1114,10 +1119,10 @@
      org.inkscape.output.png.inkscape.png_phys="1"
      org.inkscape.raster.jpg_output.quality="100"
      org.inkscape.raster.jpg_output.progressive="0"
-     org.inkscape.output.pdf.cairorenderer.resolution="300" />
+     org.inkscape.output.pdf.cairorenderer.resolution="600" />
   <group
      id="desktop"
-     style="fill:none;-inkscape-font-specification:'Arial, Bold';font-family:Arial;font-size:34.73986816px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;font-weight:bold;stroke-width:1.92">
+     style="fill:#b7c2de;-inkscape-font-specification:'Arial, Bold';font-family:Arial;font-size:34.73986816px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;font-weight:bold;stroke-width:1.92;text-anchor:end;text-align:end">
     <group
        width="640"
        height="480"
