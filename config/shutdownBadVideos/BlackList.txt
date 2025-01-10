@@ -435,7 +435,7 @@ werewolve
 what kids see
 window
 winter ultima
-witch
+\bwitch\b
 wolf
 wolfenstein
 woman
