@@ -13,6 +13,6 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
 # BACKGROUND_DIR=~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds
-BACKGROUND_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
+BACKGROUND_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds
 
 feh --no-fehbg --bg-max $(shuf -en 1 $BACKGROUND_DIR/*.{jpg,png})
