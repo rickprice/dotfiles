@@ -457,7 +457,7 @@ setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
     ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
 
     ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomMainScreen,"W12"), (bottomSecondaryScreen,"ADM")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
 
 setupWorkspaceGroups _ = do
     ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W11"),(topMainScreen, "W12")]
@@ -477,7 +477,7 @@ setupWorkspaceGroups _ = do
     ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
 
     ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomMainScreen,"W12"), (bottomSecondaryScreen,"ADM")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
 
 powerkeys key hostname = do
     -- case (screenCount, key) of
