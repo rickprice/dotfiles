@@ -166,7 +166,7 @@ myCustomKeys hostname =
 
     ++ dynamicWorkspaceGroupKeys "/" "modslash"
 
-    ++ viewGroupKeys "w w" "Work1"
+    ++ viewGroupKeys "w w" "StandardWork4"
     ++ viewGroupKeys "w 1" "Work1"
     ++ viewGroupKeys "w 2" "Work2"
     ++ viewGroupKeys "w 3" "Work3"
@@ -433,28 +433,33 @@ myNewStyleKeys hostname =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
+bottomSecondaryScreen = 0
+topSecondaryScreen = 3
+topMainScreen = 2
+bottomMainScreen = 1
+
 setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
-    ADWG.addRawWSGroup "Work1"      [(2, "W11"),(1, "W12")]
-    ADWG.addRawWSGroup "Work2"      [(2, "W21"),(1, "W22")]
-    ADWG.addRawWSGroup "Work3"      [(2, "W31"),(1, "W32")]
 
-    ADWG.addRawWSGroup "Frederick1" [(2, "FP11"),(1, "FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(2, "FP21"),(1, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(2, "FP31"),(1, "FP32")]
+    ADWG.addRawWSGroup "Work1"      [(topMainScreen, "W11"),(bottomMainScreen, "W12")]
+    ADWG.addRawWSGroup "Work2"      [(topMainScreen, "W21"),(bottomMainScreen, "W22")]
+    ADWG.addRawWSGroup "Work3"      [(topMainScreen, "W31"),(bottomMainScreen, "W32")]
 
-    ADWG.addRawWSGroup "Tamara1"    [(2, "TP11"),(1, "TP12")]
-    ADWG.addRawWSGroup "Tamara2"    [(2, "TP21"),(1, "TP22")]
+    ADWG.addRawWSGroup "Frederick1" [(topMainScreen, "FP11"),(bottomMainScreen, "FP12")]
+    ADWG.addRawWSGroup "Frederick2" [(topMainScreen, "FP21"),(bottomMainScreen, "FP22")]
+    ADWG.addRawWSGroup "Frederick3" [(topMainScreen, "FP31"),(bottomMainScreen, "FP32")]
 
-    ADWG.addRawWSGroup "Messaging"  [(2, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(2, "W11"), (1, "W12"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(2, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "StandardWork"  [(2, "W11"), (1, "W12"),(0,"ADM")]
+    ADWG.addRawWSGroup "Tamara1"    [(topMainScreen, "TP11"),(bottomMainScreen, "TP12")]
+    ADWG.addRawWSGroup "Tamara2"    [(topMainScreen, "TP21"),(bottomMainScreen, "TP22")]
+
+    ADWG.addRawWSGroup "Messaging"  [(topMainScreen, "IM"), (bottomMainScreen, "MAIL")]
+
+    ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
+    ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
+
+    ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomMainScreen,"W12"), (bottomSecondaryScreen,"ADM")]
 
 setupWorkspaceGroups _ = do
-    screenCount <- LIS.countScreens
-    let topMainScreen = screenCount - 2
-    let bottomMainScreen = screenCount - 1
-
     ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W11"),(topMainScreen, "W12")]
     ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W21"),(topMainScreen, "W22")]
     ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W31"),(topMainScreen, "W32")]
@@ -466,17 +471,28 @@ setupWorkspaceGroups _ = do
     ADWG.addRawWSGroup "Tamara1"    [(bottomMainScreen, "TP11"),(topMainScreen, "TP12")]
     ADWG.addRawWSGroup "Tamara2"    [(bottomMainScreen, "TP21"),(topMainScreen, "TP22")]
 
-    ADWG.addRawWSGroup "Messaging"  [(bottomMainScreen, "IM"), (1, "MAIL")]
-    ADWG.addRawWSGroup "Zoom"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ZM")]
-    ADWG.addRawWSGroup "Zoom2"  [(bottomMainScreen, "MAIL"), (1, "IM"),(0,"ZM")]
-    ADWG.addRawWSGroup "StandardWork"  [(bottomMainScreen, "W11"), (1, "W12"),(0,"ADM")]
+    ADWG.addRawWSGroup "Messaging"  [(bottomMainScreen, "IM"), (topMainScreen, "MAIL")]
+
+    ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
+    ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
+
+    ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomMainScreen,"W12"), (bottomSecondaryScreen,"ADM")]
 
 powerkeys key hostname = do
     -- case (screenCount, key) of
     screenCount <- LIS.countScreens
     case (screenCount, key, hostname) of
+        -- 4 Screen Setup
+        (4,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork4"
+        (4,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
+        (4,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
+        (4,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
+        (4,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
+        (4,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
+
         -- 3 Screen Setup
-        (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork"
+        (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork3"
         (3,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
         (3,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
         (3,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
