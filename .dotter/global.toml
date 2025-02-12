@@ -106,6 +106,7 @@
 [local.files]
 "local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
 "local/bin/ProcessRawImages.sh"="~/.local/bin/ProcessRawImages"
+"local/bin/Setup4monitors.sh"="~/.local/bin/Setup4monitors.sh"
 "local/bin/set_as_config.sh"="~/.local/bin/set_as_config.sh"
 "local/bin/SortFilesInDirectory.py"="~/.local/bin/SortFilesInDirectory"
 "local/bin/SortImageFilesInDirectory.py"="~/.local/bin/SortImageFilesInDirectory"
