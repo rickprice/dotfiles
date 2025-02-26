@@ -1,3 +1,3 @@
-function aider
+function Aider
     aider --subtree-only
 end
