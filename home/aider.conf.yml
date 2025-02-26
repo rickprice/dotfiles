@@ -138,7 +138,7 @@
 #editor-edit-format: xxx
 
 ## Only work with models that have meta-data available (default: True)
-#show-model-warnings: true
+show-model-warnings: false
 
 ## Soft limit on tokens for chat history, after which summarization begins. If unspecified, defaults to the model's max_chat_history_tokens.
 #max-chat-history-tokens: xxx
@@ -183,7 +183,7 @@
 # Output settings:
 
 ## Use colors suitable for a dark terminal background (default: False)
-#dark-mode: false
+dark-mode: false
 
 ## Use colors suitable for a light terminal background (default: False)
 #light-mode: false
@@ -240,10 +240,10 @@
 #aiderignore: .aiderignore
 
 ## Only consider files in the current subtree of the git repository
-#subtree-only: false
+subtree-only: true
 
 ## Enable/disable auto commit of LLM changes (default: True)
-#auto-commits: true
+auto-commits: false
 
 ## Enable/disable commits when repo is found dirty (default: True)
 #dirty-commits: true
