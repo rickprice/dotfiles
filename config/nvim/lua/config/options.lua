@@ -20,7 +20,7 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldtext = "nvim_treesitter#foldext()"
 opt.formatoptions = "l"
 opt.guicursor =
-  "n-v-c-sm:block-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
+	"n-v-c-sm:block-blinkwait50-blinkon50-blinkoff50,i-ci-ve:ver25-Cursor-blinkon100-blinkoff100,r-cr-o:hor20"
 opt.hidden = true
 opt.hidden = true -- Enable background buffers
 opt.hlsearch = true -- Highlight found searches
