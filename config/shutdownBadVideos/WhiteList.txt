@@ -15,3 +15,5 @@ leego
 view recent browsing
 ratatouille
 bee movie
+disney
+pixar
