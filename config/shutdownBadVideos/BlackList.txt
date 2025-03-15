@@ -1,4 +1,3 @@
-\bwitch\b
 abandoned hotel
 absolution
 adult
@@ -17,8 +16,8 @@ arkham asylum
 assasin
 assassin
 asylum
-at night
 ate him
+at night
 attack
 atypical
 autopsy
@@ -59,6 +58,7 @@ bully
 bully maguire
 buried
 busted
+\bwitch\b
 calithem
 call of duty
 carrion
@@ -94,10 +94,10 @@ danger
 dangerous
 dark
 dark angel
-dark knight
-dark souls
 darkest
+dark knight
 darksider
+dark souls
 darkwood
 darq
 daymare
@@ -114,10 +114,8 @@ dementor
 demon
 demonologist
 destined
-diana and
+diana
 diana and roma
-diana is
-diana roma
 do not go
 do not stay
 do not trust
@@ -129,6 +127,7 @@ dragon ball
 dreams
 duke nukem
 dying
+dying light
 eat
 eating
 edengate
@@ -151,23 +150,23 @@ forgive me
 fortnight
 freddy
 fugget
-g-force
 garten
 gashnor
 genshin
 get even
+g-force
 ghast
 ghastly
 ghost
-ghost hunting
 ghostface
+ghost hunting
 giga chad
 girlfriend
 girls' frontline
 glamrock
-god of war
 goddess
 godfather
+god of war
 godzilla
 golem
 gomer pyle
@@ -182,6 +181,7 @@ grievous
 gta
 gun
 gylt
+half life
 halloween
 halo
 hardcore
@@ -206,14 +206,14 @@ honor
 horrific
 horror
 hospital
-i love being needed
 ice cream boss
 illusion
-in the mirror
+i love being needed
 infamous
 infliction
 inquisition
 insomnis
+in the mirror
 invasion
 it happened here
 it takes two
@@ -227,6 +227,7 @@ kameo
 kem
 kidnapped
 kidnapping
+kids diana show
 kill
 killer
 killing
@@ -284,8 +285,8 @@ need more
 never again
 never back down
 night janitor
-night security
 nightmare
+night security
 nocturne
 observation duty
 oggy
@@ -337,7 +338,6 @@ robocop
 roma and diana
 ronald mcdonalds
 russian ambush
-s*xiest
 sabrina
 sackboy
 sad jj
@@ -390,13 +390,14 @@ statue house
 stranger
 stranger within
 stray
-sub urban
 subject
 subnautica
+sub urban
 suicide
 summoner
 survival
 survival horror
+s*xiest
 tears
 terminator
 terrify
@@ -404,6 +405,7 @@ the 5th wave
 the crow
 the evil within
 the kid inside my basement
+the last of us
 the mansion
 the park
 the radio station
@@ -421,6 +423,7 @@ trick or treat
 true crime
 try not to laugh
 tunic
+turbotoytime
 turok
 tv woman
 twisted metal
