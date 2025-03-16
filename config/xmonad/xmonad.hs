@@ -49,6 +49,8 @@ myModMask = mod4Mask
 
 myBrowser = "firefox-developer-edition"
 
+myEricUpdateConfiguration = "cd ~/.dotfiles; git pull --force"
+
 myEricBrowser = "~/.local/bin/ericRunBrowser"
 
 myBrowserNyxt = "nyxt --no-socket"
@@ -157,6 +159,7 @@ myStartupHook = do
     -- spawnOn "IM" "discord"
     spawnOnce "nitrogen --set-scaled ~/.dotfiles/wallpaper/wallpaper.jpg"
     spawnOnce "~/.local/bin/shutdownBadVideos"
+    spawnOnce myEricUpdateConfiguration
     spawnOnce myEricBrowser
 
 main :: IO ()
