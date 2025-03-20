@@ -14,7 +14,7 @@ badVideoBackground = os.path.expanduser(
 goodBackground = os.path.expanduser("~/.dotfiles/wallpaper/wallpaper.jpg")
 browserCommand = [
     "/usr/bin/firefox-developer-edition",
-    "https://www.youtube.com/results?search_query=power+rangers",
+    "https://www.youtube.com/results?search_query=lego+building",
 ]
 
 # Setup logging
