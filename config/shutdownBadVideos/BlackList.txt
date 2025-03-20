@@ -483,3 +483,4 @@ yu-gi-oh
 zeta
 zombie
 zombies
+phasmophobia
