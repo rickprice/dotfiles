@@ -90,6 +90,7 @@ creepiest
 creepy
 criminal
 crimson
+crisis zone
 crow's eye
 crushing
 curse
@@ -441,6 +442,7 @@ the window
 thief
 thinknoodles
 through the woods
+time crisis
 timeshift
 toilet
 tomb
