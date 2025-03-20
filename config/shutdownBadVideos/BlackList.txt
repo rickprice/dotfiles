@@ -91,6 +91,7 @@ creepy
 criminal
 crimson
 crow's eye
+crushing
 curse
 cursed
 cutscenes
@@ -126,6 +127,7 @@ diana and roma
 do not go
 do not stay
 do not trust
+dollmare
 dominium
 don't trust
 doom
@@ -235,6 +237,7 @@ jj build
 johnny test
 joker
 joyville
+jumpscare
 kameo
 kem
 kidnapped
@@ -289,6 +292,7 @@ murder
 murdered
 murdured
 my friendly neighbourhood
+my goo
 my parents after
 mystic
 mythic
@@ -312,6 +316,7 @@ outlast
 outlast chris walker
 partum artifex
 perry mason
+phasmophobia
 pihrana
 pikmin
 plauge
@@ -483,4 +488,3 @@ yu-gi-oh
 zeta
 zombie
 zombies
-phasmophobia
