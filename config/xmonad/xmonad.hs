@@ -41,7 +41,6 @@ import XMonad.StackSet qualified as W
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
-import XMonad.Operations.unGrab
 
 -- import XMonad.Util.Run
 
