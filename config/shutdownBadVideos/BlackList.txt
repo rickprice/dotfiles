@@ -32,6 +32,7 @@ badguy
 baldur
 banban
 bandit battle
+banned
 bart
 batman
 battle of new york
@@ -68,6 +69,7 @@ buried
 busted
 calithem
 call of duty
+carcosa
 carrion
 castlevania
 catwoman
@@ -101,6 +103,7 @@ curse
 cursed
 cutscenes
 cyberpunk
+damage
 danger
 dangerous
 daredevil
@@ -113,6 +116,7 @@ darksider
 darkwood
 darq
 dashcam
+daughters
 daymare
 dead
 dead island
@@ -167,6 +171,7 @@ firefight
 first person
 fnaf
 following me
+footage
 forgive me
 fortnight
 freddy
@@ -362,6 +367,7 @@ rage
 rainbow
 rainbow friends
 rdr2
+re7
 ready or not
 realistic body
 red alert
