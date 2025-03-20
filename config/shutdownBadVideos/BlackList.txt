@@ -164,6 +164,7 @@ felony
 file destined
 final fantasy
 firefight
+first person
 fnaf
 following me
 forgive me
@@ -218,6 +219,8 @@ henry stickman
 her baby fell
 herobrine
 hi-fi
+hidden
+hit
 hitler
 hitman
 homer
@@ -233,6 +236,7 @@ in the mirror
 infamous
 infliction
 inquisition
+insane
 insomnis
 invasion
 it happened here
@@ -260,6 +264,7 @@ krampus
 last of us
 layers of fear
 left 4 dead
+liminal
 little nightmares
 living under
 lost
@@ -304,6 +309,7 @@ mystic
 mythic
 navy seals
 need more
+neighbour
 never again
 never back down
 nibbles
@@ -323,6 +329,7 @@ ouija
 outlast
 outlast chris walker
 partum artifex
+patrol officers
 perry mason
 phasmophobia
 pihrana
@@ -347,6 +354,7 @@ prototype
 psycho
 psychonauts
 punisher
+punishes
 puppet
 quake
 radio station
@@ -418,6 +426,7 @@ soloman grundy
 souls
 special
 splatterhouse
+splitting up
 spongebob
 spyhunter
 squid game
