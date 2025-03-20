@@ -1,8 +1,11 @@
+\bwitch\b
+abandoned
 abandoned hotel
 absolution
 adult
 advanced warfare
 agatha
+alien
 alien isolation
 all alone
 annihilation
@@ -16,8 +19,8 @@ arkham asylum
 assasin
 assassin
 asylum
-ate him
 at night
+ate him
 attack
 atypical
 autopsy
@@ -34,6 +37,7 @@ battle of new york
 beautiful girl
 beavis and butthead
 bee movie
+bendy
 beneath
 beneath the deep
 beyond the evil
@@ -54,11 +58,11 @@ born into fear
 breach
 broke into
 brothers in arms
+brutal
 bully
 bully maguire
 buried
 busted
-\bwitch\b
 calithem
 call of duty
 carrion
@@ -81,6 +85,7 @@ containment breach
 contra bosses
 council of hanwell
 covenant
+crash
 creepiest
 creepy
 criminal
@@ -92,14 +97,16 @@ cutscenes
 cyberpunk
 danger
 dangerous
+daredevil
 dark
 dark angel
-darkest
 dark knight
-darksider
 dark souls
+darkest
+darksider
 darkwood
 darq
+dashcam
 daymare
 dead
 dead island
@@ -119,6 +126,7 @@ diana and roma
 do not go
 do not stay
 do not trust
+dominium
 don't trust
 doom
 doomguy
@@ -132,13 +140,17 @@ eat
 eating
 edengate
 endgame
+enemy npc
 enlisted gameplay
+ennard
 escaping
 escaping mutant
 everspace
 evil
 family alive
 farmer's life
+fatalities
+fatality
 fear
 feeding frenzy
 file destined
@@ -150,23 +162,23 @@ forgive me
 fortnight
 freddy
 fugget
+g-force
 garten
 gashnor
 genshin
 get even
-g-force
 ghast
 ghastly
 ghost
-ghostface
 ghost hunting
+ghostface
 giga chad
 girlfriend
 girls' frontline
 glamrock
+god of war
 goddess
 godfather
-god of war
 godzilla
 golem
 gomer pyle
@@ -206,14 +218,14 @@ honor
 horrific
 horror
 hospital
+i love being needed
 ice cream boss
 illusion
-i love being needed
+in the mirror
 infamous
 infliction
 inquisition
 insomnis
-in the mirror
 invasion
 it happened here
 it takes two
@@ -284,10 +296,12 @@ navy seals
 need more
 never again
 never back down
+nibbles
 night janitor
-nightmare
 night security
+nightmare
 nocturne
+nouveau
 observation duty
 oggy
 one who knocks
@@ -302,6 +316,7 @@ pihrana
 pikmin
 plauge
 playdead
+playhouse
 police
 pomni
 poop
@@ -334,11 +349,13 @@ reloaded
 remnant
 resident evil
 resistance
+riptos rage
 roblox
 robocop
 roma and diana
 ronald mcdonalds
 russian ambush
+s*xiest
 sabrina
 sackboy
 sad jj
@@ -348,6 +365,7 @@ saint rhodes
 saturday morning cartoons
 say no to choking
 scare
+scared
 scarface
 scarier
 scariest
@@ -376,11 +394,13 @@ slashers
 sleepover
 slender
 slime girl
+smackdown
 sml movie
 sml parody
 sniper
 sniper elite
 soloman grundy
+souls
 splatterhouse
 spongebob
 spyhunter
@@ -391,14 +411,13 @@ statue house
 stranger
 stranger within
 stray
+sub urban
 subject
 subnautica
-sub urban
 suicide
 summoner
 survival
 survival horror
-s*xiest
 tears
 terminator
 terrify
@@ -431,6 +450,7 @@ tv woman
 twisted metal
 uncharted
 undead
+undertaker
 unholy
 urbex night security
 valiant hearts
@@ -453,6 +473,9 @@ wolfenstein
 woman
 women
 world war z
+worst
+wrestlers
+wwe
 xbox
 yandere
 yieun
