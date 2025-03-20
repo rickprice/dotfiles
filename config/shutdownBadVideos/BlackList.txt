@@ -2,6 +2,7 @@
 abandoned
 abandoned hotel
 absolution
+addicted
 adult
 advanced warfare
 agatha
@@ -34,6 +35,7 @@ bandit battle
 bart
 batman
 battle of new york
+beat
 beautiful girl
 beavis and butthead
 bee movie
@@ -54,6 +56,7 @@ bloodlines
 bloody
 blue fire
 body swap
+bodycam
 born into fear
 breach
 broke into
@@ -83,6 +86,7 @@ conarium
 containment
 containment breach
 contra bosses
+control
 council of hanwell
 covenant
 crash
@@ -156,6 +160,7 @@ fatalities
 fatality
 fear
 feeding frenzy
+felony
 file destined
 final fantasy
 firefight
@@ -308,6 +313,7 @@ nightmare
 nocturne
 nouveau
 observation duty
+obsessed
 oggy
 oliver and the
 one who knocks
@@ -390,6 +396,7 @@ shadow
 shantae
 shapeshift
 she watches
+shortage
 sifu mod
 silent hill
 silver chains
@@ -409,6 +416,7 @@ sniper
 sniper elite
 soloman grundy
 souls
+special
 splatterhouse
 spongebob
 spyhunter
@@ -416,6 +424,7 @@ squid game
 stalingrad
 stalker
 statue house
+stole
 stranger
 stranger within
 stray
@@ -464,7 +473,9 @@ unholy
 urbex night security
 valiant hearts
 vampire
+vegetative
 vengeful
+violent
 voodoo
 warfare
 warfighter
