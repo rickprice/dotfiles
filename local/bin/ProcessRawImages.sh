@@ -54,12 +54,12 @@ function process_photo_directory() {
     mkdir -p "$directory_location_data"
     cp -r $directory/* "$directory_location_data"
 
-    echo "Add location data $directory"
-    exiftool -v5 -Copyright="All rights reserved. $COMPANY" -CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data
+    # echo "Add location data $directory"
+    # exiftool -v5 -Copyright="All rights reserved. $COMPANY" -CopyrightNotice="All rights reserved. $COMPANY" -Rights="All rights reserved" -Artist="$ARTIST" -geotag "$LOCATION_HISTORY_FILE_KML" '-geotime<${DateTimeOriginal}-05:00' . -api GeoMaxIntSecs=1800 -overwrite_original_in_place $directory_location_data
     echo "Organize Images $directory_location_data"
     exiftool '-filename<DateTimeOriginal' -d "$directory_location_data/%Y-%m-%d/%Y-%m-%d_%%-c%%f.%%e" $directory_location_data
 }
 
-setup_google_location_data
+# setup_google_location_data
 process_photo_directory "$WORKING_DIR/Incoming" "Pictures/CanonRawPhotos"
 # process_photo_directory "$WORKING_DIR/CanonSX540HS"  "Pictures/CanonSX540HS"
