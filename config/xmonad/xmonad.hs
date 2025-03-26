@@ -106,12 +106,13 @@ myCustomKeys hostname =
     , spawnKey "i" myInkScape
     , spawnKey "e" myEbookViewer
     , spawnKey "f" myFileManager
-    , spawnKey "m" mySystemMonitor -- performance monitor
+    , spawnKey "p" mySystemMonitor -- performance monitor
     , spawnKey "s" myScanner
     , spawnKey "c" myCalculator
     , spawnKey "r" myRDPClient
     , spawnKey "a" myArdour
     , spawnKey "z" myFixScreens
+    , spawnKey "m" myEmailer
 
     -- Handle powerkeys
     , ("M-1", powerkeys 1 hostname)
