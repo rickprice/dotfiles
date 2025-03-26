@@ -61,7 +61,8 @@ hostnameDAW = "daw"
 
 -- Programs we run frequently
 myBrowser = "firefox-developer-edition"
-myEmailer = "thunderbird"
+-- myEmailer = "thunderbird"
+myEmailer = "wezterm start -- neomutt"
 myBrowserNyxt = "nyxt --no-socket"
 myAudioManager = "pavucontrol"
 myTerminal = "wezterm"
