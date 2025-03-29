@@ -43,6 +43,7 @@ bee movie
 bendy
 beneath
 beneath the deep
+berserker
 beyond the evil
 bhad bhabie
 bill and mandy
@@ -69,6 +70,7 @@ buried
 busted
 calithem
 call of duty
+can't control
 carcosa
 carrion
 castlevania
@@ -175,6 +177,7 @@ footage
 forgive me
 fortnight
 freddy
+fright
 fugget
 g-force
 garten
@@ -317,6 +320,7 @@ need more
 neighbour
 never again
 never back down
+never check
 nibbles
 night janitor
 night security
@@ -488,6 +492,7 @@ unholy
 urbex night security
 valiant hearts
 vampire
+vegatative
 vegetative
 vengeful
 violent
@@ -516,5 +521,6 @@ yandere
 yieun
 yu-gi-oh
 zeta
+zodiak
 zombie
 zombies
