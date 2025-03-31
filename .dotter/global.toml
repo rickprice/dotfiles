@@ -150,6 +150,7 @@
 
 [mutt.files]
 "home/mutt/muttrc"="~/.mutt/muttrc"
+"home/mutt/mailcap"="~/.mutt/mailcap"
 "home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
 "home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
 "home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"

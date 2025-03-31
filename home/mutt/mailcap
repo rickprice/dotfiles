@@ -1,0 +1,2 @@
+text/html; elinks -dump -dump-color-mode 1; copiousoutput;
+application/pdf; zathura %s;
