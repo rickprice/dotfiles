@@ -318,9 +318,9 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Sans;font-size:18px;-inkscape-font-specification:'Sans, Bold';letter-spacing:0.67px;text-orientation:auto;font-weight:bold;text-anchor:end;text-align:end"
+       style="line-height:1.25;font-family:Sans;font-size:21.33333333px;-inkscape-font-specification:'Sans, Normal';letter-spacing:0.67px;text-orientation:auto"
        selcue="1"
-       align_mode="2"
+       align_mode="1"
        writing_mode="0"
        orientation_mode="0"
        direction_mode="0" />
@@ -585,7 +585,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="1" />
+       page="2" />
     <group
        id="filtereffects" />
     <group
@@ -629,7 +629,7 @@
        path="">
       <group
          id="exportarea"
-         value="drawing" />
+         value="custom" />
       <group
          id="defaultxdpi" />
       <group
@@ -660,7 +660,7 @@
     <group
        id="import"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/DarkTableExport/GooglePhotos/"
+       path="/home/fprice/Documents/Personal/Dropbox/Pictures/QuickPhotos/"
        ask="1"
        ask_svg="1"
        link="embed"
@@ -1021,7 +1021,7 @@
        colorsontop="0" />
     <group
        id="font"
-       unitType="1"
+       unitType="2"
        scaleLineHeightFromFontSIze="1" />
     <group
        id="boot"
@@ -1122,7 +1122,7 @@
      org.inkscape.output.pdf.cairorenderer.resolution="600" />
   <group
      id="desktop"
-     style="fill:#b7c2de;-inkscape-font-specification:'Arial, Bold';font-family:Arial;font-size:34.73986816px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;font-weight:bold;stroke-width:1.92;text-anchor:end;text-align:end">
+     style="fill:#ffcc00;-inkscape-font-specification:Garamond;font-family:Garamond;font-size:24px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;text-anchor:middle;text-align:center;vector-effect:non-scaling-stroke;-inkscape-stroke:hairline">
     <group
        width="640"
        height="480"
