@@ -16,11 +16,11 @@ set -xg PATH "/home/fprice/.ghcup/bin:$PATH"
 # # Setup Python pyenv automatically
 # pyenv init - | source
 # -- START ACTIVESTATE INSTALLATION
-set -xg PATH "/home/fprice/.local/ActiveState/StateTool/beta/bin:$PATH"
+set -xg PATH "/home/fprice/.local/ActiveState/StateTool/release/bin:$PATH"
 # -- STOP ACTIVESTATE INSTALLATION
-## -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
-#set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
-#if test ! -z "$ACTIVESTATE_ACTIVATED"; test -f "$ACTIVESTATE_ACTIVATED/activestate.yaml"
-#  echo "State Tool is operating on project $ACTIVESTATE_ACTIVATED_NAMESPACE, located at $ACTIVESTATE_ACTIVATED"
-#end
-## -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+# -- START ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
+set -xg PATH "/home/fprice/.cache/activestate/bin:$PATH"
+if test ! -z "$ACTIVESTATE_ACTIVATED"; test -f "$ACTIVESTATE_ACTIVATED/activestate.yaml"
+  echo "State Tool is operating on project $ACTIVESTATE_ACTIVATED_NAMESPACE, located at $ACTIVESTATE_ACTIVATED"
+end
+# -- STOP ACTIVESTATE DEFAULT RUNTIME ENVIRONMENT
