@@ -35,6 +35,7 @@
 # My files in conf.d
 "config/fish/conf.d/zoxide.fish" = "~/.config/fish/conf.d/zoxide.fish"
 "config/fish/conf.d/Editor.fish" = "~/.config/fish/conf.d/Editor.fish"
+"config/fish/functions/tmux-attach.fish" = "~/.config/fish/functions/tmux-attach.fish"
 
 [i3.files]
 "config/i3/config" = "~/.config/i3/config"
