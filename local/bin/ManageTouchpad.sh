@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TOUCHPAD_NAME=$(xinput list --name-only | grep -e "Touchpad|ALPS GlidePoint")
+TOUCHPAD_NAME=$(xinput list --name-only | grep -e "Touchpad\|ALPS GlidePoint")
 echo "Touchpad is [$TOUCHPAD_NAME]"
 
 if [ -n "$TOUCHPAD_NAME" ]; then
