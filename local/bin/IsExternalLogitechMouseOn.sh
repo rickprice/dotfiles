@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if xinput list --name-only | grep -q -e "Logitech M.+" ; then
+if xinput list --name-only | grep -q -e "Logitech M" ; then
     echo "External Logitech mouse plugged in"
     exit 0
 else
