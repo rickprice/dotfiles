@@ -23,6 +23,7 @@
 
 [bash.files]
 "home/bashrc" = "~/.bashrc"
+"home/profile" = "~/.profile"
 
 [xmonad.files]
 "config/xmonad/xmonad.hs" = "~/.config/xmonad/xmonad.hs"
