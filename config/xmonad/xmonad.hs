@@ -120,6 +120,12 @@ myCustomKeys hostname =
     , ("M-3", powerkeys 3 hostname)
     , ("M-4", powerkeys 4 hostname)
     , ("M-5", powerkeys 5 hostname)
+
+    -- Powekey for Quick Mobile jumping particularly
+    , ("M-i", showDesktop "IM")
+    , ("M-t", showDesktop "TP11")
+    , ("M-S-f", showDesktop "FP11")
+
     -- , ("M-6", powerkeys 6 hostname)
     -- , ("M-7", powerkeys 7 hostname)
     -- , ("M-8", powerkeys 8 hostname)
