@@ -19,6 +19,7 @@
 
 ## Specify the model to use for the main chat
 #model: xxx
+model: as-claude
 
 ## Use claude-3-opus-20240229 model for the main chat
 #opus: false
