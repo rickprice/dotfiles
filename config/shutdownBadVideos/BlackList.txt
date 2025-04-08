@@ -9,6 +9,7 @@ agatha
 alien
 alien isolation
 all alone
+amanita design
 annihilation
 anthology
 anthology of fear
@@ -94,6 +95,7 @@ control
 council of hanwell
 covenant
 crash
+creaks
 creepiest
 creepy
 criminal
@@ -495,6 +497,7 @@ vampire
 vegatative
 vegetative
 vengeful
+vigilantism
 violent
 voodoo
 warfare
