@@ -194,6 +194,7 @@
 [keyd.files]
 "etc/keyd/default.conf" = { target = "/etc/keyd/default.conf", type = "symbolic", owner = "root" }
 "etc/keyd/12keymini.conf" = { target = "/etc/keyd/12keymini.conf", type = "symbolic", owner = "root" }
+"etc/keyd/staplesmini.conf" = { target = "/etc/keyd/staplesmini.conf", type = "symbolic", owner = "root" }
 
 [nyxt.files]
 "config/nyxt/auto-config.lisp" = "~/.config/nyxt/auto-config.lisp"
