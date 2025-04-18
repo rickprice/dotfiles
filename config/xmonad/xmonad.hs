@@ -109,6 +109,8 @@ myCustomKeys hostname =
     , spawnKey "p" mySystemMonitor -- performance monitor
     , spawnKey "s" myScanner
     , spawnKey "c" myCalculator
+    , ("<XF86Calculator>", spawn myCalculator)
+    , ("calc", spawn myCalculator)
     , spawnKey "r" myRDPClient
     , spawnKey "a" myArdour
     , spawnKey "z" myFixScreens
