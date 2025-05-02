@@ -7,10 +7,13 @@ Config { overrideRedirect = False
        , hideOnStart = False
        , persistent = True
        , commands = [ Run Cpu
-                        [ "-L", "3"
+                        [ 
+                        "--template", "Cpu: <total>%"
+                        , "-L", "5"
                         , "-H", "50"
-                        , "--high"  , "red"
-                        , "--normal", "green"
+                        , "--high", "red"
+                        , "--low", "white"
+                        , "--normal", "white"
                         ] 10
 --                    , Run Memory ["--template", "Mem: <usedratio>%"] 10
                     , Run Date "<fc=#FFB53A>%A %B</fc> %Y-%m-%d <fc=#FFB53A>%H:%M</fc>" "date" 10

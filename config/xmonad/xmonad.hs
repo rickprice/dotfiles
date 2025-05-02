@@ -294,9 +294,11 @@ myManageHook :: ManageHook
 myManageHook =
     composeAll
         [ manageSpawn
+        , manageDocks
         -- , ewmhDesktopsManageHook
         -- , manageZoomHook
         -- , className =? "zoom" --> doSink
+        , resource =? "trayer" --> doIgnore
         , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
         , className =? "Gimp" --> doFloat
