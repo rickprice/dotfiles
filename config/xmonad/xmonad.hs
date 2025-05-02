@@ -25,6 +25,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.Magnifier
 import XMonad.Layout.MultiColumns
 import XMonad.Layout.LayoutCombinators hiding ( (|||) )
@@ -225,7 +226,6 @@ myStartupHook  hostname= do
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
-    spawnOnce "nm-applet"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
@@ -252,8 +252,11 @@ myStartupHook  hostname= do
         else
             do
                 spawnOn "FP12" myArdour
-    spawn "trayer --monitor primary --edge top --align right --width 11"
+    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 24"
+    spawnOnce "snixembed"
+    spawnOnce "nm-applet"
     spawnOnce "xscreensaver --no-splash"
+    setWMName "LG3D" -- Helps with Java GUI compatibility
 
 
 main :: IO ()
@@ -263,6 +266,7 @@ main = do
         $ setEwmhActivateHook doAskUrgent
         . ewmh
         . ewmhFullscreen
+        . docks
         . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
         $ createMyConfig hostname
 
@@ -271,8 +275,8 @@ createMyConfig hostname =
             def
                 { terminal = myTerminal
                 , modMask = myModMask
-                , layoutHook = smartBorders $ desktopLayoutModifiers myLayouts
-                , manageHook = myManageHook
+                , layoutHook = avoidStruts $ smartBorders $ desktopLayoutModifiers myLayouts
+                , manageHook = manageDocks <+> myManageHook
                 , startupHook = myStartupHook hostname
                 , normalBorderColor = myNormalBorderColor
                 , focusedBorderColor = myFocusedBorderColor
