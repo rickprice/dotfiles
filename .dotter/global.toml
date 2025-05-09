@@ -123,6 +123,7 @@
 # "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 "local/bin/remindme.sh"="~/.local/bin/remindme"
 "local/bin/script-declutter.pl"="~/.local/bin/script-declutter"
+"local/bin/NameTimePeriod.py"="~/.local/bin/NameTimePeriod"
 
 [medium.files]
 "local/bin/PublishToMedium.py"="~/.local/bin/PublishToMedium"
