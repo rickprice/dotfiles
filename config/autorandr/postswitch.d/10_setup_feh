@@ -12,7 +12,11 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
-# BACKGROUND_DIR=~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds
-BACKGROUND_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds
-
-feh --no-fehbg --bg-max $(shuf -en 1 $BACKGROUND_DIR/*.{jpg,png})
+BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
+# BACKGROUNDS_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds
+DEFAULT_BACKGROUND_DIR=$BACKGROUNDS_DIR/Default
+THEME_DIR=$BACKGROUNDS_DIR/$(NameTimePeriod)
+echo "DEFAULT_BACKGROUND_DIR is: " $DEFAULT_BACKGROUND_DIR
+echo "THEME_DIR is: " $THEME_DIR
+# feh --no-fehbg --bg-max $(shuf -en 1 $DEFAULT_BACKGROUND_DIR/*.{jpg,png} $THEME_DIR/*.{jpg,png})
+feh --no-fehbg --bg-max $(shuf -en 1 $THEME_DIR/*.{jpg,png})

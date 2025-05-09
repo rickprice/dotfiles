@@ -65,6 +65,7 @@
 "local/bin/IsExternalLogitechMouseOn.sh"="~/.local/bin/IsExternalLogitechMouseOn"
 "local/bin/ManageTouchpadBasedOnExternalMouse.sh"="~/.local/bin/ManageTouchpadBasedOnExternalMouse"
 "local/bin/ManageTouchpad.sh"="~/.local/bin/ManageTouchpad"
+"local/bin/NameTimePeriod.py"="~/.local/bin/NameTimePeriod"
 
 [dropbox.files]
 "config/systemd/user/dropbox.service" = "~/.config/systemd/user/dropbox.service"
