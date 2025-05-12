@@ -12,8 +12,8 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
-BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
-# BACKGROUNDS_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds
+# BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
+BACKGROUNDS_DIR=~/Documents/Dropbox/TamaraDocuments/Backgrounds
 DEFAULT_BACKGROUND_DIR=$BACKGROUNDS_DIR/Default
 THEME_DIR=$BACKGROUNDS_DIR/$(NameTimePeriod)
 echo "DEFAULT_BACKGROUND_DIR is: " $DEFAULT_BACKGROUND_DIR
