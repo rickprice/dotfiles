@@ -23,7 +23,8 @@ Config { overrideRedirect = False
        , sepChar  = "%"
        , alignSep = "}{"
 --       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
-       , template = " %XMonadLog% | %cpu% | %date% %sprint%"
+--       , template = " %XMonadLog% | %cpu% | %date% %sprint%"
+       , template = " %XMonadLog% | %cpu% | %date% "
 --       , template = " %XMonadLog% | %cpu% | %date%"
        }
 
