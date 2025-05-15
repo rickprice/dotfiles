@@ -243,7 +243,7 @@ myStartupHook  hostname= do
                 spawnOn "MAIL" myEmailer
                 -- liftIO (threadDelay 7000000)
                 -- Setup IM programs
-                spawnOn "IM" "slack"
+                -- spawnOn "IM" "slack"
                 -- liftIO (threadDelay 7000000)
                 spawnOn "IM" "discord"
                 -- Browser
