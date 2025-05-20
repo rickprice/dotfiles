@@ -15,5 +15,14 @@ return {
 		lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
 		version = "*", -- Pin Neorg to the latest stable release
 		config = true,
+        load = {
+            ["core.defaults"] = {},
+            ["external.pandoc"] = {}
+        },
 	},
+    -- {
+    --     "champignoom/norg-pandoc",
+    --     branch = "neorg-plugin",
+    --     config = true,
+    -- },
 }
