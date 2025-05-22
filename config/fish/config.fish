@@ -5,6 +5,8 @@ if status is-interactive
     starship init fish | source
     #
     # pyenv virtualenv-init - | source
+    # Atuin
+    atuin init fish | source
 end
 # Haskell Cabal Setup
 set -xg PATH "/home/fprice/.cabal/bin:$PATH"

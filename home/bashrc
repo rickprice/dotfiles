@@ -10,5 +10,10 @@ export PATH="~/.local/bin:$PATH"
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# eval "$(starship init bash)"
+eval "$(starship init bash)"
 
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh
+
+eval "$(atuin init bash)"
+
+eval "$(zoxide init bash)"

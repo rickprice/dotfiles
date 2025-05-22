@@ -16,3 +16,10 @@ eval "$(starship init bash)"
 # source /home/fprice/.config/broot/launcher/bash/br
 
 source /home/fprice/.config/broot/launcher/bash/br
+
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh
+
+eval "$(atuin init bash)"
+
+eval "$(zoxide init bash)"
+
