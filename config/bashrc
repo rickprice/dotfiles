@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+export PATH=$PATH:/home/fprice/.local/bin
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -17,7 +19,7 @@ eval "$(starship init bash)"
 
 source /home/fprice/.config/broot/launcher/bash/br
 
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh
+#[[ $- == *i* ]] && source /usr/share/blesh/ble.sh
 
 eval "$(atuin init bash)"
 
