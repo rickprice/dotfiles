@@ -1,0 +1,10 @@
+/home/fprice/.dotfiles/config/xmonad/hostname-1.0/.stack-work/dist/x86_64-linux-tinfo6/ghc-9.6.6/build/autogen/cabal_macros.h:
+  hash: 9e44db8a415c7971e52c1fed3450340bc7fc83cb4fc1d5a490e04f76bde74dde
+/home/fprice/.dotfiles/config/xmonad/hostname-1.0/Network/HostName.hs:
+  hash: 23cb7bd6333e8d630527f70fb8497c78bef9e2947cb8d6cc65e89824ef8003c2
+/home/fprice/.dotfiles/config/xmonad/hostname-1.0/hostname.cabal:
+  hash: 8203b6ecd14ca1ef12f73a471b0a6a4be3ad4568d8b84f2bc4bc9e0abb8c4153
+? /home/fprice/.stack/programs/x86_64-linux/ghc-tinfo6-9.6.6/lib/ghc-9.6.6/lib/x86_64-linux-ghc-9.6.6/rts-1.0.2/include/ghcversion.h
+: hash: 9032f6afc97dcddfe8c8b306639eb6f456e3f6667f3dd8268681f51bb77c8634
+/usr/include/stdc-predef.h:
+  hash: 82975831ea2d1f95b60225f37ddd6130225f0c3de2318674cb178fea661ad87b
