@@ -252,10 +252,10 @@ myStartupHook  hostname= do
         else
             do
                 spawnOn "FP12" myArdour
-    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 24"
     spawnOnce "snixembed"
     spawnOnce "nm-applet"
     spawnOnce "xscreensaver --no-splash"
+    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 24"
     setWMName "LG3D" -- Helps with Java GUI compatibility
 
 
@@ -402,24 +402,24 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
-asDesktops = 3
-asDesktopPanes = 2
+asDesktops = 6
+asDesktopPanes = 1
 asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 asWorkspaceKeys = wsKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
 tWorkspaceKeyPrefix = Just "t"
-tDesktops = 2
-tDesktopPanes = 2
+tDesktops = 4
+tDesktopPanes = 1
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 3
-fDesktopPanes = 2
+fDesktops = 6
+fDesktopPanes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
@@ -449,51 +449,53 @@ myNewStyleKeys hostname =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
-bottomSecondaryScreen = 0
-topSecondaryScreen = 3
-topMainScreen = 2
-bottomMainScreen = 1
+bottomMainScreen = 4
+topMainScreen = 3
+bottomSecondaryScreen = 1
+topSecondaryScreen = 2
 
 setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
 
-    ADWG.addRawWSGroup "Work1"      [(topMainScreen, "W11"),(bottomMainScreen, "W12")]
-    ADWG.addRawWSGroup "Work2"      [(topMainScreen, "W21"),(bottomMainScreen, "W22")]
-    ADWG.addRawWSGroup "Work3"      [(topMainScreen, "W31"),(bottomMainScreen, "W32")]
+    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W1"),(bottomSecondaryScreen, "W2")]
+    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W3"),(bottomSecondaryScreen, "W4")]
+    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W5"),(bottomSecondaryScreen, "W6")]
 
-    ADWG.addRawWSGroup "Frederick1" [(topMainScreen, "FP11"),(bottomMainScreen, "FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(topMainScreen, "FP21"),(bottomMainScreen, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(topMainScreen, "FP31"),(bottomMainScreen, "FP32")]
+    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "F1"),(bottomSecondaryScreen, "F2")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "F3"),(bottomSecondaryScreen, "F4")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "F5"),(bottomSecondaryScreen, "F6")]
 
-    ADWG.addRawWSGroup "Tamara1"    [(topMainScreen, "TP11"),(bottomMainScreen, "TP12")]
-    ADWG.addRawWSGroup "Tamara2"    [(topMainScreen, "TP21"),(bottomMainScreen, "TP22")]
+    ADWG.addRawWSGroup "Tamara1" [(bottomMainScreen, "T1"),(bottomSecondaryScreen, "T2")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMainScreen, "T3"),(bottomSecondaryScreen, "T4")]
 
-    ADWG.addRawWSGroup "Messaging"  [(topMainScreen, "IM"), (bottomMainScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
 
-    ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
-    ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
+    -- ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
+    -- ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
+    ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
+    -- ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
 
 setupWorkspaceGroups _ = do
-    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W11"),(topMainScreen, "W12")]
-    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W21"),(topMainScreen, "W22")]
-    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W31"),(topMainScreen, "W32")]
+    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W1"),(bottomSecondaryScreen, "W2")]
+    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W3"),(bottomSecondaryScreen, "W4")]
+    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W5"),(bottomSecondaryScreen, "W6")]
 
-    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "FP11"),(topMainScreen, "FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "FP21"),(topMainScreen, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "FP31"),(topMainScreen, "FP32")]
+    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "F1"),(bottomSecondaryScreen, "F2")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "F3"),(bottomSecondaryScreen, "F4")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "F5"),(bottomSecondaryScreen, "F6")]
 
-    ADWG.addRawWSGroup "Tamara1"    [(bottomMainScreen, "TP11"),(topMainScreen, "TP12")]
-    ADWG.addRawWSGroup "Tamara2"    [(bottomMainScreen, "TP21"),(topMainScreen, "TP22")]
+    ADWG.addRawWSGroup "Tamara1" [(bottomMainScreen, "T1"),(bottomSecondaryScreen, "T2")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMainScreen, "T3"),(bottomSecondaryScreen, "T4")]
 
-    ADWG.addRawWSGroup "Messaging"  [(bottomMainScreen, "IM"), (topMainScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
 
-    ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
-    ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
+    -- ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
+    -- ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ADM")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
+    ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
+    -- ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
+    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
 
 powerkeys key hostname = do
     -- case (screenCount, key) of
