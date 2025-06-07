@@ -1,92 +1,108 @@
 {-# LANGUAGE ImportQualifiedPost #-}
 
-import Data.Ratio
-import Data.List
-
--- import XMonad.Config.Desktop
-
+-- Base imports
 import Control.Concurrent
-
+import Data.List
+import Data.Ratio
 import Network.HostName (getHostName)
 
-import Graphics.X11.ExtraTypes.XF86
+-- XMonad core
 import XMonad
-import XMonad.Actions.SpawnOn
-import XMonad.Actions.UpdatePointer
-import XMonad.Actions.Warp
+import XMonad.StackSet qualified as W
+
+-- XMonad configuration
 import XMonad.Config.Desktop (
     desktopConfig,
     desktopLayoutModifiers,
  )
+
+-- XMonad actions
+import XMonad.Actions.SpawnOn
+import XMonad.Actions.UpdatePointer
+import XMonad.Actions.Warp
+import XMonad.Actions.DynamicWorkspaceGroups as ADWG
+
+-- XMonad hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.SetWMName
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.UrgencyHook
-import XMonad.Hooks.SetWMName
+
+-- XMonad layouts
+import XMonad.Layout.GridVariants
+import XMonad.Layout.LayoutCombinators hiding ( (|||) )
 import XMonad.Layout.Magnifier
 import XMonad.Layout.MultiColumns
-import XMonad.Layout.LayoutCombinators hiding ( (|||) )
-
--- import XMonad.Layout.Named
--- import XMonad.Layout.NoBorders
-
-import XMonad.Layout.GridVariants
 import XMonad.Layout.NoBorders (noBorders, smartBorders)
 import XMonad.Layout.ThreeColumns
-
--- import XMonad.Layout.Grid
--- import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
 import XMonad.Layout.ToggleLayouts
-import XMonad.StackSet qualified as W
-import XMonad.Util.EZConfig
-import XMonad.Util.Loggers
-import XMonad.Util.SpawnOnce
-
--- ScratchPads
-import XMonad.Util.NamedScratchpad
-
--- Workspace Groups
-import XMonad.Actions.DynamicWorkspaceGroups as ADWG
 import qualified XMonad.Layout.IndependentScreens as LIS
 
--- import XMonad.Util.Run
+-- XMonad utilities
+import XMonad.Util.EZConfig
+import XMonad.Util.Loggers
+import XMonad.Util.NamedScratchpad
+import XMonad.Util.SpawnOnce
 
+-- X11 extras
+import Graphics.X11.ExtraTypes.XF86
+
+-- =============================================================================
+-- CONFIGURATION CONSTANTS
+-- =============================================================================
+
+-- Main modifier key
 myModMask = mod4Mask
 
 -- Hostnames
 hostnameWork = "fwork"
 hostnameDAW = "daw"
 
--- Programs we run frequently
-myBrowser = "firefox-developer-edition"
--- myEmailer = "thunderbird"
-myEmailer = "wezterm start -- neomutt"
-myBrowserNyxt = "nyxt --no-socket"
-myAudioManager = "pavucontrol"
+-- Applications
 myTerminal = "wezterm"
+myBrowser = "firefox-developer-edition"
+myBrowserNyxt = "nyxt --no-socket"
+myEmailer = "wezterm start -- neomutt"
 myFileManager = "pcmanfm"
-myScanner = "simple-scan"
-myEbookViewer = "ebook-viewer"
-myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
-mySystemMonitor = "gnome-system-monitor"
 myDMenu = "dmenu-frecency"
+
+-- Creative applications
 myDarkTable = "darktable"
 myDarkTablePersonalLibrary = "~/Documents/Personal/DarktablePersonal/library.db"
 myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library.db"
 myInkScape = "inkscape"
-myCalculator = "gnome-calculator"
-myRDPClient = "remmina"
-myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
-myFixScreens = "autorandr --change"
 myArdour = "ardour8"
+myEbookViewer = "ebook-viewer"
+
+-- System utilities
+myAudioManager = "pavucontrol"
+mySystemMonitor = "gnome-system-monitor"
+myCalculator = "gnome-calculator"
+myScanner = "simple-scan"
+myRDPClient = "remmina"
 myPrinterConfig = "system-config-printer"
 
--- Define extra workspaces that I use all the time, by hostname
-myExtraWorkspaces hostname | isPrefixOf hostnameWork hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
-myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
+-- Scripts and commands
+myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
+myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
+myFixScreens = "autorandr --change"
+
+-- Colors
+myNormalBorderColor = "#dddddd"
+myFocusedBorderColor = "#FFB53A"
+
+-- Key prefixes
+workspaceFocusKey = "M-d "
+workspaceMoveKey = "M-S-d "
+appRunKey = "M-a "
+
+-- =============================================================================
+-- KEY BINDING HELPER FUNCTIONS
+-- =============================================================================
 
 spawnKey key program = (appRunKey ++ key, spawn program)
 
@@ -204,6 +220,7 @@ myCustomKeys hostname =
     -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
     -- mod-/ and mod-? %! Jump to or memorize a workspace group
 
+-- Helper function for setting up work windows
 setupWorkWindow = do
     spawnHere myBrowser
     spawnHere myBrowser
@@ -211,54 +228,50 @@ setupWorkWindow = do
     spawnHere myTerminal
     spawnHere myTerminal
 
--- liftIO (threadDelay 7000000)
--- This is now handled by a script in autorandr
--- spawn myRunBackgrounds
-
+-- Mouse warp keys
 warpMouseKeys =
     [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2))
     , ("M-C-e", warpToScreen 1 (1 % 2) (1 % 2))
     , ("M-C-r", warpToScreen 2 (1 % 2) (1 % 2))
     ]
 
+-- =============================================================================
+-- STARTUP AND MAIN CONFIGURATION
+-- =============================================================================
+
+-- Startup hook configuration
 myStartupHook  hostname= do
     setupWorkspaceGroups hostname
+    -- System services
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
     spawnOnce "wired --run"
     spawnOnce "picom -b"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
     spawn "killall volumeicon; sleep 15; volumeicon"
-    -- spawnOnce "cbatticon"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
-    -- spawnOnce "qmidinet -n 6"
     spawn myFixScreens
+    
+    -- Host-specific configuration
     if isPrefixOf hostnameWork hostname
-        then
-            do
-                spawnOnce "system-config-printer-applet"
-                spawnOnce "meteo-qt"
-                -- Setup initial work window
-                spawnOn "MAIL" myEmailer
-                -- liftIO (threadDelay 7000000)
-                -- Setup IM programs
-                -- spawnOn "IM" "slack"
-                -- liftIO (threadDelay 7000000)
-                spawnOn "IM" "discord"
-                -- Browser
-                -- liftIO (threadDelay 7000000)
-                spawnOn "ADM" myBrowser
-        else
-            do
-                spawnOn "FP12" myArdour
+        then do
+            spawnOnce "system-config-printer-applet"
+            spawnOnce "meteo-qt"
+            spawnOn "MAIL" myEmailer
+            spawnOn "IM" "discord"
+            spawnOn "ADM" myBrowser
+        else do
+            spawnOn "FP12" myArdour
+    
+    -- System tray and utilities
     spawnOnce "snixembed"
     spawnOnce "nm-applet"
     spawnOnce "xscreensaver --no-splash"
     spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 24"
-    setWMName "LG3D" -- Helps with Java GUI compatibility
+    setWMName "LG3D"
 
-
+-- Main configuration
 main :: IO ()
 main = do
     hostname <- getHostName
@@ -269,7 +282,6 @@ main = do
         . docks
         . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
         $ createMyConfig hostname
-
 
 createMyConfig hostname = 
             def
@@ -285,30 +297,12 @@ createMyConfig hostname =
                 }
                 `additionalKeysP` myNewStyleKeys hostname
 
-myWorkspaces hostname | isPrefixOf hostnameWork hostname = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
-myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
+-- =============================================================================
+-- LAYOUTS AND VISUAL CONFIGURATION
+-- =============================================================================
 
-
-myManageHook :: ManageHook
-myManageHook =
-    composeAll
-        [ manageSpawn
-        , manageDocks
-        -- , ewmhDesktopsManageHook
-        -- , manageZoomHook
-        -- , className =? "zoom" --> doSink
-        , resource =? "trayer" --> doIgnore
-        , className =? "simple-scan" --> doSink
-        , className =? "zoom" --> doShift "ZM"
-        , className =? "Gimp" --> doFloat
-        , className =? "meteo-qt" --> doFloat
-        , className =? "discord" --> doShift "IM"
-        , className =? "Slack" --> doShift "IM"
-        , className =? "thunderbird" --> doShift "MAIL"
-        , isDialog --> doFloat
-        ]
-
+-- Window layouts
 myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifier mainGrid ||| churchSetup ))
   where
     magnifier = magnifiercz 1.4
@@ -321,20 +315,35 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGr
     resizeIncrement = 5 / 100
 
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
-    -- mirrorTall = Mirror (Tall 1 (3 / 100) (3 / 5))
     multiColumn = multiCol [1] 1 0.01 (-0.5)
-    -- This one actually works
     tall = (Tall 1 (10/100) (80/100))
-    churchSetup = ( (tall ****|* tall ) ****/* tall ) 
+    churchSetup = ( (tall ****|* tall ) ****/* tall )
+
+-- Window management rules
+myManageHook :: ManageHook
+myManageHook =
+    composeAll
+        [ manageSpawn
+        , manageDocks
+        , resource =? "trayer" --> doIgnore
+        , className =? "simple-scan" --> doSink
+        , className =? "zoom" --> doShift "ZM"
+        , className =? "Gimp" --> doFloat
+        , className =? "meteo-qt" --> doFloat
+        , className =? "discord" --> doShift "IM"
+        , className =? "Slack" --> doShift "IM"
+        , className =? "thunderbird" --> doShift "MAIL"
+        , isDialog --> doFloat
+        ] 
 
 
+-- Status bar configuration
 myXmobarPP :: PP
 myXmobarPP =
     def
         { ppSep = magenta " • "
         , ppTitleSanitize = xmobarStrip
         , ppCurrent = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
-        -- , ppHidden = white . wrap " " ""
         , ppHiddenNoWindows = lowWhite . wrap " " ""
         , ppUrgent = red . wrap (yellow "!") (yellow "!")
         , ppOrder = \[ws, l, _, _] -> [ws, l]
@@ -344,8 +353,6 @@ myXmobarPP =
     formatFocused = wrap (white "[") (white "]") . magenta . ppWindow
     formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue . ppWindow
 
-    -- \| Windows should have *some* title, which should not not exceed a
-    -- sane length.
     ppWindow :: String -> String
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
 
@@ -357,15 +364,26 @@ myXmobarPP =
     red = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
 
-myNormalBorderColor = "#dddddd"
 
-myFocusedBorderColor = "#FFB53A"
+-- =============================================================================
+-- WORKSPACE MANAGEMENT
+-- =============================================================================
 
-workspaceFocusKey = "M-d "
-workspaceMoveKey = "M-S-d "
+-- Define extra workspaces that I use all the time, by hostname
+myExtraWorkspaces hostname | isPrefixOf hostnameWork hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
+myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
 
-appRunKey = "M-a "
+myWorkspaces hostname | isPrefixOf hostnameWork hostname = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
+-- Workspace helper functions
+showDesktop :: String -> X ()
+showDesktop d = windows $ W.greedyView d
+
+moveFocusedWindowToDesktop :: String -> X ()
+moveFocusedWindowToDesktop d = windows $ W.shift d
+
+-- Workspace generation functions
 workspacePanelTuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
 workspacePanelTuples desktops desktop_panes = [(x, Just y) | x <- [1 .. desktops], y <- [1 .. desktop_panes]]
 
@@ -383,22 +401,14 @@ desktopNameFromTuple p (x, Just y) = p ++ show x ++ show y
 fixPrefix Nothing = ""
 fixPrefix (Just p) = p ++ " "
 
--- desktopKeyMapFromTuple :: Show a => String -> (Maybe a, Maybe a) -> String
 desktopKeyMapFromTuple p (x, Nothing) = fixPrefix p ++ show x
 desktopKeyMapFromTuple p (x, Just y) = fixPrefix p ++ show x ++ " " ++ show y
-
-showDesktop :: String -> X ()
-showDesktop d = windows $ W.greedyView d
-
-moveFocusedWindowToDesktop :: String -> X ()
-moveFocusedWindowToDesktop d = windows $ W.shift d
-
--- calculateKeymap workspaceKeyPrefix workspaceWindowPrefix metaPrefix function = (metaPrefix ++ desktopKeyMapFromTuple workspaceKeyPrefix t, function ((desktopNameFromTuple workspaceWindowPrefix) t))
 
 desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, showDesktop (desktopNameFromTuple workspaceWindowPrefix t))
 
 desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop (desktopNameFromTuple workspaceWindowPrefix t))
 
+-- Workspace definitions
 -- ActiveState workspaces
 asWorkspaceDisplayPrefix = "W"
 asWorkspaceKeyPrefix = Nothing
@@ -422,6 +432,10 @@ fDesktops = 6
 fDesktopPanes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
+
+-- =============================================================================
+-- MAIN KEY BINDINGS
+-- =============================================================================
 
 myNewStyleKeys hostname =
     asWorkspaceKeys
@@ -449,13 +463,17 @@ myNewStyleKeys hostname =
 --     shouldSink title = title `elem` tileTitles
 --     doSink = (ask >>= doF . W.sink) <+> doF W.swapDown
 
+-- =============================================================================
+-- WORKSPACE GROUPS SETUP
+-- =============================================================================
+
+-- Screen position constants
 bottomMainScreen = 4
 topMainScreen = 3
 bottomSecondaryScreen = 1
 topSecondaryScreen = 2
 
 setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
-
     ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W1"),(bottomSecondaryScreen, "W2")]
     ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W3"),(bottomSecondaryScreen, "W4")]
     ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W5"),(bottomSecondaryScreen, "W6")]
@@ -469,11 +487,7 @@ setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
 
     ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
 
-    -- ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
-    -- ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
-
     ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
-    -- ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
     ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
 
 setupWorkspaceGroups _ = do
@@ -490,15 +504,11 @@ setupWorkspaceGroups _ = do
 
     ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
 
-    -- ADWG.addRawWSGroup "Zoom"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"IM")]
-    -- ADWG.addRawWSGroup "Zoom2"  [(topMainScreen, "W11"), (bottomMainScreen, "W12"),(bottomSecondaryScreen,"ZM"),(topSecondaryScreen,"MAIL")]
-
     ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
-    -- ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "W11"),(bottomSecondaryScreen,"ADM"),(bottomMainScreen,"W12")]
     ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
 
+-- Power keys function - context-aware workspace switching
 powerkeys key hostname = do
-    -- case (screenCount, key) of
     screenCount <- LIS.countScreens
     case (screenCount, key, hostname) of
         -- 4 Screen Setup
@@ -517,7 +527,6 @@ powerkeys key hostname = do
         (3,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
         (3,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
 
-
         -- 2 Screen Setup
         (2,1, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
         (2,2, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
@@ -526,13 +535,11 @@ powerkeys key hostname = do
         -- Default Screen Setup
         (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W11"
         (_,1,_) -> showDesktop "F11"
-
         (_,2, _) -> showDesktop "IM"
         (_,3, _) -> showDesktop "MAIL"
         (_,4, _) -> showDesktop "ADM"
-        (_,6, _) -> showDesktop "ZM"
-
         (_,5, _) -> showDesktop "SCRATCH"
+        (_,6, _) -> showDesktop "ZM"
         (_,8, _) -> showDesktop "NSP"
 
 
