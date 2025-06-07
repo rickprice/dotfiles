@@ -123,7 +123,7 @@
 # "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 "local/bin/remindme.sh"="~/.local/bin/remindme"
 "local/bin/script-declutter.pl"="~/.local/bin/script-declutter"
-"local/bin/NameTimePeriod.py"="~/.local/bin/NameTimePeriod"
+# "local/bin/NameTimePeriod.py"="~/.local/bin/NameTimePeriod"
 "local/bin/tmux-attach.sh"="~/.local/bin/tmux-attach"
 "local/bin/weather.sh"="~/.local/bin/weather"
 
