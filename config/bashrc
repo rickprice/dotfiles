@@ -5,8 +5,8 @@
 export PATH=$PATH:/home/fprice/.local/bin
 export EDITOR=nvim
 
-# Discard output of ssh-agent
-eval "$(ssh-agent -s)" > /dev/null 2>&1
+# Remember ssh passwords across terminal sessions
+eval $(keychain --eval --agents ssh id_rsa)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
