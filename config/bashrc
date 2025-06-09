@@ -6,7 +6,7 @@ export PATH=$PATH:/home/fprice/.local/bin
 export EDITOR=nvim
 
 # Remember ssh passwords across terminal sessions
-eval $(keychain --eval --agents ssh id_rsa)
+eval "$(keychain --quiet --eval ~/.ssh/id_ed25519)"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
