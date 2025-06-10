@@ -91,7 +91,7 @@ myPrinterConfig = "system-config-printer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
-myFixLogitechMouse = "xinput --set-prop "Logitech M325" "libinput Accel Speed" -0.5"
+myFixLogitechMouse = "xinput --set-prop 'Logitech M325' 'libinput Accel Speed' -0.5"
 
 -- Colors
 myNormalBorderColor = "#dddddd"
@@ -332,7 +332,7 @@ myManageHook =
         , resource =? "trayer" --> doIgnore
         , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
-        , className =? "Gimp" --> doFloat
+        -- , className =? "Gimp" --> doFloat
         , className =? "meteo-qt" --> doFloat
         , className =? "discord" --> doShift "IM"
         , className =? "Slack" --> doShift "IM"
