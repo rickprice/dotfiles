@@ -90,6 +90,7 @@ myPrinterConfig = "system-config-printer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
+myFixLogitechMouse = "xinput --set-prop "Logitech M325" "libinput Accel Speed" -0.5"
 
 -- Colors
 myNormalBorderColor = "#dddddd"
@@ -252,6 +253,7 @@ myStartupHook  hostname= do
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
     spawn myFixScreens
+    spawn myFixLogitechMouse
     
     -- Host-specific configuration
     if isPrefixOf hostnameWork hostname
