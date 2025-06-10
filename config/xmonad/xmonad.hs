@@ -25,6 +25,7 @@ import XMonad.Actions.DynamicWorkspaceGroups as ADWG
 -- XMonad hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
@@ -327,6 +328,7 @@ myManageHook =
     composeAll
         [ manageSpawn
         , manageDocks
+        , insertPosition End Newer
         , resource =? "trayer" --> doIgnore
         , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
