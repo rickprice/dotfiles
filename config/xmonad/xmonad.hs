@@ -2,6 +2,7 @@
 
 -- Base imports
 import Control.Concurrent
+import Data.Char (toLower)
 import Data.List
 import Data.Ratio
 import Network.HostName (getHostName)
@@ -328,7 +329,7 @@ myManageHook =
     composeAll
         [ manageSpawn
         , manageDocks
-        , insertPosition End Newer
+        , className /=? "" --> insertPosition End Newer
         , resource =? "trayer" --> doIgnore
         , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
