@@ -17,4 +17,4 @@ BACKGROUNDS_DIR=~/Documents/Dropbox/Pictures/SharedBackgrounds
 THEME_DIRS="Default $(name_time_period)"
 echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
 echo "THEME_DIRS are: " $THEME_DIRS
-feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $BACKGROUNDS_DIR $THEME_DIRS)
+feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 1 $BACKGROUNDS_DIR $THEME_DIRS)
