@@ -85,7 +85,7 @@ bindsym $mod+Ctrl+m exec wezterm start -- 'alsamixer'
 bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F8 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec rm -f ~/.cache/selected-background.txt && autorandr --change --force
+bindsym $mod+F4 exec  --no-startup-id rm -f ~/.cache/selected-background.txt && autorandr --change --force
 bindsym $mod+F5 exec background-picker --selected-image-file ~/.cache/selected-background.txt --directory ~/Documents/Dropbox/Pictures/SharedBackgrounds
 bindsym $mod+F9 exec pcmanfm
 # bindsym $mod+F3 exec ranger
