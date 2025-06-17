@@ -492,44 +492,44 @@ myNewStyleKeys hostname =
 -- =============================================================================
 
 -- Screen position constants
-bottomMainScreen = 4
-topMainScreen = 3
-bottomSecondaryScreen = 1
-topSecondaryScreen = 2
+farLeftScreen = 3
+topMiddleScreen = 0
+bottomMiddleScreen = 1
+farRightScreen = 2
 
 setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
-    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W1"),(bottomSecondaryScreen, "W2")]
-    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W3"),(bottomSecondaryScreen, "W4")]
-    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W5"),(bottomSecondaryScreen, "W6")]
+    ADWG.addRawWSGroup "Work1"      [(farRightScreen, "W1"),(bottomMiddleScreen, "W2")]
+    ADWG.addRawWSGroup "Work2"      [(farRightScreen, "W3"),(bottomMiddleScreen, "W4")]
+    ADWG.addRawWSGroup "Work3"      [(farRightScreen, "W5"),(bottomMiddleScreen, "W6")]
 
-    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "F1"),(bottomSecondaryScreen, "F2")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "F3"),(bottomSecondaryScreen, "F4")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "F5"),(bottomSecondaryScreen, "F6")]
+    ADWG.addRawWSGroup "Frederick1" [(farRightScreen, "F1"),(bottomMiddleScreen, "F2")]
+    ADWG.addRawWSGroup "Frederick2" [(farRightScreen, "F3"),(bottomMiddleScreen, "F4")]
+    ADWG.addRawWSGroup "Frederick3" [(farRightScreen, "F5"),(bottomMiddleScreen, "F6")]
 
-    ADWG.addRawWSGroup "Tamara1" [(bottomMainScreen, "T1"),(bottomSecondaryScreen, "T2")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMainScreen, "T3"),(bottomSecondaryScreen, "T4")]
+    ADWG.addRawWSGroup "Tamara1" [(farRightScreen, "T1"),(bottomMiddleScreen, "T2")]
+    ADWG.addRawWSGroup "Tamara2" [(farRightScreen, "T3"),(bottomMiddleScreen, "T4")]
 
-    ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
 
 setupWorkspaceGroups _ = do
-    ADWG.addRawWSGroup "Work1"      [(bottomMainScreen, "W1"),(bottomSecondaryScreen, "W2")]
-    ADWG.addRawWSGroup "Work2"      [(bottomMainScreen, "W3"),(bottomSecondaryScreen, "W4")]
-    ADWG.addRawWSGroup "Work3"      [(bottomMainScreen, "W5"),(bottomSecondaryScreen, "W6")]
+    ADWG.addRawWSGroup "Work1"      [(farRightScreen, "W1"),(bottomMiddleScreen, "W2")]
+    ADWG.addRawWSGroup "Work2"      [(farRightScreen, "W3"),(bottomMiddleScreen, "W4")]
+    ADWG.addRawWSGroup "Work3"      [(farRightScreen, "W5"),(bottomMiddleScreen, "W6")]
 
-    ADWG.addRawWSGroup "Frederick1" [(bottomMainScreen, "F1"),(bottomSecondaryScreen, "F2")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMainScreen, "F3"),(bottomSecondaryScreen, "F4")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMainScreen, "F5"),(bottomSecondaryScreen, "F6")]
+    ADWG.addRawWSGroup "Frederick1" [(farRightScreen, "F1"),(bottomMiddleScreen, "F2")]
+    ADWG.addRawWSGroup "Frederick2" [(farRightScreen, "F3"),(bottomMiddleScreen, "F4")]
+    ADWG.addRawWSGroup "Frederick3" [(farRightScreen, "F5"),(bottomMiddleScreen, "F6")]
 
-    ADWG.addRawWSGroup "Tamara1" [(bottomMainScreen, "T1"),(bottomSecondaryScreen, "T2")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMainScreen, "T3"),(bottomSecondaryScreen, "T4")]
+    ADWG.addRawWSGroup "Tamara1" [(farRightScreen, "T1"),(bottomMiddleScreen, "T2")]
+    ADWG.addRawWSGroup "Tamara2" [(farRightScreen, "T3"),(bottomMiddleScreen, "T4")]
 
-    ADWG.addRawWSGroup "Messaging"  [(topSecondaryScreen, "IM"), (bottomSecondaryScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(farRightScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(topSecondaryScreen, "IM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
-    ADWG.addRawWSGroup "StandardWork4"  [(topSecondaryScreen, "IM"),(topMainScreen, "ADM"),(bottomSecondaryScreen,"MAIL"),(bottomMainScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
 
 -- Power keys function - context-aware workspace switching
 powerkeys key hostname = do
@@ -544,17 +544,17 @@ powerkeys key hostname = do
         (4,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
 
         -- 3 Screen Setup
-        (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork3"
-        (3,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
-        (3,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
-        (3,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
-        (3,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
-        (3,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
-
-        -- 2 Screen Setup
-        (2,1, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
-        (2,2, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
-        (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
+        -- (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork3"
+        -- (3,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
+        -- (3,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
+        -- (3,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
+        -- (3,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
+        -- (3,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
+        --
+        -- -- 2 Screen Setup
+        -- (2,1, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
+        -- (2,2, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
+        -- (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
         (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W11"
