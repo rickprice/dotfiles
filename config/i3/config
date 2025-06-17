@@ -92,7 +92,7 @@ bindsym $mod+F9 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F4 exec terminal -e ranger
-bindsym $mod+F5 exec ManageTouchpad on
+bindsym $mod+F6 exec ManageTouchpad on
 # bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
