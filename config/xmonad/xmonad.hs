@@ -498,16 +498,16 @@ bottomMiddleScreen = 1
 farRightScreen = 2
 
 setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
-    ADWG.addRawWSGroup "Work1"      [(farRightScreen, "W1"),(bottomMiddleScreen, "W2")]
-    ADWG.addRawWSGroup "Work2"      [(farRightScreen, "W3"),(bottomMiddleScreen, "W4")]
-    ADWG.addRawWSGroup "Work3"      [(farRightScreen, "W5"),(bottomMiddleScreen, "W6")]
+    ADWG.addRawWSGroup "Work1"      [(bottomMiddleScreen, "W2"),(farRightScreen, "W1")]
+    ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
+    ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
 
-    ADWG.addRawWSGroup "Frederick1" [(farRightScreen, "F1"),(bottomMiddleScreen, "F2")]
-    ADWG.addRawWSGroup "Frederick2" [(farRightScreen, "F3"),(bottomMiddleScreen, "F4")]
-    ADWG.addRawWSGroup "Frederick3" [(farRightScreen, "F5"),(bottomMiddleScreen, "F6")]
+    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP3")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP6"),(farRightScreen, "FP5")]
 
-    ADWG.addRawWSGroup "Tamara1" [(farRightScreen, "T1"),(bottomMiddleScreen, "T2")]
-    ADWG.addRawWSGroup "Tamara2" [(farRightScreen, "T3"),(bottomMiddleScreen, "T4")]
+    ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP4"),(farRightScreen, "TP3")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
@@ -515,18 +515,18 @@ setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
     ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
 
 setupWorkspaceGroups _ = do
-    ADWG.addRawWSGroup "Work1"      [(farRightScreen, "W1"),(bottomMiddleScreen, "W2")]
-    ADWG.addRawWSGroup "Work2"      [(farRightScreen, "W3"),(bottomMiddleScreen, "W4")]
-    ADWG.addRawWSGroup "Work3"      [(farRightScreen, "W5"),(bottomMiddleScreen, "W6")]
+    ADWG.addRawWSGroup "Work1"      [(bottomMiddleScreen, "W2"),(farRightScreen, "W1")]
+    ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
+    ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
 
-    ADWG.addRawWSGroup "Frederick1" [(farRightScreen, "F1"),(bottomMiddleScreen, "F2")]
-    ADWG.addRawWSGroup "Frederick2" [(farRightScreen, "F3"),(bottomMiddleScreen, "F4")]
-    ADWG.addRawWSGroup "Frederick3" [(farRightScreen, "F5"),(bottomMiddleScreen, "F6")]
+    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP3")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP6"),(farRightScreen, "FP5")]
 
-    ADWG.addRawWSGroup "Tamara1" [(farRightScreen, "T1"),(bottomMiddleScreen, "T2")]
-    ADWG.addRawWSGroup "Tamara2" [(farRightScreen, "T3"),(bottomMiddleScreen, "T4")]
+    ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP4"),(farRightScreen, "TP3")]
 
-    ADWG.addRawWSGroup "Messaging"  [(farRightScreen, "IM"), (bottomMiddleScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
     ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W1")]
     ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
@@ -557,8 +557,8 @@ powerkeys key hostname = do
         -- (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
-        (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W11"
-        (_,1,_) -> showDesktop "F11"
+        (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W1"
+        (_,1,_) -> showDesktop "FP1"
         (_,2, _) -> showDesktop "IM"
         (_,3, _) -> showDesktop "MAIL"
         (_,4, _) -> showDesktop "ADM"
