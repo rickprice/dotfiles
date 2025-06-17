@@ -52,6 +52,8 @@ import XMonad.Util.SpawnOnce
 
 -- X11 extras
 import Graphics.X11.ExtraTypes.XF86
+import Graphics.X11.Xlib.Extras
+import Graphics.X11.Xlib
 
 -- =============================================================================
 -- CONFIGURATION CONSTANTS
@@ -79,6 +81,7 @@ myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library
 myInkScape = "inkscape"
 myArdour = "ardour8"
 myEbookViewer = "ebook-viewer"
+myMarkdownEditor = "obsidian"
 
 -- System utilities
 myAudioManager = "pavucontrol"
@@ -135,6 +138,7 @@ myCustomKeys hostname =
     , spawnKey "a" myArdour
     , spawnKey "z" myFixScreens
     , spawnKey "m" myEmailer
+    , spawnKey "o" myMarkdownEditor
 
     -- Handle powerkeys
     , ("M-1", powerkeys 1 hostname)
@@ -329,7 +333,7 @@ myManageHook =
     composeAll
         [ manageSpawn
         , manageDocks
-        , className /=? "" --> insertPosition End Newer
+        , customInsertPosition
         , resource =? "trayer" --> doIgnore
         , className =? "simple-scan" --> doSink
         , className =? "zoom" --> doShift "ZM"
@@ -339,7 +343,22 @@ myManageHook =
         , className =? "Slack" --> doShift "IM"
         , className =? "thunderbird" --> doShift "MAIL"
         , isDialog --> doFloat
-        ] 
+        ]
+
+-- Custom insertion position logic based on WM_CLASS and WM_TRANSIENT_FOR
+customInsertPosition :: ManageHook  
+customInsertPosition = do
+    w <- ask
+    dpy <- liftX $ asks display
+    wmClass <- liftX $ io $ do
+        wmClassAtom <- internAtom dpy "WM_CLASS" False
+        getWindowProperty8 dpy wmClassAtom w
+    wmTransientFor <- liftX $ io $ do
+        wmTransientForAtom <- internAtom dpy "WM_TRANSIENT_FOR" False  
+        getWindowProperty32 dpy wmTransientForAtom w
+    case (wmClass, wmTransientFor) of
+        (Just _, Nothing) -> insertPosition End Newer
+        _ -> idHook 
 
 
 -- Status bar configuration
