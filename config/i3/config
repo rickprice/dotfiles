@@ -1,4 +1,4 @@
-# i3 config file (v4
+# i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # exec_always --no-startup-id xrandr --output DP1-1-1 --auto --above eDP1
 exec_always --no-startup-id xrandr --output eDP-1 --primary --scale 0.7
@@ -29,7 +29,7 @@ default_border pixel 1
 default_floating_border normal
 
 # Hide borders
-hide_edge_borders none
+hide_edge_borders smart
 
 # change borders
 bindsym $mod+u border none
@@ -86,8 +86,7 @@ bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F8 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec rm -f ~/.cache/selected-background.txt && autorandr --change --force
-bindsym $mod+F5 exec background-picker --selected-image-file ~/.cache/selected-background.txt --directory ~/Documents/Dropbox/Pictures/SharedBackgrounds
-autorandr --change --force
+bindsym $mod+F5 exec background-picker --selected-image-file ~/.cache/selected-background.txt --directory ~/Documents/Dropbox/Pictures/SharedBackgrounds && autorandr --change --force
 bindsym $mod+F9 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -531,4 +530,3 @@ bindsym $mod+m bar mode toggle
 
 ## Settings for i3-wm
 
-hide_edge_borders smart
