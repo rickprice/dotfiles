@@ -15,7 +15,7 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
 BACKGROUNDS_DIR=~/Documents/Dropbox/Pictures/SharedBackgrounds
 THEME_DIRS="Default $(name_time_period)"
-SELECTED_BACKGROUND_FILE=~/cache/selected-background.txt
+SELECTED_BACKGROUND_FILE=~/.cache/selected-background.txt
 
 # Check if selected background file exists and use it, otherwise use current logic
 if [ -f "$SELECTED_BACKGROUND_FILE" ]; then
