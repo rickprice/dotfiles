@@ -15,6 +15,15 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
 BACKGROUNDS_DIR=~/Documents/Dropbox/Pictures/SharedBackgrounds
 THEME_DIRS="Default $(name_time_period)"
-echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
-echo "THEME_DIRS are: " $THEME_DIRS
-feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 1 $BACKGROUNDS_DIR $THEME_DIRS)
+SELECTED_BACKGROUND_FILE=~/cache/selected-background.txt
+
+# Check if selected background file exists and use it, otherwise use current logic
+if [ -f "$SELECTED_BACKGROUND_FILE" ]; then
+    BACKGROUND_IMAGE=$(cat "$SELECTED_BACKGROUND_FILE")
+    echo "Using selected background: $BACKGROUND_IMAGE"
+    feh --no-fehbg --bg-max "$BACKGROUND_IMAGE"
+else
+    echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
+    echo "THEME_DIRS are: " $THEME_DIRS
+    feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 1 $BACKGROUNDS_DIR $THEME_DIRS)
+fi
