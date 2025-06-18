@@ -95,7 +95,7 @@ myPrinterConfig = "system-config-printer"
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
-myFixLogitechMouse = "xinput --set-prop 'Logitech M325' 'libinput Accel Speed' -0.5"
+myFixLogitechMouse = "xinput --set-prop 'Logitech M325' 'libinput Accel Speed' -0.4"
 
 -- Colors
 myNormalBorderColor = "#dddddd"
