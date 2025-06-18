@@ -205,7 +205,7 @@ myCustomKeys hostname =
     ++ viewGroupKeys "w 2" "Work2"
     ++ viewGroupKeys "w 3" "Work3"
 
-    ++ viewGroupKeys "f f" "Frederick1"
+    ++ viewGroupKeys "f f" "StandardFrederick1"
     ++ viewGroupKeys "f 1" "Frederick1"
     ++ viewGroupKeys "f 2" "Frederick2"
     ++ viewGroupKeys "f 3" "Frederick3"
@@ -502,12 +502,13 @@ setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
     ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
     ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
 
-    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
     ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP3")]
     ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP6"),(farRightScreen, "FP5")]
 
-    ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP4"),(farRightScreen, "TP3")]
+    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
@@ -519,12 +520,14 @@ setupWorkspaceGroups _ = do
     ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
     ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
 
-    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP3")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP6"),(farRightScreen, "FP5")]
+    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP2"),(farRightScreen, "FP3")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP5")]
 
-    ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP4"),(farRightScreen, "TP3")]
+    -- ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
+    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
+    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
