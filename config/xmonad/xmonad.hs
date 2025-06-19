@@ -359,7 +359,8 @@ customInsertPosition = do
     isDialogWindow <- isDialog
     case (wmClass, wmTransientFor, isDialogWindow) of
         (Just _, Nothing, False) -> insertPosition End Newer
-        (_, _, True) -> insertPosition End Newer
+        (_, Just _, _) -> idHook
+        (_, _, True) -> idHook
         _ -> idHook 
 
 
