@@ -345,7 +345,7 @@ myManageHook =
         , isDialog --> doFloat
         ]
 
--- Custom insertion position logic based on WM_CLASS and WM_TRANSIENT_FOR
+-- Custom insertion position logic based on WM_CLASS, WM_TRANSIENT_FOR, and dialog windows
 customInsertPosition :: ManageHook  
 customInsertPosition = do
     w <- ask
@@ -356,8 +356,10 @@ customInsertPosition = do
     wmTransientFor <- liftX $ io $ do
         wmTransientForAtom <- internAtom dpy "WM_TRANSIENT_FOR" False  
         getWindowProperty32 dpy wmTransientForAtom w
-    case (wmClass, wmTransientFor) of
-        (Just _, Nothing) -> insertPosition End Newer
+    isDialogWindow <- isDialog
+    case (wmClass, wmTransientFor, isDialogWindow) of
+        (Just _, Nothing, False) -> insertPosition End Newer
+        (_, _, True) -> insertPosition End Newer
         _ -> idHook 
 
 
