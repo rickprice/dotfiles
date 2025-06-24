@@ -276,7 +276,7 @@ myStartupHook  hostname= do
     spawnOnce "snixembed"
     spawnOnce "nm-applet"
     spawnOnce "xscreensaver --no-splash"
-    spawnOnce "trayer --monitor primary --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 24"
+    spawnOnce "trayer --monitor primary --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0x222222 --height 21"
     setWMName "LG3D"
 
 -- Main configuration

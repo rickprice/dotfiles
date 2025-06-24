@@ -1,8 +1,8 @@
 Config { overrideRedirect = False
-       , font     = "xft:iosevka-14"
+       , font     = "xft:iosevka-12"
        , bgColor = "#1c1c1c"
        , fgColor = "#ffffff"
-       , position = TopSize L 90 zy26
+       , position = TopW L 93
        , lowerOnStart = True
        , hideOnStart = False
        , persistent = True
