@@ -17,7 +17,8 @@
 			hook: (parent_anchor: TL, self_anchor: TL),
 			offset: (x: 0, y: 48),
 			params: NotificationBlock((
-				monitor: 0,
+				monitor: -1,
+                focus_follows: Window,
 				border_width: 3.0,
 				border_rounding: 0.0,
 				gap: (x: 0.0, y: 24.0),
