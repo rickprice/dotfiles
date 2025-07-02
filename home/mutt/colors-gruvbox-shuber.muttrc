@@ -48,7 +48,7 @@ color underline   color223 color239
 color sidebar_divider    color250 color234
 color sidebar_new        color142 color234
 
-color index color142 color234 ~N
+color index color142 color237 ~N
 color index color108 color234 ~O
 color index color109 color234 ~P
 color index color214 color234 ~F
