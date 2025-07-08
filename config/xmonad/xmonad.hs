@@ -70,7 +70,7 @@ hostnameDAW = "daw"
 myTerminal = "wezterm"
 myBrowser = "firefox-developer-edition"
 myBrowserNyxt = "nyxt --no-socket"
-myEmailer = "wezterm start -- neomutt"
+myEmailer = "wezterm start -- neomutt -F /home/fprice/.mutt/muttrc"
 myFileManager = "pcmanfm"
 myDMenu = "dmenu-frecency"
 
