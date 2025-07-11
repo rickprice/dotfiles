@@ -15,6 +15,8 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 # BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
 BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds
 THEME_DIRS="Default $(name_time_period)"
+PERSON_SPECIFIC=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds/${USER}Specific
+
 echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
 echo "THEME_DIRS are: " $THEME_DIRS
-feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $BACKGROUNDS_DIR $THEME_DIRS)
+feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $PERSON_SPECIFIC $BACKGROUNDS_DIR $THEME_DIRS)
