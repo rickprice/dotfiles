@@ -123,6 +123,7 @@ viewGroupKeys keys viewGroup = [("M-s " ++ keys , ADWG.viewWSGroup viewGroup)]
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
+    -- , ("M-y", withFocused $ windows . W.sink)
     , spawnKey "b" myBrowser
     , spawnKey "d" (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary)
     , spawnKey "S-d" (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary)
@@ -149,7 +150,7 @@ myCustomKeys hostname =
 
     -- Powekey for Quick Mobile jumping particularly
     , ("M-i", showDesktop "IM")
-    , ("M-t", showDesktop "TP11")
+    -- , ("M-t", showDesktop "TP11")
     , ("M-S-f", showDesktop "FP11")
 
     -- , ("M-6", powerkeys 6 hostname)
