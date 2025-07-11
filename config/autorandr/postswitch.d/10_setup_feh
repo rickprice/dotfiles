@@ -19,4 +19,5 @@ PERSON_SPECIFIC=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds/${USER}S
 
 echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
 echo "THEME_DIRS are: " $THEME_DIRS
+echo "PERSON_SPECIFIC is: " $PERSON_SPECIFIC
 feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $PERSON_SPECIFIC $BACKGROUNDS_DIR $THEME_DIRS)
