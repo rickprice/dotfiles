@@ -12,12 +12,13 @@ trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
 trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
-# BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
-BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds
-THEME_DIRS="Default $(name_time_period)"
-PERSON_SPECIFIC=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds/${USER}Specific
+DROPBOX_LOCATION=$(find ~/Documents -name Dropbox)
+BACKGROUNDS_DIR="$DROPBOX_LOCATION/Pictures/SharedBackgrounds"
+PERSON_SPECIFIC="${USER}Specific"
+THEME_DIRS="$PERSON_SPECIFIC Default $(name_time_period)"
 
+echo "DROPBOX_LOCATION is: " $DROPBOX_LOCATION
 echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
-echo "THEME_DIRS are: " $THEME_DIRS
 echo "PERSON_SPECIFIC is: " $PERSON_SPECIFIC
-feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $PERSON_SPECIFIC $BACKGROUNDS_DIR $THEME_DIRS)
+echo "THEME_DIRS are: " $THEME_DIRS
+feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $BACKGROUNDS_DIR $THEME_DIRS)
