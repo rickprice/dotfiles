@@ -13,17 +13,12 @@ trap 'echo "\"${last_command}\" command failed with exit code $?."' EXIT
 
 # Setup where everything goes
 # BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/TamaraDocuments/Backgrounds
+# BACKGROUNDS_DIR=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds
 BACKGROUNDS_DIR=~/Documents/Dropbox/Pictures/SharedBackgrounds
 THEME_DIRS="Default $(name_time_period)"
-SELECTED_BACKGROUND_FILE=~/.cache/selected-background.txt
+PERSON_SPECIFIC=~/Documents/Personal/Dropbox/Pictures/SharedBackgrounds/${USER}Specific
 
-# Check if selected background file exists and use it, otherwise use current logic
-if [ -f "$SELECTED_BACKGROUND_FILE" ]; then
-    BACKGROUND_IMAGE=$(cat "$SELECTED_BACKGROUND_FILE")
-    echo "Using selected background: $BACKGROUND_IMAGE"
-    feh --no-fehbg --bg-max "$BACKGROUND_IMAGE"
-else
-    echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
-    echo "THEME_DIRS are: " $THEME_DIRS
-    feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 1 $BACKGROUNDS_DIR $THEME_DIRS)
-fi
+echo "BACKGROUNDS_DIR is: " $BACKGROUNDS_DIR
+echo "THEME_DIRS are: " $THEME_DIRS
+echo "PERSON_SPECIFIC is: " $PERSON_SPECIFIC
+feh --no-fehbg --bg-max $(images_matching_subdirectories --names-only --limit 4 $PERSON_SPECIFIC $BACKGROUNDS_DIR $THEME_DIRS)
