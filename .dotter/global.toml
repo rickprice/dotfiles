@@ -57,7 +57,7 @@
 
 [X11.files]
 "etc/X11/xorg.conf.d/30-touchpad.conf" = { target = "/etc/X11/xorg.conf.d/30-touchpad.conf", type = "symbolic", owner = "root" }
-"etc/udev/rules.d/40-monitor-hotplug-rules" = { target = "/etc/udev/rules.d/40-monitor-hotplug-rules", type = "symbolic", owner = "root" }
+# "etc/udev/rules.d/40-monitor-hotplug-rules" = { target = "/etc/udev/rules.d/40-monitor-hotplug-rules", type = "symbolic", owner = "root" }
 
 [local.files]
 "local/bin/enableExternalMonitor.sh"="~/.local/bin/enableExternalMonitor"
