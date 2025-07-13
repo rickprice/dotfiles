@@ -1,1 +1,1 @@
-ACTION=="change", SUBSYSTEM=="drm", RUN+="sleep 2 && /usr/bin/autorandr --change --force"
+ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/autorandr TamaraCurved --force"
