@@ -18,8 +18,8 @@
 [alacritty.files]
 "config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 
-[autorandr.files]
-"config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
+# [autorandr.files]
+# "config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
 
 [bash.files]
 "home/bashrc" = "~/.bashrc"
