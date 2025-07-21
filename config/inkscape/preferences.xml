@@ -309,7 +309,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -318,7 +318,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Sans;font-size:21.33333333px;-inkscape-font-specification:'Sans, Normal';letter-spacing:0.67px;text-orientation:auto"
+       style="line-height:1.25;font-family:Sans;font-size:21.33333333px;-inkscape-font-specification:'Sans, Normal';letter-spacing:0.67px;text-orientation:auto;text-anchor:middle;text-align:center"
        selcue="1"
        align_mode="1"
        writing_mode="0"
@@ -412,6 +412,8 @@
     <group
        id="geometric"
        mode="drag" />
+    <group
+       id="picker" />
   </group>
   <group
      id="palette">
@@ -585,7 +587,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="2" />
+       page="1" />
     <group
        id="filtereffects" />
     <group
@@ -629,7 +631,7 @@
        path="">
       <group
          id="exportarea"
-         value="custom" />
+         value="drawing" />
       <group
          id="defaultxdpi" />
       <group
@@ -656,7 +658,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/FrederickPosters/GreenBarn/" />
+       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads" />
     <group
        id="import"
        enable_preview="1"
@@ -1029,7 +1031,8 @@
       <group
          id="shown"
          ver1.3.2="1"
-         ver1.4="1" />
+         ver1.4="1"
+         ver1.4.2="1" />
     </group>
     <group
        id="rendering"
