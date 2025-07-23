@@ -68,7 +68,8 @@ hostnameDAW = "daw"
 
 -- Applications
 myTerminal = "wezterm"
-myBrowser = "firefox-developer-edition"
+-- myBrowser = "firefox-developer-edition"
+myBrowser = "google-chrome-stable"
 myBrowserNyxt = "nyxt --no-socket"
 myEmailer = "wezterm start -- neomutt -F /home/fprice/.mutt/muttrc"
 myFileManager = "pcmanfm"
