@@ -242,3 +242,6 @@
 [LLM.files]
 "home/aider.conf.yml"="~/.aider.conf.yml"
 
+[dunst.files]
+"config/dunst/dunstrc" = "~/.config/dunst/dunstrc"
+

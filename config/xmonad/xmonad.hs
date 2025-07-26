@@ -254,7 +254,7 @@ myStartupHook  hostname= do
     setupWorkspaceGroups hostname
     -- System services
     spawnOnce "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-    spawnOnce "wired --run"
+    spawnOnce "dunst"
     spawnOnce "picom -b"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"

@@ -52,7 +52,7 @@ paru --noconfirm -S xmonad xmonad-contrib stack ghcup-hs-bin
 paru --noconfirm -S xmobar
 paru --noconfirm -S trayer-srg
 paru --noconfirm -S xorg-fonts-misc
-paru --noconfirm -S wired # toaster notification manager
+paru --noconfirm -S dunst # toaster notification manager
 paru --noconfirm -S feh
 paru --noconfirm -S gnome-system-monitor
 paru --noconfirm -S dmenu-frecency-git
