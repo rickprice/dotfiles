@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="248.977646715062"
-         height="2971.16956815945"
+         width="600.000007200002"
+         height="600.000007200002"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -646,7 +646,7 @@
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/CalvaryConnects"
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/Logos"
        use_current_dir="1"
        enable_svgexport="0" />
     <group
@@ -658,7 +658,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/DropBoxDownloads" />
+       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/Logos" />
     <group
        id="import"
        enable_preview="1"
@@ -1125,7 +1125,7 @@
      org.inkscape.output.pdf.cairorenderer.resolution="600" />
   <group
      id="desktop"
-     style="fill:#ffcc00;-inkscape-font-specification:Garamond;font-family:Garamond;font-size:24px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;text-anchor:middle;text-align:center;vector-effect:non-scaling-stroke;-inkscape-stroke:hairline">
+     style="fill:#000000;-inkscape-font-specification:Garamond;font-family:Garamond;font-size:24px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;text-anchor:middle;text-align:center;vector-effect:non-scaling-stroke;-inkscape-stroke:hairline">
     <group
        width="640"
        height="480"
