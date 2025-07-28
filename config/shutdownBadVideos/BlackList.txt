@@ -18,11 +18,14 @@ apocalypse
 araha
 arkham
 arkham asylum
+arma
 assasin
 assassin
 asylum
 at night
+at the door
 ate him
+ath force
 attack
 atypical
 autopsy
@@ -100,6 +103,7 @@ creaks
 creepiest
 creepy
 criminal
+criminals
 crimson
 crisis zone
 crow's eye
@@ -123,6 +127,7 @@ darq
 dashcam
 daughters
 daymare
+days gone
 dead
 dead island
 deadly
@@ -159,6 +164,7 @@ endgame
 enemy npc
 enlisted gameplay
 ennard
+escape
 escaping
 escaping mutant
 everspace
@@ -171,6 +177,7 @@ fear
 feeding frenzy
 felony
 file destined
+final call
 final fantasy
 firefight
 first person
@@ -216,6 +223,7 @@ gylt
 half life
 halloween
 halo
+haloween
 hardcore
 harry potter
 haunted
@@ -242,8 +250,10 @@ horror
 hospital
 i love being needed
 ice cream boss
+il gatto
 illusion
 in the mirror
+inception
 infamous
 infliction
 inquisition
@@ -252,6 +262,7 @@ insomnis
 invasion
 it happened here
 it takes two
+jackie chan
 jak and daxter
 jj and mikey
 jj build
@@ -275,6 +286,7 @@ krampus
 last of us
 layers of fear
 left 4 dead
+liberation
 liminal
 little nightmares
 living under
@@ -289,6 +301,7 @@ madness
 maizen
 mansion
 maquette
+marine rock
 marines
 marvel
 mature
@@ -336,10 +349,14 @@ oggy
 oliver and the
 one who knocks
 only 24 hours
+onslaught
 orph
 ouija
 outlast
 outlast chris walker
+overlord
+pacer bounce
+parkour
 partum artifex
 patrol officers
 perry mason
@@ -377,6 +394,7 @@ rdr2
 re7
 ready or not
 realistic body
+rebel
 red alert
 red dead
 reloaded
@@ -457,6 +475,7 @@ suicide
 summoner
 survival
 survival horror
+swat team
 tears
 terminator
 terrify
@@ -520,7 +539,9 @@ world war z
 worst
 wrestlers
 wwe
+wwii
 xbox
+xenomorph
 yandere
 yieun
 yu-gi-oh
@@ -528,3 +549,4 @@ zeta
 zodiak
 zombie
 zombies
+zombis
