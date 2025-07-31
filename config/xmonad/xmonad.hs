@@ -69,7 +69,7 @@ hostnameDAW = "daw"
 -- Applications
 myTerminal = "wezterm"
 -- myBrowser = "firefox-developer-edition"
-myBrowser = "google-chrome-stable"
+myBrowser = "google-chrome-stable --new-window https://www.google.com"
 myBrowserNyxt = "nyxt --no-socket"
 -- myEmailer = "wezterm start -- neomutt -F /home/fprice/.mutt/muttrc"
 myEmailer = "trojita"
@@ -261,7 +261,7 @@ myStartupHook  hostname= do
     spawn "killall volumeicon; sleep 15; volumeicon"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
-    spawnOnce "syncthing"
+    spawnOnce "syncthing servec"
     spawn myFixScreens
     spawn myFixLogitechMouse
     
