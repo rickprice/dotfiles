@@ -261,7 +261,7 @@ myStartupHook  hostname= do
     spawn "killall volumeicon; sleep 15; volumeicon"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
-    spawnOnce "syncthing servec"
+    spawnOnce "syncthing serve"
     spawn myFixScreens
     spawn myFixLogitechMouse
     
