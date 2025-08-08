@@ -261,7 +261,6 @@ myStartupHook  hostname= do
     spawn "killall volumeicon; sleep 15; volumeicon"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
-    spawnOnce "syncthing serve"
     spawn myFixScreens
     spawn myFixLogitechMouse
     
@@ -273,6 +272,7 @@ myStartupHook  hostname= do
             spawnOn "MAIL" myEmailer
             spawnOn "IM" "discord"
             spawnOn "ADM" myBrowser
+            spawnOnce "syncthing serve"
         else do
             spawnOn "FP12" myArdour
     
