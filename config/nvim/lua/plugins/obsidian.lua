@@ -5,18 +5,17 @@ return {
   ft = "markdown",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp", -- optional, for completion
     "nvim-telescope/telescope.nvim", -- optional, for search
   },
   opts = {
     workspaces = {
       {
-        name = "work",
-        path = "~/obsidian/work-vault",
+        name = "personal",
+        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments/personal-vault",
       },
       {
-        name = "personal",
-        path = "~/obsidian/personal-vault", -- optional
+        name = "work",
+        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments/work-vault",
       },
     },
 
@@ -25,7 +24,7 @@ return {
       folder = "journal/daily",
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
-      template = "templates/daily-note.md"
+      template = "daily-note.md"
     },
 
     -- Weekly notes for sprint planning, retrospectives
@@ -33,12 +32,12 @@ return {
       folder = "journal/weekly",
       date_format = "%Y-W%V",
       alias_format = "Week of %B %-d, %Y",
-      template = "templates/weekly-note.md"
+      template = "weekly-note.md"
     },
 
     -- Note completion and linking
     completion = {
-      nvim_cmp = true,
+      nvim_cmp = false, -- disabled in favor of blink.cmp
       min_chars = 2,
     },
 
@@ -159,7 +158,7 @@ return {
     { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New Obsidian note" },
     { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open in Obsidian app" },
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Show backlinks" },
-    { "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Insert template" },
+    { "<leader>otp", "<cmd>ObsidianTemplate<cr>", desc = "Insert template" },
     { "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image" },
     { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note" },
 
