@@ -126,6 +126,9 @@
 # "local/bin/NameTimePeriod.py"="~/.local/bin/NameTimePeriod"
 "local/bin/tmux-attach.sh"="~/.local/bin/tmux-attach"
 "local/bin/weather.sh"="~/.local/bin/weather"
+"local/bin/cd_check.sh"="~/.local/bin/cd_check"
+"local/bin/cd_individual_normalize.sh"="~/.local/bin/cd_individual_normalize"
+"local/bin/cd_normalize.sh"="~/.local/bin/cd_normalize"
 
 [medium.files]
 "local/bin/PublishToMedium.py"="~/.local/bin/PublishToMedium"
