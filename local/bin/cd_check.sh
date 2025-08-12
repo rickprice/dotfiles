@@ -3,7 +3,7 @@
 echo "Final CD Master Check"
 echo "===================="
 
-for file in cd_masters/*.wav; do
+for file in *.wav; do
     # Check sample rate and bit depth
     format=$(ffprobe -v quiet -select_streams a:0 \
              -show_entries stream=sample_rate,bits_per_sample \
