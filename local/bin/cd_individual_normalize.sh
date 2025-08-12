@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TARGET_LUFS=${1:--14}
-TARGET_PEAK=${2:--1}
+TARGET_LUFS=${1:--16}
+TARGET_PEAK=${2:--"-0.3"}
 OUTPUT_DIR="normalized"
 
 echo "Individual track normalization to ${TARGET_LUFS} LUFS, Peak: ${TARGET_PEAK} dBTP"
@@ -15,6 +15,9 @@ ffmpeg-normalize *.wav \
     -t "$TARGET_LUFS" \
     -tp "$TARGET_PEAK" \
     --two-pass \
+    --keep-lra-above 1 \
+    -ar 44100 \
+    -c:a pcm_s16le \
     -pr \
     -ext wav \
     -o "$OUTPUT_DIR/"
