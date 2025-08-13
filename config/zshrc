@@ -1,0 +1,130 @@
+# Immediate history sharing
+setopt SHARE_HISTORY          # Share history between all sessions
+setopt INC_APPEND_HISTORY     # Write to history file immediately, not when shell exits
+setopt HIST_IGNORE_DUPS       # Don't record duplicates
+setopt HIST_IGNORE_ALL_DUPS   # Remove older duplicate entries from history
+setopt HIST_FIND_NO_DUPS      # Don't display duplicates when searching
+setopt HIST_IGNORE_SPACE      # Don't record commands that start with space
+setopt HIST_SAVE_NO_DUPS      # Don't write duplicates to history file
+
+# History file settings
+HISTFILE=~/.zsh_history
+HISTSIZE=50000                # Lines of history to keep in memory
+SAVEHIST=50000               # Lines of history to save to file
+
+# Source fzf key bindings and completion
+source <(fzf --zsh)
+
+# Better fzf defaults
+export FZF_DEFAULT_OPTS="
+  --height 40% 
+  --layout=reverse 
+  --border 
+  --inline-info
+  --preview-window=:hidden
+  --bind='ctrl-/:toggle-preview'
+"
+
+# Better history search options
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' 
+  --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'
+"
+
+# Initialize starship prompt
+eval "$(starship init zsh)"
+
+# Add to ~/.zshrc
+eval "$(zoxide init zsh)"
+
+export PATH=$PATH:/home/fprice/.local/bin
+export PATH=$PATH:/home/fprice/.ghcup/bin
+export EDITOR=nvim
+
+# Remember ssh passwords across terminal sessions
+eval "$(keychain --quiet --eval ~/.ssh/id_ed25519)"
+
+# Enable syntax highlighting and autosuggestions if available
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Autosuggestion settings
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# Enhanced completion system
+autoload -Uz compinit
+compinit
+
+# Completion options
+setopt AUTO_MENU          # Show completion menu on successive tab press
+setopt COMPLETE_IN_WORD   # Allow completion in the middle of a word
+setopt ALWAYS_TO_END      # Move cursor to end of completed word
+setopt GLOB_COMPLETE      # Show expansions of wildcards
+
+# Case insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+# Color completion menus
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+# Better directory completion
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+
+# Process completion
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+
+# Useful aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ~="cd ~"
+alias c='clear'
+alias h='history'
+alias j='jobs -l'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+alias glog='git log --oneline --graph --decorate'
+
+# Modern alternatives
+alias cat='bat --paging=never' 2>/dev/null || alias cat='cat'
+alias ls='exa --icons' 2>/dev/null || alias ls='ls --color=auto'
+alias tree='exa --tree' 2>/dev/null || alias tree='tree'
+
+# Safety aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Directory navigation with zoxide
+alias cd='z'
+
