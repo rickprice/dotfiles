@@ -56,6 +56,9 @@
 "config/fish/functions/aider.fish" = "~/.config/fish/functions/aider.fish"
 "config/starship.toml" = "~/.config/starship.toml"
 
+[zsh.files]
+"config/zshrc" = "~/.zshrc"
+
 [bash.files]
 "config/bashrc" = "~/.bashrc"
 
