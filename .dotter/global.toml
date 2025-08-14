@@ -251,3 +251,6 @@
 [dunst.files]
 "config/dunst/dunstrc" = "~/.config/dunst/dunstrc"
 
+[tmux.files]
+"home/tmux.conf" = "~/.tmux.conf"
+
