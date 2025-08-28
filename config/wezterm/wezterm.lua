@@ -6,8 +6,9 @@ local config = {
 	-- color_scheme="Jellybeans",
 	-- color_scheme="BuiltinDark",
 
-	font = wezterm.font_with_fallback({ "Fira Code","Symbols Nerd Font Mono"}),
 	font_size = 10.0,
+	initial_cols = 120,
+	initial_rows = 70,
 	-- dpi = 96.0,
 	bold_brightens_ansi_colors = true,
 	-- font_dirs = {"/usr/share/fonts/TTF"},
@@ -17,21 +18,48 @@ local config = {
 	scrollback_lines = 10000,
 }
 
--- Platform-specific colors
+-- Platform-specific colors and fonts
 if wezterm.target_triple:find("darwin") then
-	-- macOS - white background
+	-- macOS - match Terminal.app default Basic theme
 	config.colors = {
-		foreground = "#333333",
+		foreground = "#000000",
 		background = "#ffffff",
-		cursor_bg = "#ff6600",
-		cursor_border = "#ff6600",
+		cursor_bg = "#000000",
+		cursor_border = "#000000",
 		cursor_fg = "#ffffff",
 		selection_bg = "#b3d4fc",
 		selection_fg = "#000000",
 
-		ansi = { "#000000", "#d70000", "#00d700", "#d7af00", "#0087d7", "#d700d7", "#00d7af", "#d7d7d7" },
-		brights = { "#808080", "#ff5f5f", "#5fff5f", "#ffff5f", "#5f87ff", "#ff5fff", "#5fffff", "#ffffff" },
+		-- Standard macOS Terminal ANSI colors
+		ansi = {
+			"#000000", -- Black
+			"#c23621", -- Red  
+			"#25bc24", -- Green
+			"#adad27", -- Yellow
+			"#492ee1", -- Blue
+			"#d338d3", -- Magenta
+			"#33bbc8", -- Cyan
+			"#cbcccd", -- White
+		},
+		brights = {
+			"#818383", -- Bright Black (Gray)
+			"#fc391f", -- Bright Red
+			"#31e722", -- Bright Green  
+			"#eaec23", -- Bright Yellow
+			"#5833ff", -- Bright Blue
+			"#f935f8", -- Bright Magenta
+			"#14f0f0", -- Bright Cyan
+			"#e9ebeb", -- Bright White
+		},
 	}
+	-- macOS fonts with excellent ligature support
+	config.font = wezterm.font_with_fallback({
+		"JetBrains Mono",       -- Excellent ligatures, bundled with many IDEs
+		"Fira Code",            -- Classic ligature font
+		"SF Mono",              -- Apple's system monospace font
+		"Menlo",                -- macOS default terminal font
+		"Symbols Nerd Font Mono"
+	})
 else
 	-- Other platforms - black background (original Jellybeans-based)
 	config.colors = {
@@ -46,6 +74,8 @@ else
 		ansi = { "#929292", "#e27373", "#94b979", "#ffba7b", "#97bedc", "#e1c0fa", "#00988e", "#dedede" },
 		brights = { "#bdbdbd", "#ffa1a1", "#bddeab", "#ffdca0", "#b1d8f6", "#fbdaff", "#1ab2a8", "#ffffff" },
 	}
+	-- Other platforms - use original font configuration
+	config.font = wezterm.font_with_fallback({ "Fira Code", "Symbols Nerd Font Mono"})
 end
 
 -- Event handler for zen mode
