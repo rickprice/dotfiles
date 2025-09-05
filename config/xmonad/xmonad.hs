@@ -120,6 +120,10 @@ viewGroupKeys keys viewGroup = [("M-s " ++ keys , ADWG.viewWSGroup viewGroup)]
 myCustomKeys =
     [ ("M-f", sendMessage ToggleLayout)
     , ("M-S-<Enter>", spawn myTerminal)
+    , ("M-<F2>", spawn myBrowser)
+    , ("M-<F3>", spawn myFileManager)
+    , ("M-<F4>", spawn "rm -f ~/.cache/selected-background.txt && autorandr --change --force")
+    , ("M-<F5>", spawn "background-picker --selected-image-file ~/.cache/selected-background.txt --directory ~/Documents/Dropbox/Pictures/SharedBackgrounds")
     -- , ("M-y", withFocused $ windows . W.sink)
     , spawnKey "b" myBrowser
     , spawnKey "d" (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary)
@@ -258,6 +262,7 @@ myStartupHook = do
     spawnOnce "killall udiskie; udiskie --tray"
     spawn myFixScreens
     spawn myFixLogitechMouse
+    spawn "~/.local/bin/ManageTouchpad off"
     
     -- Application startup
     spawnOnce "system-config-printer-applet"
