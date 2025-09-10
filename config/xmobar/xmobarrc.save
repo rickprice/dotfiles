@@ -17,16 +17,15 @@ Config { overrideRedirect = False
                         ] 10
 --                    , Run Memory ["--template", "Mem: <usedratio>%"] 10
                     , Run Date "<fc=#FFB53A>%a %b</fc> %Y-%m-%d <fc=#FFB53A>%H:%M</fc>" "date" 10
---                    , Run XMonadLog
---                    , Run Com "markdown_timesheet" ["/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments.work/work-vault/journal/daily", "--summarize"] "timesheet" 180
+                    , Run XMonadLog
+                    , Run Com "markdown_timesheet" ["/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments.work/work-vault/journal/daily", "--summarize"] "timesheet" 180
 --                    , Run Com "sprint" [] "sprint" 36000
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
 --       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
 --       , template = " %XMonadLog% | %cpu% | %date% %sprint%"
+       , template = " %XMonadLog% | %date% | %timesheet% }{%cpu% "
 --       , template = " %XMonadLog% | %cpu% | %date%"
---       , template = " %XMonadLog% | %date% | %timesheet% }{%cpu% "
-       , template = " %date% "
        }
 
