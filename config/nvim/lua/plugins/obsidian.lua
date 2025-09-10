@@ -11,11 +11,11 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments/personal-vault",
+        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments.personal",
       },
       {
         name = "work",
-        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments/work-vault",
+        path = "~/Documents/Personal/Dropbox/FrederickDocuments/MarkDownDocuments.work",
       },
     },
 
