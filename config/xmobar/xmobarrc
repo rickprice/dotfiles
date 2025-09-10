@@ -1,0 +1,9 @@
+Config { font = "xft:Sans-10"
+       , bgColor = "#000000"
+       , fgColor = "#ffffff"
+       , position = Top
+       , commands = [ Run Date "%Y-%m-%d %H:%M" "date" 10 ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%date%"
+       }

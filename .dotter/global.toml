@@ -64,8 +64,8 @@
 
 [xmonad.files]
 "config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
-"home/xmobarrc" = "~/.xmobarrc"
-"home/stalonetrayrc" = "~/.config/stalonetray/stalonetrayrc"
+"config/xmobar" = { target = "~/.config/xmobar", type = "symbolic" }
+"config/stalonetray" = { target = "~/.config/stalonetray", type = "symbolic" }
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
