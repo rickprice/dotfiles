@@ -65,7 +65,7 @@
 [xmonad.files]
 "config/xmonad" = { target = "~/.config/xmonad", type = "symbolic" }
 "home/xmobarrc" = "~/.xmobarrc"
-"home/stalonetrayrc" = "~/.stalonetrayrc"
+"home/stalonetrayrc" = "~/.config/stalonetray/stalonetrayrc"
 
 [flake8.files]
 "config/flake8" = "~/.config/flake8"
@@ -141,7 +141,7 @@
 "local/bin/ManageTouchpad.sh"="/usr/local/bin/ManageTouchpad"
 
 [gitconfig.files]
-"home/gitconfig"="~/.gitconfig"
+"home/gitconfig"="~/.config/git/config"
 
 [pivotal.files]
 "home/pivotaltrackerrc"="~/.pivotaltrackerrc"
@@ -159,13 +159,13 @@
 "config/fish/conf.d/ToDoistAPIKey.fish" = "~/.config/fish/conf.d/ToDoistAPIKey.fish"
 
 [mutt.files]
-"home/mutt/muttrc"="~/.mutt/muttrc"
-"home/mutt/mailcap"="~/.mutt/mailcap"
-"home/mutt/muttrc.gmail"="~/.mutt/muttrc.gmail"
-"home/mutt/muttrc.colour"="~/.mutt/muttrc.colour"
-"home/mutt/colors-gruvbox-shuber.muttrc"="~/.mutt/colors-gruvbox-shuber.muttrc"
-"home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.mutt/colors-gruvbox-shuber-extended.muttrc"
-"home/mutt/mutt_tokenfile"={target="~/.mutt/mutt_tokenfile",type="symbolic"}
+"home/mutt/muttrc"="~/.config/mutt/muttrc"
+"home/mutt/mailcap"="~/.config/mutt/mailcap"
+"home/mutt/muttrc.gmail"="~/.config/mutt/muttrc.gmail"
+"home/mutt/muttrc.colour"="~/.config/mutt/muttrc.colour"
+"home/mutt/colors-gruvbox-shuber.muttrc"="~/.config/mutt/colors-gruvbox-shuber.muttrc"
+"home/mutt/colors-gruvbox-shuber-extended.muttrc"="~/.config/mutt/colors-gruvbox-shuber-extended.muttrc"
+"home/mutt/mutt_tokenfile"={target="~/.config/mutt/mutt_tokenfile",type="symbolic"}
 "local/bin/mutt_oauth2.py"="~/.local/bin/mutt_oauth2"
 
 [gist.files]
@@ -246,11 +246,11 @@
 "etc/vanta.conf" = { target = "/etc/vanta.conf", type = "template", owner = "root" }
 
 [LLM.files]
-"home/aider.conf.yml"="~/.aider.conf.yml"
+"home/aider.conf.yml"="~/.config/aider/aider.conf.yml"
 
 [dunst.files]
 "config/dunst/dunstrc" = "~/.config/dunst/dunstrc"
 
 [tmux.files]
-"home/tmux.conf" = "~/.tmux.conf"
+"home/tmux.conf" = "~/.config/tmux/tmux.conf"
 
