@@ -25,7 +25,7 @@ Config { overrideRedirect = False
        , alignSep = "}{"
 --       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
 --       , template = " %XMonadLog% | %cpu% | %date% %sprint%"
-       , template = " %XMonadLog% | %cpu% | %date% | %timesheet% "
+       , template = " %XMonadLog% | %date% | %timesheet% }{%cpu% "
 --       , template = " %XMonadLog% | %cpu% | %date%"
        }
 
