@@ -92,6 +92,7 @@ myCalculator = "gnome-calculator"
 myScanner = "simple-scan"
 myRDPClient = "remmina"
 myPrinterConfig = "system-config-printer"
+myScreenLock = "xscreensaver-command locking"
 
 -- Scripts and commands
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
@@ -142,6 +143,7 @@ myCustomKeys hostname =
     , spawnKey "z" myFixScreens
     , spawnKey "m" myEmailer
     , spawnKey "o" myMarkdownEditor
+    , spawnKey "l" myScreenLock 
 
     -- Handle powerkeys
     , ("M-1", powerkeys 1 hostname)
