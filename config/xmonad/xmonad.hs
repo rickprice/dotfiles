@@ -92,7 +92,7 @@ myCalculator = "gnome-calculator"
 myScanner = "simple-scan"
 myRDPClient = "remmina"
 myPrinterConfig = "system-config-printer"
-myScreenLock = "xscreensaver-command locking"
+myScreenLock = "xscreensaver-command -lock"
 
 -- Scripts and commands
 myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
