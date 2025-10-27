@@ -260,7 +260,7 @@ myStartupHook  hostname= do
     spawnOnce "picom -b"
     spawnOnce "pamac-tray"
     spawnOnce "blueman-applet"
-    spawn "killall volumeicon; sleep 15; volumeicon"
+    spawn "killall pasystray; sleep 15; pasystray"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
     spawn myFixScreens
