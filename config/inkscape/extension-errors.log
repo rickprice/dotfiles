@@ -1,11 +1,9 @@
-Extension "XFIG Input" failed to load because a dependency was not met.
-Dependency:
+Extension "XFIG Input" failed to load because a dependency was not met. Dependency:
 	type: executable
 	location: path
 	string: fig2dev
 
-Extension "Formula (typst)" failed to load because a dependency was not met.
-Dependency:
+Extension "Formula (typst)" failed to load because a dependency was not met. Dependency:
 	type: executable
 	location: path
 	string: typst
