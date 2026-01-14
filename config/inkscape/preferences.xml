@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="600.000007200002"
-         height="600.000007200002"
+         width="1039.59176611713"
+         height="799.910917507382"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -309,7 +309,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -318,7 +318,7 @@
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
        use_svg2="1"
-       style="line-height:1.25;font-family:Sans;font-size:21.33333333px;-inkscape-font-specification:'Sans, Normal';letter-spacing:0.67px;text-orientation:auto;text-anchor:middle;text-align:center"
+       style="line-height:1.25;font-family:Sans;font-size:192px;-inkscape-font-specification:'Sans, Semi-Bold';letter-spacing:0.67px;text-orientation:auto;text-anchor:middle;text-align:center;font-weight:600"
        selcue="1"
        align_mode="1"
        writing_mode="0"
@@ -328,6 +328,8 @@
        id="nodes"
        selcue="1"
        gradientdrag="1"
+       changelayer="0"
+       changepage="0"
        pathflash_enabled="1"
        pathflash_unselected="0"
        pathflash_timeout="500"
@@ -587,7 +589,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="1" />
+       page="2" />
     <group
        id="filtereffects" />
     <group
@@ -658,7 +660,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/fprice/Documents/Personal/Dropbox/TamaraDocuments/The PricePixel Design House/Logos" />
+       path="/home/fprice/.config/darktable/watermarks" />
     <group
        id="import"
        enable_preview="1"
@@ -1032,7 +1034,8 @@
          id="shown"
          ver1.3.2="1"
          ver1.4="1"
-         ver1.4.2="1" />
+         ver1.4.2="1"
+         ver1.4.3="1" />
     </group>
     <group
        id="rendering"
@@ -1125,7 +1128,7 @@
      org.inkscape.output.pdf.cairorenderer.resolution="600" />
   <group
      id="desktop"
-     style="fill:#000000;-inkscape-font-specification:Garamond;font-family:Garamond;font-size:24px;letter-spacing:0.67px;stroke:#ffcc00;text-orientation:auto;text-anchor:middle;text-align:center;vector-effect:non-scaling-stroke;-inkscape-stroke:hairline">
+     style="fill:none;-inkscape-font-specification:'Open Sans SemiBold,  Semi-Bold Italic';font-family:'Open Sans SemiBold';font-size:266.66666667px;letter-spacing:0.67px;stroke:#000000;text-orientation:auto;text-anchor:middle;text-align:center;stroke-width:13.33333333;font-weight:600;font-style:italic">
     <group
        width="640"
        height="480"
@@ -1162,7 +1165,8 @@
        iconsize="16"
        width="32">
       <group
-         id="buttons" />
+         id="buttons"
+         showLPETool="0" />
     </group>
     <group
        id="controlbars"
