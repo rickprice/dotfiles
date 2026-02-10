@@ -118,8 +118,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="1039.59176611713"
-         height="799.910917507382"
+         width="600.000007200002"
+         height="600.000007200002"
          ry="0" />
       <eventcontext
          id="3dbox"
@@ -309,7 +309,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -589,7 +589,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="2" />
+       page="1" />
     <group
        id="filtereffects" />
     <group
@@ -633,7 +633,7 @@
        path="">
       <group
          id="exportarea"
-         value="drawing" />
+         value="selection" />
       <group
          id="defaultxdpi" />
       <group
@@ -1128,7 +1128,7 @@
      org.inkscape.output.pdf.cairorenderer.resolution="600" />
   <group
      id="desktop"
-     style="fill:none;-inkscape-font-specification:'Open Sans SemiBold,  Semi-Bold Italic';font-family:'Open Sans SemiBold';font-size:266.66666667px;letter-spacing:0.67px;stroke:#000000;text-orientation:auto;text-anchor:middle;text-align:center;stroke-width:13.33333333;font-weight:600;font-style:italic">
+     style="fill:#1a1a1a;-inkscape-font-specification:'Open Sans SemiBold,  Semi-Bold Italic';font-family:'Open Sans SemiBold';font-size:266.66666667px;letter-spacing:0.67px;stroke:#000000;text-orientation:auto;text-anchor:middle;text-align:center;stroke-width:13.33333333;font-weight:600;font-style:italic">
     <group
        width="640"
        height="480"
