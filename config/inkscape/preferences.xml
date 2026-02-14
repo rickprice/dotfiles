@@ -633,7 +633,7 @@
        path="">
       <group
          id="exportarea"
-         value="selection" />
+         value="page" />
       <group
          id="defaultxdpi" />
       <group
