@@ -81,7 +81,7 @@ myDarkTable = "darktable"
 myDarkTablePersonalLibrary = "~/Documents/Personal/DarktablePersonal/library.db"
 myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library.db"
 myInkScape = "inkscape"
-myArdour = "ardour8"
+myArdour = "ardour9"
 myEbookViewer = "ebook-viewer"
 myMarkdownEditor = "obsidian"
 
