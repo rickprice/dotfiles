@@ -82,6 +82,7 @@ myDarkTablePersonalLibrary = "~/Documents/Personal/DarktablePersonal/library.db"
 myDarkTableCommercialLibrary = "~/Documents/Personal/DarktableCommercial/library.db"
 myInkScape = "inkscape"
 myArdour = "ardour9"
+myGuitarix = "guitarix"
 myEbookViewer = "ebook-viewer"
 myMarkdownEditor = "obsidian"
 
@@ -140,6 +141,7 @@ myCustomKeys hostname =
     , ("calc", spawn myCalculator)
     , spawnKey "r" myRDPClient
     , spawnKey "a" myArdour
+    , spawnKey "g" myGuitarix
     , spawnKey "z" myFixScreens
     , spawnKey "m" myEmailer
     , spawnKey "o" myMarkdownEditor
