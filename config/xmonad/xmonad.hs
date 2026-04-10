@@ -84,6 +84,7 @@ myInkScape = "inkscape"
 myArdour = "ardour9"
 myGuitarix = "guitarix"
 myCarla = "carla"
+myQPWGraph = "qpwgraph"
 myEbookViewer = "ebook-viewer"
 myMarkdownEditor = "obsidian"
 
@@ -144,6 +145,7 @@ myCustomKeys hostname =
     , spawnKey "a a" myArdour
     , spawnKey "a g" myGuitarix
     , spawnKey "a c" myCarla
+    , spawnKey "a q" myQPWGraph
     , spawnKey "z" myFixScreens
     , spawnKey "m" myEmailer
     , spawnKey "o" myMarkdownEditor
