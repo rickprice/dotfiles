@@ -85,6 +85,7 @@ myArdour = "ardour9"
 myGuitarix = "guitarix"
 myCarla = "carla"
 myQPWGraph = "qpwgraph"
+myMidiSnoop = "midisnoop"
 myEbookViewer = "ebook-viewer"
 myMarkdownEditor = "obsidian"
 
@@ -146,6 +147,7 @@ myCustomKeys hostname =
     , spawnKey "a g" myGuitarix
     , spawnKey "a c" myCarla
     , spawnKey "a q" myQPWGraph
+    , spawnKey "a m" myMidiSnoop
     , spawnKey "z" myFixScreens
     , spawnKey "m" myEmailer
     , spawnKey "o" myMarkdownEditor
