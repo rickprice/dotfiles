@@ -231,6 +231,10 @@ myCustomKeys hostname =
     ++ viewGroupKeys "z 1" "Zoom"
     ++ viewGroupKeys "z 2" "Zoom2"
 
+    -- ++ viewGroupKeys "m m" "M1"
+    -- ++ viewGroupKeys "m 1" "M1"
+    -- ++ viewGroupKeys "m 2" "M2"
+
     ++ viewGroupKeys "c" "Messaging"
 
     -- ++ [
@@ -276,13 +280,16 @@ myStartupHook  hostname= do
     spawn myFixLogitechMouse
     
     -- Host-specific configuration
-    if isPrefixOf hostnameWork hostname
+    if hostnameWork `isPrefixOf` hostname
         then do
             spawnOnce "system-config-printer-applet"
             spawnOnce "meteo-qt"
             spawnOn "MAIL" myEmailer
             spawnOn "IM" "discord"
             spawnOn "ADM" myBrowser
+            spawnOn "U1" myGuitarix
+            spawnOn "U1" myCarla
+            spawnOn "U2" myQPWGraph
             spawnOnce "syncthing serve"
         else do
             spawnOn "FP12" myArdour
@@ -415,7 +422,7 @@ myXmobarPP =
 myExtraWorkspaces hostname | isPrefixOf hostnameWork hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
 myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
 
-myWorkspaces hostname | isPrefixOf hostnameWork hostname = asWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces
+myWorkspaces hostname | isPrefixOf hostnameWork hostname = wWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces ++ uWorkspaces
 myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
 -- Workspace helper functions
@@ -451,13 +458,13 @@ desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (
 desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop (desktopNameFromTuple workspaceWindowPrefix t))
 
 -- Workspace definitions
--- ActiveState workspaces
-asWorkspaceDisplayPrefix = "W"
-asWorkspaceKeyPrefix = Nothing
-asDesktops = 6
-asDesktopPanes = 1
-asWorkspaces = workspaceNames asWorkspaceDisplayPrefix asDesktops asDesktopPanes
-asWorkspaceKeys = wsKeys asWorkspaceKeyPrefix asWorkspaceDisplayPrefix asDesktops asDesktopPanes
+-- Work workspaces
+wWorkspaceDisplayPrefix = "W"
+wWorkspaceKeyPrefix = Nothing
+wDesktops = 4
+wDesktopPanes = 1
+wWorkspaces = workspaceNames wWorkspaceDisplayPrefix wDesktops wDesktopPanes
+wWorkspaceKeys = wsKeys wWorkspaceKeyPrefix wWorkspaceDisplayPrefix wDesktops wDesktopPanes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
@@ -475,14 +482,23 @@ fDesktopPanes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
+-- Utility workspaces
+uWorkspaceDisplayPrefix = "U"
+uWorkspaceKeyPrefix = Just "u"
+uDesktops = 2
+uDesktopPanes = 1
+uWorkspaces = workspaceNames uWorkspaceDisplayPrefix uDesktops uDesktopPanes
+uWorkspaceKeys = wsKeys uWorkspaceKeyPrefix uWorkspaceDisplayPrefix uDesktops uDesktopPanes
+
 -- =============================================================================
 -- MAIN KEY BINDINGS
 -- =============================================================================
 
 myNewStyleKeys hostname =
-    asWorkspaceKeys
+    wWorkspaceKeys
         ++ tWorkspaceKeys
         ++ fWorkspaceKeys
+        ++ uWorkspaceKeys
         ++ myCustomKeys hostname
         ++ warpMouseKeys
 
