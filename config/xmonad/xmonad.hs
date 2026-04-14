@@ -287,8 +287,8 @@ myStartupHook  hostname= do
             spawnOn "MAIL" myEmailer
             spawnOn "IM" "discord"
             spawnOn "ADM" myBrowser
-            spawnOn "U1" myGuitarix
             spawnOn "U1" myCarla
+            spawnOn "U1" myGuitarix
             spawnOn "U2" myQPWGraph
             spawnOnce "syncthing serve"
         else do
