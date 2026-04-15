@@ -286,6 +286,7 @@ myStartupHook  hostname= do
             spawnOnce "meteo-qt"
             spawnOn "MAIL" myEmailer
             spawnOn "IM" "discord"
+            spawnOn "ADM" myMarkdownEditor
             spawnOn "ADM" myBrowser
             spawnOn "U1" myCarla
             spawnOn "U1" myGuitarix
