@@ -276,7 +276,7 @@ myStartupHook  hostname= do
     spawn "killall pasystray; sleep 15; pasystray"
     spawnOnce "xfce4-power-manager"
     spawnOnce "killall udiskie; udiskie --tray"
-    spawnOnce "easyeffects --service-mode --hide-window"
+    -- spawnOnce "easyeffects --service-mode --hide-window"
     spawn myFixScreens
     spawn myFixLogitechMouse
     
