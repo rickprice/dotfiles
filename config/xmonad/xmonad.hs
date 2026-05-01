@@ -142,6 +142,7 @@ myCustomKeys hostname =
     , spawnKey "s" myScanner
     , spawnKey "c" myCalculator
     , ("<XF86Calculator>", spawn myCalculator)
+    , ("C-M-'", spawn myScreenLock)
     , ("calc", spawn myCalculator)
     , spawnKey "r" myRDPClient
     , spawnKey "a a" myArdour
