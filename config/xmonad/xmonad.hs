@@ -104,6 +104,7 @@ myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
 myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
 myFixLogitechMouse = "xinput --set-prop 'Logitech M325' 'libinput Accel Speed' -0.4"
+myFixKensingtonTrackball = "kensington-reset.sh"
 
 -- Colors
 myNormalBorderColor = "#dddddd"
@@ -151,9 +152,10 @@ myCustomKeys hostname =
     , spawnKey "a q" myQPWGraph
     , spawnKey "a m" myMidiSnoop
     , spawnKey "z" myFixScreens
-    , spawnKey "m" myEmailer
+    -- , spawnKey "m" myEmailer
     , spawnKey "o" myMarkdownEditor
     , spawnKey "l" myScreenLock 
+    , spawnKey "m" myFixKensingtonTrackball
 
     -- Handle powerkeys
     , ("M-1", powerkeys 1 hostname)

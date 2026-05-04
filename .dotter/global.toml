@@ -23,6 +23,7 @@
 
 [autorandr.files]
 "config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
+"etc/udev/rules.d/40-monitor-hotplug-rules" = { target = "/etc/udev/rules.d/40-monitor-hotplug-rules", type = "template", owner = "root" }
 # "config/autorandr/livingroom/config" = "~/.config/autorandr/livingroom/config"
 # "config/autorandr/livingroom/setup" = "~/.config/autorandr/livingroom/setup"
 # "config/autorandr/docked2/config" = "~/.config/autorandr/docked2/config"
@@ -137,8 +138,9 @@
 "local/bin/PublishToMedium.py"="~/.local/bin/PublishToMedium"
 
 [touchpad.files]
-"etc/udev/rules.d/90-toggletouchpad.rules"="/etc/udev/rules.d/90-toggletouchpad.rules"
-"local/bin/ManageTouchpad.sh"="/usr/local/bin/ManageTouchpad"
+# "etc/udev/rules.d/90-toggletouchpad.rules" = { target = "/etc/udev/rules.d/90-toggletouchpad.rules", type = "template", owner = "root" }
+"etc/udev/rules.d/50-usb_power_save.rules" = { target = "/etc/udev/rules.d/50-usb_power_save.rules", type = "template", owner = "root" }
+# "local/bin/ManageTouchpad.sh"="/usr/local/bin/ManageTouchpad"
 
 [gitconfig.files]
 "home/gitconfig"="~/.config/git/config"
@@ -255,4 +257,8 @@
 
 [tmux.files]
 "home/tmux.conf" = "~/.config/tmux/tmux.conf"
+
+[kensington.files]
+"etc/udev/rules.d/99-kensington-usbreset.rules" = { target = "/etc/udev/rules.d/99-kensington-usbreset.rules", type = "template", owner = "root" }
+"local/bin/kensington-reset.sh" = "~/.local/bin/kensington-reset"
 
