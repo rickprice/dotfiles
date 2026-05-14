@@ -35,12 +35,6 @@ export FZF_CTRL_R_OPTS="
   --header 'Press CTRL-Y to copy command into clipboard'
 "
 
-# Initialize starship prompt
-eval "$(starship init zsh)"
-
-# Add to ~/.zshrc
-eval "$(zoxide init zsh)"
-
 export PATH=$PATH:/home/fprice/.local/bin
 export PATH=/home/fprice/.ghcup/bin:$PATH
 export EDITOR=nvim
@@ -128,3 +122,8 @@ alias mv='mv -i'
 # Directory navigation with zoxide
 alias cd='z'
 
+# Initialize starship prompt
+eval "$(starship init zsh)"
+
+# Add to ~/.zshrc
+eval "$(zoxide init zsh)"
