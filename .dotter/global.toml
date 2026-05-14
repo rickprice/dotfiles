@@ -263,7 +263,7 @@
 "local/bin/kensington-reset.sh" = "~/.local/bin/kensington-reset"
 
 [midi-daemon.files]
-"etc/midi-daemon/config.toml" = { target = "/etc/midi-daemon/config.toml", type = "symbolic", owner = "root" }
-"etc/midi-daemon/routes.d/invert_controllers.lua" = { target = "/etc/midi-daemon/routes.d/invert_controllers.lua", type = "symbolic", owner = "root" }
-"etc/midi-daemon/routes.d/metronome.lua" = { target = "/etc/midi-daemon/routes.d/metronome.lua", type = "symbolic", owner = "root" }
+"etc/midi-daemon/config.toml" = { target = "/etc/midi-daemon/config.toml", type = "copy", owner = "root" }
+"etc/midi-daemon/routes.d/invert_controllers.lua" = { target = "/etc/midi-daemon/routes.d/invert_controllers.lua", type = "copy", owner = "root" }
+"etc/midi-daemon/routes.d/metronome.lua" = { target = "/etc/midi-daemon/routes.d/metronome.lua", type = "copy", owner = "root" }
 
