@@ -1,0 +1,55 @@
+# midi-daemon configuration
+# Default values shown — all fields are optional.
+
+# Directory containing .lua route files.
+# Each .lua file gets its own virtual ALSA MIDI port pair.
+# routes_dir = "~/.config/midi-daemon/routes.d"
+
+# Default BPM for the timer passed to on_tick().
+# Can be overridden at runtime from Lua with set_bpm().
+default_bpm = 120.0
+
+# Pulses per quarter note — controls tick resolution.
+# 24 = standard MIDI clock, 96 = high resolution.
+# Can be overridden at runtime from Lua with set_ppqn().
+default_ppqn = 24
+
+[invert_controllers]
+# Message type to match
+type = "cc"
+# MIDI channel to match
+channel = 1
+# CC controller numbers whose values should be inverted (0–127 → 127–0)
+# controllers = [7, 11]   # volume, expression
+controllers = [82]   # Button B3
+
+[metronome]
+# Timer
+bpm  = 50.0
+ppqn = 24
+
+# Output notes (GM percussion defaults)
+beat_1_note = 37   # Side Stick
+beat_n_note = 56   # Cowbell
+channel     = 10   # GM percussion channel
+velocity    = 100
+beats_per_bar = 4
+note_len_ms   = 20   # fixed note duration in milliseconds (independent of BPM)
+
+# Incoming CC that controls BPM (maps 0–127 → 20–200 BPM)
+# cc_type       = "cc"
+# cc_channel    = 1
+# cc_controller = 21
+cc_type       = "cc"
+cc_channel    = 1
+cc_controller = 5
+
+# Incoming CC that starts/stops the metronome (value >= 64 = start, value < 64 = stop)
+# MIDI Transport Start (0xFA), Stop (0xFC), and Continue (0xFB) are also honoured.
+start_stop_channel    = 1
+# start_stop_controller = 22
+start_stop_controller = 80
+
+# Whether the metronome starts playing immediately on launch (default: true)
+# start_running = true
+start_running = false
