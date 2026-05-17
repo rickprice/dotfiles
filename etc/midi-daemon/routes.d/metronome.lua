@@ -46,6 +46,17 @@ local function set_running(state)
     log(running and "Started" or "Stopped")
 end
 
+local function transport_start()
+    flush_notes()
+    beat = 0
+    if not running then
+        running = true
+        log("Started")
+    else
+        log("Restarted from beat 1")
+    end
+end
+
 function on_tick(tick, bpm, ppqn)
     if not running then return end
 
@@ -86,7 +97,9 @@ function on_midi(msg)
             and msg.controller == START_STOP_CONTROLLER then
         set_running(msg.value >= 64)
     -- MIDI Transport messages
-    elseif msg.type == "start" or msg.type == "continue" then
+    elseif msg.type == "start" then
+        transport_start()
+    elseif msg.type == "continue" then
         set_running(true)
     elseif msg.type == "stop" then
         set_running(false)
