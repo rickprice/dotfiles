@@ -73,7 +73,7 @@ connect_metronome-in  = ".*metronome-out.*"
 # MIDI channel for the pan CC output
 pan_channel   = 1
 # CC number for pan output (10 = standard MIDI pan)
-pan_controller = 10
+pan_controller = 74
 
 # ±ms window where pan reaches full left (early) or full right (late)
 max_error_ms = 200
@@ -87,7 +87,7 @@ idle_seconds = 3
 # Incoming CC that enables/disables timing training (value >= 64 = enable, < 64 = disable)
 # MIDI Transport Start/Continue enable; Stop disables.
 start_stop_channel    = 1
-start_stop_controller = 22
+start_stop_controller = 83
 
 # Whether timing training is active on launch (default: true)
-start_running = true
+start_running = false
