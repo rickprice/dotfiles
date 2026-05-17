@@ -63,9 +63,13 @@ start_stop_channel    = 1
 start_stop_controller = 80
 
 # Whether the metronome starts playing immediately on launch (default: true)
-start_running = true
+# start_running = true
+start_running = false
 
 [timing-trainer]
+connect_keyboard-in = ".*A-PRO 2.*"   # regex matched against "ClientName:PortName"
+connect_metronome-in  = ".*metronome-out.*"
+
 # MIDI channel for the pan CC output
 pan_channel   = 1
 # CC number for pan output (10 = standard MIDI pan)
