@@ -258,6 +258,9 @@
 [tmux.files]
 "home/tmux.conf" = "~/.config/tmux/tmux.conf"
 
+[tlp.files]
+"etc/tlp.conf" = { target = "/etc/tlp.conf", type = "template", owner = "root" }
+
 [kensington.files]
 "etc/udev/rules.d/99-kensington-usbreset.rules" = { target = "/etc/udev/rules.d/99-kensington-usbreset.rules", type = "template", owner = "root" }
 "local/bin/kensington-reset.sh" = "~/.local/bin/kensington-reset"
