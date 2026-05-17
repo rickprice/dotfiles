@@ -57,11 +57,33 @@ cc_channel    = 1
 cc_controller = 5
 
 # Incoming CC that starts/stops the metronome (value >= 64 = start, value < 64 = stop)
-# MIDI Transport Start (0xFA), Stop (0xFC), and Continue (0xFB) are also honoured.
+# MIDI Transport Start (0xFA) resets to beat 1; Continue (0xFB) resumes; Stop (0xFC) stops.
 start_stop_channel    = 1
 # start_stop_controller = 22
 start_stop_controller = 80
 
 # Whether the metronome starts playing immediately on launch (default: true)
-# start_running = true
-start_running = false
+start_running = true
+
+[timing-trainer]
+# MIDI channel for the pan CC output
+pan_channel   = 1
+# CC number for pan output (10 = standard MIDI pan)
+pan_controller = 10
+
+# ±ms window where pan reaches full left (early) or full right (late)
+max_error_ms = 200
+
+# Number of recent note hits to average before computing pan position
+history_size = 8
+
+# Seconds of keyboard silence before pan resets to center
+idle_seconds = 3
+
+# Incoming CC that enables/disables timing training (value >= 64 = enable, < 64 = disable)
+# MIDI Transport Start/Continue enable; Stop disables.
+start_stop_channel    = 1
+start_stop_controller = 22
+
+# Whether timing training is active on launch (default: true)
+start_running = true
