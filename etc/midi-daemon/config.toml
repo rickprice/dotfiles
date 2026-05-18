@@ -67,7 +67,7 @@ start_stop_controller = 80
 start_running = false
 
 [timing-trainer]
-connect_keyboard-in = ".*A-PRO 1.*"   # regex matched against "ClientName:PortName"
+connect_keyboard-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 connect_metronome-in  = ".*metronome-out.*"
 
 # MIDI channel for the pan CC output
