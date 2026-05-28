@@ -265,6 +265,10 @@
 "etc/udev/rules.d/99-kensington-usbreset.rules" = { target = "/etc/udev/rules.d/99-kensington-usbreset.rules", type = "template", owner = "root" }
 "local/bin/kensington-reset.sh" = "~/.local/bin/kensington-reset"
 
+[nobsound.files]
+"etc/udev/rules.d/99-nobsound--usbreset.rules" = { target = "/etc/udev/rules.d/99-nobsound--usbreset.rules", type = "template", owner = "root" }
+"local/bin/nobsound-reset.sh" = "~/.local/bin/nobsound-reset"
+
 [midi-daemon.files]
 "etc/midi-daemon/config.toml" = { target = "/etc/midi-daemon/config.toml", type = "template", owner = "root" }
 "etc/midi-daemon/routes.d/invert_controllers.lua" = { target = "/etc/midi-daemon/routes.d/invert_controllers.lua", type = "template", owner = "root" }
