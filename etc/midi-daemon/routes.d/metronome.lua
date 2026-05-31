@@ -1,31 +1,44 @@
 -- metronome.lua
--- A simple configurable metronome.
--- Plays a high click on beat 1, low click on other beats.
--- Virtual ports created: midi-daemon:metronome (in + out)
+-- Configurable metronome with MIDI and optional OSC control/output.
+--
+-- OSC is handled by the global listener/sender configured in config.toml:
+--   osc_receive_port = 9000        (all routes share one UDP port)
+--   osc_send_addr    = "host:port" (all routes share one send destination)
+--
+-- OSC output (when osc_send_addr is set):
+--   /metronome/beat    <beat:int> <beats_per_bar:int> <bpm:float>
+--   /metronome/running <1|0>
+--
+-- OSC params (handled automatically by Rust, declared in init()):
+--   /metronome/bpm <value>   — set BPM (20–200)
+--   /metronome/running <1|0> — start (1) or stop (0)
+--   /metronome/start         — reset to beat 1 and start
+--   /metronome/stop          — stop and reset
+--   /metronome/continue      — resume from current position
+--   /metronome/bpm           — query current BPM (no args → reply)
+--   /metronome/running       — query running state (no args → reply)
 
-local BEAT_1_NOTE  = config.beat_1_note  or 37   -- Side Stick (GM)
-local BEAT_N_NOTE  = config.beat_n_note  or 56   -- Cowbell (GM)
-local CHANNEL      = config.channel      or 10   -- GM percussion channel
-local VELOCITY     = config.velocity     or 100
+local BEAT_1_NOTE   = config.beat_1_note   or 37   -- Side Stick (GM)
+local BEAT_N_NOTE   = config.beat_n_note   or 56   -- Cowbell (GM)
+local CHANNEL       = config.channel       or 10   -- GM percussion channel
+local VELOCITY      = config.velocity      or 100
 local BEATS_PER_BAR = config.beats_per_bar or 4
 local NOTE_LEN_MS   = config.note_len_ms   or 20   -- fixed note duration in ms
 
--- CC that controls BPM (maps 0–127 → 20–200 BPM)
-local CC_TYPE       = config.cc_type       or "cc"
-local CC_CHANNEL    = config.cc_channel    or 1
-local CC_CONTROLLER = config.cc_controller or 21
+-- MIDI binding config — read in init() for the param midi arrays.
+local CC_CHANNEL             = config.cc_channel             or 1
+local CC_CONTROLLER          = config.cc_controller          or 21
+local START_STOP_CHANNEL     = config.start_stop_channel     or 1
+local START_STOP_CONTROLLER  = config.start_stop_controller  or 22
 
--- CC that starts/stops the metronome (value >= 64 = start, value < 64 = stop)
--- MIDI Transport Start (0xFA), Stop (0xFC), and Continue (0xFB) are also honoured.
-local START_STOP_CHANNEL    = config.start_stop_channel    or 1
-local START_STOP_CONTROLLER = config.start_stop_controller or 22
+local OSC_OUT = OSC_SEND_ENABLED
 
 set_bpm(config.bpm   or 120)
 set_ppqn(config.ppqn or 24)
 
-local beat = 0
-local note_off_at = {}  -- tick -> {note, channel}
-local running = (config.start_running ~= false)  -- default true
+local beat        = 0
+local note_off_at = {}  -- tick -> list of {note, channel}
+local running     = (config.start_running ~= false)  -- default true
 
 local function flush_notes()
     for _, evs in pairs(note_off_at) do
@@ -43,6 +56,7 @@ local function set_running(state)
         flush_notes()
         beat = 0
     end
+    if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/running", running and 1 or 0) end
     log(running and "Started" or "Stopped")
 end
 
@@ -55,6 +69,50 @@ local function transport_start()
     else
         log("Restarted from beat 1")
     end
+    if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/running", 1) end
+end
+
+function init()
+    return {
+        inputs  = {"midi"},
+        outputs = {"midi"},
+        osc = {
+            receive = 9000,
+            send = { default = "127.0.0.1:9001" },
+            params = {
+                bpm = {
+                    set = function(v) set_bpm(v); log(string.format("BPM: %.1f", v)) end,
+                    get = get_bpm,
+                    -- CC payload 0–127 scaled linearly to 20–200 BPM
+                    midi = {
+                        { type = "cc", channel = CC_CHANNEL,
+                          controller = CC_CONTROLLER, scale = {20, 200} },
+                    },
+                },
+                running = {
+                    set = function(v) set_running(v ~= 0) end,
+                    get = function() return running and 1 or 0 end,
+                    -- CC value ≥ 64 → start (1), < 64 → stop (0)
+                    midi = {
+                        { type = "cc", channel = START_STOP_CHANNEL,
+                          controller = START_STOP_CONTROLLER, threshold = 64 },
+                    },
+                },
+                start = {
+                    set = transport_start,
+                    midi = { { type = "start" } },
+                },
+                stop = {
+                    set = function() set_running(false) end,
+                    midi = { { type = "stop" } },
+                },
+                continue = {
+                    set = function() set_running(true) end,
+                    midi = { { type = "continue" } },
+                },
+            },
+        },
+    }
 end
 
 function on_tick(tick, bpm, ppqn)
@@ -74,11 +132,12 @@ function on_tick(tick, bpm, ppqn)
         local note = (beat == 1) and BEAT_1_NOTE or BEAT_N_NOTE
 
         send({ type = "note_on", channel = CHANNEL, note = note, velocity = VELOCITY })
+        if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/beat", beat, BEATS_PER_BAR, bpm) end
 
         -- Schedule note-off after a fixed wall-clock duration regardless of BPM.
         -- Tick duration = 60000 / (bpm * ppqn) ms, so ticks needed for NOTE_LEN_MS:
         local off_ticks = math.max(1, math.floor(NOTE_LEN_MS * bpm * ppqn / 60000.0 + 0.5))
-        local off_tick = tick + off_ticks
+        local off_tick  = tick + off_ticks
         note_off_at[off_tick] = note_off_at[off_tick] or {}
         table.insert(note_off_at[off_tick], { note = note, channel = CHANNEL })
 
@@ -86,22 +145,3 @@ function on_tick(tick, bpm, ppqn)
     end
 end
 
-function on_midi(msg)
-    -- BPM control CC
-    if msg.type == CC_TYPE and msg.channel == CC_CHANNEL and msg.controller == CC_CONTROLLER then
-        local new_bpm = 20 + (msg.value / 127.0) * 180
-        set_bpm(new_bpm)
-        log(string.format("BPM changed to %.1f", new_bpm))
-    -- Start/stop CC (value >= 64 starts, value < 64 stops)
-    elseif msg.type == "cc" and msg.channel == START_STOP_CHANNEL
-            and msg.controller == START_STOP_CONTROLLER then
-        set_running(msg.value >= 64)
-    -- MIDI Transport messages
-    elseif msg.type == "start" then
-        transport_start()
-    elseif msg.type == "continue" then
-        set_running(true)
-    elseif msg.type == "stop" then
-        set_running(false)
-    end
-end

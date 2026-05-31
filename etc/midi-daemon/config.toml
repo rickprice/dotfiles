@@ -1,5 +1,16 @@
 # midi-daemon configuration
 # Default values shown — all fields are optional.
+#
+# Structure:
+#   Top-level keys (this section) set global defaults that apply to every route.
+#   A [section-name] adds per-route config for routes/<section-name>.lua.
+#   Values in a [section-name] block are available in that route as the `config`
+#   Lua global (e.g. config.bpm, config.osc_receive_port).
+#
+# Priority order (lowest → highest):
+#   global defaults in this file
+#   → per-route [section] values
+#   → connect patterns returned by init() in the .lua script
 
 # Directory containing .lua route files.
 # Each .lua file gets its own virtual ALSA MIDI port pair.
@@ -14,8 +25,15 @@ default_bpm = 50.0
 # Applied to every route input/output that has no per-route pattern.
 # Uncomment and set to your controller/synth name to wire everything at once.
 # default_connect_input  = ".*My Keyboard.*"
-# default_connect_output = ".*My Synth.*"
 default_connect_input  = ".*A-PRO 2.*"
+# default_connect_output = ".*My Synth.*"
+
+# Global OSC root — a single UDP port shared by all routes.
+# Incoming packets are dispatched by address prefix: /route-name/... → that route.
+# Each route's send_osc() calls go to the shared destination.
+# Routes can still override with their own osc = { receive, send } block in init().
+# osc_receive_port = 9000
+# osc_send_addr    = "127.0.0.1:9001"
 
 # Pulses per quarter note — controls tick resolution.
 # 24 = standard MIDI clock, 96 = high resolution.
@@ -27,6 +45,41 @@ default_ppqn = 24
 # connect_input = ".*KeyLab.*"   # regex matched against "ClientName:PortName"
 # connect_bass  = ".*ZynAddSubFX.*"
 # connect_lead  = ".*Surge.*"
+
+# Per-port connect strings for multi-input/output routes.
+# connect_{portname}-in  matches a specific named input port
+# connect_{portname}-out matches a specific named output port
+# Example (timing-trainer has inputs "keyboard" and "metronome"):
+# [timing-trainer]
+# connect_keyboard-in  = ".*My Keyboard.*"
+# connect_metronome-in = ".*metronome-out.*"
+
+# OSC receive/send is declared per-route in init(), not in config.toml.
+# Example init() return value (in your .lua file):
+#
+#   function init()
+#       return {
+#           osc = {
+#               receive = 9000,                       -- UDP port to listen on
+#               send = { default = "127.0.0.1:9001" } -- named send targets
+#           }
+#       }
+#   end
+#
+# Use config.toml values to make the port/address configurable:
+#
+#   function init()
+#       return { osc = { receive = config.osc_port or 9000 } }
+#   end
+#
+# [osc-bridge]
+# osc_port = 9000
+
+# ── Per-route sections ────────────────────────────────────────────────────────
+# Each [section-name] below corresponds to routes.d/<section-name>.lua.
+# Keys become the `config` Lua global in that route.
+# Any TOML type is supported: strings, integers, floats, booleans, arrays,
+# and nested tables.
 
 [invert_controllers]
 # Message type to match
@@ -42,6 +95,11 @@ controllers = [82]   # volume, expression
 bpm  = 120.0
 ppqn = 24
 
+# Optional OSC output — sends /metronome/beat and /metronome/running on each event.
+# osc_send_addr = "127.0.0.1:9001"
+
+# Optional OSC input — listens for /metronome/bpm, /start, /stop, /continue.
+# osc_receive_port = 9000
 # Output notes (GM percussion defaults)
 beat_1_note = 37   # Side Stick
 beat_n_note = 56   # Cowbell
@@ -73,6 +131,7 @@ connect_metronome-in  = ".*metronome-out.*"
 # MIDI channel for the pan CC output
 pan_channel   = 1
 # CC number for pan output (10 = standard MIDI pan)
+# pan_controller = 10
 pan_controller = 74
 
 # ±ms window where pan reaches full left (early) or full right (late)
@@ -87,7 +146,9 @@ idle_seconds = 3
 # Incoming CC that enables/disables timing training (value >= 64 = enable, < 64 = disable)
 # MIDI Transport Start/Continue enable; Stop disables.
 start_stop_channel    = 1
+# start_stop_controller = 22
 start_stop_controller = 83
 
 # Whether timing training is active on launch (default: true)
+# start_running = true
 start_running = false

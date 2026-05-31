@@ -24,6 +24,7 @@
 --   start_stop_channel      = 1     -- MIDI channel for the enable/disable CC
 --   start_stop_controller   = 22    -- CC controller that enables/disables (≥64 on, <64 off)
 --   start_running           = true  -- whether training is active on launch
+--   osc_receive_port        = 9002  -- optional: enable OSC control on this UDP port
 
 local PAN_CHANNEL    = config.pan_channel    or 1
 local PAN_CONTROLLER = config.pan_controller or 10
@@ -34,12 +35,8 @@ local IDLE_SECONDS   = config.idle_seconds   or 3
 local START_STOP_CHANNEL    = config.start_stop_channel    or 1
 local START_STOP_CONTROLLER = config.start_stop_controller or 22
 
-function init()
-    return {
-        inputs  = {"metronome", "keyboard"},
-        outputs = {"pan"},
-    }
-end
+-- ── State ─────────────────────────────────────────────────────────────────────
+-- Declared before init() so that closures in the params table can close over them.
 
 local running       = (config.start_running ~= false)  -- default true
 local current_tick  = 0
@@ -48,6 +45,57 @@ local last_key_tick = nil   -- tick at which the last keyboard note arrived
 local error_history = {}    -- rolling window of signed errors in ms
 local current_pan   = 64    -- last pan value sent (avoids redundant CC spam)
 local initialized   = false -- send initial center CC on first tick
+
+local function send_pan(value)
+    if value == current_pan then return end
+    current_pan = value
+    send("pan", { type = "cc", channel = PAN_CHANNEL, controller = PAN_CONTROLLER, value = value })
+end
+
+local function set_running(state)
+    if running == state then return end
+    running = state
+    if not running then
+        error_history = {}
+        beat_tick     = nil
+        last_key_tick = nil
+        send_pan(64)
+    end
+    log(running and "Enabled" or "Disabled")
+end
+
+-- ─────────────────────────────────────────────────────────────────────────────
+
+function init()
+    return {
+        inputs  = {"metronome", "keyboard"},
+        outputs = {"pan"},
+        osc = {
+            receive = config.osc_receive_port,  -- optional OSC control
+            params = {
+                running = {
+                    set = function(v) set_running(v ~= 0) end,
+                    get = function() return running and 1 or 0 end,
+                    -- CC value ≥ 64 → enable, < 64 → disable
+                    midi = {
+                        { type = "cc", channel = START_STOP_CHANNEL,
+                          controller = START_STOP_CONTROLLER, threshold = 64 },
+                    },
+                },
+                start = {
+                    set = function() set_running(true) end,
+                    midi = { { type = "start" }, { type = "continue" } },
+                },
+                stop = {
+                    set = function() set_running(false) end,
+                    midi = { { type = "stop" } },
+                },
+            },
+        },
+    }
+end
+
+-- ── Helpers ───────────────────────────────────────────────────────────────────
 
 local function tick_ms(bpm, ppqn)
     return 60000.0 / (bpm * ppqn)
@@ -79,23 +127,7 @@ local function error_to_pan(err_ms)
     return math.max(0, math.min(127, math.floor(64 + norm * 63 + 0.5)))
 end
 
-local function send_pan(value)
-    if value == current_pan then return end
-    current_pan = value
-    send("pan", { type = "cc", channel = PAN_CHANNEL, controller = PAN_CONTROLLER, value = value })
-end
-
-local function set_running(state)
-    if running == state then return end
-    running = state
-    if not running then
-        error_history = {}
-        beat_tick     = nil
-        last_key_tick = nil
-        send_pan(64)
-    end
-    log(running and "Enabled" or "Disabled")
-end
+-- ── Callbacks ─────────────────────────────────────────────────────────────────
 
 function on_tick(tick, bpm, ppqn)
     current_tick = tick
@@ -119,23 +151,7 @@ function on_tick(tick, bpm, ppqn)
 end
 
 function on_midi(msg)
-    -- Enable/disable via CC (value ≥ 64 = enable, < 64 = disable).
-    if msg.type == "cc" and msg.channel == START_STOP_CHANNEL
-            and msg.controller == START_STOP_CONTROLLER then
-        set_running(msg.value >= 64)
-        return
-    end
-
-    -- MIDI Transport messages.
-    if msg.type == "start" or msg.type == "continue" then
-        set_running(true)
-        return
-    end
-    if msg.type == "stop" then
-        set_running(false)
-        return
-    end
-
+    -- CC enable/disable and transport start/stop/continue are handled by params.
     if not running then return end
 
     -- Track when each metronome beat arrives.
