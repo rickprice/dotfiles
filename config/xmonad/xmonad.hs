@@ -298,6 +298,7 @@ myStartupHook  hostname= do
             spawnOnce "syncthing serve"
         else do
             spawnOn "FP12" myArdour
+            spawnOnce "cbatticon"
     
     -- System tray and utilities
     spawnOnce "snixembed"
