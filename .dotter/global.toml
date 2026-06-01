@@ -274,3 +274,4 @@
 "etc/midi-daemon/routes.d/invert_controllers.lua" = { target = "/etc/midi-daemon/routes.d/invert_controllers.lua", type = "template", owner = "root" }
 "etc/midi-daemon/routes.d/metronome.lua" = { target = "/etc/midi-daemon/routes.d/metronome.lua", type = "template", owner = "root" }
 "etc/midi-daemon/routes.d/timing-trainer.lua" = { target = "/etc/midi-daemon/routes.d/timing-trainer.lua", type = "template", owner = "root" }
+"etc/midi-daemon/routes.d/VolumePanMuteControl.lua" = { target = "/etc/midi-daemon/routes.d/VolumePanMuteControl.lua", type = "template", owner = "root" }
