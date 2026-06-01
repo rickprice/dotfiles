@@ -78,8 +78,6 @@ function init()
         inputs  = {"midi"},
         outputs = {"midi"},
         osc = {
-            receive = 9000,
-            send = { default = "127.0.0.1:9001" },
             params = {
                 bpm = {
                     set = function(v) set_bpm(v); log(string.format("BPM: %.1f", v)) end,
