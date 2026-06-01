@@ -32,7 +32,7 @@ default_connect_input  = ".*A-PRO 2.*"
 # Incoming packets are dispatched by address prefix: /route-name/... → that route.
 # Each route's send_osc() calls go to the shared destination.
 # Routes can still override with their own osc = { receive, send } block in init().
-# osc_receive_port = 9000
+osc_receive_port = 9000
 # osc_send_addr    = "127.0.0.1:9001"
 
 # Pulses per quarter note — controls tick resolution.

@@ -5,7 +5,10 @@
 --   osc_receive_port = 9000        (all routes share one UDP port)
 --   osc_send_addr    = "host:port" (all routes share one send destination)
 --
--- OSC output (when osc_send_addr is set):
+-- OSC output:
+--   When a named send target is configured, /metronome/beat and /metronome/running
+--   are sent there. When no send target is defined, these messages are automatically
+--   fanned out to any clients that have sent /metronome/subscribe.
 --   /metronome/beat    <beat:int> <beats_per_bar:int> <bpm:float>
 --   /metronome/running <1|0>
 --
@@ -31,8 +34,6 @@ local CC_CONTROLLER          = config.cc_controller          or 21
 local START_STOP_CHANNEL     = config.start_stop_channel     or 1
 local START_STOP_CONTROLLER  = config.start_stop_controller  or 22
 
-local OSC_OUT = OSC_SEND_ENABLED
-
 set_bpm(config.bpm   or 120)
 set_ppqn(config.ppqn or 24)
 
@@ -56,7 +57,7 @@ local function set_running(state)
         flush_notes()
         beat = 0
     end
-    if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/running", running and 1 or 0) end
+    send_osc("/" .. ROUTE_NAME .. "/running", running and 1 or 0)
     log(running and "Started" or "Stopped")
 end
 
@@ -69,7 +70,7 @@ local function transport_start()
     else
         log("Restarted from beat 1")
     end
-    if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/running", 1) end
+    send_osc("/" .. ROUTE_NAME .. "/running", 1)
 end
 
 function init()
@@ -132,7 +133,7 @@ function on_tick(tick, bpm, ppqn)
         local note = (beat == 1) and BEAT_1_NOTE or BEAT_N_NOTE
 
         send({ type = "note_on", channel = CHANNEL, note = note, velocity = VELOCITY })
-        if OSC_OUT then send_osc("/" .. ROUTE_NAME .. "/beat", beat, BEATS_PER_BAR, bpm) end
+        send_osc("/" .. ROUTE_NAME .. "/beat", beat, BEATS_PER_BAR, bpm)
 
         -- Schedule note-off after a fixed wall-clock duration regardless of BPM.
         -- Tick duration = 60000 / (bpm * ppqn) ms, so ticks needed for NOTE_LEN_MS:
