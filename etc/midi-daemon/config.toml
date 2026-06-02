@@ -141,7 +141,7 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
-connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
@@ -164,7 +164,7 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
-connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
@@ -188,7 +188,7 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
-connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
@@ -212,7 +212,7 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
-connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
