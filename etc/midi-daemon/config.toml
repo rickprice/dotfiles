@@ -124,7 +124,72 @@ start_stop_controller = 80
 # start_running = true
 start_running = false
 
-[VolumePanMuteControl]
+[VolumePanMuteControlMetronome]
+# Shared MIDI channel for all three CCs (overridden by the per-param keys below)
+channel = 1
+
+# Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
+volume_channel    = 1
+volume_controller = 7
+
+# Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
+pan_channel    = 1
+pan_controller = 10
+
+# Mute: no universal MIDI standard; set to match your DAW or hardware
+# Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
+mute_channel    = 1
+mute_controller = 118
+
+# OSC receive/send — use the global config or override here per-route
+# osc_receive_port = 9000
+# osc_send_addr    = "127.0.0.1:9001"
+
+[VolumePanMuteControlVocals]
+# Shared MIDI channel for all three CCs (overridden by the per-param keys below)
+channel = 1
+
+# Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
+volume_channel    = 1
+volume_controller = 7
+
+# Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
+pan_channel    = 1
+pan_controller = 10
+
+# Mute: no universal MIDI standard; set to match your DAW or hardware
+# Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
+mute_channel    = 1
+mute_controller = 118
+
+# OSC receive/send — use the global config or override here per-route
+# osc_receive_port = 9000
+# osc_send_addr    = "127.0.0.1:9001"
+
+
+[VolumePanMuteControlGuitarix]
+# Shared MIDI channel for all three CCs (overridden by the per-param keys below)
+channel = 1
+
+# Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
+volume_channel    = 1
+volume_controller = 7
+
+# Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
+pan_channel    = 1
+pan_controller = 10
+
+# Mute: no universal MIDI standard; set to match your DAW or hardware
+# Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
+mute_channel    = 1
+mute_controller = 118
+
+# OSC receive/send — use the global config or override here per-route
+# osc_receive_port = 9000
+# osc_send_addr    = "127.0.0.1:9001"
+
+
+[VolumePanMuteControlPiano]
 # Shared MIDI channel for all three CCs (overridden by the per-param keys below)
 channel = 1
 
