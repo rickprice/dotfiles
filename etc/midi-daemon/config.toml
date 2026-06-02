@@ -141,6 +141,8 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
+connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
 # osc_send_addr    = "127.0.0.1:9001"
@@ -161,6 +163,8 @@ pan_controller = 10
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
 mute_controller = 118
+
+connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
@@ -184,6 +188,8 @@ pan_controller = 10
 mute_channel    = 1
 mute_controller = 118
 
+connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
 # osc_send_addr    = "127.0.0.1:9001"
@@ -205,6 +211,8 @@ pan_controller = 10
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
 mute_controller = 118
+
+connect_midi-in = [".*A-PRO 1.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
