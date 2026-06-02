@@ -51,7 +51,7 @@ function init()
         outputs = {"midi"},
         osc = {
             params = {
-                volume = {
+                Volume = {
                     set = function(v)
                         volume = math.max(0.0, math.min(1.0, v))
                         send_volume_cc()
@@ -64,7 +64,7 @@ function init()
                           controller = VOLUME_CONTROLLER, scale = {0.0, 1.0} },
                     },
                 },
-                pan = {
+                Pan = {
                     set = function(v)
                         pan = math.max(-1.0, math.min(1.0, v))
                         send_pan_cc()
@@ -77,7 +77,7 @@ function init()
                           controller = PAN_CONTROLLER, scale = {-1.0, 1.0} },
                     },
                 },
-                mute = {
+                Mute = {
                     set = function(v)
                         muted = (v ~= 0 and v ~= false)
                         send_mute_cc()
