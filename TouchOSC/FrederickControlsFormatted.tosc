@@ -736,7 +736,7 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>200</x>
+              <x>300</x>
               <y>100</y>
               <w>260</w>
               <h>260</h>
@@ -1371,7 +1371,7 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>300</x>
+              <x>500</x>
               <y>100</y>
               <w>260</w>
               <h>260</h>
@@ -2006,7 +2006,7 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>400</x>
+              <x>700</x>
               <y>100</y>
               <w>260</w>
               <h>260</h>
@@ -2026,7 +2026,7 @@ end]]></value>
           </property>
           <property type="s">
             <key><![CDATA[name]]></key>
-            <value><![CDATA[VolumePanMuteControlGuitar]]></value>
+            <value><![CDATA[VolumePanMuteControlGuitarix]]></value>
           </property>
           <property type="i">
             <key><![CDATA[orientation]]></key>
