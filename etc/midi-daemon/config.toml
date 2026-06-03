@@ -130,16 +130,16 @@ channel = 1
 
 # Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
 volume_channel    = 1
-volume_controller = 7
+volume_controller = 73
 
 # Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
 pan_channel    = 1
-pan_controller = 10
+pan_controller = 65
 
 # Mute: no universal MIDI standard; set to match your DAW or hardware
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
-mute_controller = 118
+mute_controller = 80
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
@@ -153,16 +153,16 @@ channel = 1
 
 # Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
 volume_channel    = 1
-volume_controller = 7
+volume_controller = 72
 
 # Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
 pan_channel    = 1
-pan_controller = 10
+pan_controller = 5
 
 # Mute: no universal MIDI standard; set to match your DAW or hardware
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
-mute_controller = 118
+mute_controller = 82
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
@@ -177,16 +177,16 @@ channel = 1
 
 # Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
 volume_channel    = 1
-volume_controller = 7
+volume_controller = 91
 
 # Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
 pan_channel    = 1
-pan_controller = 10
+pan_controller = 76
 
 # Mute: no universal MIDI standard; set to match your DAW or hardware
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
-mute_controller = 118
+mute_controller = 83
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
@@ -201,16 +201,16 @@ channel = 1
 
 # Volume: CC 7 is the MIDI standard for Channel Volume (0–127 maps to OSC 0.0–1.0)
 volume_channel    = 1
-volume_controller = 7
+volume_controller = 75
 
 # Pan: CC 10 is the MIDI standard for Pan (0=left, 64=center, 127=right maps to OSC -1.0–1.0)
 pan_channel    = 1
-pan_controller = 10
+pan_controller = 2
 
 # Mute: no universal MIDI standard; set to match your DAW or hardware
 # Incoming CC value ≥ 64 = muted, < 64 = unmuted; outgoing sends 127 or 0
 mute_channel    = 1
-mute_controller = 118
+mute_controller = 81
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
