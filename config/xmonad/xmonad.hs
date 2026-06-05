@@ -85,6 +85,8 @@ myArdour = "ardour9"
 myGuitarix = "guitarix"
 myCarlaKeyboardProject = "/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/Music/KeyboardWorking.carxp"
 myCarla = "carla" ++" "++ myCarlaKeyboardProject
+myTouchOSCProject = "/home/fprice/Documents/Personal/Dropbox/FrederickDocuments/Music/CarlaKeyboardGuitarix.tosc"
+myTouchOSC = "TouchOSC" ++ " --general.ui.editor false --general.ui.fullscreen true"++" "++ myTouchOSCProject
 myQPWGraph = "qpwgraph"
 myMidiSnoop = "midisnoop"
 myEbookViewer = "ebook-viewer"
@@ -295,6 +297,7 @@ myStartupHook  hostname= do
             spawnOn "U1" myCarla
             spawnOn "U1" myGuitarix
             spawnOn "U2" myQPWGraph
+            spawnOn "U3" myTouchOSC
             spawnOnce "syncthing serve"
         else do
             spawnOn "FP12" myArdour
@@ -483,7 +486,7 @@ tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tD
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 6
+fDesktops = 4
 fDesktopPanes = 1
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
@@ -491,7 +494,7 @@ fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fD
 -- Utility workspaces
 uWorkspaceDisplayPrefix = "U"
 uWorkspaceKeyPrefix = Just "u"
-uDesktops = 2
+uDesktops = 3
 uDesktopPanes = 1
 uWorkspaces = workspaceNames uWorkspaceDisplayPrefix uDesktops uDesktopPanes
 uWorkspaceKeys = wsKeys uWorkspaceKeyPrefix uWorkspaceDisplayPrefix uDesktops uDesktopPanes
