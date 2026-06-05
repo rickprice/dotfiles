@@ -104,7 +104,7 @@
               <x>5</x>
               <y>5</y>
               <w>260</w>
-              <h>260</h>
+              <h>280</h>
             </value>
           </property>
           <property type="b">
@@ -221,8 +221,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -234,7 +234,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>5</x>
-                  <y>5</y>
+                  <y>0</y>
                   <w>250</w>
                   <h>250</h>
                 </value>
@@ -395,8 +395,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -408,7 +408,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>67</x>
-                  <y>67</y>
+                  <y>62</y>
                   <w>125</w>
                   <h>125</h>
                 </value>
@@ -569,8 +569,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -582,7 +582,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>102</x>
-                  <y>102</y>
+                  <y>97</y>
                   <w>55</w>
                   <h>55</h>
                 </value>
@@ -712,9 +712,128 @@ end]]></value>
               </osc>
             </messages>
           </node>
+          <node ID="79ba5684-60b6-11f1-8f7e-8cae4cb83d63" type="LABEL">
+            <properties>
+              <property type="b">
+                <key><![CDATA[background]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[color]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key><![CDATA[cornerRadius]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[font]]></key>
+                <value>0</value>
+              </property>
+              <property type="r">
+                <key><![CDATA[frame]]></key>
+                <value>
+                  <x>0</x>
+                  <y>245</y>
+                  <w>250</w>
+                  <h>25</h>
+                </value>
+              </property>
+              <property type="b">
+                <key><![CDATA[grabFocus]]></key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[interactive]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[locked]]></key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key><![CDATA[name]]></key>
+                <value><![CDATA[label1]]></value>
+              </property>
+              <property type="i">
+                <key><![CDATA[orientation]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[outline]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[outlineStyle]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[pointerPriority]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[shape]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignH]]></key>
+                <value>2</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignV]]></key>
+                <value>2</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[textClip]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[textColor]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textLength]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textSize]]></key>
+                <value>14</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[visible]]></key>
+                <value>1</value>
+              </property>
+            </properties>
+            <values>
+              <value>
+                <key><![CDATA[text]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>1</lockedDefaultCurrent>
+                <default><![CDATA[Metronome]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+              <value>
+                <key><![CDATA[touch]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default><![CDATA[false]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+            </values>
+          </node>
         </children>
       </node>
-      <node ID="2f828b62-5dd8-11f1-ad9e-8cae4cb83d64" type="GROUP">
+      <node ID="f0f62afa-60b8-11f1-9a61-8cae4cb83d63" type="GROUP">
         <properties>
           <property type="b">
             <key><![CDATA[background]]></key>
@@ -736,10 +855,10 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>270</x>
+              <x>257</x>
               <y>5</y>
               <w>260</w>
-              <h>260</h>
+              <h>280</h>
             </value>
           </property>
           <property type="b">
@@ -842,7 +961,7 @@ end]]></value>
           </value>
         </values>
         <children>
-          <node ID="bcbd5c60-5dc8-11f1-b556-8cae4cb83d63" type="RADIAL">
+          <node ID="f0f62be0-60b8-11f1-8925-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -856,8 +975,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -869,7 +988,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>5</x>
-                  <y>5</y>
+                  <y>0</y>
                   <w>250</w>
                   <h>250</h>
                 </value>
@@ -1016,7 +1135,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="eac3c9aa-5dc8-11f1-8420-8cae4cb83d63" type="RADIAL">
+          <node ID="f0f62cda-60b8-11f1-9f5a-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -1030,8 +1149,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -1043,7 +1162,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>67</x>
-                  <y>67</y>
+                  <y>62</y>
                   <w>125</w>
                   <h>125</h>
                 </value>
@@ -1190,7 +1309,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="fe884dda-5dc8-11f1-90d3-8cae4cb83d63" type="BUTTON">
+          <node ID="f0f62e4c-60b8-11f1-bd2a-8cae4cb83d63" type="BUTTON">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -1204,8 +1323,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -1217,7 +1336,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>102</x>
-                  <y>102</y>
+                  <y>97</y>
                   <w>55</w>
                   <h>55</h>
                 </value>
@@ -1347,9 +1466,128 @@ end]]></value>
               </osc>
             </messages>
           </node>
+          <node ID="f0f62f46-60b8-11f1-9148-8cae4cb83d63" type="LABEL">
+            <properties>
+              <property type="b">
+                <key><![CDATA[background]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[color]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key><![CDATA[cornerRadius]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[font]]></key>
+                <value>0</value>
+              </property>
+              <property type="r">
+                <key><![CDATA[frame]]></key>
+                <value>
+                  <x>0</x>
+                  <y>245</y>
+                  <w>250</w>
+                  <h>25</h>
+                </value>
+              </property>
+              <property type="b">
+                <key><![CDATA[grabFocus]]></key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[interactive]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[locked]]></key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key><![CDATA[name]]></key>
+                <value><![CDATA[label1]]></value>
+              </property>
+              <property type="i">
+                <key><![CDATA[orientation]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[outline]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[outlineStyle]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[pointerPriority]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[shape]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignH]]></key>
+                <value>2</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignV]]></key>
+                <value>2</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[textClip]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[textColor]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textLength]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textSize]]></key>
+                <value>14</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[visible]]></key>
+                <value>1</value>
+              </property>
+            </properties>
+            <values>
+              <value>
+                <key><![CDATA[text]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>1</lockedDefaultCurrent>
+                <default><![CDATA[Piano]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+              <value>
+                <key><![CDATA[touch]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default><![CDATA[false]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+            </values>
+          </node>
         </children>
       </node>
-      <node ID="2f828b62-5dd8-11f1-ad9e-8cae4cb83d65" type="GROUP">
+      <node ID="3e614874-60b9-11f1-8f35-8cae4cb83d63" type="GROUP">
         <properties>
           <property type="b">
             <key><![CDATA[background]]></key>
@@ -1371,10 +1609,10 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>530</x>
+              <x>508</x>
               <y>5</y>
               <w>260</w>
-              <h>260</h>
+              <h>280</h>
             </value>
           </property>
           <property type="b">
@@ -1477,7 +1715,7 @@ end]]></value>
           </value>
         </values>
         <children>
-          <node ID="bcbd5c60-5dc8-11f1-b556-8cae4cb83d63" type="RADIAL">
+          <node ID="3e61498c-60b9-11f1-95ee-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -1491,8 +1729,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -1504,7 +1742,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>5</x>
-                  <y>5</y>
+                  <y>0</y>
                   <w>250</w>
                   <h>250</h>
                 </value>
@@ -1651,7 +1889,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="eac3c9aa-5dc8-11f1-8420-8cae4cb83d63" type="RADIAL">
+          <node ID="3e614a90-60b9-11f1-9009-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -1665,8 +1903,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -1678,7 +1916,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>67</x>
-                  <y>67</y>
+                  <y>62</y>
                   <w>125</w>
                   <h>125</h>
                 </value>
@@ -1825,7 +2063,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="fe884dda-5dc8-11f1-90d3-8cae4cb83d63" type="BUTTON">
+          <node ID="3e614b12-60b9-11f1-8e9f-8cae4cb83d63" type="BUTTON">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -1839,8 +2077,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -1852,7 +2090,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>102</x>
-                  <y>102</y>
+                  <y>97</y>
                   <w>55</w>
                   <h>55</h>
                 </value>
@@ -1982,9 +2220,128 @@ end]]></value>
               </osc>
             </messages>
           </node>
+          <node ID="3e614b6c-60b9-11f1-a581-8cae4cb83d63" type="LABEL">
+            <properties>
+              <property type="b">
+                <key><![CDATA[background]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[color]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key><![CDATA[cornerRadius]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[font]]></key>
+                <value>0</value>
+              </property>
+              <property type="r">
+                <key><![CDATA[frame]]></key>
+                <value>
+                  <x>0</x>
+                  <y>245</y>
+                  <w>250</w>
+                  <h>25</h>
+                </value>
+              </property>
+              <property type="b">
+                <key><![CDATA[grabFocus]]></key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[interactive]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[locked]]></key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key><![CDATA[name]]></key>
+                <value><![CDATA[label1]]></value>
+              </property>
+              <property type="i">
+                <key><![CDATA[orientation]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[outline]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[outlineStyle]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[pointerPriority]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[shape]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignH]]></key>
+                <value>2</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignV]]></key>
+                <value>2</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[textClip]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[textColor]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textLength]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textSize]]></key>
+                <value>14</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[visible]]></key>
+                <value>1</value>
+              </property>
+            </properties>
+            <values>
+              <value>
+                <key><![CDATA[text]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>1</lockedDefaultCurrent>
+                <default><![CDATA[Vocals]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+              <value>
+                <key><![CDATA[touch]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default><![CDATA[false]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+            </values>
+          </node>
         </children>
       </node>
-      <node ID="2f828b62-5dd8-11f1-ad9e-8cae4cb83d67" type="GROUP">
+      <node ID="820deb4a-60b9-11f1-b206-8cae4cb83d63" type="GROUP">
         <properties>
           <property type="b">
             <key><![CDATA[background]]></key>
@@ -2006,10 +2363,10 @@ end]]></value>
           <property type="r">
             <key><![CDATA[frame]]></key>
             <value>
-              <x>790</x>
+              <x>760</x>
               <y>5</y>
               <w>260</w>
-              <h>260</h>
+              <h>280</h>
             </value>
           </property>
           <property type="b">
@@ -2112,7 +2469,7 @@ end]]></value>
           </value>
         </values>
         <children>
-          <node ID="bcbd5c60-5dc8-11f1-b556-8cae4cb83d63" type="RADIAL">
+          <node ID="820dec26-60b9-11f1-b1c6-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -2126,8 +2483,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -2139,7 +2496,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>5</x>
-                  <y>5</y>
+                  <y>0</y>
                   <w>250</w>
                   <h>250</h>
                 </value>
@@ -2286,7 +2643,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="eac3c9aa-5dc8-11f1-8420-8cae4cb83d63" type="RADIAL">
+          <node ID="820ded5c-60b9-11f1-ba4d-8cae4cb83d63" type="RADIAL">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -2300,8 +2657,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -2313,7 +2670,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>67</x>
-                  <y>67</y>
+                  <y>62</y>
                   <w>125</w>
                   <h>125</h>
                 </value>
@@ -2460,7 +2817,7 @@ end]]></value>
               </osc>
             </messages>
           </node>
-          <node ID="fe884dda-5dc8-11f1-90d3-8cae4cb83d63" type="BUTTON">
+          <node ID="820dee2e-60b9-11f1-af2e-8cae4cb83d63" type="BUTTON">
             <properties>
               <property type="b">
                 <key><![CDATA[background]]></key>
@@ -2474,8 +2831,8 @@ end]]></value>
                 <key><![CDATA[color]]></key>
                 <value>
                   <r>1</r>
-                  <g>0</g>
-                  <b>0</b>
+                  <g>1</g>
+                  <b>1</b>
                   <a>1</a>
                 </value>
               </property>
@@ -2487,7 +2844,7 @@ end]]></value>
                 <key><![CDATA[frame]]></key>
                 <value>
                   <x>102</x>
-                  <y>102</y>
+                  <y>97</y>
                   <w>55</w>
                   <h>55</h>
                 </value>
@@ -2616,6 +2973,125 @@ end]]></value>
                 </arguments>
               </osc>
             </messages>
+          </node>
+          <node ID="820def00-60b9-11f1-9115-8cae4cb83d63" type="LABEL">
+            <properties>
+              <property type="b">
+                <key><![CDATA[background]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[color]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="f">
+                <key><![CDATA[cornerRadius]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[font]]></key>
+                <value>0</value>
+              </property>
+              <property type="r">
+                <key><![CDATA[frame]]></key>
+                <value>
+                  <x>0</x>
+                  <y>245</y>
+                  <w>250</w>
+                  <h>25</h>
+                </value>
+              </property>
+              <property type="b">
+                <key><![CDATA[grabFocus]]></key>
+                <value>1</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[interactive]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[locked]]></key>
+                <value>0</value>
+              </property>
+              <property type="s">
+                <key><![CDATA[name]]></key>
+                <value><![CDATA[label1]]></value>
+              </property>
+              <property type="i">
+                <key><![CDATA[orientation]]></key>
+                <value>0</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[outline]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[outlineStyle]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[pointerPriority]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[shape]]></key>
+                <value>1</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignH]]></key>
+                <value>2</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textAlignV]]></key>
+                <value>2</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[textClip]]></key>
+                <value>1</value>
+              </property>
+              <property type="c">
+                <key><![CDATA[textColor]]></key>
+                <value>
+                  <r>1</r>
+                  <g>1</g>
+                  <b>1</b>
+                  <a>1</a>
+                </value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textLength]]></key>
+                <value>0</value>
+              </property>
+              <property type="i">
+                <key><![CDATA[textSize]]></key>
+                <value>14</value>
+              </property>
+              <property type="b">
+                <key><![CDATA[visible]]></key>
+                <value>1</value>
+              </property>
+            </properties>
+            <values>
+              <value>
+                <key><![CDATA[text]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>1</lockedDefaultCurrent>
+                <default><![CDATA[Guitar]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+              <value>
+                <key><![CDATA[touch]]></key>
+                <locked>0</locked>
+                <lockedDefaultCurrent>0</lockedDefaultCurrent>
+                <default><![CDATA[false]]></default>
+                <defaultPull>0</defaultPull>
+              </value>
+            </values>
           </node>
         </children>
       </node>
