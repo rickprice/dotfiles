@@ -124,6 +124,8 @@ start_stop_controller = 80
 # start_running = true
 start_running = false
 
+persist_state = true
+
 [VolumePanMuteControlMetronome]
 # Shared MIDI channel for all three CCs (overridden by the per-param keys below)
 channel = 1
@@ -166,6 +168,8 @@ mute_controller = 82
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
+persist_state = true
+
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
 # osc_send_addr    = "127.0.0.1:9001"
@@ -190,6 +194,8 @@ mute_controller = 83
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
+persist_state = true
+
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
 # osc_send_addr    = "127.0.0.1:9001"
@@ -213,6 +219,8 @@ mute_channel    = 1
 mute_controller = 81
 
 connect_midi-in = [".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
+
+persist_state = true
 
 # OSC receive/send — use the global config or override here per-route
 # osc_receive_port = 9000
