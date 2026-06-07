@@ -126,7 +126,7 @@ start_running = false
 
 persist_state = true
 
-connect_midi-in = [".*VolumePanMuteControlMetronome.*"]   # regex matched against "ClientName:PortName"
+connect_midi-in = [".*VolumePanMuteControlMetronome.*", ".*A-PRO 2.*"]   # regex matched against "ClientName:PortName"
 
 [VolumePanMuteControlMetronome]
 # Shared MIDI channel for all three CCs (overridden by the per-param keys below)
