@@ -41,6 +41,7 @@ import qualified XMonad.Layout.IndependentScreens as LIS
 
 -- XMonad utilities
 import XMonad.Util.EZConfig
+import XMonad.Util.NamedActions
 import XMonad.Util.Loggers
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
@@ -105,89 +106,61 @@ appRunKey = "M-a "
 -- KEY BINDING HELPER FUNCTIONS
 -- =============================================================================
 
-spawnKey key program = (appRunKey ++ key, spawn program)
+spawnKey key desc program = (appRunKey ++ key, addName desc $ spawn program)
 
-workspaceKeys key ws = [(workspaceFocusKey ++ key, showDesktop ws), (workspaceMoveKey ++ key, moveFocusedWindowToDesktop ws)]
+workspaceKeys key ws = [(workspaceFocusKey ++ key, addName ("Focus " ++ ws) $ showDesktop ws), (workspaceMoveKey ++ key, addName ("Move to " ++ ws) $ moveFocusedWindowToDesktop ws)]
 
-dynamicScratchPadKeys key scratchPadName = [("M-S-" ++ key, withFocused $ toggleDynamicNSP scratchPadName), ("M-" ++ key, dynamicNSPAction scratchPadName) ]
+dynamicScratchPadKeys key scratchPadName = [("M-S-" ++ key, addName ("Assign to scratchpad " ++ scratchPadName) $ withFocused $ toggleDynamicNSP scratchPadName), ("M-" ++ key, addName ("Show scratchpad " ++ scratchPadName) $ dynamicNSPAction scratchPadName)]
 
-dynamicWorkspaceGroupKeys key viewGroup = [("M-" ++ key, ADWG.viewWSGroup viewGroup), ("M-S-" ++ key, ADWG.addCurrentWSGroup viewGroup)]
+dynamicWorkspaceGroupKeys key viewGroup = [("M-" ++ key, addName ("View group " ++ viewGroup) $ ADWG.viewWSGroup viewGroup), ("M-S-" ++ key, addName ("Save group " ++ viewGroup) $ ADWG.addCurrentWSGroup viewGroup)]
 
-viewGroupKeys keys viewGroup = [("M-s " ++ keys , ADWG.viewWSGroup viewGroup)]
+viewGroupKeys keys viewGroup = [("M-s " ++ keys, addName ("View group " ++ viewGroup) $ ADWG.viewWSGroup viewGroup)]
 
 myCustomKeys hostname =
-    [ ("M-f", sendMessage ToggleLayout)
-    , ("M-S-h", toggleHideEmptyWS)
-    , ("M-S-<Enter>", spawn myTerminal)
-    -- , ("M-y", withFocused $ windows . W.sink)
-    , spawnKey "b" myBrowser
-    , spawnKey "d" (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary)
-    , spawnKey "S-d" (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary)
-    , spawnKey "i" myInkScape
-    , spawnKey "e" myEbookViewer
-    , spawnKey "f" myFileManager
-    , spawnKey "p" mySystemMonitor -- performance monitor
-    , spawnKey "s" myScanner
-    , spawnKey "c" myCalculator
-    , ("<XF86Calculator>", spawn myCalculator)
-    , ("C-M-'", spawn myScreenLock)
-    , ("calc", spawn myCalculator)
-    , spawnKey "r" myRDPClient
-    , spawnKey "a a" myArdour
-    , spawnKey "a g" myGuitarix
-    , spawnKey "a c" myCarla
-    , spawnKey "a q" myQPWGraph
-    , spawnKey "a m" myMidiSnoop
-    , spawnKey "z" myFixScreens
-    -- , spawnKey "m" myEmailer
-    , spawnKey "o" myMarkdownEditor
-    , spawnKey "l" myScreenLock 
-    , spawnKey "m" myFixKensingtonTrackball
+    [ ("M-f", addName "Toggle fullscreen" $ sendMessage ToggleLayout)
+    , ("M-S-h", addName "Toggle hide empty workspaces" toggleHideEmptyWS)
+    , ("M-S-<Enter>", addName "Open terminal" $ spawn myTerminal)
+    , spawnKey "b" "Browser" myBrowser
+    , spawnKey "d" "DarkTable (personal)" (myDarkTable ++ " --library " ++ myDarkTablePersonalLibrary)
+    , spawnKey "S-d" "DarkTable (commercial)" (myDarkTable ++ " --library " ++ myDarkTableCommercialLibrary)
+    , spawnKey "i" "Inkscape" myInkScape
+    , spawnKey "e" "Ebook viewer" myEbookViewer
+    , spawnKey "f" "File manager" myFileManager
+    , spawnKey "p" "System monitor" mySystemMonitor
+    , spawnKey "s" "Scanner" myScanner
+    , spawnKey "c" "Calculator" myCalculator
+    , ("<XF86Calculator>", addName "Calculator" $ spawn myCalculator)
+    , ("C-M-'", addName "Screen lock" $ spawn myScreenLock)
+    , ("calc", addName "Calculator" $ spawn myCalculator)
+    , spawnKey "r" "RDP client" myRDPClient
+    , spawnKey "a a" "Ardour DAW" myArdour
+    , spawnKey "a g" "Guitarix" myGuitarix
+    , spawnKey "a c" "Carla" myCarla
+    , spawnKey "a q" "QPWGraph" myQPWGraph
+    , spawnKey "a m" "MidiSnoop" myMidiSnoop
+    , spawnKey "z" "Fix screens" myFixScreens
+    , spawnKey "o" "Markdown editor (Obsidian)" myMarkdownEditor
+    , spawnKey "l" "Screen lock" myScreenLock
+    , spawnKey "m" "Fix Kensington trackball" myFixKensingtonTrackball
 
     -- Handle powerkeys
-    , ("M-1", powerkeys 1 hostname)
-    , ("M-2", powerkeys 2 hostname)
-    , ("M-3", powerkeys 3 hostname)
-    , ("M-4", powerkeys 4 hostname)
-    , ("M-5", powerkeys 5 hostname)
+    , ("M-1", addName "Power key 1" $ powerkeys 1 hostname)
+    , ("M-2", addName "Power key 2" $ powerkeys 2 hostname)
+    , ("M-3", addName "Power key 3" $ powerkeys 3 hostname)
+    , ("M-4", addName "Power key 4" $ powerkeys 4 hostname)
+    , ("M-5", addName "Power key 5" $ powerkeys 5 hostname)
 
-    -- Powekey for Quick Mobile jumping particularly
-    , ("M-i", showDesktop "IM")
-    -- , ("M-t", showDesktop "TP11")
-    , ("M-S-f", showDesktop "FP11")
-
-    -- , ("M-6", powerkeys 6 hostname)
-    -- , ("M-7", powerkeys 7 hostname)
-    -- , ("M-8", powerkeys 8 hostname)
-
-    -- Handle powergroups
-    -- , ("M-s w w", powergroups 1)
-    -- , ("M-s w 1", powergroups 1)
-    -- , ("M-s w 2", powergroups 2)
-    -- , ("M-s w 3", powergroups 3)
-    --
-    -- , ("M-s c", powergroups 4)
-    --
-    -- , ("M-s z z", powergroups 5)
-    -- , ("M-s z 1", powergroups 5)
-    -- , ("M-s z 2", powergroups 6)
-    --
-    -- , ("M-s t t", powergroups 7)
-    -- , ("M-s t 1", powergroups 7)
-    -- , ("M-s t 2", powergroups 8)
-    --
-    -- , ("M-s f f", powergroups 9)
-    -- , ("M-s f 1", powergroups 9)
-    -- , ("M-s f 2", powergroups 10)
+    , ("M-i", addName "Jump to IM" $ showDesktop "IM")
+    , ("M-S-f", addName "Jump to FP11" $ showDesktop "FP11")
 
     -- Handle moves
-    , ("M-S-1", moveFocusedWindowToDesktop "W11")
-    , ("M-S-2", moveFocusedWindowToDesktop "IM")
-    , ("M-S-3", moveFocusedWindowToDesktop "MAIL")
-    , ("M-S-4", moveFocusedWindowToDesktop "ADM")
-    , ("M-S-5", moveFocusedWindowToDesktop "SCRATCH")
-    , ("M-S-6", moveFocusedWindowToDesktop "ZM")
-    , ("M-S-7", moveFocusedWindowToDesktop "NSP")
+    , ("M-S-1", addName "Move to W11" $ moveFocusedWindowToDesktop "W11")
+    , ("M-S-2", addName "Move to IM" $ moveFocusedWindowToDesktop "IM")
+    , ("M-S-3", addName "Move to MAIL" $ moveFocusedWindowToDesktop "MAIL")
+    , ("M-S-4", addName "Move to ADM" $ moveFocusedWindowToDesktop "ADM")
+    , ("M-S-5", addName "Move to SCRATCH" $ moveFocusedWindowToDesktop "SCRATCH")
+    , ("M-S-6", addName "Move to ZM" $ moveFocusedWindowToDesktop "ZM")
+    , ("M-S-7", addName "Move to NSP" $ moveFocusedWindowToDesktop "NSP")
     ]
 
     ++ workspaceKeys "a" "ADM"
@@ -225,24 +198,13 @@ myCustomKeys hostname =
     ++ viewGroupKeys "z 1" "Zoom"
     ++ viewGroupKeys "z 2" "Zoom2"
 
-    -- ++ viewGroupKeys "m m" "M1"
-    -- ++ viewGroupKeys "m 1" "M1"
-    -- ++ viewGroupKeys "m 2" "M2"
-
     ++ viewGroupKeys "c" "Messaging"
-
-    -- ++ [
-    -- Dynamic Workspace Groups
-    -- , ("M-y n", ADWG.promptWSGroupAdd myXPConfig "Name this group: ")
-    -- , ("M-y g", ADWG.promptWSGroupView myXPConfig "Go to group: ")
-    -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
-    -- mod-/ and mod-? %! Jump to or memorize a workspace group
 
 -- Mouse warp keys
 warpMouseKeys =
-    [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2))
-    , ("M-C-e", warpToScreen 1 (1 % 2) (1 % 2))
-    , ("M-C-r", warpToScreen 2 (1 % 2) (1 % 2))
+    [ ("M-C-w", addName "Warp mouse to screen 0" $ warpToScreen 0 (1 % 2) (1 % 2))
+    , ("M-C-e", addName "Warp mouse to screen 1" $ warpToScreen 1 (1 % 2) (1 % 2))
+    , ("M-C-r", addName "Warp mouse to screen 2" $ warpToScreen 2 (1 % 2) (1 % 2))
     ]
 
 -- =============================================================================
@@ -302,19 +264,20 @@ main = do
         . withEasySB (statusBarProp "xmobar" myXmobarPP) defToggleStrutsKey
         $ createMyConfig hostname
 
-createMyConfig hostname = 
-            def
-                { terminal = myTerminal
-                , modMask = myModMask
-                , layoutHook = avoidStruts $ smartBorders $ desktopLayoutModifiers myLayouts
-                , manageHook = manageDocks <+> myManageHook
-                , startupHook = myStartupHook hostname
-                , normalBorderColor = myNormalBorderColor
-                , focusedBorderColor = myFocusedBorderColor
-                , workspaces = myWorkspaces hostname
-                , logHook = updatePointer (0.5, 0.5) (0, 0)
-                }
-                `additionalKeysP` myNewStyleKeys hostname
+createMyConfig hostname =
+    addDescrKeys ((myModMask, xK_F1), xMessage)
+        (\c -> mkNamedKeymap c (myNewStyleKeys hostname))
+        def
+            { terminal = myTerminal
+            , modMask = myModMask
+            , layoutHook = avoidStruts $ smartBorders $ desktopLayoutModifiers myLayouts
+            , manageHook = manageDocks <+> myManageHook
+            , startupHook = myStartupHook hostname
+            , normalBorderColor = myNormalBorderColor
+            , focusedBorderColor = myFocusedBorderColor
+            , workspaces = myWorkspaces hostname
+            , logHook = updatePointer (0.5, 0.5) (0, 0)
+            }
 
 
 -- =============================================================================
@@ -453,9 +416,13 @@ fixPrefix (Just p) = p ++ " "
 desktopKeyMapFromTuple p (x, Nothing) = fixPrefix p ++ show x
 desktopKeyMapFromTuple p (x, Just y) = fixPrefix p ++ show x ++ " " ++ show y
 
-desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, showDesktop (desktopNameFromTuple workspaceWindowPrefix t))
+desktopShowDesktopKeymapFromTuple workspaceKeyPrefix workspaceWindowPrefix t =
+    let ws = desktopNameFromTuple workspaceWindowPrefix t
+    in (workspaceFocusKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, addName ("Focus " ++ ws) $ showDesktop ws)
 
-desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, moveFocusedWindowToDesktop (desktopNameFromTuple workspaceWindowPrefix t))
+desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t =
+    let ws = desktopNameFromTuple workspaceWindowPrefix t
+    in (workspaceMoveKey ++ desktopKeyMapFromTuple workspaceKeyPrefix t, addName ("Move to " ++ ws) $ moveFocusedWindowToDesktop ws)
 
 -- Workspace definitions
 -- Work workspaces
