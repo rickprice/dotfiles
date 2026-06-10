@@ -224,6 +224,9 @@ myCustomKeys hostname =
     ++ viewGroupKeys "w 2" "Work2"
     ++ viewGroupKeys "w 3" "Work3"
 
+    ++ viewGroupKeys "u u" "StandardUtility1"
+    ++ viewGroupKeys "u 1" "StandardUtility1"
+
     ++ viewGroupKeys "f f" "StandardFrederick1"
     ++ viewGroupKeys "f 1" "Frederick1"
     ++ viewGroupKeys "f 2" "Frederick2"
@@ -294,13 +297,13 @@ myStartupHook  hostname= do
             spawnOn "IM" "discord"
             spawnOn "ADM" myMarkdownEditor
             spawnOn "ADM" myBrowser
-            spawnOn "U1" myCarla
-            spawnOn "U1" myGuitarix
-            spawnOn "U2" myQPWGraph
-            spawnOn "U3" myTouchOSC
+            spawnOn "U11" myCarla
+            spawnOn "U11" myGuitarix
+            spawnOn "U12" myQPWGraph
+            spawnOn "U13" myTouchOSC
             spawnOnce "syncthing serve"
         else do
-            spawnOn "FP12" myArdour
+            spawnOn "FP11" myArdour
             spawnOnce "cbatticon"
     
     -- System tray and utilities
@@ -355,8 +358,8 @@ myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGr
 
     mainGrid = SplitGrid orientation masterRows masterColumns masterPortion slaveAspectRatio resizeIncrement
     multiColumn = multiCol [1] 1 0.01 (-0.5)
-    tall = (Tall 1 (10/100) (80/100))
-    churchSetup = ( (tall ****|* tall ) ****/* tall )
+    tall = Tall 1 (10/100) (80/100)
+    churchSetup =  (tall ****|* tall ) ****/* tall
 
 -- Window management rules
 myManageHook :: ManageHook
@@ -428,10 +431,10 @@ myXmobarPP =
 -- =============================================================================
 
 -- Define extra workspaces that I use all the time, by hostname
-myExtraWorkspaces hostname | isPrefixOf hostnameWork hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
+myExtraWorkspaces hostname | hostnameWork `isPrefixOf` hostname = ["IM", "MAIL", "ADM", "SCRATCH", "ZM", "DOC", "NSP"]
 myExtraWorkspaces _ = ["SCRATCH", "DOC", "NSP"]
 
-myWorkspaces hostname | isPrefixOf hostnameWork hostname = wWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces ++ uWorkspaces
+myWorkspaces hostname | hostnameWork `isPrefixOf` hostname = wWorkspaces ++ myExtraWorkspaces hostname ++ tWorkspaces ++ fWorkspaces ++ uWorkspaces
 myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
 -- Workspace helper functions
@@ -470,32 +473,32 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- Work workspaces
 wWorkspaceDisplayPrefix = "W"
 wWorkspaceKeyPrefix = Nothing
-wDesktops = 4
-wDesktopPanes = 1
+wDesktops = 1
+wDesktopPanes = 3
 wWorkspaces = workspaceNames wWorkspaceDisplayPrefix wDesktops wDesktopPanes
 wWorkspaceKeys = wsKeys wWorkspaceKeyPrefix wWorkspaceDisplayPrefix wDesktops wDesktopPanes
 
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
 tWorkspaceKeyPrefix = Just "t"
-tDesktops = 4
-tDesktopPanes = 1
+tDesktops = 1
+tDesktopPanes = 3
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 4
-fDesktopPanes = 1
+fDesktops = 2
+fDesktopPanes = 3
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 
 -- Utility workspaces
 uWorkspaceDisplayPrefix = "U"
 uWorkspaceKeyPrefix = Just "u"
-uDesktops = 3
-uDesktopPanes = 1
+uDesktops = 1
+uDesktopPanes = 3
 uWorkspaces = workspaceNames uWorkspaceDisplayPrefix uDesktops uDesktopPanes
 uWorkspaceKeys = wsKeys uWorkspaceKeyPrefix uWorkspaceDisplayPrefix uDesktops uDesktopPanes
 
@@ -535,45 +538,53 @@ myNewStyleKeys hostname =
 -- =============================================================================
 
 -- Screen position constants
+-- farLeftScreen = 3
+-- topMiddleScreen = 0
+-- bottomMiddleScreen = 1
+-- farRightScreen = 2
 farLeftScreen = 3
 topMiddleScreen = 0
 bottomMiddleScreen = 1
 farRightScreen = 2
 
-setupWorkspaceGroups hostname | isPrefixOf hostnameWork hostname = do
-    ADWG.addRawWSGroup "Work1"      [(farLeftScreen, "W4"),(topMiddleScreen, "W3"),(bottomMiddleScreen,"W2"),(farRightScreen,"W1")]
+setupWorkspaceGroups hostname | hostnameWork `isPrefixOf` hostname = do
+    ADWG.addRawWSGroup "Work1"      [(farLeftScreen, "W21"),(topMiddleScreen, "W13"),(bottomMiddleScreen,"W12"),(farRightScreen,"W11")]
     ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
     ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
+
+    ADWG.addRawWSGroup "StandardUtility1"  [(farLeftScreen, "FP21"),(farRightScreen,"U12"),(bottomMiddleScreen,"U11"),(topMiddleScreen, "U13")]
 
     -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
     -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "IM"),(bottomMiddleScreen,"ADM"),(farRightScreen,"FP1")]
-    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"FP1")]
-    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP3")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP6"),(farRightScreen, "FP5")]
+    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"FP11")]
+    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
+    -- ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP13"),(bottomMiddleScreen,"FP12"),(farRightScreen,"FP11")]
+    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
+    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP21"),(farRightScreen, "FP22")]
+    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP31"),(farRightScreen, "FP32")]
 
-    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
+    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "TP11"),(farRightScreen,"TP13"),(bottomMiddleScreen,"TP12")]
+    -- ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W11")]
     -- ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
-    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"W11")]
 
 setupWorkspaceGroups _ = do
-    ADWG.addRawWSGroup "Work1"      [(bottomMiddleScreen, "W2"),(farRightScreen, "W1")]
-    ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
-    ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
-
-    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
-    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP2"),(farRightScreen, "FP3")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP5")]
+    -- ADWG.addRawWSGroup "Work1"      [(bottomMiddleScreen, "W2"),(farRightScreen, "W1")]
+    -- ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
+    -- ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
+    --
+    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
+    -- ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
+    -- ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP2"),(farRightScreen, "FP3")]
+    -- ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP5")]
 
     -- ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
-    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
-    ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
+    -- ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
+    -- ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
@@ -585,12 +596,12 @@ powerkeys key hostname = do
     screenCount <- LIS.countScreens
     case (screenCount, key, hostname) of
         -- 4 Screen Setup
-        (4,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork4"
-        (4,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
-        (4,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
-        (4,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
-        (4,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
-        (4,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
+        (4,1, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "StandardWork4"
+        (4,2, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Messaging"
+        (4,3, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Frederick1"
+        (4,4, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Tamara1"
+        (4,6, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom"
+        (4,7, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom2"
 
         -- 3 Screen Setup
         -- (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork3"
@@ -606,8 +617,8 @@ powerkeys key hostname = do
         -- (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
-        (_,1, hostname) | isPrefixOf hostnameWork hostname -> showDesktop "W1"
-        (_,1,_) -> showDesktop "FP1"
+        (_,1, hostname) | hostnameWork `isPrefixOf` hostname -> showDesktop "W11"
+        (_,1,_) -> showDesktop "FP11"
         (_,2, _) -> showDesktop "IM"
         (_,3, _) -> showDesktop "MAIL"
         (_,4, _) -> showDesktop "ADM"
