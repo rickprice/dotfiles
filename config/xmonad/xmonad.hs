@@ -1,8 +1,8 @@
 {-# LANGUAGE ImportQualifiedPost #-}
+{-# OPTIONS_GHC -Wno-missing-signatures -Wno-type-defaults #-}
 
 -- Base imports
 import Control.Concurrent
-import Data.Char (toLower)
 import Data.List
 import Data.Ratio
 import Network.HostName (getHostName)
@@ -12,10 +12,7 @@ import XMonad
 import XMonad.StackSet qualified as W
 
 -- XMonad configuration
-import XMonad.Config.Desktop (
-    desktopConfig,
-    desktopLayoutModifiers,
- )
+import XMonad.Config.Desktop (desktopLayoutModifiers)
 
 -- XMonad actions
 import XMonad.Actions.SpawnOn
@@ -31,7 +28,6 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.StatusBar
-import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.UrgencyHook
 
 -- XMonad layouts
@@ -40,7 +36,6 @@ import XMonad.Layout.LayoutCombinators hiding ( (|||) )
 import XMonad.Layout.Magnifier
 import XMonad.Layout.MultiColumns
 import XMonad.Layout.NoBorders (noBorders, smartBorders)
-import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ToggleLayouts
 import qualified XMonad.Layout.IndependentScreens as LIS
 
@@ -49,11 +44,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
-
--- X11 extras
-import Graphics.X11.ExtraTypes.XF86
-import Graphics.X11.Xlib.Extras
-import Graphics.X11.Xlib
+import qualified XMonad.Util.ExtensibleState as XS
 
 -- =============================================================================
 -- CONFIGURATION CONSTANTS
@@ -64,17 +55,14 @@ myModMask = mod4Mask
 
 -- Hostnames
 hostnameWork = "fwork"
-hostnameDAW = "daw"
 
 -- Applications
 myTerminal = "wezterm"
 -- myBrowser = "firefox-developer-edition"
 myBrowser = "google-chrome-stable --new-window https://www.google.com"
-myBrowserNyxt = "nyxt --no-socket"
 -- myEmailer = "wezterm start -- neomutt -F /home/fprice/.mutt/muttrc"
 myEmailer = "trojita"
 myFileManager = "pcmanfm"
-myDMenu = "dmenu-frecency"
 
 -- Creative applications
 myDarkTable = "darktable"
@@ -93,17 +81,13 @@ myEbookViewer = "ebook-viewer"
 myMarkdownEditor = "obsidian"
 
 -- System utilities
-myAudioManager = "pavucontrol"
 mySystemMonitor = "gnome-system-monitor"
 myCalculator = "gnome-calculator"
 myScanner = "simple-scan"
 myRDPClient = "remmina"
-myPrinterConfig = "system-config-printer"
 myScreenLock = "xscreensaver-command -lock"
 
 -- Scripts and commands
-myBackgrounds = "~/Documents/Personal/Dropbox/FrederickDocuments/Backgrounds/"
-myRunBackgrounds = "feh --no-fehbg --bg-max --random " ++ myBackgrounds
 myFixScreens = "autorandr --change"
 myFixLogitechMouse = "xinput --set-prop 'Logitech M325' 'libinput Accel Speed' -0.4"
 myFixKensingtonTrackball = "kensington-reset.sh"
@@ -123,7 +107,7 @@ appRunKey = "M-a "
 
 spawnKey key program = (appRunKey ++ key, spawn program)
 
-workspaceKeys key desktop = [(workspaceFocusKey ++ key, showDesktop desktop), (workspaceMoveKey ++ key, moveFocusedWindowToDesktop desktop)]
+workspaceKeys key ws = [(workspaceFocusKey ++ key, showDesktop ws), (workspaceMoveKey ++ key, moveFocusedWindowToDesktop ws)]
 
 dynamicScratchPadKeys key scratchPadName = [("M-S-" ++ key, withFocused $ toggleDynamicNSP scratchPadName), ("M-" ++ key, dynamicNSPAction scratchPadName) ]
 
@@ -133,6 +117,7 @@ viewGroupKeys keys viewGroup = [("M-s " ++ keys , ADWG.viewWSGroup viewGroup)]
 
 myCustomKeys hostname =
     [ ("M-f", sendMessage ToggleLayout)
+    , ("M-S-h", toggleHideEmptyWS)
     , ("M-S-<Enter>", spawn myTerminal)
     -- , ("M-y", withFocused $ windows . W.sink)
     , spawnKey "b" myBrowser
@@ -253,14 +238,6 @@ myCustomKeys hostname =
     -- , ("M-y d", ADWG.promptWSGroupForget myXPConfig "Forget group: ")]
     -- mod-/ and mod-? %! Jump to or memorize a workspace group
 
--- Helper function for setting up work windows
-setupWorkWindow = do
-    spawnHere myBrowser
-    spawnHere myBrowser
-    liftIO (threadDelay 5000000)
-    spawnHere myTerminal
-    spawnHere myTerminal
-
 -- Mouse warp keys
 warpMouseKeys =
     [ ("M-C-w", warpToScreen 0 (1 % 2) (1 % 2))
@@ -322,7 +299,7 @@ main = do
         . ewmh
         . ewmhFullscreen
         . docks
-        . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+        . withEasySB (statusBarProp "xmobar" myXmobarPP) defToggleStrutsKey
         $ createMyConfig hostname
 
 createMyConfig hostname = 
@@ -345,9 +322,9 @@ createMyConfig hostname =
 -- =============================================================================
 
 -- Window layouts
-myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifier mainGrid ||| churchSetup ))
+myLayouts = toggleLayouts (noBorders Full) (smartBorders (multiColumn ||| mainGrid ||| magnifyLayout mainGrid ||| churchSetup ))
   where
-    magnifier = magnifiercz 1.4
+    magnifyLayout = magnifiercz 1.4
 
     orientation = XMonad.Layout.GridVariants.L
     masterRows = 2
@@ -399,15 +376,25 @@ customInsertPosition = do
 
 
 -- Status bar configuration
-myXmobarPP :: PP
-myXmobarPP =
-    def
+
+newtype HideEmptyWS = HideEmptyWS Bool deriving (Read, Show)
+
+instance ExtensionClass HideEmptyWS where
+    initialValue = HideEmptyWS True
+
+toggleHideEmptyWS :: X ()
+toggleHideEmptyWS = XS.modify (\(HideEmptyWS b) -> HideEmptyWS (not b))
+
+myXmobarPP :: X PP
+myXmobarPP = do
+    HideEmptyWS hideEmpty <- XS.get
+    return $ def
         { ppSep = magenta " • "
         , ppTitleSanitize = xmobarStrip
         , ppCurrent = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
-        , ppHiddenNoWindows = lowWhite . wrap " " ""
+        , ppHiddenNoWindows = \ws -> if hideEmpty || ws `elem` ["U11", "U12", "U13"] then "" else lowWhite . wrap " " "" $ ws
         , ppUrgent = red . wrap (yellow "!") (yellow "!")
-        , ppOrder = \[ws, l, _, _] -> [ws, l]
+        , ppOrder = \xs -> case xs of { (ws:l:_) -> [ws, l]; _ -> [] }
         , ppExtras = [logTitles formatFocused formatUnfocused]
         }
   where
@@ -593,38 +580,39 @@ setupWorkspaceGroups _ = do
 
 -- Power keys function - context-aware workspace switching
 powerkeys key hostname = do
-    screenCount <- LIS.countScreens
-    case (screenCount, key, hostname) of
+    numScreens <- LIS.countScreens
+    case (numScreens, key) of
         -- 4 Screen Setup
-        (4,1, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "StandardWork4"
-        (4,2, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Messaging"
-        (4,3, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Frederick1"
-        (4,4, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Tamara1"
-        (4,6, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom"
-        (4,7, hostname) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom2"
+        (4,1) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "StandardWork4"
+        (4,2) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Messaging"
+        (4,3) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Frederick1"
+        (4,4) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Tamara1"
+        (4,6) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom"
+        (4,7) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom2"
 
         -- 3 Screen Setup
-        -- (3,1, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "StandardWork3"
-        -- (3,2, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Messaging"
-        -- (3,3, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Frederick1"
-        -- (3,4, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Tamara1"
-        -- (3,6, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom"
-        -- (3,7, hostname) | isPrefixOf hostnameWork hostname -> ADWG.viewWSGroup "Zoom2"
+        -- (3,1) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "StandardWork3"
+        -- (3,2) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Messaging"
+        -- (3,3) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Frederick1"
+        -- (3,4) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Tamara1"
+        -- (3,6) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom"
+        -- (3,7) | hostnameWork `isPrefixOf` hostname -> ADWG.viewWSGroup "Zoom2"
         --
         -- -- 2 Screen Setup
-        -- (2,1, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
-        -- (2,2, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
-        -- (2,3, hostname) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
+        -- (2,1) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick1"
+        -- (2,2) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick2"
+        -- (2,3) | hostname == hostnameDAW -> ADWG.viewWSGroup "Frederick3"
 
         -- Default Screen Setup
-        (_,1, hostname) | hostnameWork `isPrefixOf` hostname -> showDesktop "W11"
-        (_,1,_) -> showDesktop "FP11"
-        (_,2, _) -> showDesktop "IM"
-        (_,3, _) -> showDesktop "MAIL"
-        (_,4, _) -> showDesktop "ADM"
-        (_,5, _) -> showDesktop "SCRATCH"
-        (_,6, _) -> showDesktop "ZM"
-        (_,8, _) -> showDesktop "NSP"
+        (_,1) | hostnameWork `isPrefixOf` hostname -> showDesktop "W11"
+        (_,1) -> showDesktop "FP11"
+        (_,2) -> showDesktop "IM"
+        (_,3) -> showDesktop "MAIL"
+        (_,4) -> showDesktop "ADM"
+        (_,5) -> showDesktop "SCRATCH"
+        (_,6) -> showDesktop "ZM"
+        (_,8) -> showDesktop "NSP"
+        _ -> return ()
 
 
 -- powergroups key = do
