@@ -392,6 +392,7 @@ myXmobarPP = do
         { ppSep = magenta " • "
         , ppTitleSanitize = xmobarStrip
         , ppCurrent = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
+        , ppHidden = \ws -> if ws `elem` ["U11", "U12", "U13"] then "" else lowWhite . wrap " " "" $ ws
         , ppHiddenNoWindows = \ws -> if hideEmpty || ws `elem` ["U11", "U12", "U13"] then "" else lowWhite . wrap " " "" $ ws
         , ppUrgent = red . wrap (yellow "!") (yellow "!")
         , ppOrder = \xs -> case xs of { (ws:l:_) -> [ws, l]; _ -> [] }
