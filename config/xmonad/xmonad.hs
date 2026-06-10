@@ -460,7 +460,7 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t = (wor
 -- Work workspaces
 wWorkspaceDisplayPrefix = "W"
 wWorkspaceKeyPrefix = Nothing
-wDesktops = 1
+wDesktops = 2
 wDesktopPanes = 3
 wWorkspaces = workspaceNames wWorkspaceDisplayPrefix wDesktops wDesktopPanes
 wWorkspaceKeys = wsKeys wWorkspaceKeyPrefix wWorkspaceDisplayPrefix wDesktops wDesktopPanes
@@ -468,7 +468,7 @@ wWorkspaceKeys = wsKeys wWorkspaceKeyPrefix wWorkspaceDisplayPrefix wDesktops wD
 -- Tamara workspaces
 tWorkspaceDisplayPrefix = "TP"
 tWorkspaceKeyPrefix = Just "t"
-tDesktops = 1
+tDesktops = 2
 tDesktopPanes = 3
 tWorkspaces = workspaceNames tWorkspaceDisplayPrefix tDesktops tDesktopPanes
 tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tDesktopPanes
@@ -476,7 +476,7 @@ tWorkspaceKeys = wsKeys tWorkspaceKeyPrefix tWorkspaceDisplayPrefix tDesktops tD
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 2
+fDesktops = 3
 fDesktopPanes = 3
 fWorkspaces = workspaceNames fWorkspaceDisplayPrefix fDesktops fDesktopPanes
 fWorkspaceKeys = wsKeys fWorkspaceKeyPrefix fWorkspaceDisplayPrefix fDesktops fDesktopPanes
