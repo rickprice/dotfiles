@@ -108,7 +108,6 @@ topMiddleScreen = 0
 bottomMiddleScreen = 1
 farRightScreen = 2
 
--- Workspace configurations: (displayPrefix, keyPrefix, numDesktops, numPanes)
 -- Work workspaces
 wWorkspaceDisplayPrefix = "W"
 wWorkspaceKeyPrefix = Nothing
@@ -209,22 +208,16 @@ setupWorkspaceGroups hostname | hostnameWork `isPrefixOf` hostname = do
 
     ADWG.addRawWSGroup "StandardUtility1"  [(farLeftScreen, "FP21"),(farRightScreen,"U12"),(bottomMiddleScreen,"U11"),(topMiddleScreen, "U13")]
 
-    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
-    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "IM"),(bottomMiddleScreen,"ADM"),(farRightScreen,"FP1")]
-    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"FP11")]
     ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
-    -- ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP13"),(bottomMiddleScreen,"FP12"),(farRightScreen,"FP11")]
     ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
     ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP21"),(farRightScreen, "FP22")]
     ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP31"),(farRightScreen, "FP32")]
 
     ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "TP11"),(farRightScreen,"TP13"),(bottomMiddleScreen,"TP12")]
-    -- ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
 
     ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
 
     ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W11")]
-    -- ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
     ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"W11")]
 
 setupWorkspaceGroups _ = do
