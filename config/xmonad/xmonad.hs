@@ -1,8 +1,8 @@
 {-# LANGUAGE ImportQualifiedPost #-}
+{-# LANGUAGE LambdaCase #-}
 {-# OPTIONS_GHC -Wno-missing-signatures -Wno-type-defaults #-}
 
 -- Base imports
-import Control.Concurrent
 import Data.List
 import Data.Ratio
 import Network.HostName (getHostName)
@@ -158,10 +158,10 @@ myWorkspaces hostname = fWorkspaces ++ myExtraWorkspaces hostname
 
 -- Workspace navigation helpers
 showDesktop :: String -> X ()
-showDesktop d = windows $ W.greedyView d
+showDesktop = windows . W.greedyView
 
 moveFocusedWindowToDesktop :: String -> X ()
-moveFocusedWindowToDesktop d = windows $ W.shift d
+moveFocusedWindowToDesktop = windows . W.shift
 
 -- Workspace name/key generation
 workspacePanelTuples desktops 1 = [(x, Nothing) | x <- [1 .. desktops]]
@@ -183,8 +183,7 @@ desktopNameFromTuple :: Show a => String -> (a, Maybe a) -> String
 desktopNameFromTuple p (x, Nothing) = p ++ show x
 desktopNameFromTuple p (x, Just y) = p ++ show x ++ show y
 
-fixPrefix Nothing = ""
-fixPrefix (Just p) = p ++ " "
+fixPrefix = maybe "" (++ " ")
 
 desktopKeyMapFromTuple p (x, Nothing) = fixPrefix p ++ show x
 desktopKeyMapFromTuple p (x, Just y) = fixPrefix p ++ show x ++ " " ++ show y
@@ -343,8 +342,6 @@ customInsertPosition = do
     isDialogWindow <- isDialog
     case (wmClass, wmTransientFor, isDialogWindow) of
         (Just _, Nothing, False) -> insertPosition End Newer
-        (_, Just _, _) -> idHook
-        (_, _, True) -> idHook
         _ -> idHook
 
 -- manageZoomHook =
@@ -388,7 +385,7 @@ myXmobarPP = do
         , ppHidden = \ws -> if ws `elem` ["U11", "U12", "U13"] then "" else lowWhite . wrap " " "" $ ws
         , ppHiddenNoWindows = \ws -> if hideEmpty || ws `elem` ["U11", "U12", "U13"] then "" else lowWhite . wrap " " "" $ ws
         , ppUrgent = red . wrap (yellow "!") (yellow "!")
-        , ppOrder = \xs -> case xs of { (ws:l:_) -> [ws, l]; _ -> [] }
+        , ppOrder = \case { (ws:l:_) -> [ws, l]; _ -> [] }
         , ppExtras = [logTitles formatFocused formatUnfocused]
         }
   where
