@@ -220,6 +220,11 @@
 # [makepkg.files]
 # "home/makepkg.conf" = "~/.makepkg.conf"
 
+[ufw.files]
+"etc/ufw/ufw.conf" = { target = "/etc/ufw/ufw.conf", type = "template", owner = "root" }
+"etc/ufw/user.rules" = { target = "/etc/ufw/user.rules", type = "template", owner = "root" }
+"etc/ufw/user6.rules" = { target = "/etc/ufw/user6.rules", type = "template", owner = "root" }
+
 [wireguard.files]
 "etc/wireguard/wg0_rickp.conf" = { target = "/etc/wireguard/wg0_rickp.conf", type = "template", owner = "root" }
 
