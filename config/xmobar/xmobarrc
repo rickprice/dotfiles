@@ -1,0 +1,17 @@
+Config
+  { font             = "xft:URWGothic-Book:size=14"
+  , bgColor          = "#222D31"
+  , fgColor          = "#F9FAF9"
+  , position         = Top
+  , lowerOnStart     = True
+  , hideOnStart      = False
+  , allDesktops      = True
+  , persistent       = True
+  , commands         =
+      [ Run UnsafeStdinReader
+      , Run Date "%B-%d-%Y %l:%M%P" "date" 10
+      ]
+  , sepChar          = "%"
+  , alignSep         = "}{"
+  , template         = "%UnsafeStdinReader% }{ <fc=#454947>|</fc> %date% "
+  }
