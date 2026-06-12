@@ -1,0 +1,15 @@
+resolver: lts-21.12
+
+packages:
+- ./
+
+extra-deps:
+- X11-1.10
+
+nix:
+  packages:
+    - zlib
+    - xorg.libX11
+    - xorg.libXrandr
+    - xorg.libXScrnSaver
+    - xorg.libXext

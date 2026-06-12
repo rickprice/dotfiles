@@ -1,0 +1,20 @@
+apt:
+  libx11-dev
+  libxext-dev
+  libxinerama-dev
+  libxrandr-dev
+  libxss-dev
+
+github-patches:
+  .github/workflows/haskell-ci-hackage.patch
+
+raw-project
+  optimization: False
+  package xmonad
+    flags: +pedantic
+
+-- avoid --haddock-all which overwrites *-docs.tar.gz with tests docs
+haddock-components: libs
+
+error-unused-packages: False
+error-incomplete-patterns: False
