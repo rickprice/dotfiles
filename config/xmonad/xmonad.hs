@@ -207,17 +207,17 @@ setupWorkspaceGroups hostname | hostnameWork `isPrefixOf` hostname = do
 
     ADWG.addRawWSGroup "StandardUtility1"  [(displayPort2, "U13"),(displayPort0,"U12"),(displayPort1,"U11"),(hdmiA0, "U13")]
 
-    ADWG.addRawWSGroup "StandardFrederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort0,"FP13"),(displayPort1,"FP12")]
-    ADWG.addRawWSGroup "Frederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort0,"FP13"),(displayPort1,"FP12")]
+    ADWG.addRawWSGroup "StandardFrederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort1,"FP13"),(displayPort0,"FP12")]
+    ADWG.addRawWSGroup "Frederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort1,"FP13"),(displayPort0,"FP12")]
     ADWG.addRawWSGroup "Frederick2" [(displayPort1, "FP21"),(displayPort0, "FP22")]
     ADWG.addRawWSGroup "Frederick3" [(displayPort1, "FP31"),(displayPort0, "FP32")]
 
-    ADWG.addRawWSGroup "Tamara1"  [(displayPort2, "TP13"),(hdmiA0, "TP11"),(displayPort0,"TP13"),(displayPort1,"TP12")]
+    ADWG.addRawWSGroup "Tamara1"  [(displayPort2, "TP13"),(hdmiA0, "TP11"),(displayPort1,"TP13"),(displayPort0,"TP12")]
 
-    ADWG.addRawWSGroup "Messaging"  [(hdmiA0, "IM"), (displayPort1, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(hdmiA0, "IM"), (displayPort0, "MAIL")]
 
     ADWG.addRawWSGroup "StandardWork3"  [(displayPort2, "IM"),(displayPort1,"MAIL"),(displayPort0,"W11")]
-    ADWG.addRawWSGroup "StandardWork4"  [(displayPort2, "MAIL"),(hdmiA0, "ADM"),(displayPort0,"DOC"),(displayPort1,"W11")]
+    ADWG.addRawWSGroup "StandardWork4"  [(displayPort2, "MAIL"),(hdmiA0, "ADM"),(displayPort1,"DOC"),(displayPort0,"W11")]
 
 setupWorkspaceGroups _ = do
     -- ADWG.addRawWSGroup "Work1"      [(displayPort1, "W2"),(displayPort0, "W1")]
