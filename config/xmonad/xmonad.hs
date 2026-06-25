@@ -103,10 +103,10 @@ workspaceMoveKey = "M-S-d "
 appRunKey = "M-a "
 
 -- Screen positions
-farLeftScreen = 3
-topMiddleScreen = 0
-bottomMiddleScreen = 1
-farRightScreen = 2
+displayPort2 = 3
+hdmiA0 = 0
+displayPort1 = 1
+displayPort0 = 2
 
 -- Work workspaces
 wWorkspaceDisplayPrefix = "W"
@@ -124,7 +124,7 @@ tDesktopPanes = 3
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
 fDesktops = 3
-fDesktopPanes = 3
+fDesktopPanes = 5
 
 -- Utility workspaces
 uWorkspaceDisplayPrefix = "U"
@@ -201,42 +201,42 @@ desktopMoveFocusedKeyFromTuple workspaceKeyPrefix workspaceWindowPrefix t =
 -- =============================================================================
 
 setupWorkspaceGroups hostname | hostnameWork `isPrefixOf` hostname = do
-    ADWG.addRawWSGroup "Work1"      [(farLeftScreen, "W21"),(topMiddleScreen, "W13"),(bottomMiddleScreen,"W12"),(farRightScreen,"W11")]
-    ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
-    ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
+    ADWG.addRawWSGroup "Work1"      [(displayPort2, "W13"),(hdmiA0, "W13"),(displayPort1,"W12"),(displayPort0,"W11")]
+    ADWG.addRawWSGroup "Work2"      [(displayPort1, "W4"),(displayPort0, "W3")]
+    ADWG.addRawWSGroup "Work3"      [(displayPort1, "W6"),(displayPort0, "W5")]
 
-    ADWG.addRawWSGroup "StandardUtility1"  [(farLeftScreen, "FP21"),(farRightScreen,"U12"),(bottomMiddleScreen,"U11"),(topMiddleScreen, "U13")]
+    ADWG.addRawWSGroup "StandardUtility1"  [(displayPort2, "U13"),(displayPort0,"U12"),(displayPort1,"U11"),(hdmiA0, "U13")]
 
-    ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
-    ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "FP11"),(farRightScreen,"FP13"),(bottomMiddleScreen,"FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP21"),(farRightScreen, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP31"),(farRightScreen, "FP32")]
+    ADWG.addRawWSGroup "StandardFrederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort0,"FP13"),(displayPort1,"FP12")]
+    ADWG.addRawWSGroup "Frederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort0,"FP13"),(displayPort1,"FP12")]
+    ADWG.addRawWSGroup "Frederick2" [(displayPort1, "FP21"),(displayPort0, "FP22")]
+    ADWG.addRawWSGroup "Frederick3" [(displayPort1, "FP31"),(displayPort0, "FP32")]
 
-    ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "FP21"),(topMiddleScreen, "TP11"),(farRightScreen,"TP13"),(bottomMiddleScreen,"TP12")]
+    ADWG.addRawWSGroup "Tamara1"  [(displayPort2, "TP13"),(hdmiA0, "TP11"),(displayPort0,"TP13"),(displayPort1,"TP12")]
 
-    ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(hdmiA0, "IM"), (displayPort1, "MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W11")]
-    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "MAIL"),(topMiddleScreen, "ADM"),(farRightScreen,"DOC"),(bottomMiddleScreen,"W11")]
+    ADWG.addRawWSGroup "StandardWork3"  [(displayPort2, "IM"),(displayPort1,"MAIL"),(displayPort0,"W11")]
+    ADWG.addRawWSGroup "StandardWork4"  [(displayPort2, "MAIL"),(hdmiA0, "ADM"),(displayPort0,"DOC"),(displayPort1,"W11")]
 
 setupWorkspaceGroups _ = do
-    -- ADWG.addRawWSGroup "Work1"      [(bottomMiddleScreen, "W2"),(farRightScreen, "W1")]
-    -- ADWG.addRawWSGroup "Work2"      [(bottomMiddleScreen, "W4"),(farRightScreen, "W3")]
-    -- ADWG.addRawWSGroup "Work3"      [(bottomMiddleScreen, "W6"),(farRightScreen, "W5")]
+    -- ADWG.addRawWSGroup "Work1"      [(displayPort1, "W2"),(displayPort0, "W1")]
+    -- ADWG.addRawWSGroup "Work2"      [(displayPort1, "W4"),(displayPort0, "W3")]
+    -- ADWG.addRawWSGroup "Work3"      [(displayPort1, "W6"),(displayPort0, "W5")]
     --
-    -- ADWG.addRawWSGroup "StandardFrederick1"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"FP1")]
-    -- ADWG.addRawWSGroup "Frederick1"  [(farLeftScreen, "FP4"),(topMiddleScreen, "FP3"),(bottomMiddleScreen,"FP2"),(farRightScreen,"FP1")]
-    -- ADWG.addRawWSGroup "Frederick2" [(bottomMiddleScreen, "FP2"),(farRightScreen, "FP3")]
-    -- ADWG.addRawWSGroup "Frederick3" [(bottomMiddleScreen, "FP4"),(farRightScreen, "FP5")]
+    -- ADWG.addRawWSGroup "StandardFrederick1"  [(displayPort2, "ADM"),(hdmiA0, "MAIL"),(displayPort1,"IM"),(displayPort0,"FP1")]
+    -- ADWG.addRawWSGroup "Frederick1"  [(displayPort2, "FP4"),(hdmiA0, "FP3"),(displayPort1,"FP2"),(displayPort0,"FP1")]
+    -- ADWG.addRawWSGroup "Frederick2" [(displayPort1, "FP2"),(displayPort0, "FP3")]
+    -- ADWG.addRawWSGroup "Frederick3" [(displayPort1, "FP4"),(displayPort0, "FP5")]
 
-    -- ADWG.addRawWSGroup "Tamara1" [(bottomMiddleScreen, "TP2"),(farRightScreen, "TP1")]
-    -- ADWG.addRawWSGroup "Tamara1"  [(farLeftScreen, "TP4"),(topMiddleScreen, "TP3"),(bottomMiddleScreen,"TP2"),(farRightScreen,"TP1")]
-    -- ADWG.addRawWSGroup "Tamara2" [(bottomMiddleScreen, "TP5"),(farRightScreen, "TP6")]
+    -- ADWG.addRawWSGroup "Tamara1" [(displayPort1, "TP2"),(displayPort0, "TP1")]
+    -- ADWG.addRawWSGroup "Tamara1"  [(displayPort2, "TP4"),(hdmiA0, "TP3"),(displayPort1,"TP2"),(displayPort0,"TP1")]
+    -- ADWG.addRawWSGroup "Tamara2" [(displayPort1, "TP5"),(displayPort0, "TP6")]
 
-    ADWG.addRawWSGroup "Messaging"  [(topMiddleScreen, "IM"), (bottomMiddleScreen, "MAIL")]
+    ADWG.addRawWSGroup "Messaging"  [(hdmiA0, "IM"), (displayPort1, "MAIL")]
 
-    ADWG.addRawWSGroup "StandardWork3"  [(farLeftScreen, "IM"),(bottomMiddleScreen,"MAIL"),(farRightScreen,"W1")]
-    ADWG.addRawWSGroup "StandardWork4"  [(farLeftScreen, "ADM"),(topMiddleScreen, "MAIL"),(bottomMiddleScreen,"IM"),(farRightScreen,"W1")]
+    ADWG.addRawWSGroup "StandardWork3"  [(displayPort2, "IM"),(displayPort1,"MAIL"),(displayPort0,"W1")]
+    ADWG.addRawWSGroup "StandardWork4"  [(displayPort2, "ADM"),(hdmiA0, "MAIL"),(displayPort1,"IM"),(displayPort0,"W1")]
 
 -- Power keys function - context-aware workspace switching
 powerkeys key hostname = do
