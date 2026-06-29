@@ -111,7 +111,7 @@ displayPort0 = 2
 -- Work workspaces
 wWorkspaceDisplayPrefix = "W"
 wWorkspaceKeyPrefix = Nothing
-wDesktops = 2
+wDesktops = 6
 wDesktopPanes = 3
 
 -- Tamara workspaces
@@ -123,7 +123,7 @@ tDesktopPanes = 3
 -- Frederick workspaces
 fWorkspaceDisplayPrefix = "FP"
 fWorkspaceKeyPrefix = Just "f"
-fDesktops = 3
+fDesktops = 6
 fDesktopPanes = 5
 
 -- Utility workspaces
