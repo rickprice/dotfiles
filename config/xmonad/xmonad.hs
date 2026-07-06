@@ -209,8 +209,10 @@ setupWorkspaceGroups hostname | hostnameWork `isPrefixOf` hostname = do
 
     ADWG.addRawWSGroup "StandardFrederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort1,"FP13"),(displayPort0,"FP12")]
     ADWG.addRawWSGroup "Frederick1"  [(displayPort2, "FP14"),(hdmiA0, "FP11"),(displayPort1,"FP13"),(displayPort0,"FP12")]
-    ADWG.addRawWSGroup "Frederick2" [(displayPort1, "FP21"),(displayPort0, "FP22")]
-    ADWG.addRawWSGroup "Frederick3" [(displayPort1, "FP31"),(displayPort0, "FP32")]
+    ADWG.addRawWSGroup "Frederick2"  [(displayPort2, "FP24"),(hdmiA0, "FP21"),(displayPort1,"FP23"),(displayPort0,"FP22")]
+    ADWG.addRawWSGroup "Frederick3"  [(displayPort2, "FP34"),(hdmiA0, "FP31"),(displayPort1,"FP33"),(displayPort0,"FP32")]
+    -- ADWG.addRawWSGroup "Frederick2" [(displayPort1, "FP21"),(displayPort0, "FP22")]
+    -- ADWG.addRawWSGroup "Frederick3" [(displayPort1, "FP31"),(displayPort0, "FP32")]
 
     ADWG.addRawWSGroup "Tamara1"  [(displayPort2, "TP13"),(hdmiA0, "TP11"),(displayPort1,"TP13"),(displayPort0,"TP12")]
 
