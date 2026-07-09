@@ -74,5 +74,5 @@ tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
         # format = " %d.%m. %H:%M "
         # format = "%B-%d-%Y %l:%M%P"
-        format = "%a %B-%d-%Y %l:%M%P"
+        format = "%A %B-%d-%Y %l:%M%P"
 }
