@@ -206,6 +206,9 @@
 [meteo-qt.files]
 "config/meteo-qt/meteo-qt.conf" = "~/.config/meteo-qt/meteo-qt.conf"
 
+[flameshot.files]
+"config/flameshot/flameshot.ini" = "~/.config/flameshot/flameshot.ini"
+
 [keyd.files]
 "etc/keyd/default.conf" = { target = "/etc/keyd/default.conf", type = "symbolic", owner = "root" }
 "etc/keyd/12keymini.conf" = { target = "/etc/keyd/12keymini.conf", type = "symbolic", owner = "root" }

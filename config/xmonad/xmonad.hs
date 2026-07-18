@@ -87,6 +87,8 @@ myCalculator = "gnome-calculator"
 myScanner = "simple-scan"
 myRDPClient = "remmina"
 myScreenLock = "xscreensaver-command -lock"
+myScreenshotTool = "flameshot"
+myScreenshotCapture = "flameshot gui"
 
 -- Scripts and commands
 myFixScreens = "autorandr --change"
@@ -433,6 +435,7 @@ myCustomKeys hostname =
     , spawnKey "s" "Scanner" myScanner
     , spawnKey "c" "Calculator" myCalculator
     , ("<XF86Calculator>", addName "Calculator" $ spawn myCalculator)
+    , ("<Print>", addName "Screenshot capture" $ spawn myScreenshotCapture)
     , ("C-M-'", addName "Screen lock" $ spawn myScreenLock)
     , ("calc", addName "Calculator" $ spawn myCalculator)
     , spawnKey "r" "RDP client" myRDPClient
@@ -558,6 +561,7 @@ myStartupHook hostname = do
     -- System tray and utilities
     spawnOnce "snixembed"
     spawnOnce "nm-applet"
+    spawnOnce myScreenshotTool
     spawnOnce "xscreensaver --no-splash"
     spawnOnce "trayer --monitor primary --edge top --align right --SetDockType true --SetPartialStrut true --expand true --widthtype request --transparent true --alpha 0 --tint 0xffffff --height 21 --iconspacing 2"
     setWMName "LG3D"
