@@ -18,9 +18,6 @@
 [alacritty.files]
 "config/alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 
-[sudo.files]
-"etc/sudoers.d/90_configure_timeouts_normal" = { target = "/etc/sudoers.d/90_configure_timeouts_normal", type = "template", owner = "root" }
-
 [autorandr.files]
 "config/autorandr" = { target = "~/.config/autorandr", type = "symbolic" }
 "etc/udev/rules.d/40-monitor-hotplug-rules" = { target = "/etc/udev/rules.d/40-monitor-hotplug-rules", type = "template", owner = "root" }
