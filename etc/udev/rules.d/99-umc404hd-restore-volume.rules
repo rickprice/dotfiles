@@ -1,0 +1,7 @@
+# The UMC404HD's hardware DAC output gain (channels 1-4) isn't managed by
+# WirePlumber's normal ACP route-volume persistence, because
+# wireplumber.conf.d/51-umc404-direct.conf sets api.alsa.use-acp = false to
+# get flat AUX0-3 numbering. Without that, nothing pins the hardware mixer
+# to unity, so it can come back down at whatever the USB driver's power-on
+# default is on every reconnect. Pin it to 0dB (127) here instead.
+ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", ATTRS{idVendor}=="1397", ATTRS{idProduct}=="0509", RUN+="/usr/bin/sh -c '/usr/bin/amixer -c U192k cset numid=1 127,127; /usr/bin/amixer -c U192k cset numid=3 127,127; /usr/bin/amixer -c U192k cset numid=17 127,127,127,127'"

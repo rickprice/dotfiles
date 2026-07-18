@@ -204,6 +204,7 @@
 
 [wireplumber.files]
 "config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf" = "~/.config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf"
+"etc/udev/rules.d/99-umc404hd-restore-volume.rules" = { target = "/etc/udev/rules.d/99-umc404hd-restore-volume.rules", type = "template", owner = "root" }
 
 [meteo-qt.files]
 "config/meteo-qt/meteo-qt.conf" = "~/.config/meteo-qt/meteo-qt.conf"
