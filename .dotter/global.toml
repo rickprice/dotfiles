@@ -202,6 +202,9 @@
 "config/pipewire/pipewire.conf.d/umc404hd-split.conf" = "~/.config/pipewire/pipewire.conf.d/umc404hd-split.conf"
 "config/pipewire/pipewire.conf.d/umc404hd-compressed.conf" = "~/.config/pipewire/pipewire.conf.d/umc404hd-compressed.conf"
 
+[wireplumber.files]
+"config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf" = "~/.config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf"
+
 [meteo-qt.files]
 "config/meteo-qt/meteo-qt.conf" = "~/.config/meteo-qt/meteo-qt.conf"
 
