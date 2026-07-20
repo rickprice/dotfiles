@@ -1,0 +1,52 @@
+["gx_plugin_version", 1,
+  "Pad Vocoder" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.4": 0.77999997
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.5": 0.55000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.3": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.2": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.6": 0.30000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.7": 0.0
+  },
+  "Choral Vocoder" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.4": 0.16
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.5": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.3": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.2": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.6": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.7": 0.0
+  },
+  "16 Band Vocoder" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.4": 0.16
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.5": 0.55000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.3": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.2": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.6": 0.66670001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.7": 1.0
+  },
+  "Old Vocoder" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.4": 0.16
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.5": 0.55000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.3": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.2": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.6": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.7": 0.0
+  },
+  "Default" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.4": 0.16
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.5": 0.55000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.3": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.2": 0.40000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.6": 0.66670001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fVocoder.7": 0.0
+  }
+]

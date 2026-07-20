@@ -1,0 +1,40 @@
+["gx_plugin_version", 1,
+  "GuitarCompression" {
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.24": 0.06954567
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.25": 20.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.32": 1.99526
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.31": 0.00025119
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.34": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.36": 70.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.12": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.23": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.29": 2.49521184
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.35": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.39": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.6": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.7": 0.99999988
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.8": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.40": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.28": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.41": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.30": 0.50117999
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.33": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.42": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.11": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.26": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.27": 200.20162964
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.16": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.14": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.18": 6.30955267
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.17": 10.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.13": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.9": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.10": 1.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.20": 99.46144104
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.19": 3.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.15": 0.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.22": 6032.82324219
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.21": 3.0
+    "lv2_http%3a%2f%2flsp-plug%2ein%2fplugins%2flv2%2fcompressor_mono.38": 1.0
+  }
+]

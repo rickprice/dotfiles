@@ -1,0 +1,7 @@
+["gx_plugin_version", 1,
+  "Zero" {
+    "lv2_urn%3azamaudio%3aZamHeadX2.4": 0
+    "lv2_urn%3azamaudio%3aZamHeadX2.5": 0
+    "lv2_urn%3azamaudio%3aZamHeadX2.6": 1
+  }
+]

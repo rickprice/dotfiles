@@ -198,6 +198,8 @@
 "config/pipewire/pipewire-pulse.conf" = "~/.config/pipewire/pipewire-pulse.conf"
 "config/pipewire/pipewire.conf.d/umc404hd-split.conf" = "~/.config/pipewire/pipewire.conf.d/umc404hd-split.conf"
 "config/pipewire/pipewire.conf.d/umc404hd-compressed.conf" = "~/.config/pipewire/pipewire.conf.d/umc404hd-compressed.conf"
+"etc/pipewire/pipewire.conf.d/10-quantum.conf" = { target = "/etc/pipewire/pipewire.conf.d/10-quantum.conf", type = "template", owner = "root" }
+"etc/pipewire/pipewire.conf.d/20-alsa.conf" = { target = "/etc/pipewire/pipewire.conf.d/20-alsa.conf", type = "template", owner = "root" }
 
 [wireplumber.files]
 "config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf" = "~/.config/wireplumber/wireplumber.conf.d/51-umc404-direct.conf"
@@ -213,6 +215,9 @@
 "etc/keyd/default.conf" = { target = "/etc/keyd/default.conf", type = "symbolic", owner = "root" }
 "etc/keyd/12keymini.conf" = { target = "/etc/keyd/12keymini.conf", type = "symbolic", owner = "root" }
 "etc/keyd/staplesmini.conf" = { target = "/etc/keyd/staplesmini.conf", type = "symbolic", owner = "root" }
+
+[guitarix.files]
+"config/guitarix" = { target = "~/.config/guitarix", type = "symbolic" }
 
 [nyxt.files]
 "config/nyxt/auto-config.lisp" = "~/.config/nyxt/auto-config.lisp"

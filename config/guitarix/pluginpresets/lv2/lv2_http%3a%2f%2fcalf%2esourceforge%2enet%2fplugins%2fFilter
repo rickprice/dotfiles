@@ -1,0 +1,20 @@
+["gx_plugin_version", 1,
+  "Totally muted" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.4": 10.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.7": 20.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.6": 2.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.5": 0.70700002
+  },
+  "Disco" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.4": 193.82099915
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.7": 74.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.6": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.5": 1.37955999
+  },
+  "Distant Headphones" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.4": 305.81799316
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.7": 74.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.6": 3.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFilter.5": 0.70700002
+  }
+]

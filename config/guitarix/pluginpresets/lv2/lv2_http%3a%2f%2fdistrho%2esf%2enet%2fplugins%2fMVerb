@@ -1,0 +1,57 @@
+["gx_plugin_version", 1,
+  "Cupboard" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.6": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.4": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.7": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.5": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.12": 75
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.10": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.11": 35
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.8": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.9": 25
+  },
+  "Stadium" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.6": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.4": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.7": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.5": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.12": 75
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.10": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.11": 35
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.8": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.9": 100
+  },
+  "Dark" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.6": 10
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.4": 10
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.7": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.5": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.12": 75
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.10": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.11": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.8": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.9": 50
+  },
+  "Halves" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.6": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.4": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.7": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.5": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.12": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.10": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.11": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.8": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.9": 75
+  },
+  "Subtle" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.6": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.4": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.7": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.5": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.12": 75
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.10": 100
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.11": 15.00000095
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.8": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fMVerb.9": 50
+  }
+]

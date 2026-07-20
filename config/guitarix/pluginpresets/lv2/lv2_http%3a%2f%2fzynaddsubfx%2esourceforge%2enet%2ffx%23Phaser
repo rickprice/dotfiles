@@ -1,0 +1,182 @@
+["gx_plugin_version", 1,
+  "Analog Phaser 4" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 45
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 80
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 14
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 7
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 1
+  },
+  "Phaser 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 68
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 107
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 31
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 66
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 2
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Phaser 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 36
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Phaser 5" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 67
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 78
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Phaser 6" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 37
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 78
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 53
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 100
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 58
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 3
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Analog Phaser 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 14
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 4
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Analog Phaser 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 70
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 14
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 5
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 6
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Analog Phaser 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 9
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 8
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Analog Phaser 5" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 25
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 16
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 127
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 100
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 25
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 8
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Analog Phaser 6" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 70
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 110
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 12
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Phaser 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 35
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 88
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 3
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 0
+  },
+  "Phaser 4" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.16": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.8": 67
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.15": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.9": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.14": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.4": 22
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.7": 66
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.13": 20
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.10": 5
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Phaser.12": 1
+  }
+]

@@ -1,0 +1,122 @@
+["gx_plugin_version", 1,
+  "Chorus 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 56
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 45
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 98
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 19
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Celeste 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 18
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 115
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 26
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 42
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 127
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Chorus 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 85
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 50
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 119
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Chorus 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 95
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 97
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 29
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 42
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 127
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Celeste 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 9
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 115
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 31
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 29
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 117
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 50
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 127
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 1
+  },
+  "Flange 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 3
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 23
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 62
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 57
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Flange 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 3
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 35
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 109
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 33
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 34
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Flange 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 3
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 35
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 54
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 53
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 34
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 94
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 1
+  },
+  "Flange 4" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 19
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 12
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 97
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 40
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 62
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 0
+  },
+  "Flange 5" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.9": 19
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.8": 39
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.10": 17
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.12": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.4": 55
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.5": 105
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.7": 24
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Chorus.13": 1
+  }
+]

@@ -1,0 +1,58 @@
+["gx_plugin_version", 1,
+  "Zero" {
+    "lv2_urn%3azamaudio%3aZamEQ2.2": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.5": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.10": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.8": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.3": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.6": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.4": 1000
+    "lv2_urn%3azamaudio%3aZamEQ2.7": 3000
+    "lv2_urn%3azamaudio%3aZamEQ2.11": 8000
+    "lv2_urn%3azamaudio%3aZamEQ2.9": 250
+    "lv2_urn%3azamaudio%3aZamEQ2.13": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.12": 0
+  },
+  "CarvedBass" {
+    "lv2_urn%3azamaudio%3aZamEQ2.2": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.5": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.10": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.8": 6
+    "lv2_urn%3azamaudio%3aZamEQ2.3": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.6": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.4": 500
+    "lv2_urn%3azamaudio%3aZamEQ2.7": 3000
+    "lv2_urn%3azamaudio%3aZamEQ2.11": 8000
+    "lv2_urn%3azamaudio%3aZamEQ2.9": 60
+    "lv2_urn%3azamaudio%3aZamEQ2.13": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.12": -6
+  },
+  "CarvedGuitar" {
+    "lv2_urn%3azamaudio%3aZamEQ2.2": 5.5999999
+    "lv2_urn%3azamaudio%3aZamEQ2.5": 0.69999999
+    "lv2_urn%3azamaudio%3aZamEQ2.10": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.8": -1.04999995
+    "lv2_urn%3azamaudio%3aZamEQ2.3": 1.46000004
+    "lv2_urn%3azamaudio%3aZamEQ2.6": 1.33000004
+    "lv2_urn%3azamaudio%3aZamEQ2.4": 175
+    "lv2_urn%3azamaudio%3aZamEQ2.7": 500
+    "lv2_urn%3azamaudio%3aZamEQ2.11": 8000
+    "lv2_urn%3azamaudio%3aZamEQ2.9": 30
+    "lv2_urn%3azamaudio%3aZamEQ2.13": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.12": -6
+  },
+  "CarvedVox" {
+    "lv2_urn%3azamaudio%3aZamEQ2.2": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.5": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.10": 6
+    "lv2_urn%3azamaudio%3aZamEQ2.8": 6
+    "lv2_urn%3azamaudio%3aZamEQ2.3": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.6": 1
+    "lv2_urn%3azamaudio%3aZamEQ2.4": 500
+    "lv2_urn%3azamaudio%3aZamEQ2.7": 3000
+    "lv2_urn%3azamaudio%3aZamEQ2.11": 330
+    "lv2_urn%3azamaudio%3aZamEQ2.9": 6600
+    "lv2_urn%3azamaudio%3aZamEQ2.13": 0
+    "lv2_urn%3azamaudio%3aZamEQ2.12": -12
+  }
+]

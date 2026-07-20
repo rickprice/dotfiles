@@ -1,0 +1,10 @@
+["gx_plugin_version", 1,
+  "Default" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.6": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.4": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.8": 220
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.7": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.5": 0
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2f3BandEQ.9": 2000
+  }
+]

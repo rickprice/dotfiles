@@ -1,0 +1,20 @@
+["gx_plugin_version", 1,
+  "Stereo Detune" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.0": 0.2
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.1": 0.89999998
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.2": 0.5
+  },
+  "Symphonic" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.0": 0.2
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.1": 0.89999998
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.2": 0.5
+  },
+  "Out Of Tune" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.0": 0.80000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.1": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fDetune.2": 0.5
+  }
+]

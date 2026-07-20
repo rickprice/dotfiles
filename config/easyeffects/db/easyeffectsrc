@@ -1,17 +1,27 @@
+[EffectsPipelines]
+inactivityTimeout=22
+processAllOutputs=false
+
 [Presets]
 lastLoadedOutputPreset=Onodio Headphones
 
 [StreamInputs]
-inputDevice=alsa_input.usb-M-Audio_M-Track_2X2-00.analog-stereo
+inputDevice=alsa_input.usb-BEHRINGER_UMC404HD_192k-00.capture.0.0
+useDefaultInputDevice=false
 
 [StreamOutputs]
+linkToVirtualSource=true
 mostUsedPresets=Onodio Headphones
-outputDevice=alsa_output.usb-M-Audio_M-Track_2X2-00.analog-stereo
+outputDevice=umc404hd_out12
 plugins=equalizer#0
-usedPresets=Onodio Headphones:1
+useDefaultOutputDevice=false
+usedPresets=Onodio Headphones:4
 visiblePage=pluginsPage
 visiblePlugin=equalizer#0
 
+[Style]
+collapsePluginsList=true
+
 [Window]
-height=1057
-width=1918
+height=1027
+width=838

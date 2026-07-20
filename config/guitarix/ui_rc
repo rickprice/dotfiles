@@ -1,0 +1,19 @@
+{
+  "system.mainwin_visible": 0,
+  "system.mainwin_x": 1280,
+  "system.mainwin_y": 1080,
+  "system.mainwin_height": 1078,
+  "system.mainwin_rack_height": 1078,
+  "system.preset_window_height": 328,
+  "system.mul_buffer": 1,
+  "ui.skin_name": "Sky",
+  "ui.latency_nowarn": 0,
+  "system.order_rack_h": 1,
+  "system.show_value": 0,
+  "system.show_tooltips": 1,
+  "system.animations": 1,
+  "system.show_presets": 0,
+  "system.show_toolbar": 0,
+  "system.show_rack": 1,
+  "system.midiout": 0
+}

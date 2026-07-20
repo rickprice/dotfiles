@@ -1,0 +1,56 @@
+["gx_plugin_version", 1,
+  "Default" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 0
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.5
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Guerilla Love" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.5
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Looking for the World" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 0
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Stay Down" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 0
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.40000001
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Tumble to the Power" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Do Yourself a Favour" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.5
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 1
+  },
+  "Past is Past" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 1
+  },
+  "You and Only You" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 0.5
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.30000001
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 0
+  },
+  "Soul Force" {
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.5": 0.5
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.7": 1
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.4": 0.30000001
+    "lv2_http%3a%2f%2fwww%2eniallmoody%2ecom%2fndcplugs%2fsoulforce%2ehtm.6": 1
+  }
+]

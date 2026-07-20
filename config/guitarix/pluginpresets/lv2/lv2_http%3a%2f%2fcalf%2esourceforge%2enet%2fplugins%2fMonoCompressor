@@ -1,0 +1,62 @@
+["gx_plugin_version", 1,
+  "Vocal Leveller 2" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.10": 10.50959969
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.2": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.6": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.7": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.14": 0.24742199
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.13": 8.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.3": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.12": 4.85678005
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.4": 0.53345698
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.5": 0.740246
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.9": 4.25008011
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.11": 106.85199738
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.8": 0.0883884
+  },
+  "Snare Mic 2" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.10": 10.50959969
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.2": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.6": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.7": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.14": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.13": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.3": 1.05701995
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.12": 2.94853997
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.4": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.5": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.9": 3.00696993
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.11": 80.69730377
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.8": 0.164939
+  },
+  "Snare Mic" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.10": 3.5034399
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.2": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.6": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.7": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.14": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.13": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.3": 1.05701995
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.12": 2.94853997
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.4": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.5": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.9": 3.00696993
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.11": 21.85989952
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.8": 0.164939
+  },
+  "Vocal Leveller" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.10": 3.10086989
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.2": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.6": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.7": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.14": 0.176127
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.13": 8.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.3": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.12": 4.85678005
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.4": 0.84783101
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.5": 0.90860999
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.9": 4.25008011
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.11": 25.00119972
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fMonoCompressor.8": 0.0883884
+  }
+]

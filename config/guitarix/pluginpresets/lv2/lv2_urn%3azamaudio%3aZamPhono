@@ -1,0 +1,6 @@
+["gx_plugin_version", 1,
+  "RIAA (Playback)" {
+    "lv2_urn%3azamaudio%3aZamPhono.2": 0
+    "lv2_urn%3azamaudio%3aZamPhono.3": 3
+  }
+]

@@ -1,0 +1,7 @@
+["gx_plugin_version", 1,
+  "Zero" {
+    "lv2_urn%3azamaudio%3aZaMaximX2.6": 0
+    "lv2_urn%3azamaudio%3aZaMaximX2.5": 25
+    "lv2_urn%3azamaudio%3aZaMaximX2.7": 0
+  }
+]

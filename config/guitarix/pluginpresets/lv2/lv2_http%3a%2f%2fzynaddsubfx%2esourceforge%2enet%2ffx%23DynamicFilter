@@ -1,0 +1,52 @@
+["gx_plugin_version", 1,
+  "Vocal Morph 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.11": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.9": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.10": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.8": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.4": 80
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.6": 0
+  },
+  "Auto Wah" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.11": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.9": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.10": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.8": 70
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.4": 70
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.7": 80
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.6": 0
+  },
+  "Sweep" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.11": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.9": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.10": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.8": 80
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.4": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.7": 50
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.6": 0
+  },
+  "Wah Wah" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.11": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.9": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.10": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.8": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.4": 80
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.7": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.6": 0
+  },
+  "Vocal Morph 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.11": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.9": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.10": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.8": 64
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.4": 50
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.7": 96
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23DynamicFilter.6": 0
+  }
+]

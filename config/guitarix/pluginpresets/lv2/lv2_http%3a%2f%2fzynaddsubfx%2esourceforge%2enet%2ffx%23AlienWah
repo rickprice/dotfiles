@@ -1,0 +1,46 @@
+["gx_plugin_version", 1,
+  "AlienWah 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.10": 31
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.8": 112
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.9": 105
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.4": 63
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.7": 100
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.12": 42
+  },
+  "AlienWah 4" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.10": 47
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.8": 101
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.9": 11
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.4": 25
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.7": 66
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.6": 1
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.12": 86
+  },
+  "AlienWah 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.10": 17
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.8": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.9": 105
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.4": 73
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.5": 106
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.7": 101
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.12": 64
+  },
+  "AlienWah 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.10": 25
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.8": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.9": 105
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.4": 70
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.5": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.7": 62
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.11": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23AlienWah.12": 64
+  }
+]

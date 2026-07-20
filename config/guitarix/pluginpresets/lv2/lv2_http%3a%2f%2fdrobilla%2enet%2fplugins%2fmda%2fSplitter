@@ -1,0 +1,29 @@
+["gx_plugin_version", 1,
+  "Stereo Crossover" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.5": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.2": 0.25
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.4": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.0": 0.66666698
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.6": 0.5
+  },
+  "Pass Peaks Only" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.5": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.2": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.4": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.6": 0.5
+  },
+  "Frequency/Level Splitter" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.5": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.2": 0.25
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.3": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.4": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.0": 0.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fSplitter.6": 0.5
+  }
+]

@@ -1,0 +1,6 @@
+["gx_plugin_version", 1,
+  "Default" {
+    "lv2_urn%3azamaudio%3aZamNoise.3": 50
+    "lv2_urn%3azamaudio%3aZamNoise.2": 0
+  }
+]

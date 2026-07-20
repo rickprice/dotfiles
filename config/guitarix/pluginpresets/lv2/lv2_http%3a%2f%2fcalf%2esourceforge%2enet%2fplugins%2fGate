@@ -1,0 +1,15 @@
+["gx_plugin_version", 1,
+  "RogerVocalsGate" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.13": 20.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.4": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.17": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.16": 2.82842994
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.5": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.15": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.10": 0.06125
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.12": 1.47704625
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.14": 250.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.18": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fGate.11": 0.00243815
+  }
+]

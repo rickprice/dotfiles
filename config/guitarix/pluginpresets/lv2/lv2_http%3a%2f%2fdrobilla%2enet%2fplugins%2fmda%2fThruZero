@@ -1,0 +1,30 @@
+["gx_plugin_version", 1,
+  "Phase Canceller" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.1": 0.2
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.4": 1.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.3": 0.30000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.2": 0.47
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.0": 0.5
+  },
+  "Thru-Zero Flanger" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.1": 0.43000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.4": 1.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.3": 0.30000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.2": 0.47
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.0": 0.30000001
+  },
+  "Mad Modulator" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.1": 1.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.4": 1.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.3": 0.75
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.2": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.0": 0.75
+  },
+  "Chorus Doubler" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.1": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.4": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.3": 0.30000001
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.2": 0.34999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fThruZero.0": 0.60000002
+  }
+]

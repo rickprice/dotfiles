@@ -1,0 +1,54 @@
+["gx_plugin_version", 1,
+  "Fast Sweep" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 0.926588
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": 0.76139998
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 0.1
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 4.35481977
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 5.22819996
+  },
+  "Allpass filter" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 1.85318005
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.11": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": -0.44639999
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 2.63027
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 0.5
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 2.56892991
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.9": 0.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.8": 0.0
+  },
+  "Chorus Lite" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 0.63287801
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": 0.0683999
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 10.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 2.08435011
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 0.910155
+  },
+  "Slow Resonant" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 1.0
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": -0.88200003
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 0.125893
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 0.36221799
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 0.14684799
+  },
+  "Tooth Killer" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 0.31863999
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": 0.99000001
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 0.363078
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 0.181539
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 0.100419
+  },
+  "Warble" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 0.31863999
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": -0.99000001
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 0.218776
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 0.181539
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 20.0
+  },
+  "Waterlike" {
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.10": 0.926588
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.7": -0.1692
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.4": 0.47863001
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.5": 0.72272003
+    "lv2_http%3a%2f%2fcalf%2esourceforge%2enet%2fplugins%2fFlanger.6": 1.67184997
+  }
+]

@@ -1,0 +1,6 @@
+["gx_plugin_version", 1,
+  "Default" {
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fPingPongPan.4": 50
+    "lv2_http%3a%2f%2fdistrho%2esf%2enet%2fplugins%2fPingPongPan.5": 75
+  }
+]

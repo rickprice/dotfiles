@@ -1,0 +1,11 @@
+["gx_plugin_version", 1,
+  "Default" {
+    "lv2_urn%3azamaudio%3aZamTube.3": 5
+    "lv2_urn%3azamaudio%3aZamTube.7": 0
+    "lv2_urn%3azamaudio%3aZamTube.8": 0
+    "lv2_urn%3azamaudio%3aZamTube.4": 5
+    "lv2_urn%3azamaudio%3aZamTube.6": 0
+    "lv2_urn%3azamaudio%3aZamTube.5": 5
+    "lv2_urn%3azamaudio%3aZamTube.2": 0.1
+  }
+]

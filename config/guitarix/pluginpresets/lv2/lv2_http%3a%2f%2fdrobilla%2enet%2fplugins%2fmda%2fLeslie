@@ -1,0 +1,35 @@
+["gx_plugin_version", 1,
+  "Fast" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.4": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.5": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.3": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.2": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.0": 1.0
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.7": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.8": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.6": 0.47999999
+  },
+  "Slow" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.4": 0.75
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.5": 0.56999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.3": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.2": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.0": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.7": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.8": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.6": 0.47999999
+  },
+  "Default" {
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.4": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.5": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.3": 0.69999999
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.2": 0.60000002
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.1": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.0": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.7": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.8": 0.5
+    "lv2_http%3a%2f%2fdrobilla%2enet%2fplugins%2fmda%2fLeslie.6": 0.47999999
+  }
+]

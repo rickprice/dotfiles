@@ -1,0 +1,65 @@
+["gx_plugin_version", 1,
+  "Echo 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 10
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 60
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 59
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 64
+  },
+  "Simple Echo" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 44
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 64
+  },
+  "Echo 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 21
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 59
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 64
+  },
+  "Echo 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 35
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 59
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 64
+  },
+  "Canyon" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 48
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 102
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 82
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 30
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 50
+  },
+  "Panning Echo 1" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 24
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 44
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 82
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 0
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 17
+  },
+  "Panning Echo 2" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 18
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 46
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 68
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 100
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 118
+  },
+  "Panning Echo 3" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 36
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 26
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 67
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 127
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 100
+  },
+  "Feedback Echo" {
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.8": 55
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.4": 28
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.7": 90
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.6": 100
+    "lv2_http%3a%2f%2fzynaddsubfx%2esourceforge%2enet%2ffx%23Echo.5": 64
+  }
+]
