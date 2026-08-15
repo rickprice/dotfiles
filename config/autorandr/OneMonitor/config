@@ -6,10 +6,10 @@ output HDMI-A-0
 off
 output DisplayPort-2
 crtc 0
-mode 1680x1050
+mode 1920x1080
 pos 0x0
 primary
-rate 59.88
+rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 16

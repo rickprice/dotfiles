@@ -1,10 +1,9 @@
 output DisplayPort-1
 off
-output DisplayPort-0
-crtc 0
+output DisplayPort-2
+crtc 1
 mode 1920x1080
-pos 1680x0
-primary
+pos 0x0
 rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
@@ -15,11 +14,12 @@ x-prop-tearfree auto
 x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
-output DisplayPort-2
-crtc 1
-mode 1680x1050
-pos 0x30
-rate 59.88
+output DisplayPort-0
+crtc 0
+mode 1920x1080
+pos 1920x0
+primary
+rate 60.00
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
 x-prop-max_bpc 16
@@ -32,7 +32,7 @@ x-prop-underscan_vborder 0
 output HDMI-A-0
 crtc 2
 mode 2560x1080
-pos 1680x1080
+pos 1920x1080
 rate 59.98
 x-prop-broadcast_rgb Automatic
 x-prop-colorspace Default
