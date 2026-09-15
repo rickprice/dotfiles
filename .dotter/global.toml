@@ -42,6 +42,7 @@
 "config/i3/config" = "~/.config/i3/config"
 "config/i3status/config" = "~/.config/i3status/config"
 "config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml" = "~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
+"config/gtk-3.0/gtk.css" = "~/.config/gtk-3.0/gtk.css"
 
 [nvim.files]
 "config/nvim" = { target = "~/.config/nvim", type = "symbolic" }

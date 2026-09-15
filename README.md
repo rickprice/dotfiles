@@ -30,6 +30,7 @@ Personal dotfiles managed with [Dotter](https://github.com/SuperCuber/dotter).
 ## Notable behaviours
 
 - Clicking the i3 bar (any area) launches/toggles `gsimplecal` — configured in `config/i3/config`
+- `gsimplecal` calendar font is 150% of the GTK default — configured via `config/gtk-3.0/gtk.css`
 - Clicking the xmobar date/time launches/toggles `gsimplecal` — configured in `home/xmobarrc`
 
 ## Deploying
