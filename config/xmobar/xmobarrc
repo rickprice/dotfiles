@@ -13,5 +13,5 @@ Config
       ]
   , sepChar          = "%"
   , alignSep         = "}{"
-  , template         = "%UnsafeStdinReader% }{ <fc=#454947>|</fc> %date% "
+  , template         = "%UnsafeStdinReader% }{ <fc=#454947>|</fc> <action=`pkill gsimplecal || gsimplecal`>%date%</action> "
   }
