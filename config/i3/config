@@ -439,6 +439,7 @@ bar {
 	tray_output primary
 	# tray_output eDP1
 
+	bindsym button1 exec --no-startup-id pkill gsimplecal || gsimplecal
 	bindsym button4 nop
 	bindsym button5 nop
 #   font xft:URWGothic-Book 14

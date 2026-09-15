@@ -17,6 +17,6 @@ Config { overrideRedirect = False
        , sepChar  = "%"
        , alignSep = "}{"
 --       , template = " %XMonadLog% | %cpu% | %memory% | %sprint% %date% "
-       , template = " %XMonadLog% | %cpu% | %memory% | %date% "
+       , template = " %XMonadLog% | %cpu% | %memory% | <action=`pkill gsimplecal || gsimplecal`>%date%</action> "
        }
 

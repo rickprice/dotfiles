@@ -27,6 +27,11 @@ Personal dotfiles managed with [Dotter](https://github.com/SuperCuber/dotter).
 | LightDM | `etc/lightdm/` |
 | Scripts | `local/bin/` |
 
+## Notable behaviours
+
+- Clicking the i3 bar (any area) launches/toggles `gsimplecal` — configured in `config/i3/config`
+- Clicking the xmobar date/time launches/toggles `gsimplecal` — configured in `home/xmobarrc`
+
 ## Deploying
 
 Install [Dotter](https://github.com/SuperCuber/dotter), then:
