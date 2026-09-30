@@ -126,6 +126,11 @@ systemModeSubmap = submap $ M.fromList
     , ((shiftMask, xK_s), spawn "i3exit shutdown")
     ]
 
+appModeSubmap :: X ()
+appModeSubmap = submap $ M.fromList
+    [ ((0,         xK_c), spawn "gnome-calculator")
+    ]
+
 myKeys =
     -- Terminal
     [ ("M-S-<Return>",   spawn myTerminal)
@@ -194,8 +199,8 @@ myKeys =
     , ("M-<Space>",      windows W.focusMaster)
     -- Sticky (copy window to all workspaces)
     , ("M-S-s",          windows copyToAll)
-    -- Focus master / parent approximation
-    , ("M-a",            windows W.focusMaster)
+    -- App mode: M-a then c (calculator)
+    , ("M-a",            appModeSubmap)
     -- Scratchpad
     , ("M--",            namedScratchpadAction myScratchpads "scratchpad")
     , ("M-S--",          withFocused $ windows . W.sink)
